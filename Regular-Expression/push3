@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+echo -e "\n添加"
+git add .
+
+echo -e "\n提交"
+git commit
+
+echo -e "\n推送到 gitee"
+git push origin master
+
+echo -e "\n部署"
+./buildForGithub
