@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
-push
+git add .
+git commit -m "`git config user.name` 于 `date "+%Y-%m-%d %H:%M:%S"` 更新"
+git push origin master
 
 echo -e "\n部署"
 ./buildForGithub
