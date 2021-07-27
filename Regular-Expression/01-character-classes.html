@@ -1,0 +1,471 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>字符组 · Regular-Expression</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Little Captain">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-prism/prism-okaidia.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="02-anchors.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    关于
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2" data-path="01-character-classes.html">
+            
+                <a href="01-character-classes.html">
+            
+                    
+                        <b>1.2.</b>
+                    
+                    字符组
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="02-anchors.html">
+            
+                <a href="02-anchors.html">
+            
+                    
+                        <b>1.3.</b>
+                    
+                    锚点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="03-escaped-characters.html">
+            
+                <a href="03-escaped-characters.html">
+            
+                    
+                        <b>1.4.</b>
+                    
+                    转义字符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="04-groups-references.html">
+            
+                <a href="04-groups-references.html">
+            
+                    
+                        <b>1.5.</b>
+                    
+                    组和引用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="05-look-around.html">
+            
+                <a href="05-look-around.html">
+            
+                    
+                        <b>1.6.</b>
+                    
+                    环视
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="06-quantifiers-alternation.html">
+            
+                <a href="06-quantifiers-alternation.html">
+            
+                    
+                        <b>1.7.</b>
+                    
+                    量词和多选结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="07-substitution.html">
+            
+                <a href="07-substitution.html">
+            
+                    
+                        <b>1.8.</b>
+                    
+                    置换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="08-flags.html">
+            
+                <a href="08-flags.html">
+            
+                    
+                        <b>1.9.</b>
+                    
+                    标识
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >字符组</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#&#x5B57;&#x7B26;&#x7EC4;"><b>1. </b>&#x5B57;&#x7B26;&#x7EC4;</a></li><ul><li><span class="title-icon "></span><a href="#&#x5B57;&#x7B26;&#x96C6;character-set---abc"><b>1.1. </b>&#x5B57;&#x7B26;&#x96C6;(character set) - [ABC]</a></li><li><span class="title-icon "></span><a href="#&#x6392;&#x9664;&#x578B;&#x5B57;&#x7B26;&#x96C6;negated-set---abc"><b>1.2. </b>&#x6392;&#x9664;&#x578B;&#x5B57;&#x7B26;&#x96C6;(negated set) - [^ABC]</a></li><li><span class="title-icon "></span><a href="#&#x8303;&#x56F4;range---a-z"><b>1.3. </b>&#x8303;&#x56F4;(range) - [A-Z]</a></li><li><span class="title-icon "></span><a href="#&#x70B9;dot---"><b>1.4. </b>&#x70B9;(dot) - .</a></li><li><span class="title-icon "></span><a href="#&#x5339;&#x914D;&#x6240;&#x6709;match-any---ss"><b>1.5. </b>&#x5339;&#x914D;&#x6240;&#x6709;(match any) - [\s\S]</a></li><li><span class="title-icon "></span><a href="#&#x5355;&#x8BCD;&#x5B57;&#x7B26;&#x96C6;word---w"><b>1.6. </b>&#x5355;&#x8BCD;&#x5B57;&#x7B26;&#x96C6;(word) - \w</a></li><li><span class="title-icon "></span><a href="#&#x975E;&#x5355;&#x8BCD;&#x5B57;&#x7B26;&#x96C6;not-word---w"><b>1.7. </b>&#x975E;&#x5355;&#x8BCD;&#x5B57;&#x7B26;&#x96C6;(not word) - \W</a></li><li><span class="title-icon "></span><a href="#&#x6570;&#x5B57;&#x5B57;&#x7B26;&#x96C6;digit---d"><b>1.8. </b>&#x6570;&#x5B57;&#x5B57;&#x7B26;&#x96C6;(digit) - \d</a></li><li><span class="title-icon "></span><a href="#&#x975E;&#x6570;&#x5B57;&#x5B57;&#x7B26;&#x96C6;not-digit---d"><b>1.9. </b>&#x975E;&#x6570;&#x5B57;&#x5B57;&#x7B26;&#x96C6;(not digit) - \D</a></li><li><span class="title-icon "></span><a href="#&#x7A7A;&#x767D;&#x5B57;&#x7B26;&#x96C6;whitespace---s"><b>1.10. </b>&#x7A7A;&#x767D;&#x5B57;&#x7B26;&#x96C6;(whitespace) - \s</a></li><li><span class="title-icon "></span><a href="#&#x975E;&#x7A7A;&#x767D;&#x5B57;&#x7B26;&#x96C6;not-whitespace---s"><b>1.11. </b>&#x975E;&#x7A7A;&#x767D;&#x5B57;&#x7B26;&#x96C6;(not whitespace) - \S</a></li><li><span class="title-icon "></span><a href="#&#x6307;&#x5B9A;&#x7C7B;&#x522B;&#x7684;-unicode-&#x5B57;&#x7B26;&#x96C6;unicode-category---pl"><b>1.12. </b>&#x6307;&#x5B9A;&#x7C7B;&#x522B;&#x7684; unicode &#x5B57;&#x7B26;&#x96C6;(unicode category) - \p{L}</a></li><li><span class="title-icon "></span><a href="#&#x6392;&#x9664;&#x6307;&#x5B9A;&#x7C7B;&#x522B;&#x7684;-unicode-&#x5B57;&#x7B26;&#x96C6;not-unicode-category---pl"><b>1.13. </b>&#x6392;&#x9664;&#x6307;&#x5B9A;&#x7C7B;&#x522B;&#x7684; unicode &#x5B57;&#x7B26;&#x96C6;(not unicode category) - \P{L}</a></li><li><span class="title-icon "></span><a href="#&#x6307;&#x5B9A;&#x811A;&#x672C;&#x7684;-unicode-&#x5B57;&#x7B26;&#x96C6;unicode-script---phan"><b>1.14. </b>&#x6307;&#x5B9A;&#x811A;&#x672C;&#x7684; unicode &#x5B57;&#x7B26;&#x96C6;(unicode script) - \p{Han}</a></li><li><span class="title-icon "></span><a href="#&#x6392;&#x9664;&#x6307;&#x5B9A;&#x811A;&#x672C;&#x7684;-unicode-&#x5B57;&#x7B26;&#x96C6;not-unicode-script---phan"><b>1.15. </b>&#x6392;&#x9664;&#x6307;&#x5B9A;&#x811A;&#x672C;&#x7684; unicode &#x5B57;&#x7B26;&#x96C6;(not unicode script) - \P{Han}</a></li></ul></ul></div><a href="#&#x5B57;&#x7B26;&#x7EC4;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x5B57;&#x7B26;&#x7EC4;"><a name="&#x5B57;&#x7B26;&#x7EC4;" class="anchor-navigation-ex-anchor" href="#&#x5B57;&#x7B26;&#x7EC4;"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x5B57;&#x7B26;&#x7EC4;</h1>
+<h2 id="&#x5B57;&#x7B26;&#x96C6;character-set---abc"><a name="&#x5B57;&#x7B26;&#x96C6;character-set---abc" class="anchor-navigation-ex-anchor" href="#&#x5B57;&#x7B26;&#x96C6;character-set---abc"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. &#x5B57;&#x7B26;&#x96C6;(character set) - [ABC]</h2>
+<ul>
+<li><p>&#x5339;&#x914D;&#x5B57;&#x7B26;&#x96C6;&#x4E2D;&#x7684;&#x4EFB;&#x610F;&#x5B57;&#x7B26;&#x3002;</p>
+</li>
+<li><p>&#x793A;&#x4F8B; - [aeiou]</p>
+</li>
+</ul>
+<p><img src="images/01/01.svg" alt="&#x56FE;1"></p>
+<h2 id="&#x6392;&#x9664;&#x578B;&#x5B57;&#x7B26;&#x96C6;negated-set---abc"><a name="&#x6392;&#x9664;&#x578B;&#x5B57;&#x7B26;&#x96C6;negated-set---abc" class="anchor-navigation-ex-anchor" href="#&#x6392;&#x9664;&#x578B;&#x5B57;&#x7B26;&#x96C6;negated-set---abc"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. &#x6392;&#x9664;&#x578B;&#x5B57;&#x7B26;&#x96C6;(negated set) - [^ABC]</h2>
+<ul>
+<li><p>&#x5339;&#x914D;&#x6CA1;&#x6709;&#x5728;&#x5B57;&#x7B26;&#x96C6;&#x4E2D;&#x7684;&#x4EFB;&#x610F;&#x5B57;&#x7B26;&#x3002;</p>
+</li>
+<li><p>&#x793A;&#x4F8B; - <sup><a href="#fn_aeiou" id="reffn_aeiou">aeiou</a></sup></p>
+</li>
+</ul>
+<p><img src="images/01/02.svg" alt="&#x56FE;2"></p>
+<h2 id="&#x8303;&#x56F4;range---a-z"><a name="&#x8303;&#x56F4;range---a-z" class="anchor-navigation-ex-anchor" href="#&#x8303;&#x56F4;range---a-z"><i class="fa fa-link" aria-hidden="true"></i></a>1.3. &#x8303;&#x56F4;(range) - [A-Z]</h2>
+<ul>
+<li><p>&#x5339;&#x914D;&#x8303;&#x56F4;&#x5185;&#x7684;&#x4EFB;&#x610F;&#x5B57;&#x7B26;&#x3002;</p>
+</li>
+<li><p>&#x793A;&#x4F8B; - [g-s]</p>
+</li>
+</ul>
+<p><img src="images/01/03.svg" alt="&#x56FE;3"></p>
+<h2 id="&#x70B9;dot---"><a name="&#x70B9;dot---" class="anchor-navigation-ex-anchor" href="#&#x70B9;dot---"><i class="fa fa-link" aria-hidden="true"></i></a>1.4. &#x70B9;(dot) - .</h2>
+<ul>
+<li>&#x5339;&#x914D;&#x9664;&#x4E86;&#x6362;&#x884C;&#x7B26;&#x5916;&#x7684;&#x6240;&#x6709;&#x5B57;&#x7B26;&#x3002;&#x7B49;&#x4EF7;&#x4E8E; <code>[^\n\r]</code>&#x3002;</li>
+</ul>
+<p><img src="images/01/04.svg" alt="&#x56FE;4"></p>
+<h2 id="&#x5339;&#x914D;&#x6240;&#x6709;match-any---ss"><a name="&#x5339;&#x914D;&#x6240;&#x6709;match-any---ss" class="anchor-navigation-ex-anchor" href="#&#x5339;&#x914D;&#x6240;&#x6709;match-any---ss"><i class="fa fa-link" aria-hidden="true"></i></a>1.5. &#x5339;&#x914D;&#x6240;&#x6709;(match any) - [\s\S]</h2>
+<ul>
+<li><p>&#x5339;&#x914D;&#x5305;&#x62EC;&#x6362;&#x884C;&#x7B26;&#x5728;&#x5185;&#x7684;&#x6240;&#x6709;&#x5B57;&#x7B26;&#x3002;</p>
+</li>
+<li><p>&#x7B49;&#x4EF7;&#x4E8E; <code>[^]</code>&#xFF0C;&#x4F46;&#x662F;&#x5F88;&#x591A;&#x6D4F;&#x89C8;&#x5668;&#x4E0D;&#x652F;&#x6301;&#x8FD9;&#x4E2A;&#x8868;&#x8FBE;&#x5F0F;&#x3002;</p>
+</li>
+</ul>
+<p><img src="images/01/05.svg" alt="&#x56FE;5"></p>
+<h2 id="&#x5355;&#x8BCD;&#x5B57;&#x7B26;&#x96C6;word---w"><a name="&#x5355;&#x8BCD;&#x5B57;&#x7B26;&#x96C6;word---w" class="anchor-navigation-ex-anchor" href="#&#x5355;&#x8BCD;&#x5B57;&#x7B26;&#x96C6;word---w"><i class="fa fa-link" aria-hidden="true"></i></a>1.6. &#x5355;&#x8BCD;&#x5B57;&#x7B26;&#x96C6;(word) - \w</h2>
+<ul>
+<li>&#x5339;&#x914D;&#x6240;&#x6709;&#x7684;&#x5355;&#x8BCD;&#x5B57;&#x7B26;&#xFF0C;&#x5305;&#x62EC;&#x5B57;&#x6BCD;&#x3001;&#x6570;&#x5B57;&#x548C;&#x4E0B;&#x5212;&#x7EBF;&#x3002;&#x7B49;&#x4EF7;&#x4E8E; <code>[A-Za-z0-9_]</code>&#x3002;</li>
+</ul>
+<p><img src="images/01/06.svg" alt="&#x56FE;6"></p>
+<h2 id="&#x975E;&#x5355;&#x8BCD;&#x5B57;&#x7B26;&#x96C6;not-word---w"><a name="&#x975E;&#x5355;&#x8BCD;&#x5B57;&#x7B26;&#x96C6;not-word---w" class="anchor-navigation-ex-anchor" href="#&#x975E;&#x5355;&#x8BCD;&#x5B57;&#x7B26;&#x96C6;not-word---w"><i class="fa fa-link" aria-hidden="true"></i></a>1.7. &#x975E;&#x5355;&#x8BCD;&#x5B57;&#x7B26;&#x96C6;(not word) - \W</h2>
+<ul>
+<li>&#x5339;&#x914D;&#x6240;&#x6709;&#x4E0D;&#x5728;&#x5355;&#x8BCD;&#x5B57;&#x7B26;&#x96C6;&#x4E2D;&#x7684;&#x5B57;&#x7B26;&#x3002;&#x7B49;&#x4EF7;&#x4E8E; <code>[^A-Za-z0-9_]</code>&#x3002;</li>
+</ul>
+<p><img src="images/01/07.svg" alt="&#x56FE;7"></p>
+<h2 id="&#x6570;&#x5B57;&#x5B57;&#x7B26;&#x96C6;digit---d"><a name="&#x6570;&#x5B57;&#x5B57;&#x7B26;&#x96C6;digit---d" class="anchor-navigation-ex-anchor" href="#&#x6570;&#x5B57;&#x5B57;&#x7B26;&#x96C6;digit---d"><i class="fa fa-link" aria-hidden="true"></i></a>1.8. &#x6570;&#x5B57;&#x5B57;&#x7B26;&#x96C6;(digit) - \d</h2>
+<ul>
+<li><p>&#x5339;&#x914D;&#x6240;&#x6709;&#x7684;&#x6570;&#x5B57;&#x5B57;&#x7B26;&#x3002;&#x7B49;&#x4EF7;&#x4E8E; <code>[0-9]</code>&#x3002;</p>
+</li>
+<li><p><img src="images/01/08.svg" alt="&#x56FE;8"></p>
+</li>
+</ul>
+<h2 id="&#x975E;&#x6570;&#x5B57;&#x5B57;&#x7B26;&#x96C6;not-digit---d"><a name="&#x975E;&#x6570;&#x5B57;&#x5B57;&#x7B26;&#x96C6;not-digit---d" class="anchor-navigation-ex-anchor" href="#&#x975E;&#x6570;&#x5B57;&#x5B57;&#x7B26;&#x96C6;not-digit---d"><i class="fa fa-link" aria-hidden="true"></i></a>1.9. &#x975E;&#x6570;&#x5B57;&#x5B57;&#x7B26;&#x96C6;(not digit) - \D</h2>
+<ul>
+<li><p>&#x5339;&#x914D;&#x6240;&#x6709;&#x4E0D;&#x5728;&#x6570;&#x5B57;&#x5B57;&#x7B26;&#x96C6;&#x4E2D;&#x7684;&#x5B57;&#x7B26;&#x3002;&#x7B49;&#x4EF7;&#x4E8E; <code>[^0-9]</code>&#x3002;</p>
+</li>
+<li><p><img src="images/01/09.svg" alt="&#x56FE;9"></p>
+</li>
+</ul>
+<h2 id="&#x7A7A;&#x767D;&#x5B57;&#x7B26;&#x96C6;whitespace---s"><a name="&#x7A7A;&#x767D;&#x5B57;&#x7B26;&#x96C6;whitespace---s" class="anchor-navigation-ex-anchor" href="#&#x7A7A;&#x767D;&#x5B57;&#x7B26;&#x96C6;whitespace---s"><i class="fa fa-link" aria-hidden="true"></i></a>1.10. &#x7A7A;&#x767D;&#x5B57;&#x7B26;&#x96C6;(whitespace) - \s</h2>
+<ul>
+<li><p>&#x5339;&#x914D;&#x6240;&#x6709;&#x7684;&#x7A7A;&#x767D;&#x5B57;&#x7B26;&#xFF0C;&#x5305;&#x62EC;&#x7A7A;&#x683C;&#x3001;&#x5236;&#x8868;&#x7B26;&#x548C;&#x6362;&#x884C;&#x7B26;&#x3002;</p>
+</li>
+<li><p><img src="images/01/10.svg" alt="&#x56FE;10"></p>
+</li>
+</ul>
+<h2 id="&#x975E;&#x7A7A;&#x767D;&#x5B57;&#x7B26;&#x96C6;not-whitespace---s"><a name="&#x975E;&#x7A7A;&#x767D;&#x5B57;&#x7B26;&#x96C6;not-whitespace---s" class="anchor-navigation-ex-anchor" href="#&#x975E;&#x7A7A;&#x767D;&#x5B57;&#x7B26;&#x96C6;not-whitespace---s"><i class="fa fa-link" aria-hidden="true"></i></a>1.11. &#x975E;&#x7A7A;&#x767D;&#x5B57;&#x7B26;&#x96C6;(not whitespace) - \S</h2>
+<ul>
+<li><p>&#x5339;&#x914D;&#x6240;&#x6709;&#x4E0D;&#x5728;&#x7A7A;&#x767D;&#x5B57;&#x7B26;&#x96C6;&#x4E2D;&#x7684;&#x5B57;&#x7B26;&#x3002;</p>
+</li>
+<li><p><img src="images/01/11.svg" alt="&#x56FE;11"></p>
+</li>
+</ul>
+<h2 id="&#x6307;&#x5B9A;&#x7C7B;&#x522B;&#x7684;-unicode-&#x5B57;&#x7B26;&#x96C6;unicode-category---pl"><a name="&#x6307;&#x5B9A;&#x7C7B;&#x522B;&#x7684;-unicode-&#x5B57;&#x7B26;&#x96C6;unicode-category---pl" class="anchor-navigation-ex-anchor" href="#&#x6307;&#x5B9A;&#x7C7B;&#x522B;&#x7684;-unicode-&#x5B57;&#x7B26;&#x96C6;unicode-category---pl"><i class="fa fa-link" aria-hidden="true"></i></a>1.12. &#x6307;&#x5B9A;&#x7C7B;&#x522B;&#x7684; unicode &#x5B57;&#x7B26;&#x96C6;(unicode category) - \p{L}</h2>
+<ul>
+<li><p>&#x5339;&#x914D;&#x6307;&#x5B9A;&#x7684;&#x7C7B;&#x522B;&#x4E2D;&#x7684;&#x5B57;&#x7B26;&#x3002;&#x9700;&#x8981;&#x4F7F;&#x80FD; <code>u</code> &#x6807;&#x8BC6;&#x3002;</p>
+</li>
+<li><p>&#x7C7B;&#x522B;&#x8868;&#x53C2;&#x8003; <a href="https://unicode.org/reports/tr18/#General_Category_Property" target="_blank">https://unicode.org/reports/tr18/#General_Category_Property</a></p>
+</li>
+<li><p>&#x793A;&#x4F8B; - <code>\p{Ll}</code></p>
+</li>
+</ul>
+<h2 id="&#x6392;&#x9664;&#x6307;&#x5B9A;&#x7C7B;&#x522B;&#x7684;-unicode-&#x5B57;&#x7B26;&#x96C6;not-unicode-category---pl"><a name="&#x6392;&#x9664;&#x6307;&#x5B9A;&#x7C7B;&#x522B;&#x7684;-unicode-&#x5B57;&#x7B26;&#x96C6;not-unicode-category---pl" class="anchor-navigation-ex-anchor" href="#&#x6392;&#x9664;&#x6307;&#x5B9A;&#x7C7B;&#x522B;&#x7684;-unicode-&#x5B57;&#x7B26;&#x96C6;not-unicode-category---pl"><i class="fa fa-link" aria-hidden="true"></i></a>1.13. &#x6392;&#x9664;&#x6307;&#x5B9A;&#x7C7B;&#x522B;&#x7684; unicode &#x5B57;&#x7B26;&#x96C6;(not unicode category) - \P{L}</h2>
+<ul>
+<li><p>&#x5339;&#x914D;&#x6307;&#x5B9A;&#x7684;&#x7C7B;&#x522B;&#x5916;&#x7684;&#x5B57;&#x7B26;&#x3002;&#x9700;&#x8981;&#x4F7F;&#x80FD; <code>u</code> &#x6807;&#x8BC6;&#x3002;</p>
+</li>
+<li><p>&#x793A;&#x4F8B; - <code>\P{Ll}</code></p>
+</li>
+</ul>
+<h2 id="&#x6307;&#x5B9A;&#x811A;&#x672C;&#x7684;-unicode-&#x5B57;&#x7B26;&#x96C6;unicode-script---phan"><a name="&#x6307;&#x5B9A;&#x811A;&#x672C;&#x7684;-unicode-&#x5B57;&#x7B26;&#x96C6;unicode-script---phan" class="anchor-navigation-ex-anchor" href="#&#x6307;&#x5B9A;&#x811A;&#x672C;&#x7684;-unicode-&#x5B57;&#x7B26;&#x96C6;unicode-script---phan"><i class="fa fa-link" aria-hidden="true"></i></a>1.14. &#x6307;&#x5B9A;&#x811A;&#x672C;&#x7684; unicode &#x5B57;&#x7B26;&#x96C6;(unicode script) - \p{Han}</h2>
+<ul>
+<li><p>&#x5339;&#x914D;&#x6307;&#x5B9A;&#x811A;&#x672C;&#x4E2D;&#x7684;&#x4EFB;&#x610F;&#x5B57;&#x7B26;&#x3002;&#x9700;&#x8981;&#x4F7F;&#x80FD; <code>u</code> &#x6807;&#x8BC6;&#x3002;</p>
+</li>
+<li><p>&#x811A;&#x672C;&#x53C2;&#x8003; <a href="https://unicode.org/reports/tr24/#Script" target="_blank">https://unicode.org/reports/tr24/#Script</a></p>
+</li>
+<li><p>&#x793A;&#x4F8B; - <code>\p{Arabic}</code></p>
+</li>
+</ul>
+<h2 id="&#x6392;&#x9664;&#x6307;&#x5B9A;&#x811A;&#x672C;&#x7684;-unicode-&#x5B57;&#x7B26;&#x96C6;not-unicode-script---phan"><a name="&#x6392;&#x9664;&#x6307;&#x5B9A;&#x811A;&#x672C;&#x7684;-unicode-&#x5B57;&#x7B26;&#x96C6;not-unicode-script---phan" class="anchor-navigation-ex-anchor" href="#&#x6392;&#x9664;&#x6307;&#x5B9A;&#x811A;&#x672C;&#x7684;-unicode-&#x5B57;&#x7B26;&#x96C6;not-unicode-script---phan"><i class="fa fa-link" aria-hidden="true"></i></a>1.15. &#x6392;&#x9664;&#x6307;&#x5B9A;&#x811A;&#x672C;&#x7684; unicode &#x5B57;&#x7B26;&#x96C6;(not unicode script) - \P{Han}</h2>
+<ul>
+<li><p>&#x5339;&#x914D;&#x6307;&#x5B9A;&#x811A;&#x672C;&#x5916;&#x7684;&#x4EFB;&#x610F;&#x5B57;&#x7B26;&#x3002;&#x9700;&#x8981;&#x4F7F;&#x80FD; <code>u</code> &#x6807;&#x8BC6;&#x3002;</p>
+</li>
+<li><p>&#x793A;&#x4F8B; - <code>\P{Arabic}</code></p>
+</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: 关于">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="02-anchors.html" class="navigation navigation-next " aria-label="Next page: 锚点">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"字符组","level":"1.2","depth":1,"next":{"title":"锚点","level":"1.3","depth":1,"path":"02-anchors.md","ref":"02-anchors.md","articles":[]},"previous":{"title":"关于","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","anchor-navigation-ex","-sharing","sharing-plus","-highlight","prism"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"night","family":"serif","size":2},"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"sharing":{"weibo":true,"qzone":true,"qq":true,"douban":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"Little Captain","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Regular-Expression","gitbook":"*","description":"Regular-Expression"},"file":{"path":"01-character-classes.md","mtime":"2021-07-27T06:52:25.645Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-07-27T06:53:05.812Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
