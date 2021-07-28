@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+gitbook build
+
+SITEPATH="../Little-Captain.github.io/Design-Pattern/"
+
+
+if [ ! -d "$SITEPATH" ]; then
+mkdir -p $SITEPATH
+fi
+
+cp -r ./_book/* $SITEPATH
+
+rm -rf ./_book
+
+cd $SITEPATH && \
+git add . && \
+git commit -m "`date '+%Y:%m:%d %H:%M:%S'` update" && \
+git push -f origin master
