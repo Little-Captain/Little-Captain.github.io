@@ -22,3 +22,7 @@ file filename
 ```bash
 less filename
 ```
+
+## cp(copy files and directories)
+
+* 复制文件和目录
