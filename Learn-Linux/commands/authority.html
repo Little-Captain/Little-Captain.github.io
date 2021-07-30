@@ -1,0 +1,611 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>权限相关 · Learn-Linux</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Little Captain">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-okaidia.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="directory.html" />
+    
+    
+    <link rel="prev" href="user.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Linux 基础</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../redirection.html">
+            
+                <a href="../redirection.html">
+            
+                    
+                        <b>2.1.</b>
+                    
+                    重定向
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../expansion.html">
+            
+                <a href="../expansion.html">
+            
+                    
+                        <b>2.2.</b>
+                    
+                    扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../keyboard-skills.html">
+            
+                <a href="../keyboard-skills.html">
+            
+                    
+                        <b>2.3.</b>
+                    
+                    终端中的键盘操作技巧
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../tips.html">
+            
+                <a href="../tips.html">
+            
+                    
+                        <b>2.4.</b>
+                    
+                    Tips
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">命令集锦</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="cmd.html">
+            
+                <a href="cmd.html">
+            
+                    
+                        <b>3.1.</b>
+                    
+                    命令本身相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="user.html">
+            
+                <a href="user.html">
+            
+                    
+                        <b>3.2.</b>
+                    
+                    用户相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.3" data-path="authority.html">
+            
+                <a href="authority.html">
+            
+                    
+                        <b>3.3.</b>
+                    
+                    权限相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="directory.html">
+            
+                <a href="directory.html">
+            
+                    
+                        <b>3.4.</b>
+                    
+                    目录相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="file.html">
+            
+                <a href="file.html">
+            
+                    
+                        <b>3.5.</b>
+                    
+                    文件相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="time.html">
+            
+                <a href="time.html">
+            
+                    
+                        <b>3.6.</b>
+                    
+                    时间相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="system-status.html">
+            
+                <a href="system-status.html">
+            
+                    
+                        <b>3.7.</b>
+                    
+                    查看各种系统状态
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8" data-path="others.html">
+            
+                <a href="others.html">
+            
+                    
+                        <b>3.8.</b>
+                    
+                    其他
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">文本处理命令</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="text/simple.html">
+            
+                <a href="text/simple.html">
+            
+                    
+                        <b>4.1.</b>
+                    
+                    简单的文本处理命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >权限相关</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#&#x6743;&#x9650;&#x76F8;&#x5173;&#x547D;&#x4EE4;"><b>1. </b>&#x6743;&#x9650;&#x76F8;&#x5173;&#x547D;&#x4EE4;</a></li><ul><li><span class="title-icon "></span><a href="#umask"><b>1.1. </b>umask</a></li><li><span class="title-icon "></span><a href="#chmod"><b>1.2. </b>chmod</a></li><ul><li><span class="title-icon "></span><a href="#&#x516B;&#x8FDB;&#x5236;&#x6570;&#x5B57;&#x8868;&#x793A;&#x6CD5;"><b>1.2.1. </b>&#x516B;&#x8FDB;&#x5236;&#x6570;&#x5B57;&#x8868;&#x793A;&#x6CD5;</a></li><li><span class="title-icon "></span><a href="#&#x7B26;&#x53F7;&#x8868;&#x793A;&#x6CD5;"><b>1.2.2. </b>&#x7B26;&#x53F7;&#x8868;&#x793A;&#x6CD5;</a></li></ul><li><span class="title-icon "></span><a href="#chown"><b>1.3. </b>chown</a></li><li><span class="title-icon "></span><a href="#chgrp"><b>1.4. </b>chgrp</a></li></ul></ul></div><a href="#&#x6743;&#x9650;&#x76F8;&#x5173;&#x547D;&#x4EE4;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x6743;&#x9650;&#x76F8;&#x5173;&#x547D;&#x4EE4;"><a name="&#x6743;&#x9650;&#x76F8;&#x5173;&#x547D;&#x4EE4;" class="anchor-navigation-ex-anchor" href="#&#x6743;&#x9650;&#x76F8;&#x5173;&#x547D;&#x4EE4;"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x6743;&#x9650;&#x76F8;&#x5173;&#x547D;&#x4EE4;</h1>
+<h2 id="umask"><a name="umask" class="anchor-navigation-ex-anchor" href="#umask"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. umask</h2>
+<ul>
+<li><p>&#x8BBE;&#x7F6E;&#x9ED8;&#x8BA4;&#x6743;&#x9650;</p>
+</li>
+<li><p>umask &#x547D;&#x4EE4;&#x63A7;&#x5236;&#x7740;&#x521B;&#x5EFA;&#x6587;&#x4EF6;/&#x6587;&#x4EF6;&#x5939;&#x65F6;&#x6307;&#x5B9A;&#x7ED9;&#x6587;&#x4EF6;/&#x6587;&#x4EF6;&#x5939;&#x7684;&#x9ED8;&#x8BA4;&#x6743;&#x9650;</p>
+<ul>
+<li>&#x4F7F;&#x7528;&#x516B;&#x8FDB;&#x5236;&#x8868;&#x793A;&#x6CD5;&#x6765;&#x8868;&#x793A;&#x4ECE;&#x6587;&#x4EF6;/&#x6587;&#x4EF6;&#x5939;&#x6A21;&#x5F0F;&#x5C5E;&#x6027;&#x4E2D;&#x9700;&#x8981;&#x51CF;&#x53BB;&#x7684;&#x503C;</li>
+</ul>
+</li>
+<li><p>&#x4F7F;&#x7528; 4 &#x4E2A;&#x516B;&#x8FDB;&#x5236;&#x6570;&#x5B57;&#x8868;&#x793A;</p>
+</li>
+<li><p>&#x56DB;&#x4E2A;&#x6570;&#x5B57;&#x5206;&#x522B;&#x5BF9;&#x5E94;</p>
+<ul>
+<li>&#x7279;&#x6B8A;&#x6743;&#x9650;</li>
+<li>user</li>
+<li>group</li>
+<li>others</li>
+</ul>
+</li>
+<li><p>&#x7279;&#x6B8A;&#x6743;&#x9650;</p>
+<ul>
+<li>&#x7B2C; 1 &#x4F4D;&#xFF1A;setuid</li>
+<li>&#x7B2C; 2 &#x4F4D;&#xFF1A;setgid</li>
+<li>&#x7B2C; 3 &#x4F4D;&#xFF1A;sticky</li>
+<li>&#x8BBE;&#x7F6E;&#x7279;&#x6B8A;&#x6743;&#x9650;<ul>
+<li>&#x8BBE;&#x7F6E;&#x7279;&#x6B8A;&#x6743;&#x9650;&#x4E00;&#x822C;&#x901A;&#x8FC7;&#x7B26;&#x53F7;&#x8868;&#x793A;&#x6CD5;&#xFF0C;&#x56E0;&#x4E3A;&#x8FD9;&#x6837;&#x53EF;&#x4EE5;&#x5F88;&#x65B9;&#x4FBF;&#x7684;&#x505A;&#x5230;&#x4E0D;&#x5F71;&#x54CD;&#x4E00;&#x822C;&#x6743;&#x9650;</li>
+<li>&#x6388;&#x4E88;&#x7A0B;&#x5E8F; setuid &#x6743;&#x9650;&#xFF1A;chmod u+s &#x7A0B;&#x5E8F;&#x540D;<ul>
+<li>&#x67E5;&#x770B;&#x7ED3;&#x679C;&#xFF1A;-rwsr-xr-x</li>
+</ul>
+</li>
+<li>&#x6388;&#x4E88;&#x7A0B;&#x5E8F; setgid &#x6743;&#x9650;&#xFF1A;chmod g+s &#x76EE;&#x5F55;<ul>
+<li>&#x67E5;&#x770B;&#x7ED3;&#x679C;&#xFF1A;drwxrwsr-x</li>
+</ul>
+</li>
+<li>&#x6388;&#x4E88;&#x7A0B;&#x5E8F; sticky &#x6743;&#x9650;&#xFF1A;chmod +t &#x76EE;&#x5F55;<ul>
+<li>&#x67E5;&#x770B;&#x7ED3;&#x679C;&#xFF1A;drwxrwxrwt</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>&#x793A;&#x4F8B;</p>
+<ul>
+<li>0002<ul>
+<li>&#x521B;&#x5EFA;&#x6587;&#x4EF6;&#xFF1A;666 - 002 = 664(rw-rw-r--)</li>
+<li>&#x521B;&#x5EFA;&#x6587;&#x4EF6;&#x5939;&#xFF1A;777-002 = 775(rwxrwxr-x)</li>
+</ul>
+</li>
+<li>0027<ul>
+<li>&#x521B;&#x5EFA;&#x6587;&#x4EF6;&#xFF1A;666 - 027 = 640(rw-r-----)</li>
+<li>&#x521B;&#x5EFA;&#x6587;&#x4EF6;&#x5939;&#xFF1A;777-027 = 750(rwxr-x---)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="chmod"><a name="chmod" class="anchor-navigation-ex-anchor" href="#chmod"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. chmod</h2>
+<blockquote>
+<p>change file mode bits</p>
+</blockquote>
+<ul>
+<li><p>&#x7528;&#x4E8E;&#x66F4;&#x6539;&#x6587;&#x4EF6;&#x6216;&#x76EE;&#x5F55;&#x7684;&#x6A21;&#x5F0F;(&#x6743;&#x9650;)</p>
+<ul>
+<li>&#x53EA;&#x6709;&#x6240;&#x6709;&#x8005;&#x548C;&#x8D85;&#x7EA7;&#x7528;&#x6237;&#x624D;&#x53EF;&#x4EE5;&#x66F4;&#x6539;&#x6587;&#x4EF6;&#x6216;&#x8005;&#x76EE;&#x5F55;&#x7684;&#x6A21;&#x5F0F;</li>
+</ul>
+</li>
+<li><p>&#x652F;&#x6301;&#x4E24;&#x79CD;&#x4E0D;&#x540C;&#x7684;&#x66F4;&#x6539;&#x6587;&#x4EF6;&#x6A21;&#x5F0F;&#x7684;&#x65B9;&#x5F0F;</p>
+</li>
+</ul>
+<h3 id="&#x516B;&#x8FDB;&#x5236;&#x6570;&#x5B57;&#x8868;&#x793A;&#x6CD5;"><a name="&#x516B;&#x8FDB;&#x5236;&#x6570;&#x5B57;&#x8868;&#x793A;&#x6CD5;" class="anchor-navigation-ex-anchor" href="#&#x516B;&#x8FDB;&#x5236;&#x6570;&#x5B57;&#x8868;&#x793A;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2.1. &#x516B;&#x8FDB;&#x5236;&#x6570;&#x5B57;&#x8868;&#x793A;&#x6CD5;</h3>
+<ul>
+<li>&#x4F7F;&#x7528;&#x516B;&#x8FDB;&#x5236;&#x6570;&#x5B57;&#x6765;&#x8BBE;&#x7F6E;&#x6240;&#x671F;&#x671B;&#x7684;&#x6743;&#x9650;&#x6A21;&#x5F0F;</li>
+</ul>
+<p><img src="../images/octal-mode.png" alt="&#x6A21;&#x5F0F;"></p>
+<ul>
+<li>&#x901A;&#x8FC7;&#x4F7F;&#x7528; 3 &#x4F4D;&#x516B;&#x8FDB;&#x5236;&#x6570;&#x5B57;&#xFF0C;&#x53EF;&#x4EE5;&#x5206;&#x522B;&#x8BBE;&#x7F6E;&#x6240;&#x6709;&#x8005;&#x3001;&#x7EC4;&#x6210;&#x5458;&#x548C;&#x5176;&#x4ED6;&#x6240;&#x6709;&#x7528;&#x6237;&#x7684;&#x6743;&#x9650;<ul>
+<li>&#x4E25;&#x683C;&#x7684;&#x8BF4;&#x662F; 4 &#x4F4D;&#xFF0C;&#x53EA;&#x662F;&#x7B2C; 1 &#x4F4D;&#x662F;&#x7279;&#x6B8A;&#x6743;&#x9650;&#xFF0C;&#x4E00;&#x822C;&#x90FD;&#x7701;&#x7565;&#x4E86;</li>
+<li>4 &#x4F4D;&#x5206;&#x522B;&#x5BF9;&#x5E94;<ul>
+<li>&#x7279;&#x6B8A;&#x6743;&#x9650;</li>
+<li>user</li>
+<li>group</li>
+<li>others</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<pre class="language-"><code class="lang-bash"><span class="token function">chmod</span> <span class="token number">664</span> README.md
+</code></pre>
+<h3 id="&#x7B26;&#x53F7;&#x8868;&#x793A;&#x6CD5;"><a name="&#x7B26;&#x53F7;&#x8868;&#x793A;&#x6CD5;" class="anchor-navigation-ex-anchor" href="#&#x7B26;&#x53F7;&#x8868;&#x793A;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2.2. &#x7B26;&#x53F7;&#x8868;&#x793A;&#x6CD5;</h3>
+<ul>
+<li>&#x8BE5;&#x8868;&#x793A;&#x6CD5;&#x7531;&#x4E09;&#x90E8;&#x5206;&#x7EC4;&#x6210;<ul>
+<li>&#x8981;&#x8BBE;&#x7F6E;&#x8C01;&#x7684;&#x6743;&#x9650;&#x3002;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x6307;&#x5B9A;&#xFF0C;&#x5219;&#x5047;&#x5B9A;&#x4F7F;&#x7528; all</li>
+<li>&#x8981;&#x6267;&#x884C;&#x54EA;&#x4E2A;&#x64CD;&#x4F5C;<ul>
+<li>+&#xFF1A;&#x6DFB;&#x52A0;&#x6743;&#x9650;</li>
+<li>-&#xFF1A;&#x5220;&#x9664;&#x6743;&#x9650;</li>
+<li>=&#xFF1A;&#x7528;&#x6307;&#x5B9A;&#x6743;&#x9650;&#x8986;&#x76D6;&#x539F;&#x6709;&#x6743;&#x9650;</li>
+</ul>
+</li>
+<li>&#x8981;&#x8BBE;&#x7F6E;&#x54EA;&#x79CD;&#x6743;&#x9650;<ul>
+<li>r&#xFF1A;&#x8BFB;</li>
+<li>w&#xFF1A;&#x5199;</li>
+<li>x&#xFF1A;&#x6267;&#x884C;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="../images/authority-user.png" alt="&#x7528;&#x6237;&#x6807;&#x8BC6;"></p>
+<pre class="language-"><code class="lang-bash"><span class="token function">chmod</span> u+x push.sh
+</code></pre>
+<ul>
+<li>&#x793A;&#x4F8B;</li>
+</ul>
+<p><img src="../images/symbol-example.png" alt="&#x793A;&#x4F8B;"></p>
+<ul>
+<li>&#x4F18;&#x70B9;&#xFF1A;&#x5141;&#x8BB8;&#x8BBE;&#x7F6E;&#x5355;&#x4E2A;&#x5C5E;&#x6027;&#xFF0C;&#x800C;&#x4E0D;&#x5F71;&#x54CD;&#x5176;&#x4ED6;&#x5C5E;&#x6027;</li>
+</ul>
+<h2 id="chown"><a name="chown" class="anchor-navigation-ex-anchor" href="#chown"><i class="fa fa-link" aria-hidden="true"></i></a>1.3. chown</h2>
+<blockquote>
+<p>change file owner and group</p>
+</blockquote>
+<ul>
+<li><p>&#x66F4;&#x6539;&#x6587;&#x4EF6;&#x6240;&#x6709;&#x8005;&#x548C;&#x6240;&#x5C5E;&#x7FA4;&#x7EC4;</p>
+</li>
+<li><p>&#x4F7F;&#x7528; chown &#x9700;&#x8981;&#x8D85;&#x7EA7;&#x7528;&#x6237;&#x7684;&#x6743;&#x9650;</p>
+</li>
+<li><p>&#x4F7F;&#x7528;&#x683C;&#x5F0F;</p>
+</li>
+</ul>
+<pre class="language-"><code class="lang-bash"><span class="token function">chown</span> <span class="token punctuation">[</span>owner<span class="token punctuation">]</span><span class="token punctuation">[</span>:<span class="token punctuation">[</span>group<span class="token punctuation">]</span><span class="token punctuation">]</span> file<span class="token punctuation">..</span>.
+</code></pre>
+<ul>
+<li>&#x6CE8;&#x610F;&#x7406;&#x89E3;&#x5192;&#x53F7;&#x7684;&#x4F5C;&#x7528;<ul>
+<li>bob &#x4E0D;&#x6539;&#x53D8;&#x7FA4;&#x7EC4;</li>
+<li>bob: &#x540C;&#x65F6;&#x6539;&#x53D8;&#x7FA4;&#x7EC4;&#x4E3A; bob &#x767B;&#x5F55;&#x7CFB;&#x7EDF;&#x65F6;&#x6240;&#x5C5E;&#x7684;&#x7EC4;</li>
+</ul>
+</li>
+</ul>
+<p><img src="../images/chown.png" alt="&#x683C;&#x5F0F;"></p>
+<h2 id="chgrp"><a name="chgrp" class="anchor-navigation-ex-anchor" href="#chgrp"><i class="fa fa-link" aria-hidden="true"></i></a>1.4. chgrp</h2>
+<blockquote>
+<p>change group ownership</p>
+</blockquote>
+<ul>
+<li><p>&#x66F4;&#x6539;&#x6587;&#x4EF6;&#x6240;&#x5C5E;&#x7FA4;&#x7EC4;</p>
+</li>
+<li><p>&#x65E9;&#x671F; UNIX &#x4E2D;&#xFF0C;chown &#x53EA;&#x80FD;&#x66F4;&#x6539;&#x6587;&#x4EF6;/&#x6587;&#x4EF6;&#x5939;&#x7684;&#x6240;&#x6709;&#x8005;&#xFF0C;&#x4E0D;&#x80FD;&#x6539;&#x53D8;&#x5176;&#x6240;&#x5C5E;&#x7FA4;&#x7EC4;&#xFF0C;&#x8FD9;&#x65F6;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; chgrp &#x6765;&#x4FEE;&#x6539;&#x5176;&#x6240;&#x5C5E;&#x7FA4;&#x7EC4;</p>
+</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="user.html" class="navigation navigation-prev " aria-label="Previous page: 用户相关">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="directory.html" class="navigation navigation-next " aria-label="Next page: 目录相关">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"权限相关","level":"3.3","depth":1,"next":{"title":"目录相关","level":"3.4","depth":1,"path":"commands/directory.md","ref":"./commands/directory.md","articles":[]},"previous":{"title":"用户相关","level":"3.2","depth":1,"path":"commands/user.md","ref":"./commands/user.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","anchor-navigation-ex","-sharing","sharing-plus","-highlight","prism"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"night","family":"serif","size":2},"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"sharing":{"weibo":true,"qzone":true,"qq":true,"douban":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"Little Captain","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Learn-Linux","gitbook":"*","description":"Learn-Linux"},"file":{"path":"commands/authority.md","mtime":"2021-07-30T15:34:28.904Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-07-30T17:06:31.340Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
