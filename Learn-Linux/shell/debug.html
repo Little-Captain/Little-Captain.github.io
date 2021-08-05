@@ -1,0 +1,807 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>故障诊断 · Learn-Linux</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Little Captain">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-okaidia.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="control.html" />
+    
+    
+    <link rel="prev" href="basics.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Linux 基础</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../redirection.html">
+            
+                <a href="../redirection.html">
+            
+                    
+                        <b>2.1.</b>
+                    
+                    重定向
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../expansion.html">
+            
+                <a href="../expansion.html">
+            
+                    
+                        <b>2.2.</b>
+                    
+                    扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../keyboard-skills.html">
+            
+                <a href="../keyboard-skills.html">
+            
+                    
+                        <b>2.3.</b>
+                    
+                    终端中的键盘操作技巧
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../environment.html">
+            
+                <a href="../environment.html">
+            
+                    
+                        <b>2.4.</b>
+                    
+                    环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../custom-shell-prompt.html">
+            
+                <a href="../custom-shell-prompt.html">
+            
+                    
+                        <b>2.5.</b>
+                    
+                    定制 shell 提示符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../software-management.html">
+            
+                <a href="../software-management.html">
+            
+                    
+                        <b>2.6.</b>
+                    
+                    软件包管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../storage.html">
+            
+                <a href="../storage.html">
+            
+                    
+                        <b>2.7.</b>
+                    
+                    存储介质
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="../tips.html">
+            
+                <a href="../tips.html">
+            
+                    
+                        <b>2.8.</b>
+                    
+                    Tips
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">命令集锦</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../commands/cmd.html">
+            
+                <a href="../commands/cmd.html">
+            
+                    
+                        <b>3.1.</b>
+                    
+                    命令本身相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../commands/user.html">
+            
+                <a href="../commands/user.html">
+            
+                    
+                        <b>3.2.</b>
+                    
+                    用户相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../commands/group.html">
+            
+                <a href="../commands/group.html">
+            
+                    
+                        <b>3.3.</b>
+                    
+                    用户组相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../commands/authority.html">
+            
+                <a href="../commands/authority.html">
+            
+                    
+                        <b>3.4.</b>
+                    
+                    权限相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="../commands/directory.html">
+            
+                <a href="../commands/directory.html">
+            
+                    
+                        <b>3.5.</b>
+                    
+                    目录相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="../commands/file.html">
+            
+                <a href="../commands/file.html">
+            
+                    
+                        <b>3.6.</b>
+                    
+                    文件相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="../commands/network.html">
+            
+                <a href="../commands/network.html">
+            
+                    
+                        <b>3.7.</b>
+                    
+                    网络相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8" data-path="../commands/time.html">
+            
+                <a href="../commands/time.html">
+            
+                    
+                        <b>3.8.</b>
+                    
+                    时间相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.9" data-path="../commands/system.html">
+            
+                <a href="../commands/system.html">
+            
+                    
+                        <b>3.9.</b>
+                    
+                    系统相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.10" data-path="../commands/others.html">
+            
+                <a href="../commands/others.html">
+            
+                    
+                        <b>3.10.</b>
+                    
+                    其他
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">文本处理命令</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../commands/text/simple.html">
+            
+                <a href="../commands/text/simple.html">
+            
+                    
+                        <b>4.1.</b>
+                    
+                    简单文本处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../commands/text/grep.html">
+            
+                <a href="../commands/text/grep.html">
+            
+                    
+                        <b>4.2.</b>
+                    
+                    grep 详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../commands/text/sed.html">
+            
+                <a href="../commands/text/sed.html">
+            
+                    
+                        <b>4.3.</b>
+                    
+                    sed 详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="../commands/text/awk.html">
+            
+                <a href="../commands/text/awk.html">
+            
+                    
+                        <b>4.4.</b>
+                    
+                    awk 详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">shell 编程</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="basics.html">
+            
+                <a href="basics.html">
+            
+                    
+                        <b>5.1.</b>
+                    
+                    基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="5.2" data-path="debug.html">
+            
+                <a href="debug.html">
+            
+                    
+                        <b>5.2.</b>
+                    
+                    故障诊断
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="control.html">
+            
+                <a href="control.html">
+            
+                    
+                        <b>5.3.</b>
+                    
+                    控制结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >故障诊断</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#&#x6545;&#x969C;&#x8BCA;&#x65AD;"><b>1. </b>&#x6545;&#x969C;&#x8BCA;&#x65AD;</a></li><ul><li><span class="title-icon "></span><a href="#&#x8BED;&#x6CD5;&#x9519;&#x8BEF;"><b>1.1. </b>&#x8BED;&#x6CD5;&#x9519;&#x8BEF;</a></li><li><span class="title-icon "></span><a href="#&#x903B;&#x8F91;&#x9519;&#x8BEF;"><b>1.2. </b>&#x903B;&#x8F91;&#x9519;&#x8BEF;</a></li><li><span class="title-icon "></span><a href="#&#x6D4B;&#x8BD5;"><b>1.3. </b>&#x6D4B;&#x8BD5;</a></li><ul><li><span class="title-icon "></span><a href="#&#x6869;stub"><b>1.3.1. </b>&#x6869;(stub)</a></li></ul><li><span class="title-icon "></span><a href="#&#x8C03;&#x8BD5;"><b>1.4. </b>&#x8C03;&#x8BD5;</a></li><ul><li><span class="title-icon "></span><a href="#&#x5E38;&#x7528;&#x6280;&#x672F;&#x624B;&#x6BB5;"><b>1.4.1. </b>&#x5E38;&#x7528;&#x6280;&#x672F;&#x624B;&#x6BB5;</a></li></ul><li><span class="title-icon "></span><a href="#&#x8FD0;&#x884C;&#x8FC7;&#x7A0B;&#x4E2D;&#x53D8;&#x91CF;&#x7684;&#x68C0;&#x9A8C;"><b>1.5. </b>&#x8FD0;&#x884C;&#x8FC7;&#x7A0B;&#x4E2D;&#x53D8;&#x91CF;&#x7684;&#x68C0;&#x9A8C;</a></li></ul></ul></div><a href="#&#x6545;&#x969C;&#x8BCA;&#x65AD;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x6545;&#x969C;&#x8BCA;&#x65AD;"><a name="&#x6545;&#x969C;&#x8BCA;&#x65AD;" class="anchor-navigation-ex-anchor" href="#&#x6545;&#x969C;&#x8BCA;&#x65AD;"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x6545;&#x969C;&#x8BCA;&#x65AD;</h1>
+<h2 id="&#x8BED;&#x6CD5;&#x9519;&#x8BEF;"><a name="&#x8BED;&#x6CD5;&#x9519;&#x8BEF;" class="anchor-navigation-ex-anchor" href="#&#x8BED;&#x6CD5;&#x9519;&#x8BEF;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. &#x8BED;&#x6CD5;&#x9519;&#x8BEF;</h2>
+<ul>
+<li><p>&#x8BED;&#x6CD5;&#x9519;&#x8BEF;&#x662F;&#x4E00;&#x79CD;&#x5E38;&#x89C1;&#x7684;&#x9519;&#x8BEF;&#x7C7B;&#x578B;, &#x5176;&#x4E2D;&#x5C31;&#x5305;&#x62EC;&#x4E86; shell &#x8BED;&#x53E5;&#x4E2D;&#x4E00;&#x4E9B;&#x5143;&#x7D20;&#x7684;&#x62FC;&#x5199;&#x9519;&#x8BEF;&#x3002;&#x5728;&#x5927;&#x591A;&#x6570;&#x60C5;&#x51B5;&#x4E0B;, shell &#x4F1A;&#x62D2;&#x7EDD;&#x6267;&#x884C;&#x542B;&#x6709;&#x6B64;&#x79CD;&#x7C7B;&#x578B;&#x9519;&#x8BEF;&#x7684;&#x811A;&#x672C;&#x3002;</p>
+</li>
+<li><p>&#x5E38;&#x89C1;&#x9519;&#x8BEF;</p>
+<ul>
+<li>&#x5F15;&#x53F7;&#x7F3A;&#x5931;</li>
+<li>&#x7B26;&#x53F7;&#x7F3A;&#x5931;&#x5197;&#x4F59;</li>
+<li>&#x975E;&#x9884;&#x671F;&#x7684;&#x5C55;&#x5F00;<ul>
+<li>&#x4F7F;&#x7528;&#x4E00;&#x4E9B;&#x5C55;&#x5F00;&#x53EF;&#x80FD;&#x4E3A;&#x7A7A;&#x5B57;&#x7B26;&#x4E32;&#x6216;&#x5305;&#x542B;&#x7A7A;&#x683C;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x65F6;&#xFF0C;&#x4F7F;&#x7528;&#x53CC;&#x5F15;&#x53F7;&#x5305;&#x88F9;&#x53C2;&#x6570;&#x5F15;&#x7528;&#xFF0C;&#x53EF;&#x4EE5;&#x907F;&#x514D;&#x8FD9;&#x7C7B;&#x9519;&#x8BEF;&#x3002;&#x4E00;&#x822C;&#x63A8;&#x8350;&#x53C2;&#x6570;&#x5F15;&#x7528;&#x90FD;&#x662F;&#x7528;&#x53CC;&#x5F15;&#x53F7;&#x5305;&#x88F9;&#x3002;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="&#x903B;&#x8F91;&#x9519;&#x8BEF;"><a name="&#x903B;&#x8F91;&#x9519;&#x8BEF;" class="anchor-navigation-ex-anchor" href="#&#x903B;&#x8F91;&#x9519;&#x8BEF;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. &#x903B;&#x8F91;&#x9519;&#x8BEF;</h2>
+<ul>
+<li><p>&#x4E0E;&#x8BED;&#x6CD5;&#x9519;&#x8BEF;&#x4E0D;&#x540C;&#x7684;&#x662F;, &#x903B;&#x8F91;&#x9519;&#x8BEF;&#x4E0D;&#x4F1A;&#x963B;&#x788D;&#x811A;&#x672C;&#x7684;&#x8FD0;&#x884C;&#x3002;&#x56E0;&#x4E3A;&#x811A;&#x672C;&#x5305;&#x542B;&#x7684;&#x903B;&#x8F91;&#x95EE;&#x9898;, &#x811A;&#x672C;&#x5C3D;&#x7BA1;&#x53EF;&#x4EE5;&#x8FD0;&#x884C;&#x4F46;&#x662F;&#x4E0D;&#x80FD;&#x4EA7;&#x751F;&#x7406;&#x60F3;&#x7684;&#x7ED3;&#x679C;&#x3002;</p>
+</li>
+<li><p>&#x6700;&#x5E38;&#x89C1;&#x7684;&#x903B;&#x8F91;&#x9519;&#x8BEF;</p>
+<ul>
+<li>&#x6761;&#x4EF6;&#x8868;&#x8FBE;&#x9519;&#x8BEF;</li>
+<li>&#x201C;&#x4ECE; 1 &#x5F00;&#x59CB;&#x201D; &#x9519;&#x8BEF;&#xFF1A;&#x5FAA;&#x73AF;&#x4ECE; 1 &#x5F00;&#x59CB;&#xFF0C;&#x800C;&#x6CA1;&#x6709;&#x4ECE; 0 &#x5F00;&#x59CB;&#x3002;</li>
+<li>&#x975E;&#x9884;&#x671F;&#x7684;&#x60C5;&#x5F62;</li>
+</ul>
+</li>
+<li><p>&#x9632;&#x5FA1;&#x7F16;&#x7A0B;</p>
+<ul>
+<li>&#x5728;&#x7F16;&#x7A0B;&#x4E2D;&#x6838;&#x5B9E;&#x5404;&#x9879;&#x5047;&#x8BBE;&#x662F;&#x5F88;&#x91CD;&#x8981;&#x7684;&#x4E8B;&#x60C5;, &#x8FD9;&#x610F;&#x5473;&#x7740;&#x9700;&#x8981;&#x5BF9;&#x7A0B;&#x5E8F;&#x7684;&#x9000;&#x51FA;&#x72B6;&#x6001;&#x4EE5;&#x53CA;&#x811A;&#x672C;&#x6240;&#x7528;&#x547D;&#x4EE4;&#x8FDB;&#x884C;&#x4ED4;&#x7EC6;&#x8BC4;&#x4F30;&#x3002;</li>
+</ul>
+</li>
+<li><p>&#x793A;&#x4F8B;</p>
+</li>
+</ul>
+<pre class="language-"><code class="lang-bash"><span class="token builtin class-name">cd</span> <span class="token variable">$dir_name</span>
+<span class="token function">rm</span> *
+<span class="token comment"># &#x66F4;&#x5B89;&#x5168;&#x7684;&#x7248;&#x672C;</span>
+<span class="token builtin class-name">cd</span> <span class="token variable">$dir_name</span> <span class="token operator">&amp;&amp;</span> <span class="token function">rm</span> *
+</code></pre>
+<ul>
+<li>&#x8F93;&#x5165;&#x503C;&#x9A8C;&#x8BC1;<ul>
+<li>&#x4E00;&#x6761;&#x666E;&#x904D;&#x9002;&#x5408;&#x7684;&#x7F16;&#x7A0B;&#x6CD5;&#x5219;&#x662F;&#x82E5;&#x7A0B;&#x5E8F;&#x9700;&#x83B7;&#x5F97;&#x7528;&#x6237;&#x8F93;&#x5165;, &#x5219;&#x7A0B;&#x5E8F;&#x5FC5;&#x987B;&#x80FD;&#x591F;&#x5904;&#x7406;&#x4EFB;&#x4F55;&#x8F93;&#x5165;&#x503C;&#x3002;&#x8FD9;&#x901A;&#x5E38;&#x610F;&#x663E;&#x7740;&#x5FC5;&#x987B;&#x4ED4;&#x7EC6;&#x68C0;&#x67E5;&#x8F93;&#x5165;&#x503C;, &#x4EE5;&#x4FDD;&#x8BC1;&#x6709;&#x6548;&#x7684;&#x8F93;&#x5165;&#x53EF;&#x7528;&#x4E8E;&#x8FDB;&#x4E00;&#x6B65;&#x7684;&#x5904;&#x7406;&#x8FC7;&#x7A0B;&#x3002;</li>
+<li>&#x793A;&#x4F8B; <code>[[ $REPLY =~ ^[0-3]$ ]]</code></li>
+<li>&#x6709;&#x65F6;&#x8F93;&#x5165;&#x503C;&#x9A8C;&#x8BC1;&#x7C7B;&#x578B;&#x7684;&#x6D4B;&#x8BD5;&#x5199;&#x8D77;&#x6765;&#x5F88;&#x6709;&#x6311;&#x6218;&#x6027;, &#x4F46;&#x5374;&#x662F;&#x521B;&#x9020;&#x9AD8;&#x8D28;&#x91CF;&#x811A;&#x672C;&#x7684;&#x5FC5;&#x7ECF;&#x4E4B;&#x8DEF;&#x3002;</li>
+</ul>
+</li>
+</ul>
+<h2 id="&#x6D4B;&#x8BD5;"><a name="&#x6D4B;&#x8BD5;" class="anchor-navigation-ex-anchor" href="#&#x6D4B;&#x8BD5;"><i class="fa fa-link" aria-hidden="true"></i></a>1.3. &#x6D4B;&#x8BD5;</h2>
+<ul>
+<li><p>&#x5BF9;&#x4EFB;&#x4F55;&#x8F6F;&#x4EF6;&#x7684;&#x5F00;&#x53D1;&#x8FC7;&#x7A0B;&#x6765;&#x8BF4;, &#x6D4B;&#x8BD5;&#x90FD;&#x662F;&#x4E00;&#x4E2A;&#x975E;&#x5E38;&#x91CD;&#x8981;&#x7684;&#x6B65;&#x9AA4;&#x3002;</p>
+</li>
+<li><p>&#x901A;&#x8FC7;&#x5C3D;&#x65E9;&#x53D1;&#x5E03;&#x548C;&#x7ECF;&#x5E38;&#x53D1;&#x5E03;&#x65B0;&#x7248;&#x672C;, &#x8F6F;&#x4EF6;&#x5C31;&#x80FD;&#x591F;&#x5F97;&#x5230;&#x66F4;&#x591A;&#x7528;&#x6237;&#x7684;&#x4F7F;&#x7528;&#x548C;&#x6D4B;&#x8BD5;&#x3002;</p>
+</li>
+<li><p>&#x7ECF;&#x9A8C;&#x8868;&#x660E;&#x5982;&#x679C;&#x80FD;&#x5C3D;&#x65E9;&#x5728;&#x5F00;&#x53D1;&#x5468;&#x671F;&#x4E2D;&#x53D1;&#x73B0; bug, &#x90A3;&#x4E48;&#x5269;&#x4F59;&#x7684; bug &#x4F1A;&#x66F4;&#x52A0;&#x5BB9;&#x6613;&#x53D1;&#x73B0;, &#x4FEE;&#x8865; bug &#x7684;&#x4EE3;&#x4EF7;&#x4E5F;&#x4F1A;&#x66F4;&#x5C0F;&#x3002;</p>
+</li>
+</ul>
+<h3 id="&#x6869;stub"><a name="&#x6869;stub" class="anchor-navigation-ex-anchor" href="#&#x6869;stub"><i class="fa fa-link" aria-hidden="true"></i></a>1.3.1. &#x6869;(stub)</h3>
+<ul>
+<li><p>&#x4ECE;&#x811A;&#x672C;&#x5F00;&#x53D1;&#x7684;&#x6700;&#x521D;&#x9636;&#x6BB5;&#x5F00;&#x59CB;, &#x6869;&#x5C31;&#x662F;&#x53EF;&#x7528;&#x4E8E;&#x67E5;&#x770B;&#x5DE5;&#x4F5C;&#x8FDB;&#x7A0B;&#x7684;&#x91CD;&#x8981;&#x6280;&#x672F;&#x624B;&#x6BB5;&#x3002;</p>
+</li>
+<li><p>&#x793A;&#x4F8B;</p>
+</li>
+</ul>
+<pre class="language-"><code class="lang-bash"><span class="token comment"># &#x56E0;&#x4E3A;&#x521D;&#x59CB;&#x4EE3;&#x7801;&#x7684;&#x76EE;&#x7684;&#x662F;&#x5220;&#x9664;&#x6587;&#x4EF6;, &#x6240;&#x4EE5;&#x5BF9;&#x4EE3;&#x7801;&#x76F4;&#x63A5;&#x8FDB;&#x884C;&#x6D4B;&#x8BD5;&#x5177;&#x6709;&#x4E00;&#x5B9A;&#x7684;&#x5371;&#x9669;&#x6027;&#x3002;</span>
+<span class="token comment"># &#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E00;&#x822C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; echo &#x8FDB;&#x884C;&#x8F93;&#x51FA;&#x3002;</span>
+<span class="token assign-left variable">dir_name</span><span class="token operator">=</span>tmp
+
+<span class="token keyword">if</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> -d <span class="token variable">$dir_name</span> <span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+    <span class="token keyword">if</span> <span class="token builtin class-name">cd</span> <span class="token variable">$dir_name</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+        <span class="token builtin class-name">echo</span> <span class="token function">rm</span> * <span class="token comment"># TESTING</span>
+    <span class="token keyword">else</span>
+        <span class="token builtin class-name">echo</span> <span class="token string">&quot;cannot cd to &apos;<span class="token variable">$dir_name</span>&apos;&quot;</span> <span class="token operator">&gt;</span><span class="token file-descriptor important">&amp;2</span>
+    <span class="token keyword">fi</span>
+<span class="token keyword">else</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">&quot;no such directory: &apos;<span class="token variable">$dir_name</span>&apos;&quot;</span> <span class="token operator">&gt;</span><span class="token file-descriptor important">&amp;2</span>
+    <span class="token builtin class-name">exit</span> <span class="token number">1</span>
+<span class="token keyword">fi</span>
+</code></pre>
+<h2 id="&#x8C03;&#x8BD5;"><a name="&#x8C03;&#x8BD5;" class="anchor-navigation-ex-anchor" href="#&#x8C03;&#x8BD5;"><i class="fa fa-link" aria-hidden="true"></i></a>1.4. &#x8C03;&#x8BD5;</h2>
+<ul>
+<li><p>&#x5982;&#x679C;&#x6D4B;&#x8BD5;&#x63ED;&#x9732;&#x51FA;&#x811A;&#x672C;&#x5B58;&#x5728;&#x95EE;&#x9898;, &#x90A3;&#x4E48;&#x4E0B;&#x4E00;&#x6B65;&#x5C31;&#x662F;&#x8C03;&#x8BD5;&#x3002;</p>
+</li>
+<li><p>&#x201C;&#x95EE;&#x9898;&#x201C;&#x901A;&#x5E38;&#x610F;&#x5473;&#x7740;, &#x5728;&#x67D0;&#x4E9B;&#x60C5;&#x51B5;&#x4E0B;, &#x811A;&#x672C;&#x7684;&#x8FD0;&#x884C;&#x7ED3;&#x679C;&#x548C;&#x9884;&#x671F;&#x7684;&#x6548;&#x679C;&#x4E0D;&#x540C;&#x3002;&#x5982;&#x679C;&#x662F;&#x8FD9;&#x6837;&#x7684;&#x8BDD;, &#x5C31;&#x9700;&#x8981;&#x4ED4;&#x7EC6;&#x67E5;&#x660E;&#x811A;&#x672C;&#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x600E;&#x6837;&#x8FD0;&#x4F5C;&#x7684;&#x4EE5;&#x53CA;&#x4E3A;&#x4EC0;&#x4E48;&#x4F1A;&#x51FA;&#x73B0;&#x8FD9;&#x6837;&#x7684;&#x60C5;&#x51B5;&#x3002;</p>
+</li>
+<li><p>&#x5BFB;&#x627E; bug &#x6709;&#x65F6;&#x4F1A;&#x9700;&#x8981;&#x5F88;&#x591A;&#x4FA6;&#x67E5;&#x5DE5;&#x4F5C;&#x3002;</p>
+</li>
+<li><p>&#x8BBE;&#x8BA1;&#x4F18;&#x826F;&#x7684;&#x811A;&#x672C;&#x672C;&#x8EAB;&#x80FD;&#x591F;&#x63D0;&#x4F9B;&#x4E00;&#x4E9B;&#x5E2E;&#x52A9;, &#x9632;&#x5FA1;&#x6027;&#x7684;&#x811A;&#x672C;&#x9047;&#x5230;&#x5F02;&#x5E38;&#x65F6;&#x4F1A;&#x5411;&#x7528;&#x6237;&#x53CD;&#x9988;&#x6709;&#x7528;&#x7684;&#x4FE1;&#x606F;&#x3002;&#x4F46;&#x662F;, &#x89E3;&#x51B3;&#x9884;&#x6599;&#x4E4B;&#x5916;&#x7684;&#x5947;&#x602A;&#x95EE;&#x9898;&#x5C31;&#x9700;&#x8981;&#x4ECB;&#x5165;&#x5176;&#x4ED6;&#x7684;&#x6D4B;&#x8BD5;&#x6280;&#x672F;&#x3002;</p>
+</li>
+</ul>
+<h3 id="&#x5E38;&#x7528;&#x6280;&#x672F;&#x624B;&#x6BB5;"><a name="&#x5E38;&#x7528;&#x6280;&#x672F;&#x624B;&#x6BB5;" class="anchor-navigation-ex-anchor" href="#&#x5E38;&#x7528;&#x6280;&#x672F;&#x624B;&#x6BB5;"><i class="fa fa-link" aria-hidden="true"></i></a>1.4.1. &#x5E38;&#x7528;&#x6280;&#x672F;&#x624B;&#x6BB5;</h3>
+<h4 id="&#x627E;&#x5230;&#x95EE;&#x9898;&#x57DF;"><a name="&#x627E;&#x5230;&#x95EE;&#x9898;&#x57DF;" class="anchor-navigation-ex-anchor" href="#&#x627E;&#x5230;&#x95EE;&#x9898;&#x57DF;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x627E;&#x5230;&#x95EE;&#x9898;&#x57DF;</h4>
+<ul>
+<li><p>&#x5728;&#x4E00;&#x4E9B;&#x811A;&#x672C;&#x4E2D;, &#x5C24;&#x5176;&#x662F;&#x957F;&#x811A;&#x672C;&#x4E2D;, &#x5C06;&#x95EE;&#x9898;&#x76F8;&#x5173;&#x7684;&#x811A;&#x672C;&#x57DF;&#x9694;&#x79BB;&#x51FA;&#x6765;&#x662F;&#x5F88;&#x6709;&#x5FC5;&#x8981;&#x7684;&#x3002;</p>
+</li>
+<li><p>&#x9694;&#x79BB;&#x7684;&#x90E8;&#x5206;&#x5E76;&#x4E0D;&#x4E00;&#x5B9A;&#x662F;&#x5B9E;&#x9645;&#x95EE;&#x9898;&#x6240;&#x5728;&#x4E4B;&#x5904;, &#x4F46;&#x662F;&#x901A;&#x5E38;&#x80FD;&#x63D0;&#x4F9B;&#x901A;&#x5F80;&#x5B9E;&#x9645;&#x539F;&#x56E0;&#x7684;&#x7EBF;&#x7D22;&#x3002;</p>
+</li>
+<li><p>&#x5176;&#x4E2D;&#x4E00;&#x79CD;&#x80FD;&#x591F;&#x7528;&#x4E8E;&#x9694;&#x79BB;&#x4EE3;&#x7801;&#x7247;&#x6BB5;&#x7684;&#x65B9;&#x6CD5;&#x662F;&#x201C;&#x6CE8;&#x91CA;&#x201C;&#x6389;&#x811A;&#x672C;&#x7684;&#x4E00;&#x90E8;&#x5206;&#x3002;</p>
+</li>
+</ul>
+<h4 id="&#x8FFD;&#x8E2A;"><a name="&#x8FFD;&#x8E2A;" class="anchor-navigation-ex-anchor" href="#&#x8FFD;&#x8E2A;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8FFD;&#x8E2A;</h4>
+<ul>
+<li><p>bug &#x8FD8;&#x7ECF;&#x5E38;&#x8868;&#x73B0;&#x4E3A;&#x811A;&#x672C;&#x4E2D;&#x5F02;&#x5E38;&#x7684;&#x903B;&#x8F91;&#x6D41;&#x7A0B;&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;, &#x811A;&#x672C;&#x7684;&#x4E00;&#x90E8;&#x5206;&#x6216;&#x8005;&#x4ECE;&#x6765;&#x6CA1;&#x6709;&#x6267;&#x884C;&#x8FC7;, &#x6216;&#x8005;&#x4EE5;&#x9519;&#x8BEF;&#x7684;&#x987A;&#x5E8F;&#x6216;&#x5728;&#x9519;&#x8BEF;&#x7684;&#x65F6;&#x95F4;&#x6267;&#x884C;&#x4E86;&#x3002;</p>
+</li>
+<li><p>&#x8FFD;&#x8E2A;&#x662F;&#x4E00;&#x79CD;&#x7528;&#x4E8E;&#x67E5;&#x770B;&#x7A0B;&#x5E8F;&#x5B9E;&#x9645;&#x8FD0;&#x884C;&#x6D41;&#x7A0B;&#x7684;&#x6280;&#x672F;&#x3002;</p>
+</li>
+<li><p>&#x4E00;&#x79CD;&#x8FFD;&#x8E2A;&#x6280;&#x672F;&#x662F;&#x901A;&#x8FC7; echo &#x5728;&#x811A;&#x672C;&#x4E2D;&#x6DFB;&#x52A0;&#x901A;&#x77E5;&#x4FE1;&#x606F;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x5C55;&#x793A;&#x7A0B;&#x5E8F;&#x6267;&#x884C;&#x4E4B;&#x5904;&#x3002;</p>
+</li>
+</ul>
+<h5 id="bash-&#x8FFD;&#x8E2A;"><a name="bash-&#x8FFD;&#x8E2A;" class="anchor-navigation-ex-anchor" href="#bash-&#x8FFD;&#x8E2A;"><i class="fa fa-link" aria-hidden="true"></i></a>bash &#x8FFD;&#x8E2A;</h5>
+<ul>
+<li><p>bash &#x4E5F;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x79CD;&#x8FFD;&#x8E2A;&#x7684;&#x65B9;&#x6CD5;, &#x6FC0;&#x6D3B;&#x8FFD;&#x8E2A;&#x7684;&#x65B9;&#x6CD5;&#x6709;&#x4F7F;&#x7528; -x &#x9009;&#x9879;&#x6216; set &#x547D;&#x4EE4;&#x52A0; -x &#x9009;&#x9879;&#x3002;&#x5982;&#x679C;&#x4F7F;&#x7528; bash &#x8FD0;&#x884C;&#x811A;&#x672C;&#xFF0C;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x6DFB;&#x52A0; -x &#x9009;&#x9879;&#x3002;</p>
+</li>
+<li><p>&#x5177;&#x4F53;&#x6FC0;&#x6D3B;&#x65B9;&#x6CD5;</p>
+</li>
+</ul>
+<pre class="language-"><code class="lang-bash"><span class="token comment"># &#x901A;&#x8FC7; set &#x6DFB;&#x52A0;</span>
+<span class="token comment">#!/usr/bin/env bash</span>
+<span class="token builtin class-name">set</span> -x
+<span class="token comment"># shebang &#x4E2D;&#x4F7F;&#x7528;</span>
+<span class="token comment">#!/usr/bin/bash -x</span>
+<span class="token comment"># &#x901A;&#x8FC7; bash &#x76F4;&#x63A5;&#x8FD0;&#x884C;&#x811A;&#x672C;</span>
+<span class="token function">bash</span> -x &#x811A;&#x672C;&#x7A0B;&#x5E8F;
+</code></pre>
+<ul>
+<li><p>&#x6FC0;&#x6D3B;&#x8FFD;&#x8E2A;&#x540E;&#xFF0C;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x53D8;&#x91CF;&#x5C55;&#x5F00;&#x7684;&#x6267;&#x884C;&#x60C5;&#x51B5;&#x3002;&#x884C;&#x5F00;&#x7AEF;&#x7684;&#x52A0;&#x53F7;&#x8868;&#x793A;&#x6B64;&#x884C;&#x662F;&#x7CFB;&#x7EDF;&#x7684;&#x8FFD;&#x8E2A;&#x4FE1;&#x606F;&#xFF0C;&#x4EE5;&#x533A;&#x522B;&#x4E8E;&#x4E00;&#x822C;&#x7684;&#x8F93;&#x51FA;&#x3002;</p>
+</li>
+<li><p>&#x52A0;&#x53F7;&#x662F;&#x8FFD;&#x8E2A;&#x4FE1;&#x606F;&#x7684;&#x9ED8;&#x8BA4;&#x7279;&#x5F81;, &#x662F;&#x7531; shell &#x53D8;&#x91CF; PS4 &#x8BBE;&#x5B9A;&#x7684;, &#x7528;&#x6237;&#x53EF;&#x4EE5;&#x4FEE;&#x6539;&#x53D8;&#x91CF;&#x503C;&#x4F7F;&#x8FFD;&#x8E2A;&#x6D3B;&#x52A8;&#x7684;&#x63D0;&#x793A;&#x7B26;&#x63D0;&#x4F9B;&#x66F4;&#x591A;&#x5E2E;&#x52A9;&#x4FE1;&#x606F;&#x3002;</p>
+</li>
+</ul>
+<pre class="language-"><code class="lang-bash"><span class="token comment"># &#x4F7F;&#x63D0;&#x793A;&#x7B26;&#x5305;&#x542B;&#x6267;&#x884C;&#x8FFD;&#x8E2A;&#x6D3B;&#x52A8;&#x7684;&#x811A;&#x672C;&#x884C;&#x53F7;&#x3002;</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PS4</span></span><span class="token operator">=</span><span class="token string">&apos;<span class="token variable">$LINENO</span> +&apos;</span>
+</code></pre>
+<ul>
+<li>&#x8981;&#x5BF9;&#x811A;&#x672C;&#x9009;&#x5B9A;&#x7684;&#x4E00;&#x90E8;&#x5206;&#x800C;&#x4E0D;&#x662F;&#x6574;&#x4E2A;&#x811A;&#x672C;&#x6267;&#x884C;&#x8FFD;&#x8E2A;, &#x53EF;&#x4EE5;&#x4F7F;&#x7528; set &#x547D;&#x4EE4;&#x52A0; -x &#x9009;&#x9879;&#x3002;</li>
+</ul>
+<pre class="language-"><code class="lang-bash"><span class="token builtin class-name">set</span> -x <span class="token comment"># &#x5F00;&#x59CB;&#x8FFD;&#x8E2A;</span>
+commands
+<span class="token builtin class-name">set</span> +x <span class="token comment"># &#x7ED3;&#x675F;&#x8FFD;&#x8E2A;</span>
+</code></pre>
+<ul>
+<li>&#x7EFC;&#x5408;&#x793A;&#x4F8B;</li>
+</ul>
+<pre class="language-"><code class="lang-bash"><span class="token shebang important">#!/usr/bin/env bash</span>
+
+<span class="token assign-left variable">number</span><span class="token operator">=</span><span class="token number">1</span>
+
+<span class="token assign-left variable"><span class="token environment constant">PS4</span></span><span class="token operator">=</span><span class="token string">&apos;<span class="token variable">$LINENO</span> +&apos;</span> <span class="token comment"># &#x663E;&#x793A;&#x884C;&#x53F7;</span>
+
+<span class="token builtin class-name">set</span> -x <span class="token comment"># &#x5F00;&#x59CB;&#x8FFD;&#x8E2A;</span>
+<span class="token keyword">if</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token variable">$number</span> <span class="token operator">=</span> <span class="token number">1</span> <span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">&quot;Number is equal to 1.&quot;</span>
+<span class="token keyword">else</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">&quot;Number is not equal to 1.&quot;</span>
+<span class="token keyword">fi</span>
+<span class="token builtin class-name">set</span> +x <span class="token comment"># &#x7ED3;&#x675F;&#x8FFD;&#x8E2A;</span>
+</code></pre>
+<h2 id="&#x8FD0;&#x884C;&#x8FC7;&#x7A0B;&#x4E2D;&#x53D8;&#x91CF;&#x7684;&#x68C0;&#x9A8C;"><a name="&#x8FD0;&#x884C;&#x8FC7;&#x7A0B;&#x4E2D;&#x53D8;&#x91CF;&#x7684;&#x68C0;&#x9A8C;" class="anchor-navigation-ex-anchor" href="#&#x8FD0;&#x884C;&#x8FC7;&#x7A0B;&#x4E2D;&#x53D8;&#x91CF;&#x7684;&#x68C0;&#x9A8C;"><i class="fa fa-link" aria-hidden="true"></i></a>1.5. &#x8FD0;&#x884C;&#x8FC7;&#x7A0B;&#x4E2D;&#x53D8;&#x91CF;&#x7684;&#x68C0;&#x9A8C;</h2>
+<ul>
+<li>&#x5728;&#x6267;&#x884C;&#x811A;&#x672C;&#x5E76;&#x8FFD;&#x8E2A;&#x811A;&#x672C;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;, &#x663E;&#x793A;&#x5404;&#x53D8;&#x91CF;&#x7684;&#x503C;&#x4EE5;&#x4F53;&#x73B0;&#x811A;&#x672C;&#x7684;&#x5185;&#x90E8;&#x6D3B;&#x52A8;&#x4F1A;&#x5F88;&#x6709;&#x5E2E;&#x52A9;&#x3002;&#x8FD9;&#x9879;&#x529F;&#x80FD;&#x901A;&#x5E38;&#x901A;&#x8FC7;&#x6DFB;&#x52A0;&#x989D;&#x5916;&#x7684; echo &#x8BED;&#x53E5;&#x5B8C;&#x6210;&#x3002;</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="basics.html" class="navigation navigation-prev " aria-label="Previous page: 基础">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="control.html" class="navigation navigation-next " aria-label="Next page: 控制结构">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"故障诊断","level":"5.2","depth":1,"next":{"title":"控制结构","level":"5.3","depth":1,"path":"shell/control.md","ref":"./shell/control.md","articles":[]},"previous":{"title":"基础","level":"5.1","depth":1,"path":"shell/basics.md","ref":"./shell/basics.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","anchor-navigation-ex","-sharing","sharing-plus","-highlight","prism"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"night","family":"serif","size":2},"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"sharing":{"weibo":true,"qzone":true,"qq":true,"douban":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"Little Captain","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Learn-Linux","gitbook":"*","description":"Learn-Linux"},"file":{"path":"shell/debug.md","mtime":"2021-08-05T07:10:14.422Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-08-05T07:11:57.724Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
