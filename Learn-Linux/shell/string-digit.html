@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>位置参数 · Learn-Linux</title>
+        <title>字符串和数字 · Learn-Linux</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -65,10 +65,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="control.html" />
+    <link rel="next" href="array.html" />
     
     
-    <link rel="prev" href="basics.html" />
+    <link rel="prev" href="debug.html" />
     
 
     </head>
@@ -485,7 +485,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="5.2" data-path="position-arguments.html">
+        <li class="chapter " data-level="5.2" data-path="position-arguments.html">
             
                 <a href="position-arguments.html">
             
@@ -530,7 +530,7 @@
             
         </li>
     
-        <li class="chapter " data-level="5.5" data-path="string-digit.html">
+        <li class="chapter active" data-level="5.5" data-path="string-digit.html">
             
                 <a href="string-digit.html">
             
@@ -590,7 +590,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >位置参数</a>
+        <a href=".." >字符串和数字</a>
     </h1>
 </div>
 
@@ -605,97 +605,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#&#x4F4D;&#x7F6E;&#x53C2;&#x6570;"><b>1. </b>&#x4F4D;&#x7F6E;&#x53C2;&#x6570;</a></li><ul><li><span class="title-icon "></span><a href="#&#x8BBF;&#x95EE;&#x547D;&#x4EE4;&#x884C;"><b>1.1. </b>&#x8BBF;&#x95EE;&#x547D;&#x4EE4;&#x884C;</a></li><li><span class="title-icon "></span><a href="#&#x5904;&#x7406;&#x591A;&#x4E2A;&#x4F4D;&#x7F6E;&#x53C2;&#x6570;"><b>1.2. </b>&#x5904;&#x7406;&#x591A;&#x4E2A;&#x4F4D;&#x7F6E;&#x53C2;&#x6570;</a></li></ul></ul></div><a href="#&#x4F4D;&#x7F6E;&#x53C2;&#x6570;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x4F4D;&#x7F6E;&#x53C2;&#x6570;"><a name="&#x4F4D;&#x7F6E;&#x53C2;&#x6570;" class="anchor-navigation-ex-anchor" href="#&#x4F4D;&#x7F6E;&#x53C2;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x4F4D;&#x7F6E;&#x53C2;&#x6570;</h1>
-<h2 id="&#x8BBF;&#x95EE;&#x547D;&#x4EE4;&#x884C;"><a name="&#x8BBF;&#x95EE;&#x547D;&#x4EE4;&#x884C;" class="anchor-navigation-ex-anchor" href="#&#x8BBF;&#x95EE;&#x547D;&#x4EE4;&#x884C;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. &#x8BBF;&#x95EE;&#x547D;&#x4EE4;&#x884C;</h2>
-<ul>
-<li><p>shell &#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x7EC4;&#x540D;&#x4E3A;&#x4F4D;&#x7F6E;&#x53C2;&#x6570;&#x7684;&#x53D8;&#x91CF;, &#x7528;&#x4E8E;&#x50A8;&#x5B58;&#x547D;&#x4EE4;&#x884C;&#x4E2D;&#x7684;&#x5173;&#x952E;&#x5B57;, &#x8FD9;&#x4E9B;&#x53D8;&#x91CF;&#x5206;&#x522B;&#x547D;&#x540D;&#x4E3A; 0~9&#x3002;</p>
-</li>
-<li><p>&#x5373;&#x4FBF;&#x6CA1;&#x6709;&#x63D0;&#x4F9B;&#x4EFB;&#x4F55;&#x5B9E;&#x53C2;, &#x53D8;&#x91CF; $0 &#x603B;&#x662F;&#x4F1A;&#x50A8;&#x5B58;&#x6240;&#x6267;&#x884C;&#x7A0B;&#x5E8F;&#x7684;&#x7A0B;&#x5E8F;&#x540D;&#x3002;</p>
-</li>
-<li><p>&#x63D0;&#x4F9B;&#x7684;&#x53C2;&#x6570;&#x4F1A;&#x4F9D;&#x6B21;&#x8D4B;&#x503C;&#x7ED9; $1 $2 &#x7B49;&#x7B49;&#x3002;</p>
-</li>
-<li><p>&#x4F7F;&#x7528;&#x53C2;&#x6570;&#x6269;&#x5C55;&#x6280;&#x672F;, &#x7528;&#x6237;&#x5B9E;&#x9645;&#x4E0A;&#x53EF;&#x4EE5;&#x83B7;&#x53D6;&#x591A;&#x4E8E; 9 &#x4E2A;&#x7684;&#x53C2;&#x6570;&#x3002;&#x4E3A;&#x6807;&#x660E;&#x4E00;&#x4E2A;&#x5927;&#x4E8E; 9 &#x7684;&#x6570;&#x5B57;, &#x5C06;&#x6570;&#x5B57;&#x7528;&#x5927;&#x62EC;&#x53F7;&#x62EC;&#x8D77;&#x6765;, &#x5982; ${10}&#x3002;</p>
-</li>
-<li><p>&#x786E;&#x5B9A;&#x5B9E;&#x53C2;&#x7684;&#x6570;&#x76EE;</p>
-<ul>
-<li>shell &#x63D0;&#x4F9B;&#x4E86;&#x53D8;&#x91CF; $# &#x4EE5;&#x7ED9;&#x51FA;&#x547D;&#x4EE4;&#x884C;&#x53C2;&#x6570;&#x7684;&#x6570;&#x76EE;&#x3002;</li>
-</ul>
-</li>
-<li><p>shift -- &#x5904;&#x7406;&#x5927;&#x91CF;&#x7684;&#x5B9E;&#x53C2;</p>
-<ul>
-<li>&#x5BF9;&#x4E8E;&#x5904;&#x7406;&#x5927;&#x91CF;&#x53C2;&#x6570;&#x7684;&#x60C5;&#x51B5;&#xFF0C;shell &#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x79CD;&#x7565;&#x663E;&#x7B28;&#x62D9;&#x7684;&#x5904;&#x7406;&#x65B9;&#x6CD5;&#x3002;&#x6BCF;&#x6B21;&#x6267;&#x884C; shift &#x547D;&#x4EE4;&#x540E;, &#x6240;&#x6709;&#x53C2;&#x6570;&#x7684;&#x503C;&#x5747;&#x201C;&#x4E0B;&#x79FB;&#x4E00;&#x4F4D;&#x201C;&#x3002;</li>
-<li>&#x6BCF;&#x5F53;&#x6267;&#x884C;&#x4E00;&#x6B21; shitf &#x547D;&#x4EE4;&#x65F6;, &#x53D8;&#x91CF; $2 &#x7684;&#x503C;&#x5C31;&#x8D4B;&#x7ED9;&#x53D8;&#x91CF; $1, &#x800C; $3 &#x7684;&#x503C;&#x5219;&#x8D4B;&#x7ED9;&#x53D8;&#x91CF; $2, &#x4F9D;&#x6B21;&#x7C7B;&#x63A8;&#x3002;&#x53D8;&#x91CF; $# &#x7684;&#x503C;&#x540C;&#x65F6;&#x51CF; 1&#x3002;</li>
-</ul>
-</li>
-<li><p>&#x793A;&#x4F8B;</p>
-</li>
-</ul>
-<pre class="language-"><code class="lang-bash"><span class="token assign-left variable">count</span><span class="token operator">=</span><span class="token number">1</span>
-
-<span class="token keyword">while</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token variable">$#</span> -gt <span class="token number">0</span> <span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">do</span>
-    <span class="token builtin class-name">echo</span> <span class="token string">&quot;Argument <span class="token variable">$count</span> = <span class="token variable">$1</span>&quot;</span>
-    <span class="token assign-left variable">count</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$((</span>count <span class="token operator">+</span> <span class="token number">1</span><span class="token variable">))</span></span>
-    <span class="token builtin class-name">shift</span>
-<span class="token keyword">done</span>
-</code></pre>
-<ul>
-<li>&#x5728; shell &#x51FD;&#x6570;&#x4E2D;&#x4F7F;&#x7528;&#x4F4D;&#x7F6E;&#x53C2;&#x6570;<ul>
-<li>&#x5C31;&#x50CF;&#x4F4D;&#x7F6E;&#x53C2;&#x6570;&#x53EF;&#x7528;&#x4E8E;&#x5411; shell &#x811A;&#x672C;&#x4F20;&#x9012;&#x5B9E;&#x53C2;&#x4E00;&#x6837;, &#x4F4D;&#x7F6E;&#x53C2;&#x6570;&#x4E5F;&#x53EF;&#x7528;&#x4E8E; shell &#x51FD;&#x6570;&#x5B9E;&#x53C2;&#x7684;&#x4F20;&#x9012;&#x3002;</li>
-<li>&#x51FD;&#x6570;&#x4E2D;&#xFF0C;&#x53D8;&#x91CF; $0 &#x7684;&#x503C;(&#x9002;&#x7528;&#x4E8E; bash)<ul>
-<li>shell &#x73AF;&#x5883;<ul>
-<li>$0 &#x4E3A; bash</li>
-<li>$FUNCNAME &#x4E3A;&#x51FD;&#x6570;&#x540D;&#x79F0;</li>
-</ul>
-</li>
-<li>&#x76F4;&#x63A5;&#x8C03;&#x7528;<ul>
-<li>$0 &#x4E3A;&#x811A;&#x672C;&#x7684;&#x6587;&#x4EF6;&#x540D;&#x79F0;</li>
-<li>$FUNCNAME &#x4E3A;&#x51FD;&#x6570;&#x540D;&#x79F0;</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>&#x6CE8;&#x610F;&#xFF0C;&#x5728; zsh &#x4E2D;&#xFF0C;&#x4E0D;&#x5B58;&#x5728; FUNCTION &#x53D8;&#x91CF;<ul>
-<li>&#x51FD;&#x6570;&#x4E2D;&#xFF0C;$0 &#x59CB;&#x7EC8;&#x4E3A;&#x51FD;&#x6570;&#x540D;&#x79F0;</li>
-<li>&#x811A;&#x672C;&#x4E2D;&#xFF0C;$0 &#x4E3A;&#x811A;&#x672C;&#x6587;&#x4EF6;&#x540D;&#x79F0;</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="&#x5904;&#x7406;&#x591A;&#x4E2A;&#x4F4D;&#x7F6E;&#x53C2;&#x6570;"><a name="&#x5904;&#x7406;&#x591A;&#x4E2A;&#x4F4D;&#x7F6E;&#x53C2;&#x6570;" class="anchor-navigation-ex-anchor" href="#&#x5904;&#x7406;&#x591A;&#x4E2A;&#x4F4D;&#x7F6E;&#x53C2;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. &#x5904;&#x7406;&#x591A;&#x4E2A;&#x4F4D;&#x7F6E;&#x53C2;&#x6570;</h2>
-<ul>
-<li><p>&#x6709;&#x65F6;&#x5C06;&#x6240;&#x6709;&#x7684;&#x4F4D;&#x7F6E;&#x53C2;&#x6570;&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x6574;&#x4F53;&#x6765;&#x5904;&#x7406;&#x4F1A;&#x6BD4;&#x8F83;&#x65B9;&#x4FBF;&#x3002;</p>
-</li>
-<li><p>shell &#x4E3A;&#x8FD9;&#x9879;&#x529F;&#x80FD;&#x63D0;&#x4F9B;&#x4E86;&#x4E24;&#x79CD;&#x7279;&#x6B8A;&#x7684;&#x53C2;&#x6570;&#x3002;&#x4E24;&#x79CD;&#x53C2;&#x6570;&#x90FD;&#x80FD;&#x591F;&#x6269;&#x5C55;&#x4E3A;&#x4E00;&#x4E2A;&#x5B8C;&#x6574;&#x7684;&#x4F4D;&#x7F6E;&#x53C2;&#x6570;&#x5217;, &#x4F46;&#x662F;&#x53C8;&#x6709;&#x7740;&#x5FAE;&#x5999;&#x7684;&#x533A;&#x522B;&#x3002;</p>
-</li>
-</ul>
-<p><img src="../images/position1.png" alt="position1"></p>
-<ul>
-<li>&#x793A;&#x4F8B;</li>
-</ul>
-<pre class="language-"><code class="lang-bash"><span class="token shebang important">#!/usr/bin/env bash</span>
-
-<span class="token function-name function">print_params</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token builtin class-name">echo</span> <span class="token string">&quot;\<span class="token variable">$1</span> = <span class="token variable">$1</span>&quot;</span>
-    <span class="token builtin class-name">echo</span> <span class="token string">&quot;\<span class="token variable">$2</span> = <span class="token variable">$2</span>&quot;</span>
-    <span class="token builtin class-name">echo</span> <span class="token string">&quot;\<span class="token variable">$3</span> = <span class="token variable">$3</span>&quot;</span>
-    <span class="token builtin class-name">echo</span> <span class="token string">&quot;\<span class="token variable">$4</span> = <span class="token variable">$4</span>&quot;</span>
-<span class="token punctuation">}</span>
-
-<span class="token function-name function">pass_params</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token builtin class-name">echo</span> -e <span class="token string">&quot;<span class="token entity" title="\n">\n</span>&quot;</span> <span class="token string">&apos;<span class="token variable">$*</span> :&apos;</span><span class="token punctuation">;</span> print_params <span class="token variable">$*</span>
-    <span class="token builtin class-name">echo</span> -e <span class="token string">&quot;<span class="token entity" title="\n">\n</span>&quot;</span> <span class="token string">&apos;&quot;<span class="token variable">$*</span>&quot; :&apos;</span><span class="token punctuation">;</span> print_params <span class="token string">&quot;<span class="token variable">$*</span>&quot;</span>
-    <span class="token builtin class-name">echo</span> -e <span class="token string">&quot;<span class="token entity" title="\n">\n</span>&quot;</span> <span class="token string">&apos;<span class="token variable">$@</span> :&apos;</span><span class="token punctuation">;</span> print_params <span class="token variable">$@</span>
-    <span class="token builtin class-name">echo</span> -e <span class="token string">&quot;<span class="token entity" title="\n">\n</span>&quot;</span> <span class="token string">&apos;&quot;<span class="token variable">$@</span>&quot; :&apos;</span><span class="token punctuation">;</span> print_params <span class="token string">&quot;<span class="token variable">$@</span>&quot;</span>
-<span class="token punctuation">}</span>
-
-pass_params <span class="token string">&quot;word&quot;</span> <span class="token string">&quot;words with spaces&quot;</span>
-
-<span class="token comment"># $* &#x4EA7;&#x51FA;4&#x4E2A;&#x53C2;&#x6570;</span>
-<span class="token comment"># &quot;$*&quot; &#x4EA7;&#x51FA;1&#x4E2A;&#x53C2;&#x6570;</span>
-<span class="token comment"># $@ &#x4EA7;&#x51FA;4&#x4E2A;&#x53C2;&#x6570;</span>
-<span class="token comment"># &quot;$@&quot; &#x4EA7;&#x51FA;2&#x4E2A;&#x53C2;&#x6570;&#x3002;&#x4E0E;&#x539F;&#x59CB;&#x53C2;&#x6570;&#x4E00;&#x76F4;&#xFF0C;&#x5B83;&#x662F;&#x5927;&#x591A;&#x6570;&#x60C5;&#x51B5;&#x4E0B;&#x6700;&#x4EE4;&#x4EBA;&#x6EE1;&#x610F;&#x7684;&#x65B9;&#x6CD5;&#x3002;</span>
-</code></pre>
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#&#x5B57;&#x7B26;&#x4E32;&#x548C;&#x6570;&#x5B57;"><b>1. </b>&#x5B57;&#x7B26;&#x4E32;&#x548C;&#x6570;&#x5B57;</a></li></ul></div><a href="#&#x5B57;&#x7B26;&#x4E32;&#x548C;&#x6570;&#x5B57;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x5B57;&#x7B26;&#x4E32;&#x548C;&#x6570;&#x5B57;"><a name="&#x5B57;&#x7B26;&#x4E32;&#x548C;&#x6570;&#x5B57;" class="anchor-navigation-ex-anchor" href="#&#x5B57;&#x7B26;&#x4E32;&#x548C;&#x6570;&#x5B57;"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x5B57;&#x7B26;&#x4E32;&#x548C;&#x6570;&#x5B57;</h1>
 
                                 
                                 </section>
@@ -723,12 +633,12 @@ pass_params <span class="token string">&quot;word&quot;</span> <span class="toke
 
             
                 
-                <a href="basics.html" class="navigation navigation-prev " aria-label="Previous page: 基础">
+                <a href="debug.html" class="navigation navigation-prev " aria-label="Previous page: 故障诊断">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="control.html" class="navigation navigation-next " aria-label="Next page: 控制结构">
+                <a href="array.html" class="navigation navigation-next " aria-label="Next page: 数组">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -739,7 +649,7 @@ pass_params <span class="token string">&quot;word&quot;</span> <span class="toke
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"位置参数","level":"5.2","depth":1,"next":{"title":"控制结构","level":"5.3","depth":1,"path":"shell/control.md","ref":"./shell/control.md","articles":[]},"previous":{"title":"基础","level":"5.1","depth":1,"path":"shell/basics.md","ref":"./shell/basics.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","anchor-navigation-ex","-sharing","sharing-plus","-highlight","prism"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"night","family":"serif","size":2},"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"sharing":{"weibo":true,"qzone":true,"qq":true,"douban":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"Little Captain","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Learn-Linux","gitbook":"*","description":"Learn-Linux"},"file":{"path":"shell/position-arguments.md","mtime":"2021-08-05T14:31:05.495Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-08-05T16:43:47.292Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"字符串和数字","level":"5.5","depth":1,"next":{"title":"数组","level":"5.6","depth":1,"path":"shell/array.md","ref":"./shell/array.md","articles":[]},"previous":{"title":"故障诊断","level":"5.4","depth":1,"path":"shell/debug.md","ref":"./shell/debug.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","anchor-navigation-ex","-sharing","sharing-plus","-highlight","prism"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"night","family":"serif","size":2},"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"sharing":{"weibo":true,"qzone":true,"qq":true,"douban":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"Little Captain","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Learn-Linux","gitbook":"*","description":"Learn-Linux"},"file":{"path":"shell/string-digit.md","mtime":"2021-08-05T16:33:24.890Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-08-05T16:43:47.292Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
