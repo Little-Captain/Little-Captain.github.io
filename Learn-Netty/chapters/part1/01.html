@@ -466,7 +466,233 @@
     
                                 <section class="normal markdown-section">
                                 
-                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#&#x7B2C;1&#x7AE0;-netty----&#x5F02;&#x6B65;&#x548C;&#x4E8B;&#x4EF6;&#x9A71;&#x52A8;"><b>1. </b>&#x7B2C;1&#x7AE0; Netty -- &#x5F02;&#x6B65;&#x548C;&#x4E8B;&#x4EF6;&#x9A71;&#x52A8;</a></li><ul><li><span class="title-icon "></span><a href="#java-&#x7F51;&#x7EDC;&#x7F16;&#x7A0B;"><b>1.1. </b>Java &#x7F51;&#x7EDC;&#x7F16;&#x7A0B;</a></li><ul><li><span class="title-icon "></span><a href="#java-nio"><b>1.1.1. </b>Java NIO</a></li><li><span class="title-icon "></span><a href="#&#x9009;&#x62E9;&#x5668;"><b>1.1.2. </b>&#x9009;&#x62E9;&#x5668;</a></li></ul><li><span class="title-icon "></span><a href="#netty-&#x7B80;&#x4ECB;"><b>1.2. </b>Netty &#x7B80;&#x4ECB;</a></li><ul><li><span class="title-icon "></span><a href="#&#x5F02;&#x6B65;&#x548C;&#x4E8B;&#x4EF6;&#x9A71;&#x52A8;"><b>1.2.1. </b>&#x5F02;&#x6B65;&#x548C;&#x4E8B;&#x4EF6;&#x9A71;&#x52A8;</a></li></ul><li><span class="title-icon "></span><a href="#netty-&#x7684;&#x6838;&#x5FC3;&#x7EC4;&#x4EF6;"><b>1.3. </b>Netty &#x7684;&#x6838;&#x5FC3;&#x7EC4;&#x4EF6;</a></li><ul><li><span class="title-icon "></span><a href="#channel"><b>1.3.1. </b>Channel</a></li><li><span class="title-icon "></span><a href="#&#x56DE;&#x8C03;"><b>1.3.2. </b>&#x56DE;&#x8C03;</a></li><li><span class="title-icon "></span><a href="#future"><b>1.3.3. </b>Future</a></li><li><span class="title-icon "></span><a href="#&#x4E8B;&#x4EF6;&#x548C;-channelhandler"><b>1.3.4. </b>&#x4E8B;&#x4EF6;&#x548C; ChannelHandler</a></li><li><span class="title-icon "></span><a href="#&#x603B;&#x7ED3;"><b>1.3.5. </b>&#x603B;&#x7ED3;</a></li></ul></ul></ul></div><a href="#&#x7B2C;1&#x7AE0;-netty----&#x5F02;&#x6B65;&#x548C;&#x4E8B;&#x4EF6;&#x9A71;&#x52A8;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x7B2C;1&#x7AE0;-netty----&#x5F02;&#x6B65;&#x548C;&#x4E8B;&#x4EF6;&#x9A71;&#x52A8;"><a name="&#x7B2C;1&#x7AE0;-netty----&#x5F02;&#x6B65;&#x548C;&#x4E8B;&#x4EF6;&#x9A71;&#x52A8;" class="anchor-navigation-ex-anchor" href="#&#x7B2C;1&#x7AE0;-netty----&#x5F02;&#x6B65;&#x548C;&#x4E8B;&#x4EF6;&#x9A71;&#x52A8;"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x7B2C;1&#x7AE0; Netty -- &#x5F02;&#x6B65;&#x548C;&#x4E8B;&#x4EF6;&#x9A71;&#x52A8;</h1>
+<ul>
+<li><p>Netty &#x662F;&#x4E00;&#x6B3E;&#x5F02;&#x6B65;&#x7684;&#x4E8B;&#x4EF6;&#x9A71;&#x52A8;&#x7684;&#x7F51;&#x7EDC;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x6846;&#x67B6;, &#x652F;&#x6301;&#x5FEB;&#x901F;&#x5730;&#x5F00;&#x53D1;&#x53EF;&#x7EF4;&#x62A4;&#x7684;&#x9AD8;&#x6027;&#x80FD;&#x7684;&#x9762;&#x5411;&#x534F;&#x8BAE;&#x7684;&#x670D;&#x52A1;&#x5668;&#x548C;&#x5BA2;&#x6237;&#x7AEF;&#x3002;</p>
+</li>
+<li><p>Netty &#x4F18;&#x96C5;&#x5730;&#x5904;&#x7406;&#x4E86;&#x7F51;&#x7EDC;&#x7F16;&#x7A0B;&#x3001;&#x591A;&#x7EBF;&#x7A0B;&#x5904;&#x7406;&#x548C;&#x5E76;&#x53D1;&#x7B49;&#x76F8;&#x5173;&#x7684;&#x77E5;&#x8BC6;, &#x4F7F;&#x5F97;&#x5373;&#x4F7F;&#x662F;&#x7F51;&#x7EDC;&#x7F16;&#x7A0B;&#x65B0;&#x624B;&#x4E5F;&#x80FD;&#x4F7F;&#x7528;&#x3002;</p>
+</li>
+<li><p>Netty &#x7EC8;&#x7A76;&#x662F;&#x4E00;&#x4E2A;&#x6846;&#x67B6;, &#x5B83;&#x7684;&#x67B6;&#x6784;&#x65B9;&#x6CD5;&#x548C;&#x8BBE;&#x8BA1;&#x539F;&#x5219;&#x662F;: &#x6BCF;&#x4E2A;&#x5C0F;&#x70B9;&#x90FD;&#x548C;&#x5B83;&#x7684;&#x6280;&#x672F;&#x6027;&#x5185;&#x5BB9;&#x4E00;&#x6837;&#x91CD;&#x8981;, &#x7A77;&#x5176;&#x7CBE;&#x5999;&#x3002;</p>
+</li>
+</ul>
+<h2 id="java-&#x7F51;&#x7EDC;&#x7F16;&#x7A0B;"><a name="java-&#x7F51;&#x7EDC;&#x7F16;&#x7A0B;" class="anchor-navigation-ex-anchor" href="#java-&#x7F51;&#x7EDC;&#x7F16;&#x7A0B;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. Java &#x7F51;&#x7EDC;&#x7F16;&#x7A0B;</h2>
+<ul>
+<li><p>&#x65E9;&#x671F;&#x7684; Java API(java.net) &#x53EA;&#x652F;&#x6301;&#x7531;&#x672C;&#x5730;&#x7CFB;&#x7EDF;&#x5957;&#x63A5;&#x5B57;&#x5E93;&#x63D0;&#x4F9B;&#x7684;&#x6240;&#x8C13;&#x7684;&#x963B;&#x585E;&#x51FD;&#x6570;&#x3002;</p>
+</li>
+<li><p><a href="https://gitee.com/Little-Captain/learn-netty/blob/master/c01/src/main/java/net/lc/BlockingIoExample.java" target="_blank">&#x793A;&#x4F8B;&#x4EE3;&#x7801;</a></p>
+</li>
+<li><p>&#x4F7F;&#x7528;&#x963B;&#x585E; I/O &#x5904;&#x7406;&#x591A;&#x4E2A;&#x8FDE;&#x63A5;&#xFF0C;&#x9700;&#x8981;&#x4E3A;&#x6BCF;&#x4E2A;&#x65B0;&#x7684;&#x5BA2;&#x6237;&#x7AEF; Socket &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684; Thread&#x3002;</p>
+</li>
+</ul>
+<p><img src="../../images/blocking_socket.png" alt="&#x963B;&#x585E;IO&#x5904;&#x7406;&#x591A;&#x4E2A;&#x8FDE;&#x63A5;"></p>
+<ul>
+<li>&#x4E0A;&#x8FF0;&#x65B9;&#x6848;&#x7684;&#x95EE;&#x9898;<ul>
+<li>&#x7B2C;&#x4E00;, &#x5728;&#x4EFB;&#x4F55;&#x65F6;&#x5019;&#x90FD;&#x53EF;&#x80FD;&#x6709;&#x5927;&#x91CF;&#x7684;&#x7EBF;&#x7A0B;&#x5904;&#x4E8E;&#x4F11;&#x7720;&#x72B6;&#x6001;, &#x53EA;&#x662F;&#x7B49;&#x5F85;&#x8F93;&#x5165;&#x6216;&#x8005;&#x8F93;&#x51FA;&#x6570;&#x636E;&#x5C31;&#x7EEA;, &#x8FD9;&#x53EF;&#x80FD;&#x7B97;&#x662F;&#x4E00;&#x79CD;&#x8D44;&#x6E90;&#x6D6A;&#x8D39;&#x3002;</li>
+<li>&#x7B2C;&#x4E8C;, &#x9700;&#x8981;&#x4E3A;&#x6BCF;&#x4E2A;&#x7EBF;&#x7A0B;&#x7684;&#x8C03;&#x7528;&#x6808;&#x90FD;&#x5206;&#x914D;&#x5185;&#x5B58;, &#x5176;&#x9ED8;&#x8BA4;&#x503C;&#x5927;&#x5C0F;&#x533A;&#x95F4;&#x4E3A; 64 KB &#x5230; 1 MB, &#x5177;&#x4F53;&#x53D6;&#x51B3;&#x4E8E;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x3002;</li>
+<li>&#x7B2C;&#x4E09;, &#x5373;&#x4F7F; Java &#x865A;&#x62DF;&#x673A;(JVM)&#x5728;&#x7269;&#x7406;&#x4E0A;&#x53EF;&#x4EE5;&#x652F;&#x6301;&#x975E;&#x5E38;&#x5927;&#x6570;&#x91CF;&#x7684;&#x7EBF;&#x7A0B;, &#x4F46;&#x662F;&#x8FDC;&#x5728;&#x5230;&#x8FBE;&#x8BE5;&#x6781;&#x9650;&#x4E4B;&#x524D;, &#x4E0A;&#x4E0B;&#x6587;&#x5207;&#x6362;&#x6240;&#x5E26;&#x6765;&#x7684;&#x5F00;&#x9500;&#x5C31;&#x4F1A;&#x5E26;&#x6765;&#x9EBB;&#x70E6;&#x3002;</li>
+</ul>
+</li>
+</ul>
+<h3 id="java-nio"><a name="java-nio" class="anchor-navigation-ex-anchor" href="#java-nio"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.1. Java NIO</h3>
+<ul>
+<li><p>&#x672C;&#x5730;&#x5957;&#x63A5;&#x5B57;&#x5E93;&#x5F88;&#x65E9;&#x5C31;&#x63D0;&#x4F9B;&#x4E86;&#x975E;&#x963B;&#x585E;&#x8C03;&#x7528;, &#x5176;&#x4E3A;&#x7F51;&#x7EDC;&#x8D44;&#x6E90;&#x7684;&#x5229;&#x7528;&#x7387;&#x63D0;&#x4F9B;&#x4E86;&#x76F8;&#x5F53;&#x591A;&#x7684;&#x63A7;&#x5236;</p>
+<ul>
+<li>&#x53EF;&#x4EE5;&#x4F7F;&#x7528; setsockopt() &#x65B9;&#x6CD5;&#x914D;&#x7F6E;&#x5957;&#x63A5;&#x5B57;, &#x4EE5;&#x4FBF;&#x8BFB;/&#x5199;&#x8C03;&#x7528;&#x5728;&#x6CA1;&#x6709;&#x6570;&#x636E;&#x7684;&#x65F6;&#x5019;&#x7ACB;&#x5373;&#x8FD4;&#x56DE;, &#x4E5F;&#x5C31;&#x662F;&#x8BF4;, &#x5982;&#x679C;&#x662F;&#x4E00;&#x4E2A;&#x963B;&#x585E;&#x8C03;&#x7528;&#x5E94;&#x8BE5;&#x5DF2;&#x7ECF;&#x88AB;&#x963B;&#x585E;&#x4E86;;</li>
+<li>&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x7684;&#x4E8B;&#x4EF6;&#x901A;&#x77E5; API &#x6CE8;&#x518C;&#x4E00;&#x7EC4;&#x975E;&#x963B;&#x585E;&#x5957;&#x63A5;&#x5B57;, &#x4EE5;&#x786E;&#x5B9A;&#x5B83;&#x4EEC;&#x4E2D;&#x662F;&#x5426;&#x6709;&#x4EFB;&#x4F55;&#x7684;&#x5957;&#x63A5;&#x5B57;&#x5DF2;&#x7ECF;&#x6709;&#x6570;&#x636E;&#x53EF;&#x4F9B;&#x8BFB;&#x5199;&#x3002;</li>
+</ul>
+</li>
+<li><p>Java &#x5BF9;&#x4E8E;&#x975E;&#x963B;&#x585E; I/O &#x7684;&#x652F;&#x6301;&#x662F;&#x5728; 2002 &#x5E74;&#x5F15;&#x5165;&#x7684;, &#x4F4D;&#x4E8E; JDK 1.4 &#x7684; java.nio &#x5305;&#x4E2D;&#x3002;</p>
+</li>
+<li><p>&#x65B0;&#x7684;&#x8FD8;&#x662F;&#x975E;&#x963B;&#x585E;&#x7684;</p>
+<ul>
+<li>NIO &#x6700;&#x5F00;&#x59CB;&#x662F; New Input/Output &#x7684;&#x82F1;&#x6587;&#x7F29;&#x5199;&#x3002;</li>
+<li>&#x5982;&#x4ECA;&#x5927;&#x591A;&#x6570;&#x7684;&#x7528;&#x6237;&#x8BA4;&#x4E3A; NIO &#x4EE3;&#x8868;&#x975E;&#x963B;&#x585E; I/O(Non-blocking I/O)&#x3002;</li>
+<li>&#x963B;&#x585E; I/O(blocking I/O)&#x662F;&#x65E7;&#x7684;&#x8F93;&#x5165;/&#x8F93;&#x51FA;(old input/output, OIO)&#x3002;&#x6709;&#x65F6;&#x5B83;&#x4E5F;&#x88AB;&#x79F0;&#x4E3A;&#x666E;&#x901A; I/O(plain I/O)&#x3002;</li>
+</ul>
+</li>
+</ul>
+<h3 id="&#x9009;&#x62E9;&#x5668;"><a name="&#x9009;&#x62E9;&#x5668;" class="anchor-navigation-ex-anchor" href="#&#x9009;&#x62E9;&#x5668;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.2. &#x9009;&#x62E9;&#x5668;</h3>
+<ul>
+<li>&#x4F7F;&#x7528; Selector &#x7684;&#x975E;&#x963B;&#x585E; I/O</li>
+</ul>
+<p><img src="../../images/selector_non_blocking.png" alt="selector_non_blocking"></p>
+<ul>
+<li><p>class java.nio.channels.Selector &#x662F; Java &#x7684;&#x975E;&#x963B;&#x585E; I/O &#x5B9E;&#x73B0;&#x7684;&#x5173;&#x952E;&#x3002;</p>
+<ul>
+<li>&#x5B83;&#x4F7F;&#x7528;&#x4E86;&#x4E8B;&#x4EF6;&#x901A;&#x77E5; API &#x4EE5;&#x786E;&#x5B9A;&#x5728;&#x4E00;&#x7EC4;&#x975E;&#x963B;&#x585E;&#x5957;&#x63A5;&#x5B57;&#x4E2D;&#x6709;&#x54EA;&#x4E9B;&#x5DF2;&#x7ECF;&#x5C31;&#x7EEA;&#x80FD;&#x591F;&#x8FDB;&#x884C; I/O &#x76F8;&#x5173;&#x7684;&#x64CD;&#x4F5C;&#x3002;</li>
+<li>&#x56E0;&#x4E3A;&#x53EF;&#x4EE5;&#x5728;&#x4EFB;&#x4F55;&#x7684;&#x65F6;&#x95F4;&#x68C0;&#x67E5;&#x4EFB;&#x610F;&#x7684;&#x8BFB;&#x64CD;&#x4F5C;&#x6216;&#x8005;&#x5199;&#x64CD;&#x4F5C;&#x7684;&#x5B8C;&#x6210;&#x72B6;&#x6001;, &#x6240;&#x4EE5;&#x4E00;&#x4E2A;&#x5355;&#x4E00;&#x7684;&#x7EBF;&#x7A0B;&#x4FBF;&#x53EF;&#x4EE5;&#x5904;&#x7406;&#x591A;&#x4E2A;&#x5E76;&#x53D1;&#x7684;&#x8FDE;&#x63A5;&#x3002;</li>
+</ul>
+</li>
+<li><p>&#x603B;&#x4F53;&#x6765;&#x770B;, &#x4E0E;&#x963B;&#x585E; I/O &#x6A21;&#x578B;&#x76F8;&#x6BD4;, &#x8FD9;&#x79CD;&#x6A21;&#x578B;&#x63D0;&#x4F9B;&#x4E86;&#x66F4;&#x597D;&#x7684;&#x8D44;&#x6E90;&#x7BA1;&#x7406;</p>
+<ul>
+<li>&#x4F7F;&#x7528;&#x8F83;&#x5C11;&#x7684;&#x7EBF;&#x7A0B;&#x4FBF;&#x53EF;&#x4EE5;&#x5904;&#x7406;&#x8BB8;&#x591A;&#x8FDE;&#x63A5;, &#x56E0;&#x6B64;&#x4E5F;&#x51CF;&#x5C11;&#x4E86;&#x5185;&#x5B58;&#x7BA1;&#x7406;&#x548C;&#x4E0A;&#x4E0B;&#x6587;&#x5207;&#x6362;&#x6240;&#x5E26;&#x6765;&#x5F00;&#x9500;;</li>
+<li>&#x5F53;&#x6CA1;&#x6709; I/O &#x64CD;&#x4F5C;&#x9700;&#x8981;&#x5904;&#x7406;&#x7684;&#x65F6;&#x5019;, &#x7EBF;&#x7A0B;&#x4E5F;&#x53EF;&#x4EE5;&#x88AB;&#x7528;&#x4E8E;&#x5176;&#x4ED6;&#x4EFB;&#x52A1;&#x3002;</li>
+</ul>
+</li>
+<li><p>&#x5C3D;&#x7BA1;&#x5DF2;&#x7ECF;&#x6709;&#x8BB8;&#x591A;&#x76F4;&#x63A5;&#x4F7F;&#x7528; Java NIO API &#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x88AB;&#x6784;&#x5EFA;&#x4E86;, &#x4F46;&#x662F;&#x8981;&#x505A;&#x5230;&#x6B63;&#x786E;&#x548C;&#x5B89;&#x5168;&#x5E76;&#x4E0D;&#x5BB9;&#x6613;&#x3002;</p>
+</li>
+<li><p>&#x5728;&#x9AD8;&#x8D1F;&#x8F7D;&#x4E0B;&#x53EF;&#x9760;&#x548C;&#x9AD8;&#x6548;&#x5730;&#x5904;&#x7406;&#x548C;&#x8C03;&#x5EA6; I/O &#x64CD;&#x4F5C;&#x662F;&#x4E00;&#x9879;&#x7E41;&#x7410;&#x800C;&#x4E14;&#x5BB9;&#x6613;&#x51FA;&#x9519;&#x7684;&#x4EFB;&#x52A1;, &#x6700;&#x597D;&#x7559;&#x7ED9;&#x9AD8;&#x6027;&#x80FD;&#x7684;&#x7F51;&#x7EDC;&#x7F16;&#x7A0B;&#x4E13;&#x5BB6; -- Netty&#x3002;</p>
+</li>
+</ul>
+<h2 id="netty-&#x7B80;&#x4ECB;"><a name="netty-&#x7B80;&#x4ECB;" class="anchor-navigation-ex-anchor" href="#netty-&#x7B80;&#x4ECB;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. Netty &#x7B80;&#x4ECB;</h2>
+<ul>
+<li><p>&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7684;&#x57FA;&#x672C;&#x6982;&#x5FF5;: &#x7528;&#x8F83;&#x7B80;&#x5355;&#x7684;&#x62BD;&#x8C61;&#x9690;&#x85CF;&#x5E95;&#x5C42;&#x5B9E;&#x73B0;&#x7684;&#x590D;&#x6742;&#x6027;&#x3002;</p>
+</li>
+<li><p>&#x5728;&#x7F51;&#x7EDC;&#x7F16;&#x7A0B;&#x9886;&#x57DF;, Netty &#x662F; Java &#x7684;&#x5353;&#x8D8A;&#x6846;&#x67B6;&#x3002;&#x5B83;&#x9A7E;&#x9A6D;&#x4E86; Java &#x9AD8;&#x7EA7; API, &#x5E76;&#x5C06;&#x5176;&#x9690;&#x85CF;&#x5728;&#x4E00;&#x4E2A;&#x6613;&#x4E8E;&#x4F7F;&#x7528;&#x7684; API &#x4E4B;&#x540E;&#x3002;</p>
+</li>
+<li><p>Netty &#x7684;&#x7279;&#x6027;&#x603B;&#x7ED3;</p>
+</li>
+</ul>
+<p><img src="../../images/netty-feature.png" alt="&#x7279;&#x6027;"></p>
+<h3 id="&#x5F02;&#x6B65;&#x548C;&#x4E8B;&#x4EF6;&#x9A71;&#x52A8;"><a name="&#x5F02;&#x6B65;&#x548C;&#x4E8B;&#x4EF6;&#x9A71;&#x52A8;" class="anchor-navigation-ex-anchor" href="#&#x5F02;&#x6B65;&#x548C;&#x4E8B;&#x4EF6;&#x9A71;&#x52A8;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2.1. &#x5F02;&#x6B65;&#x548C;&#x4E8B;&#x4EF6;&#x9A71;&#x52A8;</h3>
+<ul>
+<li><p>&#x672C;&#x8D28;&#x4E0A;, &#x4E00;&#x4E2A;&#x65E2;&#x662F;&#x5F02;&#x6B65;&#x7684;&#x53C8;&#x662F;&#x4E8B;&#x4EF6;&#x9A71;&#x52A8;&#x7684;&#x7CFB;&#x7EDF;&#x4F1A;&#x8868;&#x73B0;&#x51FA;&#x4E00;&#x79CD;&#x7279;&#x6B8A;&#x7684;&#x3001;&#x5BF9;&#x5F00;&#x53D1;&#x8005;&#x6765;&#x8BF4;&#x6781;&#x5177;&#x4EF7;&#x503C;&#x7684;&#x884C;&#x4E3A;: &#x5B83;&#x53EF;&#x4EE5;&#x4EE5;&#x4EFB;&#x610F;&#x7684;&#x987A;&#x5E8F;&#x54CD;&#x5E94;&#x5728;&#x4EFB;&#x610F;&#x7684;&#x65F6;&#x95F4;&#x70B9;&#x4EA7;&#x751F;&#x7684;&#x4E8B;&#x4EF6;&#x3002;</p>
+</li>
+<li><p>&#x8FD9;&#x79CD;&#x80FD;&#x529B;&#x5BF9;&#x4E8E;&#x5B9E;&#x73B0;&#x6700;&#x9AD8;&#x7EA7;&#x522B;&#x7684;&#x53EF;&#x4F38;&#x7F29;&#x6027;&#x81F3;&#x5173;&#x91CD;&#x8981;, &#x5B9A;&#x4E49;&#x4E3A;: &#x4E00;&#x79CD;&#x7CFB;&#x7EDF;&#x3001;&#x7F51;&#x7EDC;&#x6216;&#x8005;&#x8FDB;&#x7A0B;&#x5728;&#x9700;&#x8981;&#x5904;&#x7406;&#x7684;&#x5DE5;&#x4F5C;&#x4E0D;&#x65AD;&#x589E;&#x957F;&#x65F6;, &#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x67D0;&#x79CD;&#x53EF;&#x884C;&#x7684;&#x65B9;&#x5F0F;&#x6216;&#x8005;&#x6269;&#x5927;&#x5B83;&#x7684;&#x5904;&#x7406;&#x80FD;&#x529B;&#x6765;&#x9002;&#x5E94;&#x8FD9;&#x79CD;&#x589E;&#x957F;&#x7684;&#x80FD;&#x529B;&#x3002;</p>
+</li>
+<li><p>&#x5F02;&#x6B65;&#x548C;&#x53EF;&#x4F38;&#x7F29;&#x6027;&#x4E4B;&#x95F4;&#x7684;&#x8054;&#x7CFB;</p>
+<ul>
+<li>&#x975E;&#x963B;&#x585E;&#x7F51;&#x7EDC;&#x8C03;&#x7528;&#x4F7F;&#x5F97;&#x5F00;&#x53D1;&#x8005;&#x53EF;&#x4EE5;&#x4E0D;&#x5FC5;&#x7B49;&#x5F85;&#x4E00;&#x4E2A;&#x64CD;&#x4F5C;&#x7684;&#x5B8C;&#x6210;&#x3002;&#x5B8C;&#x5168;&#x5F02;&#x6B65;&#x7684; I/O &#x6B63;&#x662F;&#x57FA;&#x4E8E;&#x8FD9;&#x4E2A;&#x7279;&#x6027;&#x6784;&#x5EFA;&#x7684;, &#x5E76;&#x4E14;&#x66F4;&#x8FDB;&#x4E00;&#x6B65;: &#x5F02;&#x6B65;&#x65B9;&#x6CD5;&#x4F1A;&#x7ACB;&#x5373;&#x8FD4;&#x56DE;, &#x5E76;&#x4E14;&#x5728;&#x5B83;&#x5B8C;&#x6210;&#x65F6;, &#x4F1A;&#x76F4;&#x63A5;&#x6216;&#x8005;&#x5728;&#x7A0D;&#x540E;&#x7684;&#x67D0;&#x4E2A;&#x65F6;&#x95F4;&#x70B9;&#x901A;&#x77E5;&#x7528;&#x6237;&#x3002;</li>
+<li>&#x9009;&#x62E9;&#x5668;&#x4F7F;&#x5F97;&#x5F00;&#x53D1;&#x8005;&#x80FD;&#x591F;&#x901A;&#x8FC7;&#x8F83;&#x5C11;&#x7684;&#x7EBF;&#x7A0B;&#x4FBF;&#x53EF;&#x76D1;&#x89C6;&#x8BB8;&#x591A;&#x8FDE;&#x63A5;&#x4E0A;&#x7684;&#x4E8B;&#x4EF6;&#x3002;</li>
+</ul>
+</li>
+<li><p>&#x4E0E;&#x4F7F;&#x7528;&#x963B;&#x585E; I/O &#x6765;&#x5904;&#x7406;&#x5927;&#x91CF;&#x4E8B;&#x4EF6;&#x76F8;&#x6BD4;, &#x4F7F;&#x7528;&#x975E;&#x963B;&#x585E; I/O &#x6765;&#x5904;&#x7406;&#x66F4;&#x5FEB;&#x901F;&#x3001;&#x66F4;&#x7ECF;&#x6D4E;&#x3002;</p>
+</li>
+<li><p>&#x4ECE;&#x7F51;&#x7EDC;&#x7F16;&#x7A0B;&#x7684;&#x89D2;&#x5EA6;&#x6765;&#x770B;, &#x4F7F;&#x7528;&#x975E;&#x963B;&#x585E; I/O &#x662F;&#x6784;&#x5EFA;&#x7406;&#x60F3;&#x7CFB;&#x7EDF;&#x7684;&#x5173;&#x952E;, &#x800C;&#x4E14;&#x8FD9;&#x4E5F;&#x662F; Netty &#x7684;&#x8BBE;&#x8BA1;&#x5E95;&#x8574;&#x7684;&#x5173;&#x952E;&#x3002;</p>
+</li>
+</ul>
+<h2 id="netty-&#x7684;&#x6838;&#x5FC3;&#x7EC4;&#x4EF6;"><a name="netty-&#x7684;&#x6838;&#x5FC3;&#x7EC4;&#x4EF6;" class="anchor-navigation-ex-anchor" href="#netty-&#x7684;&#x6838;&#x5FC3;&#x7EC4;&#x4EF6;"><i class="fa fa-link" aria-hidden="true"></i></a>1.3. Netty &#x7684;&#x6838;&#x5FC3;&#x7EC4;&#x4EF6;</h2>
+<ul>
+<li><p>Netty &#x7684;&#x4E3B;&#x8981;&#x6784;&#x4EF6;&#x5757;</p>
+<ul>
+<li>Channel;</li>
+<li>&#x56DE;&#x8C03;;</li>
+<li>Future;</li>
+<li>&#x4E8B;&#x4EF6;&#x548C; ChannelHandler&#x3002;</li>
+</ul>
+</li>
+<li><p>&#x4E0A;&#x8FF0;&#x6784;&#x5EFA;&#x5757;&#x4EE3;&#x8868;&#x4E86;&#x4E0D;&#x540C;&#x7C7B;&#x578B;&#x7684;&#x6784;&#x9020;: &#x8D44;&#x6E90;&#x3001;&#x903B;&#x8F91;&#x4EE5;&#x53CA;&#x901A;&#x77E5;&#x3002;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x5C06;&#x4F7F;&#x7528;&#x5B83;&#x4EEC;&#x6765;&#x8BBF;&#x95EE;&#x7F51;&#x7EDC;&#x4EE5;&#x53CA;&#x6D41;&#x7ECF;&#x7F51;&#x7EDC;&#x7684;&#x6570;&#x636E;&#x3002;</p>
+</li>
+</ul>
+<h3 id="channel"><a name="channel" class="anchor-navigation-ex-anchor" href="#channel"><i class="fa fa-link" aria-hidden="true"></i></a>1.3.1. Channel</h3>
+<ul>
+<li><p>Channel &#x662F; Java NIO &#x7684;&#x4E00;&#x4E2A;&#x57FA;&#x672C;&#x6784;&#x9020;&#x3002;</p>
+</li>
+<li><p>Channel &#x4EE3;&#x8868;&#x4E00;&#x4E2A;&#x5230;&#x5B9E;&#x4F53;&#x7684;&#x5F00;&#x653E;&#x8FDE;&#x63A5;, &#x5982;&#x8BFB;&#x64CD;&#x4F5C;&#x548C;&#x5199;&#x64CD;&#x4F5C;&#x3002;</p>
+</li>
+<li><p>&#x8FD9;&#x91CC;&#x7684;&#x5B9E;&#x4F53;&#x53EF;&#x4EE5;&#x662F;</p>
+<ul>
+<li>&#x4E00;&#x4E2A;&#x786C;&#x4EF6;&#x8BBE;&#x5907;</li>
+<li>&#x4E00;&#x4E2A;&#x6587;&#x4EF6;</li>
+<li>&#x4E00;&#x4E2A;&#x7F51;&#x7EDC;&#x5957;&#x63A5;&#x5B57;</li>
+<li>&#x4E00;&#x4E2A;&#x80FD;&#x591F;&#x6267;&#x884C;&#x4E00;&#x4E2A;&#x6216;&#x8005;&#x591A;&#x4E2A;&#x4E0D;&#x540C;&#x7684; I/O &#x64CD;&#x4F5C;&#x7684;&#x7A0B;&#x5E8F;&#x7EC4;&#x4EF6;</li>
+<li>&#x3002;&#x3002;&#x3002;</li>
+</ul>
+</li>
+<li><p>&#x53EF;&#x4EE5;&#x628A; Channel &#x770B;&#x4F5C;&#x662F;&#x4F20;&#x5165;(&#x5165;&#x7AD9;)&#x6216;&#x8005;&#x4F20;&#x51FA;(&#x51FA;&#x7AD9;)&#x6570;&#x636E;&#x7684;&#x8F7D;&#x4F53;&#x3002;&#x56E0;&#x6B64;, &#x5B83;&#x53EF;&#x4EE5;&#x88AB;&#x6253;&#x5F00;&#x6216;&#x8005;&#x88AB;&#x5173;&#x95ED;, &#x8FDE;&#x63A5;&#x6216;&#x8005;&#x65AD;&#x5F00;&#x8FDE;&#x63A5;&#x3002;</p>
+</li>
+</ul>
+<h3 id="&#x56DE;&#x8C03;"><a name="&#x56DE;&#x8C03;" class="anchor-navigation-ex-anchor" href="#&#x56DE;&#x8C03;"><i class="fa fa-link" aria-hidden="true"></i></a>1.3.2. &#x56DE;&#x8C03;</h3>
+<ul>
+<li><p>&#x4E00;&#x4E2A;&#x56DE;&#x8C03;&#x5176;&#x5B9E;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;, &#x4E00;&#x4E2A;&#x6307;&#x5411;&#x5DF2;&#x7ECF;&#x88AB;&#x63D0;&#x4F9B;&#x7ED9;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#x7684;&#x65B9;&#x6CD5;&#x7684;&#x5F15;&#x7528;&#x3002;&#x8FD9;&#x4F7F;&#x5F97;&#x540E;&#x8005;&#x53EF;&#x4EE5;&#x5728;&#x9002;&#x5F53;&#x7684;&#x65F6;&#x5019;&#x8C03;&#x7528;&#x524D;&#x8005;&#x3002;</p>
+</li>
+<li><p>&#x56DE;&#x8C03;&#x5728;&#x5E7F;&#x6CDB;&#x7684;&#x7F16;&#x7A0B;&#x573A;&#x666F;&#x4E2D;&#x90FD;&#x6709;&#x5E94;&#x7528;, &#x800C;&#x4E14;&#x4E5F;&#x662F;&#x5728;&#x64CD;&#x4F5C;&#x5B8C;&#x6210;&#x540E;&#x901A;&#x77E5;&#x76F8;&#x5173;&#x65B9;&#x6700;&#x5E38;&#x89C1;&#x7684;&#x65B9;&#x5F0F;&#x4E4B;&#x4E00;&#x3002;</p>
+</li>
+<li><p>Netty &#x5728;&#x5185;&#x90E8;&#x4F7F;&#x7528;&#x4E86;&#x56DE;&#x8C03;&#x6765;&#x5904;&#x7406;&#x4E8B;&#x4EF6;; &#x5F53;&#x4E00;&#x4E2A;&#x56DE;&#x8C03;&#x88AB;&#x89E6;&#x53D1;&#x65F6;, &#x76F8;&#x5173;&#x7684;&#x4E8B;&#x4EF6;&#x53EF;&#x4EE5;&#x88AB;&#x4E00;&#x4E2A; ChannelHandler &#x63A5;&#x53E3;&#x7684;&#x5B9E;&#x73B0;&#x5904;&#x7406;&#x3002;</p>
+</li>
+<li><p><a href="https://gitee.com/Little-Captain/learn-netty/blob/master/c01/src/main/java/net/lc/ConnectHandler.java" target="_blank">&#x793A;&#x4F8B;&#x4EE3;&#x7801;</a></p>
+</li>
+</ul>
+<h3 id="future"><a name="future" class="anchor-navigation-ex-anchor" href="#future"><i class="fa fa-link" aria-hidden="true"></i></a>1.3.3. Future</h3>
+<ul>
+<li><p>Future &#x63D0;&#x4F9B;&#x4E86;&#x53E6;&#x4E00;&#x79CD;&#x5728;&#x64CD;&#x4F5C;&#x5B8C;&#x6210;&#x65F6;&#x901A;&#x77E5;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x65B9;&#x5F0F;&#x3002;</p>
+</li>
+<li><p>Future &#x5BF9;&#x8C61;&#x53EF;&#x4EE5;&#x770B;&#x4F5C;&#x662F;&#x4E00;&#x4E2A;&#x5F02;&#x6B65;&#x64CD;&#x4F5C;&#x7684;&#x7ED3;&#x679C;&#x7684;&#x5360;&#x4F4D;&#x7B26;; &#x5B83;&#x5C06;&#x5728;&#x672A;&#x6765;&#x7684;&#x67D0;&#x4E2A;&#x65F6;&#x523B;&#x5B8C;&#x6210;, &#x5E76;&#x63D0;&#x4F9B;&#x5BF9;&#x5176;&#x7ED3;&#x679C;&#x7684;&#x8BBF;&#x95EE;&#x3002;</p>
+</li>
+<li><p>JDK &#x9884;&#x7F6E;&#x4E86; java.util.concurrent.Future &#x63A5;&#x53E3;, &#x4F46;&#x662F;&#x5176;&#x6240;&#x63D0;&#x4F9B;&#x7684;&#x5B9E;&#x73B0;, &#x53EA;&#x5141;&#x8BB8;&#x624B;&#x52A8;&#x68C0;&#x67E5;&#x5BF9;&#x5E94;&#x7684;&#x64CD;&#x4F5C;&#x662F;&#x5426;&#x5DF2;&#x7ECF;&#x5B8C;&#x6210;, &#x6216;&#x8005;&#x4E00;&#x76F4;&#x963B;&#x585E;&#x76F4;&#x5230;&#x5B83;&#x5B8C;&#x6210;&#x3002;</p>
+</li>
+<li><p>Netty &#x63D0;&#x4F9B;&#x4E86;&#x5B83;&#x81EA;&#x5DF1;&#x7684; Future &#x5B9E;&#x73B0; -- ChannelFuture, &#x7528;&#x4E8E;&#x5728;&#x6267;&#x884C;&#x5F02;&#x6B65;&#x64CD;&#x4F5C;&#x7684;&#x65F6;&#x5019;&#x4F7F;&#x7528;&#x3002;</p>
+</li>
+<li><p>ChannelFuture &#x63D0;&#x4F9B;&#x4E86;&#x51E0;&#x79CD;&#x989D;&#x5916;&#x7684;&#x65B9;&#x6CD5;, &#x8FD9;&#x4E9B;&#x65B9;&#x6CD5;&#x4F7F;&#x5F97;&#x5F00;&#x53D1;&#x8005;&#x80FD;&#x591F;&#x6CE8;&#x518C;&#x4E00;&#x4E2A;&#x6216;&#x8005;&#x591A;&#x4E2A; ChannelFutureListener &#x5B9E;&#x4F8B;&#x3002;</p>
+<ul>
+<li>&#x76D1;&#x542C;&#x5668;&#x7684;&#x56DE;&#x8C03;&#x65B9;&#x6CD5; operationComplete(), &#x5C06;&#x4F1A;&#x5728;&#x5BF9;&#x5E94;&#x7684;&#x64CD;&#x4F5C;&#x5B8C;&#x6210;&#x65F6;&#x88AB;&#x8C03;&#x7528;&#x3002;</li>
+<li>&#x7136;&#x540E;&#x76D1;&#x542C;&#x5668;&#x53EF;&#x4EE5;&#x5224;&#x65AD;&#x8BE5;&#x64CD;&#x4F5C;&#x662F;&#x6210;&#x529F;&#x5730;&#x5B8C;&#x6210;&#x4E86;&#x8FD8;&#x662F;&#x51FA;&#x9519;&#x4E86;&#x3002;&#x5982;&#x679C;&#x662F;&#x540E;&#x8005;, &#x53EF;&#x4EE5;&#x68C0;&#x7D22;&#x4EA7;&#x751F;&#x7684; Throwable&#x3002;</li>
+<li>&#x7B80;&#x800C;&#x8A00;&#x4E4B;, &#x7531; ChannelFutureListener &#x63D0;&#x4F9B;&#x7684;&#x901A;&#x77E5;&#x673A;&#x5236;&#x6D88;&#x9664;&#x4E86;&#x624B;&#x52A8;&#x68C0;&#x67E5;&#x5BF9;&#x5E94;&#x7684;&#x64CD;&#x4F5C;&#x662F;&#x5426;&#x5B8C;&#x6210;&#x7684;&#x5FC5;&#x8981;&#x3002;</li>
+</ul>
+</li>
+<li><p>&#x6BCF;&#x4E2A; Netty &#x7684;&#x51FA;&#x7AD9; I/O &#x64CD;&#x4F5C;&#x90FD;&#x5C06;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A; ChannelFuture; &#x4E5F;&#x5C31;&#x662F;&#x8BF4;, &#x5B83;&#x4EEC;&#x90FD;&#x4E0D;&#x4F1A;&#x963B;&#x585E;&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;Netty &#x5B8C;&#x5168;&#x662F;&#x5F02;&#x6B65;&#x548C;&#x4E8B;&#x4EF6;&#x9A71;&#x52A8;&#x7684;&#x3002;</p>
+</li>
+<li><p><a href="https://gitee.com/Little-Captain/learn-netty/blob/master/c01/src/main/java/net/lc/ConnectExample.java" target="_blank">&#x793A;&#x4F8B;&#x4EE3;&#x7801;</a></p>
+</li>
+<li><p>&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;, &#x5BF9;&#x9519;&#x8BEF;&#x7684;&#x5904;&#x7406;&#x5B8C;&#x5168;&#x53D6;&#x51B3;&#x4E8E;&#x5F00;&#x53D1;&#x8005;&#x3001;&#x76EE;&#x6807;, &#x5F53;&#x7136;&#x4E5F;&#x5305;&#x62EC;&#x76EE;&#x524D;&#x4EFB;&#x4F55;&#x5BF9;&#x4E8E;&#x7279;&#x5B9A;&#x7C7B;&#x578B;&#x7684;&#x9519;&#x8BEF;&#x52A0;&#x4EE5;&#x7684;&#x9650;&#x5236;&#x3002;</p>
+</li>
+<li><p>&#x53EF;&#x4EE5;&#x628A; ChannelFutureListener &#x770B;&#x4F5C;&#x662F;&#x56DE;&#x8C03;&#x7684;&#x4E00;&#x4E2A;&#x66F4;&#x52A0;&#x7CBE;&#x7EC6;&#x7684;&#x7248;&#x672C;&#x3002;&#x4E8B;&#x5B9E;&#x4E0A;, &#x56DE;&#x8C03;&#x548C; Future &#x662F;&#x76F8;&#x4E92;&#x8865;&#x5145;&#x7684;&#x673A;&#x5236;; &#x5B83;&#x4EEC;&#x76F8;&#x4E92;&#x7ED3;&#x5408;, &#x6784;&#x6210;&#x4E86; Netty &#x672C;&#x8EAB;&#x7684;&#x5173;&#x952E;&#x6784;&#x4EF6;&#x5757;&#x4E4B;&#x4E00;&#x3002;</p>
+</li>
+</ul>
+<h3 id="&#x4E8B;&#x4EF6;&#x548C;-channelhandler"><a name="&#x4E8B;&#x4EF6;&#x548C;-channelhandler" class="anchor-navigation-ex-anchor" href="#&#x4E8B;&#x4EF6;&#x548C;-channelhandler"><i class="fa fa-link" aria-hidden="true"></i></a>1.3.4. &#x4E8B;&#x4EF6;&#x548C; ChannelHandler</h3>
+<ul>
+<li>Netty &#x4F7F;&#x7528;&#x4E0D;&#x540C;&#x7684;&#x4E8B;&#x4EF6;&#x6765;&#x901A;&#x77E5;&#x72B6;&#x6001;&#x7684;&#x6539;&#x53D8;&#x6216;&#x8005;&#x662F;&#x64CD;&#x4F5C;&#x7684;&#x72B6;&#x6001;&#x3002;&#x8FD9;&#x4F7F;&#x5F97;&#x5F00;&#x53D1;&#x8005;&#x80FD;&#x591F;&#x57FA;&#x4E8E;&#x5DF2;&#x7ECF;&#x53D1;&#x751F;&#x7684;&#x4E8B;&#x4EF6;&#x6765;&#x89E6;&#x53D1;&#x9002;&#x5F53;&#x7684;&#x52A8;&#x4F5C;&#x3002;&#x8FD9;&#x4E9B;&#x52A8;&#x4F5C;&#x53EF;&#x80FD;&#x662F;:</li>
+<li>&#x8BB0;&#x5F55;&#x65E5;&#x5FD7;;</li>
+<li>&#x6570;&#x636E;&#x8F6C;&#x6362;;</li>
+<li>&#x6D41;&#x63A7;&#x5236;;</li>
+<li><p>&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x903B;&#x8F91;&#x3002;</p>
+</li>
+<li><p>Netty &#x662F;&#x4E00;&#x4E2A;&#x7F51;&#x7EDC;&#x7F16;&#x7A0B;&#x6846;&#x67B6;, &#x6240;&#x4EE5;&#x4E8B;&#x4EF6;&#x662F;&#x6309;&#x7167;&#x5B83;&#x4EEC;&#x4E0E;&#x5165;&#x7AD9;&#x6216;&#x51FA;&#x7AD9;&#x6570;&#x636E;&#x6D41;&#x7684;&#x76F8;&#x5173;&#x6027;&#x8FDB;&#x884C;&#x5206;&#x7C7B;&#x7684;&#x3002;</p>
+</li>
+<li><p>&#x53EF;&#x80FD;&#x7531;&#x5165;&#x7AD9;&#x6570;&#x636E;&#x6216;&#x8005;&#x76F8;&#x5173;&#x7684;&#x72B6;&#x6001;&#x66F4;&#x6539;&#x800C;&#x89E6;&#x53D1;&#x7684;&#x4E8B;&#x4EF6;&#x5305;&#x62EC;:</p>
+<ul>
+<li>&#x8FDE;&#x63A5;&#x5DF2;&#x88AB;&#x6FC0;&#x6D3B;&#x6216;&#x8005;&#x8FDE;&#x63A5;&#x5931;&#x6D3B;;</li>
+<li>&#x6570;&#x636E;&#x8BFB;&#x53D6;;</li>
+<li>&#x7528;&#x6237;&#x4E8B;&#x4EF6;;</li>
+<li>&#x9519;&#x8BEF;&#x4E8B;&#x4EF6;&#x3002;</li>
+</ul>
+</li>
+<li><p>&#x51FA;&#x7AD9;&#x4E8B;&#x4EF6;&#x662F;&#x672A;&#x6765;&#x5C06;&#x4F1A;&#x89E6;&#x53D1;&#x7684;&#x67D0;&#x4E2A;&#x52A8;&#x4F5C;&#x7684;&#x64CD;&#x4F5C;&#x7ED3;&#x679C;, &#x8FD9;&#x4E9B;&#x52A8;&#x4F5C;&#x5305;&#x62EC;:</p>
+<ul>
+<li>&#x6253;&#x5F00;&#x6216;&#x8005;&#x5173;&#x95ED;&#x5230;&#x8FDC;&#x7A0B;&#x8282;&#x70B9;&#x7684;&#x8FDE;&#x63A5;;</li>
+<li>&#x5C06;&#x6570;&#x636E;&#x5199;&#x5230;&#x6216;&#x8005;&#x51B2;&#x5237;&#x5230;&#x5957;&#x63A5;&#x5B57;&#x3002;</li>
+</ul>
+</li>
+<li><p>&#x6BCF;&#x4E2A;&#x4E8B;&#x4EF6;&#x90FD;&#x53EF;&#x4EE5;&#x88AB;&#x5206;&#x53D1;&#x7ED9; ChannelHandler &#x7C7B;&#x4E2D;&#x7684;&#x67D0;&#x4E2A;&#x7528;&#x6237;&#x5B9E;&#x73B0;&#x7684;&#x65B9;&#x6CD5;&#x3002;</p>
+</li>
+<li><p>&#x6D41;&#x7ECF; ChannelHandler &#x94FE;&#x7684;&#x5165;&#x7AD9;&#x4E8B;&#x4EF6;&#x548C;&#x51FA;&#x7AD9;&#x4E8B;&#x4EF6;</p>
+</li>
+</ul>
+<p><img src="../../images/in_out.png" alt="&#x51FA;&#x5165;&#x7AD9;&#x4E8B;&#x4EF6;"></p>
+<ul>
+<li><p>Netty &#x7684; ChannelHandler &#x4E3A;&#x5904;&#x7406;&#x5668;&#x63D0;&#x4F9B;&#x4E86;&#x57FA;&#x672C;&#x7684;&#x62BD;&#x8C61;&#x3002;</p>
+</li>
+<li><p>&#x53EF;&#x4EE5;&#x8BA4;&#x4E3A;&#x6BCF;&#x4E2A; ChannelHandler &#x7684;&#x5B9E;&#x4F8B;&#x90FD;&#x7C7B;&#x4F3C;&#x4E8E;&#x4E00;&#x79CD;&#x4E3A;&#x4E86;&#x54CD;&#x5E94;&#x7279;&#x5B9A;&#x4E8B;&#x4EF6;&#x800C;&#x88AB;&#x6267;&#x884C;&#x7684;&#x56DE;&#x8C03;&#x3002;</p>
+</li>
+<li><p>Netty &#x63D0;&#x4F9B;&#x4E86;&#x5927;&#x91CF;&#x9884;&#x5B9A;&#x4E49;&#x7684;&#x53EF;&#x4EE5;&#x5F00;&#x7BB1;&#x5373;&#x7528;&#x7684; ChannelHandler &#x5B9E;&#x73B0;, &#x5305;&#x62EC;&#x7528;&#x4E8E;&#x5404;&#x79CD;&#x534F;&#x8BAE;&#x7684; ChannelHandler&#x3002;</p>
+</li>
+<li><p>&#x5728;&#x5185;&#x90E8;, ChannelHandler &#x81EA;&#x5DF1;&#x4E5F;&#x4F7F;&#x7528;&#x4E86;&#x4E8B;&#x4EF6;&#x548C; Future, &#x4F7F;&#x5F97;&#x5B83;&#x4EEC;&#x4E5F;&#x6210;&#x4E3A;&#x4E86;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4E2D;&#x5C06;&#x4F7F;&#x7528;&#x7684;&#x76F8;&#x540C;&#x62BD;&#x8C61;&#x7684;&#x6D88;&#x8D39;&#x8005;&#x3002;</p>
+</li>
+</ul>
+<h3 id="&#x603B;&#x7ED3;"><a name="&#x603B;&#x7ED3;" class="anchor-navigation-ex-anchor" href="#&#x603B;&#x7ED3;"><i class="fa fa-link" aria-hidden="true"></i></a>1.3.5. &#x603B;&#x7ED3;</h3>
+<h4 id="future&#x3001;&#x56DE;&#x8C03;&#x548C;-channelhandler"><a name="future&#x3001;&#x56DE;&#x8C03;&#x548C;-channelhandler" class="anchor-navigation-ex-anchor" href="#future&#x3001;&#x56DE;&#x8C03;&#x548C;-channelhandler"><i class="fa fa-link" aria-hidden="true"></i></a>Future&#x3001;&#x56DE;&#x8C03;&#x548C; ChannelHandler</h4>
+<ul>
+<li><p>Netty &#x7684;&#x5F02;&#x6B65;&#x7F16;&#x7A0B;&#x6A21;&#x578B;&#x662F;&#x5EFA;&#x7ACB;&#x5728; Future &#x548C;&#x56DE;&#x8C03;&#x7684;&#x6982;&#x5FF5;&#x4E4B;&#x4E0A;&#x7684;, &#x800C;&#x5C06;&#x4E8B;&#x4EF6;&#x6D3E;&#x53D1;&#x5230; ChannelHandler &#x7684;&#x65B9;&#x6CD5;&#x5219;&#x53D1;&#x751F;&#x5728;&#x66F4;&#x6DF1;&#x7684;&#x5C42;&#x6B21;&#x4E0A;&#x3002;&#x7ED3;&#x5408;&#x5728;&#x4E00;&#x8D77;, &#x8FD9;&#x4E9B;&#x5143;&#x7D20;&#x5C31;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;&#x5904;&#x7406;&#x73AF;&#x5883;,
+&#x4F7F;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x903B;&#x8F91;&#x53EF;&#x4EE5;&#x72EC;&#x7ACB;&#x4E8E;&#x4EFB;&#x4F55;&#x7F51;&#x7EDC;&#x64CD;&#x4F5C;&#x76F8;&#x5173;&#x7684;&#x987E;&#x8651;&#x800C;&#x72EC;&#x7ACB;&#x5730;&#x6F14;&#x53D8;&#x3002;&#x8FD9;&#x4E5F;&#x662F; Netty &#x7684;&#x8BBE;&#x8BA1;&#x65B9;&#x5F0F;&#x7684;&#x4E00;&#x4E2A;&#x5173;&#x952E;&#x76EE;&#x6807;&#x3002;</p>
+</li>
+<li><p>&#x62E6;&#x622A;&#x64CD;&#x4F5C;&#x4EE5;&#x53CA;&#x9AD8;&#x901F;&#x5730;&#x8F6C;&#x6362;&#x5165;&#x7AD9;&#x6570;&#x636E;&#x548C;&#x51FA;&#x7AD9;&#x6570;&#x636E;, &#x90FD;&#x53EA;&#x9700;&#x8981;&#x5F00;&#x53D1;&#x8005;&#x63D0;&#x4F9B;&#x56DE;&#x8C03;&#x6216;&#x8005;&#x5229;&#x7528;&#x64CD;&#x4F5C;&#x6240;&#x8FD4;&#x56DE;&#x7684; Future&#x3002;&#x8FD9;&#x4F7F;&#x5F97;&#x94FE;&#x63A5;&#x64CD;&#x4F5C;&#x53D8;&#x5F97;&#x65E2;&#x7B80;&#x5355;&#x53C8;&#x9AD8;&#x6548;, &#x5E76;&#x4E14;&#x4FC3;&#x8FDB;&#x4E86;&#x53EF;&#x91CD;&#x7528;&#x7684;&#x901A;&#x7528;&#x4EE3;&#x7801;&#x7684;&#x7F16;&#x5199;&#x3002;</p>
+</li>
+</ul>
+<h4 id="&#x9009;&#x62E9;&#x5668;&#x3001;&#x4E8B;&#x4EF6;&#x548C;-eventloop"><a name="&#x9009;&#x62E9;&#x5668;&#x3001;&#x4E8B;&#x4EF6;&#x548C;-eventloop" class="anchor-navigation-ex-anchor" href="#&#x9009;&#x62E9;&#x5668;&#x3001;&#x4E8B;&#x4EF6;&#x548C;-eventloop"><i class="fa fa-link" aria-hidden="true"></i></a>&#x9009;&#x62E9;&#x5668;&#x3001;&#x4E8B;&#x4EF6;&#x548C; EventLoop</h4>
+<ul>
+<li><p>Netty &#x901A;&#x8FC7;&#x89E6;&#x53D1;&#x4E8B;&#x4EF6;&#x5C06; Selector &#x4ECE;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4E2D;&#x62BD;&#x8C61;&#x51FA;&#x6765;, &#x6D88;&#x9664;&#x4E86;&#x6240;&#x6709;&#x672C;&#x6765;&#x5C06;&#x9700;&#x8981;&#x624B;&#x52A8;&#x7F16;&#x5199;&#x7684;&#x6D3E;&#x53D1;&#x4EE3;&#x7801;&#x3002;</p>
+</li>
+<li><p>&#x5728;&#x5185;&#x90E8;, &#x5C06;&#x4F1A;&#x4E3A;&#x6BCF;&#x4E2A; Channel &#x5206;&#x914D;&#x4E00;&#x4E2A; EventLoop, &#x7528;&#x4EE5;&#x5904;&#x7406;&#x6240;&#x6709;&#x4E8B;&#x4EF6;, &#x5305;&#x62EC;:</p>
+<ul>
+<li>&#x6CE8;&#x518C;&#x611F;&#x5174;&#x8DA3;&#x7684;&#x4E8B;&#x4EF6;;</li>
+<li>&#x5C06;&#x4E8B;&#x4EF6;&#x6D3E;&#x53D1;&#x7ED9; ChannelHandler;</li>
+<li>&#x5B89;&#x6392;&#x8FDB;&#x4E00;&#x6B65;&#x7684;&#x52A8;&#x4F5C;&#x3002;</li>
+</ul>
+</li>
+<li><p>EventLoop &#x672C;&#x8EAB;&#x53EA;&#x7531;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x9A71;&#x52A8;, &#x5176;&#x5904;&#x7406;&#x4E86;&#x4E00;&#x4E2A; Channel &#x7684;&#x6240;&#x6709; I/O &#x4E8B;&#x4EF6;, &#x5E76;&#x4E14;&#x5728;&#x8BE5; EventLoop &#x7684;&#x6574;&#x4E2A;&#x751F;&#x547D;&#x5468;&#x671F;&#x5185;&#x90FD;&#x4E0D;&#x4F1A;&#x6539;&#x53D8;&#x3002;&#x56E0;&#x6B64;, &#x5F00;&#x53D1;&#x8005;&#x53EF;&#x4EE5;&#x4E13;&#x6CE8;&#x4E8E;&#x63D0;&#x4F9B;&#x6B63;&#x786E;&#x7684;&#x903B;&#x8F91;, &#x7528;&#x6765;&#x5728;&#x6709;&#x611F;&#x5174;&#x8DA3;&#x7684;&#x6570;&#x636E;&#x8981;&#x5904;&#x7406;&#x7684;&#x65F6;&#x5019;&#x6267;&#x884C;&#x3002;</p>
+</li>
+</ul>
+
                                 
                                 </section>
                             
@@ -509,7 +735,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第1章 Netty -- 异步和事件驱动","level":"1.2.1","depth":2,"next":{"title":"第2章 你的第一款 Netty 应用程序","level":"1.2.2","depth":2,"path":"chapters/part1/02.md","ref":"./chapters/part1/02.md","articles":[]},"previous":{"title":"第一部分 -- Netty 的概念及体系结构","level":"1.2","depth":1,"path":"chapters/part1/SUMMARY.md","ref":"./chapters/part1/SUMMARY.md","articles":[{"title":"第1章 Netty -- 异步和事件驱动","level":"1.2.1","depth":2,"path":"chapters/part1/01.md","ref":"./chapters/part1/01.md","articles":[]},{"title":"第2章 你的第一款 Netty 应用程序","level":"1.2.2","depth":2,"path":"chapters/part1/02.md","ref":"./chapters/part1/02.md","articles":[]},{"title":"第3章 Netty 的组件和设计","level":"1.2.3","depth":2,"path":"chapters/part1/03.md","ref":"./chapters/part1/03.md","articles":[]},{"title":"第4章 传输","level":"1.2.4","depth":2,"path":"chapters/part1/04.md","ref":"./chapters/part1/04.md","articles":[]},{"title":"第5章 ByteBuf","level":"1.2.5","depth":2,"path":"chapters/part1/05.md","ref":"./chapters/part1/05.md","articles":[]},{"title":"第6章 ChannelHandler 和 ChannelPipeline","level":"1.2.6","depth":2,"path":"chapters/part1/06.md","ref":"./chapters/part1/06.md","articles":[]},{"title":"第7章 EventLoop 和线程模型","level":"1.2.7","depth":2,"path":"chapters/part1/07.md","ref":"./chapters/part1/07.md","articles":[]},{"title":"第8章 引导","level":"1.2.8","depth":2,"path":"chapters/part1/08.md","ref":"./chapters/part1/08.md","articles":[]},{"title":"第9章 单元测试","level":"1.2.9","depth":2,"path":"chapters/part1/09.md","ref":"./chapters/part1/09.md","articles":[]}]},"dir":"neutral"},"config":{"plugins":["splitter","anchor-navigation-ex","-sharing","sharing-plus","-highlight","prism"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"night","family":"serif","size":2},"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"sharing":{"weibo":true,"qzone":true,"qq":true,"douban":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"Little Captain","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Learn-Linux","gitbook":"*","description":"Learn-Linux"},"file":{"path":"chapters/part1/01.md","mtime":"2021-08-14T12:39:04.834Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-08-14T14:16:09.415Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第1章 Netty -- 异步和事件驱动","level":"1.2.1","depth":2,"next":{"title":"第2章 你的第一款 Netty 应用程序","level":"1.2.2","depth":2,"path":"chapters/part1/02.md","ref":"./chapters/part1/02.md","articles":[]},"previous":{"title":"第一部分 -- Netty 的概念及体系结构","level":"1.2","depth":1,"path":"chapters/part1/SUMMARY.md","ref":"./chapters/part1/SUMMARY.md","articles":[{"title":"第1章 Netty -- 异步和事件驱动","level":"1.2.1","depth":2,"path":"chapters/part1/01.md","ref":"./chapters/part1/01.md","articles":[]},{"title":"第2章 你的第一款 Netty 应用程序","level":"1.2.2","depth":2,"path":"chapters/part1/02.md","ref":"./chapters/part1/02.md","articles":[]},{"title":"第3章 Netty 的组件和设计","level":"1.2.3","depth":2,"path":"chapters/part1/03.md","ref":"./chapters/part1/03.md","articles":[]},{"title":"第4章 传输","level":"1.2.4","depth":2,"path":"chapters/part1/04.md","ref":"./chapters/part1/04.md","articles":[]},{"title":"第5章 ByteBuf","level":"1.2.5","depth":2,"path":"chapters/part1/05.md","ref":"./chapters/part1/05.md","articles":[]},{"title":"第6章 ChannelHandler 和 ChannelPipeline","level":"1.2.6","depth":2,"path":"chapters/part1/06.md","ref":"./chapters/part1/06.md","articles":[]},{"title":"第7章 EventLoop 和线程模型","level":"1.2.7","depth":2,"path":"chapters/part1/07.md","ref":"./chapters/part1/07.md","articles":[]},{"title":"第8章 引导","level":"1.2.8","depth":2,"path":"chapters/part1/08.md","ref":"./chapters/part1/08.md","articles":[]},{"title":"第9章 单元测试","level":"1.2.9","depth":2,"path":"chapters/part1/09.md","ref":"./chapters/part1/09.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["splitter","anchor-navigation-ex","-sharing","sharing-plus","-highlight","prism"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"night","family":"serif","size":2},"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"sharing":{"weibo":true,"qzone":true,"qq":true,"douban":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"Little Captain","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Learn-Linux","gitbook":"*","description":"Learn-Linux"},"file":{"path":"chapters/part1/01.md","mtime":"2021-08-14T16:52:37.617Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-08-14T17:12:53.663Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
