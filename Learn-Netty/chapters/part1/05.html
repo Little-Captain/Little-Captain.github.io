@@ -466,7 +466,47 @@
     
                                 <section class="normal markdown-section">
                                 
-                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#&#x7B2C;5&#x7AE0;-bytebuf"><b>1. </b>&#x7B2C;5&#x7AE0; ByteBuf</a></li><ul><li><span class="title-icon "></span><a href="#bytebuf-&#x7684;-api"><b>1.1. </b>ByteBuf &#x7684; API</a></li><li><span class="title-icon "></span><a href="#bytebuf-&#x7C7B;----netty-&#x7684;&#x6570;&#x636E;&#x5BB9;&#x5668;"><b>1.2. </b>ByteBuf &#x7C7B; -- Netty &#x7684;&#x6570;&#x636E;&#x5BB9;&#x5668;</a></li><ul><li><span class="title-icon "></span><a href="#bytebuf-&#x662F;&#x5982;&#x4F55;&#x5DE5;&#x4F5C;&#x7684;"><b>1.2.1. </b>ByteBuf &#x662F;&#x5982;&#x4F55;&#x5DE5;&#x4F5C;&#x7684;</a></li><li><span class="title-icon "></span><a href="#bytebuf-&#x7684;&#x4F7F;&#x7528;&#x6A21;&#x5F0F;"><b>1.2.2. </b>ByteBuf &#x7684;&#x4F7F;&#x7528;&#x6A21;&#x5F0F;</a></li></ul><li><span class="title-icon "></span><a href="#&#x5B57;&#x8282;&#x7EA7;&#x64CD;&#x4F5C;"><b>1.3. </b>&#x5B57;&#x8282;&#x7EA7;&#x64CD;&#x4F5C;</a></li></ul></ul></div><a href="#&#x7B2C;5&#x7AE0;-bytebuf" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x7B2C;5&#x7AE0;-bytebuf"><a name="&#x7B2C;5&#x7AE0;-bytebuf" class="anchor-navigation-ex-anchor" href="#&#x7B2C;5&#x7AE0;-bytebuf"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x7B2C;5&#x7AE0; ByteBuf</h1>
+<ul>
+<li><p>&#x7F51;&#x7EDC;&#x6570;&#x636E;&#x7684;&#x57FA;&#x672C;&#x5355;&#x4F4D;&#x603B;&#x662F;&#x5B57;&#x8282;&#x3002;</p>
+</li>
+<li><p>Java NIO &#x63D0;&#x4F9B;&#x4E86; ByteBuffer &#x4F5C;&#x4E3A;&#x5B83;&#x7684;&#x5B57;&#x8282;&#x5BB9;&#x5668;, &#x4F46;&#x662F;&#x8FD9;&#x4E2A;&#x7C7B;&#x4F7F;&#x7528;&#x8D77;&#x6765;&#x8FC7;&#x4E8E;&#x590D;&#x6742;, &#x800C;&#x4E14;&#x4E5F;&#x6709;&#x4E9B;&#x7E41;&#x7410;&#x3002;</p>
+</li>
+<li><p>Netty &#x7684; ByteBuffer &#x66FF;&#x4EE3;&#x54C1;&#x662F; ByteBuf, &#x4E00;&#x4E2A;&#x5F3A;&#x5927;&#x7684;&#x5B9E;&#x73B0;, &#x65E2;&#x89E3;&#x51B3;&#x4E86; JDK API &#x7684;&#x5C40;&#x9650;&#x6027;, &#x53C8;&#x4E3A;&#x7F51;&#x7EDC;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x5F00;&#x53D1;&#x8005;&#x63D0;&#x4F9B;&#x4E86;&#x66F4;&#x597D;&#x7684; API&#x3002;</p>
+</li>
+</ul>
+<h2 id="bytebuf-&#x7684;-api"><a name="bytebuf-&#x7684;-api" class="anchor-navigation-ex-anchor" href="#bytebuf-&#x7684;-api"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. ByteBuf &#x7684; API</h2>
+<ul>
+<li><p>Netty &#x7684;&#x6570;&#x636E;&#x5904;&#x7406; API &#x901A;&#x8FC7;&#x4E24;&#x4E2A;&#x7EC4;&#x4EF6;&#x66B4;&#x9732;</p>
+<ul>
+<li>abstract class ByteBuf</li>
+<li>interface ByteBufHolder</li>
+</ul>
+</li>
+<li><p>&#x4E00;&#x4E9B; ByteBuf API &#x7684;&#x4F18;&#x70B9;</p>
+<ul>
+<li>&#x5B83;&#x53EF;&#x4EE5;&#x88AB;&#x7528;&#x6237;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x7F13;&#x51B2;&#x533A;&#x7C7B;&#x578B;&#x6269;&#x5C55;;</li>
+<li>&#x901A;&#x8FC7;&#x5185;&#x7F6E;&#x7684;&#x590D;&#x5408;&#x7F13;&#x51B2;&#x533A;&#x7C7B;&#x578B;&#x5B9E;&#x73B0;&#x4E86;&#x900F;&#x660E;&#x7684;&#x96F6;&#x62F7;&#x8D1D;;</li>
+<li>&#x5BB9;&#x91CF;&#x53EF;&#x4EE5;&#x6309;&#x9700;&#x589E;&#x957F;(&#x7C7B;&#x4F3C;&#x4E8E; JDK &#x7684; StringBuilder);</li>
+<li>&#x5728;&#x8BFB;&#x548C;&#x5199;&#x8FD9;&#x4E24;&#x79CD;&#x6A21;&#x5F0F;&#x4E4B;&#x95F4;&#x5207;&#x6362;&#x4E0D;&#x9700;&#x8981;&#x8C03;&#x7528; ByteBuffer &#x7684; flip() &#x65B9;&#x6CD5;;</li>
+<li>&#x8BFB;&#x548C;&#x5199;&#x4F7F;&#x7528;&#x4E86;&#x4E0D;&#x540C;&#x7684;&#x7D22;&#x5F15;;</li>
+<li>&#x652F;&#x6301;&#x65B9;&#x6CD5;&#x7684;&#x94FE;&#x5F0F;&#x8C03;&#x7528;;</li>
+<li>&#x652F;&#x6301;&#x5F15;&#x7528;&#x8BA1;&#x6570;;</li>
+<li>&#x652F;&#x6301;&#x6C60;&#x5316;&#x3002;</li>
+</ul>
+</li>
+</ul>
+<h2 id="bytebuf-&#x7C7B;----netty-&#x7684;&#x6570;&#x636E;&#x5BB9;&#x5668;"><a name="bytebuf-&#x7C7B;----netty-&#x7684;&#x6570;&#x636E;&#x5BB9;&#x5668;" class="anchor-navigation-ex-anchor" href="#bytebuf-&#x7C7B;----netty-&#x7684;&#x6570;&#x636E;&#x5BB9;&#x5668;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. ByteBuf &#x7C7B; -- Netty &#x7684;&#x6570;&#x636E;&#x5BB9;&#x5668;</h2>
+<ul>
+<li><p>&#x56E0;&#x4E3A;&#x6240;&#x6709;&#x7684;&#x7F51;&#x7EDC;&#x901A;&#x4FE1;&#x90FD;&#x6D89;&#x53CA;&#x5B57;&#x8282;&#x5E8F;&#x5217;&#x7684;&#x79FB;&#x52A8;, &#x6240;&#x4EE5;&#x9AD8;&#x6548;&#x6613;&#x7528;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x660E;&#x663E;&#x662F;&#x5FC5;&#x4E0D;&#x53EF;&#x5C11;&#x7684;&#x3002;Netty &#x7684; ByteBuf &#x5B9E;&#x73B0;&#x6EE1;&#x8DB3;&#x5E76;&#x8D85;&#x8D8A;&#x4E86;&#x8FD9;&#x4E9B;&#x9700;&#x6C42;&#x3002;</p>
+</li>
+<li><p>Netty &#x901A;&#x8FC7;&#x4F7F;&#x7528;&#x4E0D;&#x540C;&#x7684;&#x7D22;&#x5F15;&#x6765;&#x7B80;&#x5316;&#x5BF9;&#x5B83;&#x6240;&#x5305;&#x542B;&#x7684;&#x6570;&#x636E;&#x7684;&#x8BFB;&#x5199;&#x64CD;&#x4F5C;&#x3002;</p>
+</li>
+</ul>
+<h3 id="bytebuf-&#x662F;&#x5982;&#x4F55;&#x5DE5;&#x4F5C;&#x7684;"><a name="bytebuf-&#x662F;&#x5982;&#x4F55;&#x5DE5;&#x4F5C;&#x7684;" class="anchor-navigation-ex-anchor" href="#bytebuf-&#x662F;&#x5982;&#x4F55;&#x5DE5;&#x4F5C;&#x7684;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2.1. ByteBuf &#x662F;&#x5982;&#x4F55;&#x5DE5;&#x4F5C;&#x7684;</h3>
+<h3 id="bytebuf-&#x7684;&#x4F7F;&#x7528;&#x6A21;&#x5F0F;"><a name="bytebuf-&#x7684;&#x4F7F;&#x7528;&#x6A21;&#x5F0F;" class="anchor-navigation-ex-anchor" href="#bytebuf-&#x7684;&#x4F7F;&#x7528;&#x6A21;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2.2. ByteBuf &#x7684;&#x4F7F;&#x7528;&#x6A21;&#x5F0F;</h3>
+<h2 id="&#x5B57;&#x8282;&#x7EA7;&#x64CD;&#x4F5C;"><a name="&#x5B57;&#x8282;&#x7EA7;&#x64CD;&#x4F5C;" class="anchor-navigation-ex-anchor" href="#&#x5B57;&#x8282;&#x7EA7;&#x64CD;&#x4F5C;"><i class="fa fa-link" aria-hidden="true"></i></a>1.3. &#x5B57;&#x8282;&#x7EA7;&#x64CD;&#x4F5C;</h2>
+
                                 
                                 </section>
                             
@@ -509,7 +549,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第5章 ByteBuf","level":"1.2.5","depth":2,"next":{"title":"第6章 ChannelHandler 和 ChannelPipeline","level":"1.2.6","depth":2,"path":"chapters/part1/06.md","ref":"./chapters/part1/06.md","articles":[]},"previous":{"title":"第4章 传输","level":"1.2.4","depth":2,"path":"chapters/part1/04.md","ref":"./chapters/part1/04.md","articles":[]},"dir":"neutral"},"config":{"plugins":["splitter","anchor-navigation-ex","-sharing","sharing-plus","-highlight","prism"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"night","family":"serif","size":2},"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"sharing":{"weibo":true,"qzone":true,"qq":true,"douban":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"Little Captain","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Learn-Linux","gitbook":"*","description":"Learn-Linux"},"file":{"path":"chapters/part1/05.md","mtime":"2021-08-14T12:39:04.837Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-08-15T05:50:56.961Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第5章 ByteBuf","level":"1.2.5","depth":2,"next":{"title":"第6章 ChannelHandler 和 ChannelPipeline","level":"1.2.6","depth":2,"path":"chapters/part1/06.md","ref":"./chapters/part1/06.md","articles":[]},"previous":{"title":"第4章 传输","level":"1.2.4","depth":2,"path":"chapters/part1/04.md","ref":"./chapters/part1/04.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","anchor-navigation-ex","-sharing","sharing-plus","-highlight","prism"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"night","family":"serif","size":2},"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"sharing":{"weibo":true,"qzone":true,"qq":true,"douban":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"Little Captain","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Learn-Linux","gitbook":"*","description":"Learn-Linux"},"file":{"path":"chapters/part1/05.md","mtime":"2021-08-15T07:16:49.080Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-08-15T07:19:29.138Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
