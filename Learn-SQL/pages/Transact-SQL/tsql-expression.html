@@ -1,0 +1,362 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Transact-SQL 表达式 · Learn-SQL</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Little Captain">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism-okaidia.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="tsql-procedure.html" />
+    
+    
+    <link rel="prev" href="tsql-control.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Transact-SQL</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="tsql-control.html">
+            
+                <a href="tsql-control.html">
+            
+                    
+                        <b>2.1.</b>
+                    
+                    Transact-SQL 控制流
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.2" data-path="tsql-expression.html">
+            
+                <a href="tsql-expression.html">
+            
+                    
+                        <b>2.2.</b>
+                    
+                    Transact-SQL 表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="tsql-procedure.html">
+            
+                <a href="tsql-procedure.html">
+            
+                    
+                        <b>2.3.</b>
+                    
+                    Transact-SQL 存储过程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Transact-SQL 表达式</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#transact-sql-&#x8868;&#x8FBE;&#x5F0F;"><b>1. </b>Transact-SQL &#x8868;&#x8FBE;&#x5F0F;</a></li><ul><li><span class="title-icon "></span><a href="#case"><b>1.1. </b>CASE</a></li><li><span class="title-icon "></span><a href="#coalesce"><b>1.2. </b>COALESCE</a></li><li><span class="title-icon "></span><a href="#nullif"><b>1.3. </b>NULLIF</a></li></ul></ul></div><a href="#transact-sql-&#x8868;&#x8FBE;&#x5F0F;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="transact-sql-&#x8868;&#x8FBE;&#x5F0F;"><a name="transact-sql-&#x8868;&#x8FBE;&#x5F0F;" class="anchor-navigation-ex-anchor" href="#transact-sql-&#x8868;&#x8FBE;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>1. Transact-SQL &#x8868;&#x8FBE;&#x5F0F;</h1>
+<h2 id="case"><a name="case" class="anchor-navigation-ex-anchor" href="#case"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. CASE</h2>
+<ul>
+<li><p>&#x8BA1;&#x7B97;&#x6761;&#x4EF6;&#x5217;&#x8868;&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;&#x591A;&#x4E2A;&#x53EF;&#x80FD;&#x7684;&#x7ED3;&#x679C;&#x8868;&#x8FBE;&#x5F0F;&#x4E4B;&#x4E00;&#x3002;</p>
+</li>
+<li><p>CASE &#x8868;&#x8FBE;&#x5F0F;&#x6709;&#x4E24;&#x79CD;&#x683C;&#x5F0F;&#xFF1A;</p>
+<ul>
+<li>CASE &#x7B80;&#x5355;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x5B83;&#x901A;&#x8FC7;&#x5C06;&#x8868;&#x8FBE;&#x5F0F;&#x4E0E;&#x4E00;&#x7EC4;&#x7B80;&#x5355;&#x7684;&#x8868;&#x8FBE;&#x5F0F;&#x8FDB;&#x884C;&#x6BD4;&#x8F83;&#x6765;&#x786E;&#x5B9A;&#x7ED3;&#x679C;&#x3002;</li>
+<li>CASE &#x641C;&#x7D22;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x5B83;&#x901A;&#x8FC7;&#x8BA1;&#x7B97;&#x4E00;&#x7EC4;&#x5E03;&#x5C14;&#x8868;&#x8FBE;&#x5F0F;&#x6765;&#x786E;&#x5B9A;&#x7ED3;&#x679C;&#x3002;</li>
+</ul>
+</li>
+<li><p>&#x8FD9;&#x4E24;&#x79CD;&#x683C;&#x5F0F;&#x90FD;&#x652F;&#x6301;&#x53EF;&#x9009;&#x7684; ELSE &#x53C2;&#x6570;&#x3002;</p>
+</li>
+<li><p>CASE &#x53EF;&#x7528;&#x4E8E;&#x5141;&#x8BB8;&#x4F7F;&#x7528;&#x6709;&#x6548;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x4EFB;&#x610F;&#x8BED;&#x53E5;&#x6216;&#x5B50;&#x53E5;&#x3002;</p>
+<ul>
+<li>&#x5982;&#xFF0C;&#x53EF;&#x4EE5;&#x5728; SELECT&#x3001;UPDATE&#x3001;DELETE &#x548C; SET &#x7B49;&#x8BED;&#x53E5;&#x4EE5;&#x53CA; select_list&#x3001;IN&#x3001;WHERE&#x3001;ORDER BY &#x548C; HAVING &#x7B49;&#x5B50;&#x53E5;&#x4E2D;&#x4F7F;&#x7528; CASE&#x3002;</li>
+</ul>
+</li>
+</ul>
+<pre class="language-"><code class="lang-sql"><span class="token comment">--Simple CASE expression:</span>
+<span class="token keyword">CASE</span> input_expression 
+     <span class="token keyword">WHEN</span> when_expression <span class="token keyword">THEN</span> result_expression <span class="token punctuation">[</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>n <span class="token punctuation">]</span>   
+     <span class="token punctuation">[</span> <span class="token keyword">ELSE</span> else_result_expression <span class="token punctuation">]</span>
+<span class="token keyword">END</span>   
+
+<span class="token comment">--Searched CASE expression:  </span>
+<span class="token keyword">CASE</span>  
+     <span class="token keyword">WHEN</span> Boolean_expression <span class="token keyword">THEN</span> result_expression <span class="token punctuation">[</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>n <span class="token punctuation">]</span>   
+     <span class="token punctuation">[</span> <span class="token keyword">ELSE</span> else_result_expression <span class="token punctuation">]</span>
+<span class="token keyword">END</span>
+</code></pre>
+<pre class="language-"><code class="lang-sql"><span class="token comment">-- Syntax for Parallel Data Warehouse</span>
+<span class="token keyword">CASE</span>  
+     <span class="token keyword">WHEN</span> when_expression <span class="token keyword">THEN</span> result_expression <span class="token punctuation">[</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>n <span class="token punctuation">]</span>   
+     <span class="token punctuation">[</span> <span class="token keyword">ELSE</span> else_result_expression <span class="token punctuation">]</span>
+<span class="token keyword">END</span>
+</code></pre>
+<ul>
+<li><p><a href="https://docs.microsoft.com/zh-cn/sql/t-sql/language-elements/case-transact-sql?view=sql-server-ver15" target="_blank">&#x53C2;&#x8003;</a></p>
+</li>
+<li><p>SQL Server &#x8BED;&#x6CD5;(&#x80FD;&#x5728; SELECT &#x4E2D;&#x4F7F;&#x7528;)</p>
+</li>
+</ul>
+<pre class="language-"><code class="lang-sql"><span class="token keyword">CASE</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token keyword">WHEN</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> &#xFF08;&#x6761;&#x4EF6;<span class="token operator">/</span>&#x4EE3;&#x7801;&#x5757;&#xFF09; <span class="token keyword">THEN</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>&#xFF08;&#x8FD4;&#x56DE;&#x503C;<span class="token operator">/</span><span class="token keyword">case</span> <span class="token keyword">when</span> <span class="token keyword">then</span> <span class="token keyword">else</span> <span class="token keyword">end</span>&#xFF09;
+<span class="token keyword">ELSE</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>&#xFF08;&#x53EF;&#x7701;&#x7565;&#xFF09;
+<span class="token keyword">END</span>
+</code></pre>
+<h2 id="coalesce"><a name="coalesce" class="anchor-navigation-ex-anchor" href="#coalesce"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. COALESCE</h2>
+<ul>
+<li>&#x6309;&#x987A;&#x5E8F;&#x8BA1;&#x7B97;&#x53D8;&#x91CF;&#x5E76;&#x8FD4;&#x56DE;&#x6700;&#x521D;&#x4E0D;&#x7B49;&#x4E8E; NULL &#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x5F53;&#x524D;&#x503C;&#x3002;</li>
+</ul>
+<pre class="language-"><code class="lang-sql"><span class="token keyword">COALESCE</span> <span class="token punctuation">(</span> expression <span class="token punctuation">[</span> <span class="token punctuation">,</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>n <span class="token punctuation">]</span> <span class="token punctuation">)</span>
+</code></pre>
+<pre class="language-"><code class="lang-sql"><span class="token comment">-- &#x8FD4;&#x56DE;&#x7B2C;&#x4E09;&#x4E2A;&#x503C;&#xFF0C;&#x56E0;&#x4E3A;&#x7B2C;&#x4E09;&#x4E2A;&#x503C;&#x662F;&#x9996;&#x4E2A;&#x4E3A;&#x975E; Null &#x7684;&#x503C;&#x3002;</span>
+<span class="token keyword">SELECT</span> <span class="token keyword">COALESCE</span><span class="token punctuation">(</span><span class="token boolean">NULL</span><span class="token punctuation">,</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span> <span class="token string">&apos;third_value&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;fourth_value&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h2 id="nullif"><a name="nullif" class="anchor-navigation-ex-anchor" href="#nullif"><i class="fa fa-link" aria-hidden="true"></i></a>1.3. NULLIF</h2>
+<ul>
+<li>&#x5982;&#x679C;&#x4E24;&#x4E2A;&#x6307;&#x5B9A;&#x7684;&#x8868;&#x8FBE;&#x5F0F;&#x76F8;&#x7B49;&#xFF0C;&#x5219;&#x8FD4;&#x56DE;&#x7A7A;&#x503C;&#x3002;</li>
+</ul>
+<pre class="language-"><code class="lang-sql"><span class="token comment">-- &#x4E3A;&#x7B2C;&#x4E00;&#x5217;&#xFF08;4 &#x548C; 4&#xFF09;&#x8FD4;&#x56DE; NULL&#xFF0C;&#x56E0;&#x4E3A;&#x4E24;&#x4E2A;&#x8F93;&#x5165;&#x503C;&#x76F8;&#x540C;&#x3002;</span>
+<span class="token comment">-- &#x7B2C;&#x4E8C;&#x5217;&#x8FD4;&#x56DE;&#x7B2C;&#x4E00;&#x4E2A;&#x503C; (5)&#xFF0C;&#x56E0;&#x4E3A;&#x4E24;&#x4E2A;&#x8F93;&#x5165;&#x503C;&#x4E0D;&#x540C;&#x3002;</span>
+<span class="token keyword">SELECT</span> <span class="token keyword">NULLIF</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Same<span class="token punctuation">,</span> <span class="token keyword">NULLIF</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Different<span class="token punctuation">;</span>
+</code></pre>
+<pre class="language-"><code class="lang-sql"><span class="token keyword">NULLIF</span> <span class="token punctuation">(</span> expression <span class="token punctuation">,</span> expression <span class="token punctuation">)</span>
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="tsql-control.html" class="navigation navigation-prev " aria-label="Previous page: Transact-SQL 控制流">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="tsql-procedure.html" class="navigation navigation-next " aria-label="Next page: Transact-SQL 存储过程">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Transact-SQL 表达式","level":"2.2","depth":1,"next":{"title":"Transact-SQL 存储过程","level":"2.3","depth":1,"path":"pages/Transact-SQL/tsql-procedure.md","ref":"./pages/Transact-SQL/tsql-procedure.md","articles":[]},"previous":{"title":"Transact-SQL 控制流","level":"2.1","depth":1,"path":"pages/Transact-SQL/tsql-control.md","ref":"./pages/Transact-SQL/tsql-control.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","anchor-navigation-ex","-sharing","sharing-plus","-highlight","prism"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"night","family":"serif","size":2},"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"sharing":{"weibo":true,"qzone":true,"qq":true,"douban":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"Little Captain","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Learn-SQL","gitbook":"*","description":"Learn-SQL"},"file":{"path":"pages/Transact-SQL/tsql-expression.md","mtime":"2021-08-24T03:43:25.307Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-08-24T03:45:34.281Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

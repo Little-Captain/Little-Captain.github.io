@@ -1,0 +1,527 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Transact-SQL 控制流 · Learn-SQL</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Little Captain">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism-okaidia.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="tsql-expression.html" />
+    
+    
+    <link rel="prev" href="../../" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Transact-SQL</li>
+        
+        
+    
+        <li class="chapter active" data-level="2.1" data-path="tsql-control.html">
+            
+                <a href="tsql-control.html">
+            
+                    
+                        <b>2.1.</b>
+                    
+                    Transact-SQL 控制流
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="tsql-expression.html">
+            
+                <a href="tsql-expression.html">
+            
+                    
+                        <b>2.2.</b>
+                    
+                    Transact-SQL 表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="tsql-procedure.html">
+            
+                <a href="tsql-procedure.html">
+            
+                    
+                        <b>2.3.</b>
+                    
+                    Transact-SQL 存储过程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Transact-SQL 控制流</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#transact-sql-&#x63A7;&#x5236;&#x6D41;"><b>1. </b>Transact-SQL &#x63A7;&#x5236;&#x6D41;</a></li><ul><li><span class="title-icon "></span><a href="#beginend"><b>1.1. </b>BEGIN...END</a></li><li><span class="title-icon "></span><a href="#break"><b>1.2. </b>BREAK</a></li><li><span class="title-icon "></span><a href="#continue"><b>1.3. </b>CONTINUE</a></li><li><span class="title-icon "></span><a href="#if-else"><b>1.4. </b>IF ELSE</a></li><li><span class="title-icon "></span><a href="#goto"><b>1.5. </b>GOTO</a></li><li><span class="title-icon "></span><a href="#return"><b>1.6. </b>RETURN</a></li><li><span class="title-icon "></span><a href="#trycatch"><b>1.7. </b>TRY...CATCH</a></li><li><span class="title-icon "></span><a href="#throw"><b>1.8. </b>THROW</a></li><li><span class="title-icon "></span><a href="#waitfor"><b>1.9. </b>WAITFOR</a></li><li><span class="title-icon "></span><a href="#while"><b>1.10. </b>WHILE</a></li></ul></ul></div><a href="#transact-sql-&#x63A7;&#x5236;&#x6D41;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="transact-sql-&#x63A7;&#x5236;&#x6D41;"><a name="transact-sql-&#x63A7;&#x5236;&#x6D41;" class="anchor-navigation-ex-anchor" href="#transact-sql-&#x63A7;&#x5236;&#x6D41;"><i class="fa fa-link" aria-hidden="true"></i></a>1. Transact-SQL &#x63A7;&#x5236;&#x6D41;</h1>
+<ul>
+<li>Transact-SQL &#x63A7;&#x5236;&#x6D41;&#x8BED;&#x8A00;&#x5173;&#x952E;&#x5B57;&#x5305;&#x62EC;<ul>
+<li>BEGIN...END</li>
+<li>RETURN</li>
+<li>BREAK</li>
+<li>THROW</li>
+<li>CONTINUE</li>
+<li>TRY...CATCH</li>
+<li>GOTO</li>
+<li>WAITFOR</li>
+<li>IF...ELSE</li>
+<li>WHILE</li>
+</ul>
+</li>
+</ul>
+<h2 id="beginend"><a name="beginend" class="anchor-navigation-ex-anchor" href="#beginend"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. BEGIN...END</h2>
+<ul>
+<li>&#x5305;&#x62EC;&#x4E00;&#x7CFB;&#x5217;&#x7684; Transact-SQL &#x8BED;&#x53E5;&#xFF0C;&#x4ECE;&#x800C;&#x53EF;&#x4EE5;&#x6267;&#x884C;&#x4E00;&#x7EC4; Transact-SQL &#x8BED;&#x53E5;&#x3002;</li>
+</ul>
+<pre class="language-"><code class="lang-sql"><span class="token keyword">BEGIN</span>  
+    { sql_statement <span class="token operator">|</span> statement_block }   
+<span class="token keyword">END</span>
+</code></pre>
+<h2 id="break"><a name="break" class="anchor-navigation-ex-anchor" href="#break"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. BREAK</h2>
+<ul>
+<li><p>BREAK &#x5C06;&#x9000;&#x51FA;&#x5F53;&#x524D; WHILE &#x5FAA;&#x73AF;&#x3002;</p>
+</li>
+<li><p>&#x5982;&#x679C;&#x5F53;&#x524D;&#x5FAA;&#x73AF;&#x5D4C;&#x5957;&#x5728;&#x53E6;&#x4E00;&#x4E2A;&#x5FAA;&#x73AF;&#x4E2D;&#xFF0C;BREAK &#x5C06;&#x53EA;&#x9000;&#x51FA;&#x5F53;&#x524D;&#x5FAA;&#x73AF;&#xFF0C;&#x5E76;&#x4E14;&#x5C06;&#x63A7;&#x5236;&#x7ED9;&#x4E88;&#x5916;&#x90E8;&#x5FAA;&#x73AF;&#x4E2D;&#x7684;&#x4E0B;&#x4E00;&#x4E2A;&#x8BED;&#x53E5;&#x3002;</p>
+</li>
+</ul>
+<h2 id="continue"><a name="continue" class="anchor-navigation-ex-anchor" href="#continue"><i class="fa fa-link" aria-hidden="true"></i></a>1.3. CONTINUE</h2>
+<ul>
+<li><p>&#x91CD;&#x65B0;&#x5F00;&#x59CB; WHILE &#x5FAA;&#x73AF;&#x3002;</p>
+</li>
+<li><p>&#x5728; CONTINUE &#x5173;&#x952E;&#x5B57;&#x4E4B;&#x540E;&#x7684;&#x4EFB;&#x4F55;&#x8BED;&#x53E5;&#x90FD;&#x5C06;&#x88AB;&#x5FFD;&#x7565;&#x3002;</p>
+</li>
+</ul>
+<h2 id="if-else"><a name="if-else" class="anchor-navigation-ex-anchor" href="#if-else"><i class="fa fa-link" aria-hidden="true"></i></a>1.4. IF ELSE</h2>
+<ul>
+<li><p><a href="https://docs.microsoft.com/zh-cn/sql/t-sql/language-elements/if-else-transact-sql?view=sql-server-ver15" target="_blank">&#x53C2;&#x8003;</a></p>
+</li>
+<li><p>&#x6307;&#x5B9A; Transact-SQL &#x8BED;&#x53E5;&#x7684;&#x6267;&#x884C;&#x6761;&#x4EF6;&#x3002;</p>
+</li>
+<li><p>&#x5982;&#x679C;&#x6EE1;&#x8DB3;&#x6761;&#x4EF6;&#xFF0C;&#x5219;&#x5728; IF &#x5173;&#x952E;&#x5B57;&#x53CA;&#x5176;&#x6761;&#x4EF6;&#x4E4B;&#x540E;&#x6267;&#x884C; Transact-SQL &#x8BED;&#x53E5;&#xFF1A;&#x5E03;&#x5C14;&#x8868;&#x8FBE;&#x5F0F;&#x8FD4;&#x56DE; TRUE&#x3002;</p>
+</li>
+<li><p>&#x53EF;&#x9009;&#x7684; ELSE &#x5173;&#x952E;&#x5B57;&#x5F15;&#x5165;&#x53E6;&#x4E00;&#x4E2A; Transact-SQL &#x8BED;&#x53E5;&#xFF0C;&#x5F53;&#x4E0D;&#x6EE1;&#x8DB3; IF &#x6761;&#x4EF6;&#x65F6;&#x5C31;&#x6267;&#x884C;&#x8BE5;&#x8BED;&#x53E5;&#xFF1A;&#x5E03;&#x5C14;&#x8868;&#x8FBE;&#x5F0F;&#x8FD4;&#x56DE; FALSE&#x3002;</p>
+</li>
+<li><p>SQL Server &#x8BED;&#x6CD5;(&#x4E0D;&#x80FD;&#x5728; SELECT &#x4E2D;&#x4F7F;&#x7528;)</p>
+</li>
+</ul>
+<pre class="language-"><code class="lang-sql"><span class="token keyword">IF</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token keyword">BEGIN</span>
+    &#x4EE3;&#x7801;&#x5757;
+<span class="token keyword">END</span>
+<span class="token keyword">ELSE</span> <span class="token comment">-- &#x6CE8;&#x610F;&#x8FD9;&#x91CC;&#x6CA1;&#x6709;ELSE IF&#xFF0C;&#x8981;&#x5B9E;&#x73B0;&#x53EA;&#x80FD;&#x5728;&#x4E0B;&#x9762;&#x7684;&#x5757;&#x4E2D;&#x7528;IF&#x5224;&#x65AD;</span>
+<span class="token keyword">BEGIN</span>
+    &#x4EE3;&#x7801;&#x5757;
+<span class="token keyword">END</span>
+</code></pre>
+<h2 id="goto"><a name="goto" class="anchor-navigation-ex-anchor" href="#goto"><i class="fa fa-link" aria-hidden="true"></i></a>1.5. GOTO</h2>
+<ul>
+<li><p>&#x5C06;&#x6267;&#x884C;&#x6D41;&#x66F4;&#x6539;&#x5230;&#x6807;&#x7B7E;&#x5904;&#x3002;</p>
+</li>
+<li><p>&#x8DF3;&#x8FC7; GOTO &#x540E;&#x9762;&#x7684; Transact-SQL &#x8BED;&#x53E5;&#xFF0C;&#x5E76;&#x4ECE;&#x6807;&#x7B7E;&#x4F4D;&#x7F6E;&#x7EE7;&#x7EED;&#x5904;&#x7406;&#x3002;</p>
+</li>
+<li><p>GOTO &#x8BED;&#x53E5;&#x548C;&#x6807;&#x7B7E;&#x53EF;&#x5728;&#x8FC7;&#x7A0B;&#x3001;&#x6279;&#x5904;&#x7406;&#x6216;&#x8BED;&#x53E5;&#x5757;&#x4E2D;&#x7684;&#x4EFB;&#x4F55;&#x4F4D;&#x7F6E;&#x4F7F;&#x7528;&#x3002;</p>
+</li>
+<li><p>GOTO &#x8BED;&#x53E5;&#x53EF;&#x5D4C;&#x5957;&#x4F7F;&#x7528;&#x3002;</p>
+</li>
+</ul>
+<pre class="language-"><code class="lang-sql"><span class="token keyword">DECLARE</span> <span class="token variable">@Counter</span> <span class="token keyword">int</span><span class="token punctuation">;</span>  
+<span class="token keyword">SET</span> <span class="token variable">@Counter</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>  
+<span class="token keyword">WHILE</span> <span class="token variable">@Counter</span> <span class="token operator">&lt;</span> <span class="token number">10</span>
+<span class="token keyword">BEGIN</span>
+    <span class="token keyword">SELECT</span> <span class="token variable">@Counter</span>
+    <span class="token keyword">SET</span> <span class="token variable">@Counter</span> <span class="token operator">=</span> <span class="token variable">@Counter</span> <span class="token operator">+</span> <span class="token number">1</span>  
+    <span class="token keyword">IF</span> <span class="token variable">@Counter</span> <span class="token operator">=</span> <span class="token number">4</span> <span class="token keyword">GOTO</span> Branch_One <span class="token comment">--Jumps to the first branch.  </span>
+    <span class="token keyword">IF</span> <span class="token variable">@Counter</span> <span class="token operator">=</span> <span class="token number">5</span> <span class="token keyword">GOTO</span> Branch_Two  <span class="token comment">--This will never execute.  </span>
+<span class="token keyword">END</span>  
+Branch_One:
+    <span class="token keyword">SELECT</span> <span class="token string">&apos;Jumping To Branch One.&apos;</span>
+    <span class="token keyword">GOTO</span> Branch_Three<span class="token punctuation">;</span> <span class="token comment">--This will prevent Branch_Two from executing.  </span>
+Branch_Two:
+    <span class="token keyword">SELECT</span> <span class="token string">&apos;Jumping To Branch Two.&apos;</span>
+Branch_Three:  
+    <span class="token keyword">SELECT</span> <span class="token string">&apos;Jumping To Branch Three.&apos;</span><span class="token punctuation">;</span>
+</code></pre>
+<h2 id="return"><a name="return" class="anchor-navigation-ex-anchor" href="#return"><i class="fa fa-link" aria-hidden="true"></i></a>1.6. RETURN</h2>
+<ul>
+<li><p><a href="https://docs.microsoft.com/zh-cn/sql/t-sql/language-elements/return-transact-sql?view=sql-server-ver15" target="_blank">&#x53C2;&#x8003;</a></p>
+</li>
+<li><p>&#x4ECE;&#x67E5;&#x8BE2;&#x6216;&#x8FC7;&#x7A0B;&#x4E2D;&#x65E0;&#x6761;&#x4EF6;&#x9000;&#x51FA;&#x3002;</p>
+</li>
+<li><p>RETURN &#x7684;&#x6267;&#x884C;&#x662F;&#x5373;&#x65F6;&#x4E14;&#x5B8C;&#x5168;&#x7684;&#xFF0C;&#x53EF;&#x5728;&#x4EFB;&#x4F55;&#x65F6;&#x5019;&#x7528;&#x4E8E;&#x4ECE;&#x8FC7;&#x7A0B;&#x3001;&#x6279;&#x5904;&#x7406;&#x6216;&#x8BED;&#x53E5;&#x5757;&#x4E2D;&#x9000;&#x51FA;&#x3002;</p>
+</li>
+<li><p>RETURN &#x4E4B;&#x540E;&#x7684;&#x8BED;&#x53E5;&#x662F;&#x4E0D;&#x6267;&#x884C;&#x7684;&#x3002;</p>
+</li>
+<li><p>&#x5B58;&#x50A8;&#x8FC7;&#x7A0B;&#x53EF;&#x5411;&#x6267;&#x884C;&#x8C03;&#x7528;&#x7684;&#x8FC7;&#x7A0B;&#x6216;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x6574;&#x6570;&#x503C;&#x3002;</p>
+</li>
+</ul>
+<h2 id="trycatch"><a name="trycatch" class="anchor-navigation-ex-anchor" href="#trycatch"><i class="fa fa-link" aria-hidden="true"></i></a>1.7. TRY...CATCH</h2>
+<ul>
+<li><p>Transact-SQL &#x8BED;&#x53E5;&#x7EC4;&#x53EF;&#x4EE5;&#x5305;&#x542B;&#x5728; TRY &#x5757;&#x4E2D;&#x3002;</p>
+</li>
+<li><p>&#x5982;&#x679C; TRY &#x5757;&#x5185;&#x90E8;&#x53D1;&#x751F;&#x9519;&#x8BEF;&#xFF0C;&#x5219;&#x4F1A;&#x5C06;&#x63A7;&#x5236;&#x4F20;&#x9012;&#x7ED9; CATCH &#x5757;&#x4E2D;&#x5305;&#x542B;&#x7684;&#x53E6;&#x4E00;&#x4E2A;&#x8BED;&#x53E5;&#x7EC4;&#x3002;</p>
+</li>
+</ul>
+<pre class="language-"><code class="lang-sql"><span class="token keyword">BEGIN</span> TRY
+    { sql_statement <span class="token operator">|</span> statement_block }
+<span class="token keyword">END</span> TRY
+<span class="token keyword">BEGIN</span> CATCH
+    <span class="token punctuation">[</span> { sql_statement <span class="token operator">|</span> statement_block } <span class="token punctuation">]</span>
+<span class="token keyword">END</span> CATCH
+<span class="token punctuation">[</span> <span class="token punctuation">;</span> <span class="token punctuation">]</span>
+</code></pre>
+<h2 id="throw"><a name="throw" class="anchor-navigation-ex-anchor" href="#throw"><i class="fa fa-link" aria-hidden="true"></i></a>1.8. THROW</h2>
+<ul>
+<li>&#x5F15;&#x53D1;&#x5F02;&#x5E38;&#xFF0C;&#x5E76;&#x5C06;&#x6267;&#x884C;&#x8F6C;&#x79FB;&#x5230; SQL Server &#x4E2D; TRY&#x2026;CATCH &#x6784;&#x9020;&#x7684; CATCH &#x5757;&#x3002;</li>
+</ul>
+<pre class="language-"><code class="lang-sql">THROW <span class="token punctuation">[</span> { error_number <span class="token operator">|</span> <span class="token variable">@local_variable</span> }<span class="token punctuation">,</span>  
+        { message <span class="token operator">|</span> <span class="token variable">@local_variable</span> }<span class="token punctuation">,</span>  
+        { state <span class="token operator">|</span> <span class="token variable">@local_variable</span> } <span class="token punctuation">]</span>   
+<span class="token punctuation">[</span> <span class="token punctuation">;</span> <span class="token punctuation">]</span>
+</code></pre>
+<h2 id="waitfor"><a name="waitfor" class="anchor-navigation-ex-anchor" href="#waitfor"><i class="fa fa-link" aria-hidden="true"></i></a>1.9. WAITFOR</h2>
+<ul>
+<li>&#x963B;&#x6B62;&#x6267;&#x884C;&#x6279;&#x5904;&#x7406;&#x3001;&#x5B58;&#x50A8;&#x8FC7;&#x7A0B;&#x6216;&#x4E8B;&#x52A1;&#xFF0C;&#x76F4;&#x5230;&#x5DF2;&#x8FC7;&#x6307;&#x5B9A;&#x65F6;&#x95F4;&#x6216;&#x65F6;&#x95F4;&#x95F4;&#x9694;&#xFF0C;&#x6216;&#x8005;&#x6307;&#x5B9A;&#x8BED;&#x53E5;&#x53D1;&#x751F;&#x4FEE;&#x6539;&#x6216;&#x81F3;&#x5C11;&#x8FD4;&#x56DE;&#x4E00;&#x884C;&#x4E3A;&#x6B62;&#x3002;</li>
+</ul>
+<pre class="language-"><code class="lang-sql"><span class="token keyword">WAITFOR</span>
+{  
+    DELAY <span class="token string">&apos;time_to_pass&apos;</span>   
+  <span class="token operator">|</span> <span class="token keyword">TIME</span> <span class="token string">&apos;time_to_execute&apos;</span>   
+  <span class="token operator">|</span> <span class="token punctuation">[</span> <span class="token punctuation">(</span> receive_statement <span class="token punctuation">)</span> <span class="token operator">|</span> <span class="token punctuation">(</span> get_conversation_group_statement <span class="token punctuation">)</span> <span class="token punctuation">]</span>   
+    <span class="token punctuation">[</span> <span class="token punctuation">,</span> TIMEOUT timeout <span class="token punctuation">]</span>  
+}
+</code></pre>
+<h2 id="while"><a name="while" class="anchor-navigation-ex-anchor" href="#while"><i class="fa fa-link" aria-hidden="true"></i></a>1.10. WHILE</h2>
+<ul>
+<li><p><a href="https://docs.microsoft.com/zh-cn/sql/t-sql/language-elements/while-transact-sql?view=sql-server-ver15" target="_blank">&#x53C2;&#x8003;</a></p>
+</li>
+<li><p>&#x8BBE;&#x7F6E;&#x91CD;&#x590D;&#x6267;&#x884C; SQL &#x8BED;&#x53E5;&#x6216;&#x8BED;&#x53E5;&#x5757;&#x7684;&#x6761;&#x4EF6;&#x3002;</p>
+</li>
+<li><p>&#x53EA;&#x8981;&#x6307;&#x5B9A;&#x7684;&#x6761;&#x4EF6;&#x4E3A;&#x771F;&#xFF0C;&#x5C31;&#x91CD;&#x590D;&#x6267;&#x884C;&#x8BED;&#x53E5;&#x3002;</p>
+</li>
+<li><p>&#x53EF;&#x4EE5;&#x4F7F;&#x7528; BREAK &#x548C; CONTINUE &#x5173;&#x952E;&#x5B57;&#x5728;&#x5FAA;&#x73AF;&#x5185;&#x90E8;&#x63A7;&#x5236; WHILE &#x5FAA;&#x73AF;&#x4E2D;&#x8BED;&#x53E5;&#x7684;&#x6267;&#x884C;&#x3002;</p>
+</li>
+<li><p>SQL Server &#x8BED;&#x6CD5;(&#x4E0D;&#x80FD;&#x5728; SELECT &#x4E2D;&#x4F7F;&#x7528;)</p>
+</li>
+</ul>
+<pre class="language-"><code class="lang-sql"><span class="token keyword">WHILE</span> Boolean_expression   
+     { sql_statement <span class="token operator">|</span> statement_block <span class="token operator">|</span> <span class="token keyword">BREAK</span> <span class="token operator">|</span> <span class="token keyword">CONTINUE</span> }
+</code></pre>
+<pre class="language-"><code class="lang-sql"><span class="token keyword">WHILE</span> Boolean_expression   
+     { sql_statement <span class="token operator">|</span> statement_block <span class="token operator">|</span> <span class="token keyword">BREAK</span> }
+</code></pre>
+<ul>
+<li>&#x666E;&#x901A;&#x5FAA;&#x73AF;</li>
+</ul>
+<pre class="language-"><code class="lang-sql"><span class="token keyword">declare</span> <span class="token variable">@i</span> <span class="token keyword">int</span><span class="token punctuation">;</span>
+<span class="token keyword">set</span> <span class="token variable">@i</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token keyword">while</span> <span class="token variable">@i</span><span class="token operator">&lt;</span><span class="token number">5</span>
+<span class="token keyword">begin</span>
+    <span class="token keyword">update</span> Student <span class="token keyword">set</span> demo <span class="token operator">=</span> <span class="token variable">@i</span><span class="token operator">+</span><span class="token number">5</span> <span class="token keyword">where</span> Uid<span class="token operator">=</span><span class="token variable">@i</span>
+    <span class="token keyword">set</span> <span class="token variable">@i</span><span class="token operator">=</span><span class="token variable">@i</span> <span class="token operator">+</span><span class="token number">1</span>
+<span class="token keyword">end</span>
+go
+</code></pre>
+<ul>
+<li>&#x6E38;&#x6807;&#x5FAA;&#x73AF;(&#x6CA1;&#x6709;&#x4E8B;&#x52A1;)</li>
+</ul>
+<pre class="language-"><code class="lang-sql"><span class="token comment">-- &#x6E38;&#x6807;&#x5FAA;&#x73AF;&#x904D;&#x5386; --</span>
+<span class="token keyword">begin</span>
+    <span class="token keyword">declare</span> <span class="token variable">@a</span> <span class="token keyword">int</span><span class="token punctuation">,</span><span class="token variable">@error</span> <span class="token keyword">int</span><span class="token punctuation">;</span>
+    <span class="token keyword">declare</span> <span class="token variable">@temp</span> <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">set</span> <span class="token variable">@a</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">set</span> <span class="token variable">@error</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token comment">-- &#x7533;&#x660E;&#x6E38;&#x6807;&#x4E3A; Uid</span>
+    <span class="token keyword">declare</span> order_cursor <span class="token keyword">cursor</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">select</span> <span class="token punctuation">[</span>Uid<span class="token punctuation">]</span> <span class="token keyword">from</span> Student<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">--&#x6253;&#x5F00;&#x6E38;&#x6807;--</span>
+    <span class="token keyword">open</span> order_cursor<span class="token punctuation">;</span>
+    <span class="token comment">--&#x5F00;&#x59CB;&#x5FAA;&#x73AF;&#x6E38;&#x6807;&#x53D8;&#x91CF;--</span>
+    <span class="token keyword">fetch</span> <span class="token keyword">next</span> <span class="token keyword">from</span> order_cursor <span class="token keyword">into</span> <span class="token variable">@temp</span>
+    <span class="token keyword">while</span> @<span class="token variable">@FETCH_STATUS</span> <span class="token operator">=</span> <span class="token number">0</span>    <span class="token comment">--&#x8FD4;&#x56DE;&#x88AB; FETCH&#x8BED;&#x53E5;&#x6267;&#x884C;&#x7684;&#x6700;&#x540E;&#x6E38;&#x6807;&#x7684;&#x72B6;&#x6001;--</span>
+        <span class="token keyword">begin</span>
+            <span class="token keyword">update</span> Student <span class="token keyword">set</span> Age<span class="token operator">=</span><span class="token number">15</span><span class="token operator">+</span><span class="token variable">@a</span><span class="token punctuation">,</span>demo<span class="token operator">=</span><span class="token variable">@a</span> <span class="token keyword">where</span> Uid<span class="token operator">=</span><span class="token variable">@temp</span>
+            <span class="token keyword">set</span> <span class="token variable">@a</span><span class="token operator">=</span><span class="token variable">@a</span><span class="token operator">+</span><span class="token number">1</span>
+            <span class="token keyword">set</span> <span class="token variable">@error</span><span class="token operator">=</span> <span class="token variable">@error</span> <span class="token operator">+</span> @<span class="token variable">@ERROR</span>   <span class="token comment">--&#x8BB0;&#x5F55;&#x6BCF;&#x6B21;&#x8FD0;&#x884C;sql&#x540E;&#x662F;&#x5426;&#x6B63;&#x786E;&#xFF0C;0&#x6B63;&#x786E;</span>
+            <span class="token keyword">fetch</span> <span class="token keyword">next</span> <span class="token keyword">from</span> order_cursor <span class="token keyword">into</span> <span class="token variable">@temp</span>   <span class="token comment">--&#x8F6C;&#x5230;&#x4E0B;&#x4E00;&#x4E2A;&#x6E38;&#x6807;&#xFF0C;&#x6CA1;&#x6709;&#x4F1A;&#x6B7B;&#x5FAA;&#x73AF;</span>
+        <span class="token keyword">end</span>
+    <span class="token keyword">close</span> order_cursor  <span class="token comment">--&#x5173;&#x95ED;&#x6E38;&#x6807;</span>
+    <span class="token keyword">deallocate</span> order_cursor   <span class="token comment">--&#x91CA;&#x653E;&#x6E38;&#x6807;</span>
+<span class="token keyword">end</span>
+go
+</code></pre>
+<ul>
+<li>&#x6E38;&#x6807;&#x5FAA;&#x73AF;(&#x4E8B;&#x52A1;)</li>
+</ul>
+<pre class="language-"><code class="lang-sql"><span class="token keyword">begin</span>
+    <span class="token keyword">declare</span> <span class="token variable">@a</span> <span class="token keyword">int</span><span class="token punctuation">,</span><span class="token variable">@error</span> <span class="token keyword">int</span><span class="token punctuation">;</span>
+    <span class="token keyword">declare</span> <span class="token variable">@temp</span> <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">set</span> <span class="token variable">@a</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">set</span> <span class="token variable">@error</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">begin</span> <span class="token keyword">tran</span>  <span class="token comment">-- &#x7533;&#x660E;&#x4E8B;&#x52A1;</span>
+    <span class="token comment">--&#x7533;&#x660E;&#x6E38;&#x6807;&#x4E3A;Uid</span>
+    <span class="token keyword">declare</span> order_cursor <span class="token keyword">cursor</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">select</span> <span class="token punctuation">[</span>Uid<span class="token punctuation">]</span> <span class="token keyword">from</span> Student<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">--&#x6253;&#x5F00;&#x6E38;&#x6807;--</span>
+    <span class="token keyword">open</span> order_cursor<span class="token punctuation">;</span>
+    <span class="token comment">--&#x5F00;&#x59CB;&#x5FAA;&#x73AF;&#x6E38;&#x6807;&#x53D8;&#x91CF;--</span>
+    <span class="token keyword">fetch</span> <span class="token keyword">next</span> <span class="token keyword">from</span> order_cursor <span class="token keyword">into</span> <span class="token variable">@temp</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span> @<span class="token variable">@FETCH_STATUS</span> <span class="token operator">=</span> <span class="token number">0</span>    <span class="token comment">--&#x8FD4;&#x56DE;&#x88AB; FETCH&#x8BED;&#x53E5;&#x6267;&#x884C;&#x7684;&#x6700;&#x540E;&#x6E38;&#x6807;&#x7684;&#x72B6;&#x6001;--</span>
+        <span class="token keyword">begin</span>
+            <span class="token keyword">update</span> Student <span class="token keyword">set</span> Age<span class="token operator">=</span><span class="token number">20</span><span class="token operator">+</span><span class="token variable">@a</span><span class="token punctuation">,</span>demo<span class="token operator">=</span><span class="token variable">@a</span> <span class="token keyword">where</span> Uid<span class="token operator">=</span><span class="token variable">@temp</span>
+            <span class="token keyword">set</span> <span class="token variable">@a</span><span class="token operator">=</span><span class="token variable">@a</span><span class="token operator">+</span><span class="token number">1</span>
+            <span class="token keyword">set</span> <span class="token variable">@error</span><span class="token operator">=</span> <span class="token variable">@error</span> <span class="token operator">+</span> @<span class="token variable">@ERROR</span>   <span class="token comment">--&#x8BB0;&#x5F55;&#x6BCF;&#x6B21;&#x8FD0;&#x884C;sql&#x540E;&#x662F;&#x5426;&#x6B63;&#x786E;&#xFF0C;0&#x6B63;&#x786E;</span>
+            <span class="token keyword">fetch</span> <span class="token keyword">next</span> <span class="token keyword">from</span> order_cursor <span class="token keyword">into</span> <span class="token variable">@temp</span>   <span class="token comment">--&#x8F6C;&#x5230;&#x4E0B;&#x4E00;&#x4E2A;&#x6E38;&#x6807;</span>
+        <span class="token keyword">end</span>
+    <span class="token keyword">if</span> <span class="token variable">@error</span><span class="token operator">=</span><span class="token number">0</span>
+    <span class="token keyword">begin</span>
+        <span class="token keyword">commit</span> <span class="token keyword">tran</span><span class="token punctuation">;</span>   <span class="token comment">--&#x63D0;&#x4EA4;&#x4E8B;&#x52A1;</span>
+    <span class="token keyword">end</span>
+    <span class="token keyword">else</span>
+    <span class="token keyword">begin</span>
+        <span class="token keyword">rollback</span> <span class="token keyword">tran</span><span class="token punctuation">;</span> <span class="token comment">--&#x56DE;&#x6EDA;&#x4E8B;&#x52A1;</span>
+    <span class="token keyword">end</span>
+    <span class="token keyword">close</span> order_cursor<span class="token punctuation">;</span>  <span class="token comment">--&#x5173;&#x95ED;&#x6E38;&#x6807;</span>
+    <span class="token keyword">deallocate</span> order_cursor<span class="token punctuation">;</span>   <span class="token comment">--&#x91CA;&#x653E;&#x6E38;&#x6807;</span>
+<span class="token keyword">end</span>
+go
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../../" class="navigation navigation-prev " aria-label="Previous page: 简介">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="tsql-expression.html" class="navigation navigation-next " aria-label="Next page: Transact-SQL 表达式">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Transact-SQL 控制流","level":"2.1","depth":1,"next":{"title":"Transact-SQL 表达式","level":"2.2","depth":1,"path":"pages/Transact-SQL/tsql-expression.md","ref":"./pages/Transact-SQL/tsql-expression.md","articles":[]},"previous":{"title":"简介","level":"1.1","depth":1,"path":"README.md","ref":"./README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","anchor-navigation-ex","-sharing","sharing-plus","-highlight","prism"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"night","family":"serif","size":2},"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"sharing":{"weibo":true,"qzone":true,"qq":true,"douban":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"Little Captain","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Learn-SQL","gitbook":"*","description":"Learn-SQL"},"file":{"path":"pages/Transact-SQL/tsql-control.md","mtime":"2021-08-24T03:38:35.577Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-08-24T03:45:34.281Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
