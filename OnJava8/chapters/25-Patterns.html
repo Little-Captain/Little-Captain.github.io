@@ -6579,36 +6579,36 @@
 <p><strong>&#x6A21;&#x677F;&#x65B9;&#x6CD5;&#x6A21;&#x5F0F;</strong></p>
 <p>&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x6846;&#x67B6;&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x57FA;&#x672C;&#x6982;&#x5FF5;&#x662F;&#x6A21;&#x677F;&#x65B9;&#x6CD5;&#x6A21;&#x5F0F;&#xFF0C;&#x5B83;&#x901A;&#x5E38;&#x9690;&#x85CF;&#x5728;&#x5E95;&#x5C42;&#xFF0C;&#x901A;&#x8FC7;&#x8C03;&#x7528;&#x57FA;&#x7C7B;&#x4E2D;&#x7684;&#x5404;&#x79CD;&#x65B9;&#x6CD5;&#x6765;&#x9A71;&#x52A8;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;(&#x4E3A;&#x4E86;&#x521B;&#x5EFA;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#xFF0C;&#x60A8;&#x5DF2;&#x7ECF;&#x8986;&#x76D6;&#x4E86;&#x5176;&#x4E2D;&#x7684;&#x4E00;&#x4E9B;&#x65B9;&#x6CD5;)&#x3002;</p>
 <p>&#x6A21;&#x677F;&#x65B9;&#x6CD5;&#x6A21;&#x5F0F;&#x7684;&#x4E00;&#x4E2A;&#x91CD;&#x8981;&#x7279;&#x6027;&#x662F;&#x5B83;&#x662F;&#x5728;&#x57FA;&#x7C7B;&#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#xFF0C;&#x5E76;&#x4E14;&#x4E0D;&#x80FD;&#x66F4;&#x6539;&#x3002;&#x5B83;&#x6709;&#x65F6;&#x662F;&#x4E00;&#x4E2A; <strong>private</strong> &#x65B9;&#x6CD5;&#xFF0C;&#x4F46;&#x5B9E;&#x9645;&#x4E0A;&#x603B;&#x662F; <strong>final</strong>&#x3002;&#x5B83;&#x8C03;&#x7528;&#x5176;&#x4ED6;&#x57FA;&#x7C7B;&#x65B9;&#x6CD5;(&#x60A8;&#x8986;&#x76D6;&#x7684;&#x90A3;&#x4E9B;)&#x6765;&#x5B8C;&#x6210;&#x5B83;&#x7684;&#x5DE5;&#x4F5C;,&#x4F46;&#x662F;&#x5B83;&#x901A;&#x5E38;&#x53EA;&#x4F5C;&#x4E3A;&#x521D;&#x59CB;&#x5316;&#x8FC7;&#x7A0B;&#x7684;&#x4E00;&#x90E8;&#x5206;&#x88AB;&#x8C03;&#x7528;(&#x56E0;&#x6B64;&#x6846;&#x67B6;&#x4F7F;&#x7528;&#x8005;&#x4E0D;&#x4E00;&#x5B9A;&#x80FD;&#x591F;&#x76F4;&#x63A5;&#x8C03;&#x7528;&#x5B83;)&#x3002;</p>
-<pre class="language-"><code class="lang-Java">// patterns/TemplateMethod.java
-// Simple demonstration of Template Method
+<pre class="language-"><code class="lang-java"><span class="token comment">// patterns/TemplateMethod.java</span>
+<span class="token comment">// Simple demonstration of Template Method</span>
 
-abstract class ApplicationFramework {
-    ApplicationFramework() {
-        templateMethod();
-    }
+<span class="token keyword">abstract</span> <span class="token keyword">class</span> <span class="token class-name">ApplicationFramework</span> <span class="token punctuation">{</span>
+    <span class="token class-name">ApplicationFramework</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">templateMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    abstract void customize1();
+    <span class="token keyword">abstract</span> <span class="token keyword">void</span> <span class="token function">customize1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    abstract void customize2(); // &quot;private&quot; means automatically &quot;final&quot;: private void templateMethod() { IntStream.range(0, 5).forEach( n -&gt; { customize1(); customize2(); }); }}// Create a new &quot;application&quot;: class MyApp extends ApplicationFramework { @Override void customize1() { System.out.print(&quot;Hello &quot;); }@Override
+    <span class="token keyword">abstract</span> <span class="token keyword">void</span> <span class="token function">customize2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// &quot;private&quot; means automatically &quot;final&quot;: private void templateMethod() { IntStream.range(0, 5).forEach( n -&gt; { customize1(); customize2(); }); }}// Create a new &quot;application&quot;: class MyApp extends ApplicationFramework { @Override void customize1() { System.out.print(&quot;Hello &quot;); }@Override</span>
 
-    void customize2() {
-        System.out.println(&quot;World!&quot;);
-    }
-}
+    <span class="token keyword">void</span> <span class="token function">customize2</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;World!&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-public class TemplateMethod {
-    public static void main(String[] args) {
-        new MyApp();
-    }
-}
-/*
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TemplateMethod</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">new</span> <span class="token class-name">MyApp</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token comment">/*
 Output:
 Hello World!
 Hello World!
 Hello World!
 Hello World!
 Hello World!
-*/
+*/</span>
 </code></pre>
 <p>&#x57FA;&#x7C7B;&#x6784;&#x9020;&#x51FD;&#x6570;&#x8D1F;&#x8D23;&#x6267;&#x884C;&#x5FC5;&#x8981;&#x7684;&#x521D;&#x59CB;&#x5316;&#xFF0C;&#x7136;&#x540E;&#x542F;&#x52A8;&#x8FD0;&#x884C;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x201C;engine&#x201D;(&#x6A21;&#x677F;&#x65B9;&#x6CD5;&#x6A21;&#x5F0F;)(&#x5728;GUI&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4E2D;&#xFF0C;&#x8FD9;&#x4E2A;&#x201C;engine&#x201D;&#x662F;&#x4E3B;&#x4E8B;&#x4EF6;&#x5FAA;&#x73AF;)&#x3002;&#x6846;&#x67B6;&#x4F7F;&#x7528;&#x8005;&#x53EA;&#x63D0;&#x4F9B;
 <strong>customize1()</strong> &#x548C; <strong>customize2()</strong> &#x7684;&#x5B9A;&#x4E49;&#xFF0C;&#x7136;&#x540E;&#x201C;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x201D;&#x5DF2;&#x7ECF;&#x5C31;&#x7EEA;&#x8FD0;&#x884C;&#x3002;</p>
@@ -6619,155 +6619,155 @@ Hello World!
 <p>&#x5728;&#x7ED3;&#x6784;&#x4E0A;&#xFF0C;&#x4EE3;&#x7406;&#x6A21;&#x5F0F;&#x548C;&#x6865;&#x63A5;&#x6A21;&#x5F0F;&#x7684;&#x533A;&#x522B;&#x5F88;&#x7B80;&#x5355;:&#x4EE3;&#x7406;&#x6A21;&#x5F0F;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x5B9E;&#x73B0;&#xFF0C;&#x800C;&#x6865;&#x63A5;&#x6A21;&#x5F0F;&#x6709;&#x591A;&#x4E2A;&#x5B9E;&#x73B0;&#x3002;&#x5728;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#x4E2D;&#x88AB;&#x8BA4;&#x4E3A;&#x662F;&#x4E0D;&#x540C;&#x7684;:&#x4EE3;&#x7406;&#x6A21;&#x5F0F;&#x7528;&#x4E8E;&#x63A7;&#x5236;&#x5BF9;&#x5176;&#x5B9E;&#x73B0;&#x7684;&#x8BBF;&#x95EE;&#xFF0C;&#x800C;&#x6865;&#x63A5;&#x6A21;&#x5F0F;&#x5141;&#x8BB8;&#x60A8;&#x52A8;&#x6001;&#x66F4;&#x6539;&#x5B9E;&#x73B0;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x5982;&#x679C;&#x60A8;&#x6269;&#x5C55;&#x4E86;&#x201C;&#x63A7;&#x5236;&#x5BF9;&#x5B9E;&#x73B0;&#x7684;&#x8BBF;&#x95EE;&#x201D;&#x7684;&#x6982;&#x5FF5;&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x4E24;&#x8005;&#x5C31;&#x53EF;&#x4EE5;&#x5B8C;&#x7F8E;&#x5730;&#x7ED3;&#x5408;&#x5728;&#x4E00;&#x8D77;</p>
 <p><strong>&#x4EE3;&#x7406;&#x6A21;&#x5F0F;</strong></p>
 <p>&#x5982;&#x679C;&#x6211;&#x4EEC;&#x6309;&#x7167;&#x4E0A;&#x9762;&#x7684;&#x5173;&#x7CFB;&#x56FE;&#x5B9E;&#x73B0;&#xFF0C;&#x5B83;&#x770B;&#x8D77;&#x6765;&#x662F;&#x8FD9;&#x6837;&#x7684;:</p>
-<pre class="language-"><code class="lang-Java">// patterns/ProxyDemo.java
-// Simple demonstration of the Proxy pattern
-interface ProxyBase {
-    void f();
+<pre class="language-"><code class="lang-java"><span class="token comment">// patterns/ProxyDemo.java</span>
+<span class="token comment">// Simple demonstration of the Proxy pattern</span>
+<span class="token keyword">interface</span> <span class="token class-name">ProxyBase</span> <span class="token punctuation">{</span>
+    <span class="token keyword">void</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    void g();
+    <span class="token keyword">void</span> <span class="token function">g</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    void h();
-}
+    <span class="token keyword">void</span> <span class="token function">h</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-class Proxy implements ProxyBase {
-    private ProxyBase implementation;
+<span class="token keyword">class</span> <span class="token class-name">Proxy</span> <span class="token keyword">implements</span> <span class="token class-name">ProxyBase</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token class-name">ProxyBase</span> implementation<span class="token punctuation">;</span>
 
-    Proxy() {
-        implementation = new Implementation();
-    }
-    // Pass method calls to the implementation:
-    @Override
-    public void f() { implementation.f(); }
-    @Override
-    public void g() { implementation.g(); }
-    @Override
-    public void h() { implementation.h(); }
-}
+    <span class="token class-name">Proxy</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        implementation <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Implementation</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">// Pass method calls to the implementation:</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> implementation<span class="token punctuation">.</span><span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">g</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> implementation<span class="token punctuation">.</span><span class="token function">g</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">h</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> implementation<span class="token punctuation">.</span><span class="token function">h</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-class Implementation implements ProxyBase {
-    public void f() {
-        System.out.println(&quot;Implementation.f()&quot;);
-    }
+<span class="token keyword">class</span> <span class="token class-name">Implementation</span> <span class="token keyword">implements</span> <span class="token class-name">ProxyBase</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;Implementation.f()&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    public void g() {
-        System.out.println(&quot;Implementation.g()&quot;);
-    }
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">g</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;Implementation.g()&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    public void h() {
-        System.out.println(&quot;Implementation.h()&quot;);
-    }
-}
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">h</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;Implementation.h()&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-public class ProxyDemo {
-    public static void main(String[] args) {
-        Proxy p = new Proxy();
-        p.f();
-        p.g();
-        p.h();
-    }
-}
-/*
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ProxyDemo</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">Proxy</span> p <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Proxy</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        p<span class="token punctuation">.</span><span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        p<span class="token punctuation">.</span><span class="token function">g</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        p<span class="token punctuation">.</span><span class="token function">h</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token comment">/*
 Output:
 Implementation.f()
 Implementation.g()
 Implementation.h()
-*/
+*/</span>
 </code></pre>
 <p>&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#x4E0D;&#x9700;&#x8981;&#x4E0E;&#x4EE3;&#x7406;&#x5BF9;&#x8C61;&#x5177;&#x6709;&#x76F8;&#x540C;&#x7684;&#x63A5;&#x53E3;;&#x53EA;&#x8981;&#x4EE3;&#x7406;&#x5BF9;&#x8C61;&#x4EE5;&#x67D0;&#x79CD;&#x65B9;&#x5F0F;&#x201C;&#x4EE3;&#x8868;&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#x7684;&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#xFF0C;&#x90A3;&#x4E48;&#x57FA;&#x672C;&#x601D;&#x60F3;&#x5C31;&#x7B97;&#x5B9E;&#x73B0;&#x4E86;&#x3002;&#x7136;&#x800C;&#xFF0C;&#x62E5;&#x6709;&#x4E00;&#x4E2A;&#x516C;&#x5171;&#x63A5;&#x53E3;&#x662F;&#x5F88;&#x65B9;&#x4FBF;&#x7684;&#xFF0C;&#x56E0;&#x6B64;&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#x5FC5;&#x987B;&#x5B9E;&#x73B0;&#x4EE3;&#x7406;&#x5BF9;&#x8C61;&#x8C03;&#x7528;&#x7684;&#x6240;&#x6709;&#x65B9;&#x6CD5;&#x3002;</p>
 <p><strong>&#x72B6;&#x6001;&#x6A21;&#x5F0F;</strong></p>
 <p>&#x72B6;&#x6001;&#x6A21;&#x5F0F;&#x5411;&#x4EE3;&#x7406;&#x5BF9;&#x8C61;&#x6DFB;&#x52A0;&#x4E86;&#x66F4;&#x591A;&#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x4EE5;&#x53CA;&#x5728;&#x4EE3;&#x7406;&#x5BF9;&#x8C61;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x5185;&#x4ECE;&#x4E00;&#x4E2A;&#x5B9E;&#x73B0;&#x5207;&#x6362;&#x5230;&#x53E6;&#x4E00;&#x79CD;&#x5B9E;&#x73B0;&#x7684;&#x65B9;&#x6CD5;:</p>
-<pre class="language-"><code class="lang-Java">// patterns/StateDemo.java // Simple demonstration of the State pattern
-interface StateBase {
-    void f();
+<pre class="language-"><code class="lang-java"><span class="token comment">// patterns/StateDemo.java // Simple demonstration of the State pattern</span>
+<span class="token keyword">interface</span> <span class="token class-name">StateBase</span> <span class="token punctuation">{</span>
+    <span class="token keyword">void</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    void g();
+    <span class="token keyword">void</span> <span class="token function">g</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    void h();
+    <span class="token keyword">void</span> <span class="token function">h</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    void changeImp(StateBase newImp);
-}
+    <span class="token keyword">void</span> <span class="token function">changeImp</span><span class="token punctuation">(</span><span class="token class-name">StateBase</span> newImp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-class State implements StateBase {
-    private StateBase implementation;
+<span class="token keyword">class</span> <span class="token class-name">State</span> <span class="token keyword">implements</span> <span class="token class-name">StateBase</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token class-name">StateBase</span> implementation<span class="token punctuation">;</span>
 
-    State(StateBase imp) {
-        implementation = imp;
-    }
+    <span class="token class-name">State</span><span class="token punctuation">(</span><span class="token class-name">StateBase</span> imp<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        implementation <span class="token operator">=</span> imp<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    @Override
-    public void changeImp(StateBase newImp) {
-        implementation = newImp;
-    }// Pass method calls to the implementation: @Override public void f() { implementation.f(); } @Override public void g() { implementation.g(); } @Override
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">changeImp</span><span class="token punctuation">(</span><span class="token class-name">StateBase</span> newImp<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        implementation <span class="token operator">=</span> newImp<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token comment">// Pass method calls to the implementation: @Override public void f() { implementation.f(); } @Override public void g() { implementation.g(); } @Override</span>
 
-    public void h() {
-        implementation.h();
-    }
-}
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">h</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        implementation<span class="token punctuation">.</span><span class="token function">h</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-class Implementation1 implements StateBase {
-    @Override
-    public void f() {
-        System.out.println(&quot;Implementation1.f()&quot;);
-    }
+<span class="token keyword">class</span> <span class="token class-name">Implementation1</span> <span class="token keyword">implements</span> <span class="token class-name">StateBase</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;Implementation1.f()&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    @Override
-    public void g() {
-        System.out.println(&quot;Implementation1.g()&quot;);
-    }
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">g</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;Implementation1.g()&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    @Override
-    public void h() {
-        System.out.println(&quot;Implementation1.h()&quot;);
-    }
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">h</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;Implementation1.h()&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    @Override
-    public void changeImp(StateBase newImp) {
-    }
-}
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">changeImp</span><span class="token punctuation">(</span><span class="token class-name">StateBase</span> newImp<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-class Implementation2 implements StateBase {
-    @Override
-    public void f() {
-        System.out.println(&quot;Implementation2.f()&quot;);
-    }
+<span class="token keyword">class</span> <span class="token class-name">Implementation2</span> <span class="token keyword">implements</span> <span class="token class-name">StateBase</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;Implementation2.f()&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    @Override
-    public void g() {
-        System.out.println(&quot;Implementation2.g()&quot;);
-    }
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">g</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;Implementation2.g()&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    @Override
-    public void h() {
-        System.out.println(&quot;Implementation2.h()&quot;);
-    }
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">h</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;Implementation2.h()&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    @Override
-    public void changeImp(StateBase newImp) {
-    }
-}
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">changeImp</span><span class="token punctuation">(</span><span class="token class-name">StateBase</span> newImp<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-public class StateDemo {
-    static void test(StateBase b) {
-        b.f();
-        b.g();
-        b.h();
-    }
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">StateDemo</span> <span class="token punctuation">{</span>
+    <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token class-name">StateBase</span> b<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        b<span class="token punctuation">.</span><span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        b<span class="token punctuation">.</span><span class="token function">g</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        b<span class="token punctuation">.</span><span class="token function">h</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    public static void main(String[] args) {
-        StateBase b = new State(new Implementation1());
-        test(b);
-        b.changeImp(new Implementation2());
-        test(b);
-    }
-}
-/* Output:
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">StateBase</span> b <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">State</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Implementation1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">test</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        b<span class="token punctuation">.</span><span class="token function">changeImp</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Implementation2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">test</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token comment">/* Output:
 Implementation1.f()
 Implementation1.g()
 Implementation1.h()
 Implementation2.f()
 Implementation2.g()
 Implementation2.h()
-*/
+*/</span>
 </code></pre>
 <p>&#x5728;main()&#x4E2D;&#xFF0C;&#x9996;&#x5148;&#x4F7F;&#x7528;&#x7B2C;&#x4E00;&#x4E2A;&#x5B9E;&#x73B0;&#xFF0C;&#x7136;&#x540E;&#x6539;&#x53D8;&#x6210;&#x7B2C;&#x4E8C;&#x4E2A;&#x5B9E;&#x73B0;&#x3002;&#x4EE3;&#x7406;&#x6A21;&#x5F0F;&#x548C;&#x72B6;&#x6001;&#x6A21;&#x5F0F;&#x7684;&#x533A;&#x522B;&#x5728;&#x4E8E;&#x5B83;&#x4EEC;&#x89E3;&#x51B3;&#x7684;&#x95EE;&#x9898;&#x3002;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#x4E2D;&#x63CF;&#x8FF0;&#x7684;&#x4EE3;&#x7406;&#x6A21;&#x5F0F;&#x7684;&#x5E38;&#x89C1;&#x7528;&#x9014;&#x5982;&#x4E0B;:</p>
 <ol>
@@ -6783,88 +6783,88 @@ Implementation2.h()
 <p>&#x5728;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#x4E2D;&#xFF0C;&#x4EE3;&#x7406;&#x6A21;&#x5F0F;&#x548C;&#x6865;&#x63A5;&#x6A21;&#x5F0F;&#x5E76;&#x4E0D;&#x662F;&#x76F8;&#x4E92;&#x5173;&#x8054;&#x7684;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x4EEC;&#x88AB;&#x8D4B;&#x4E88;(&#x6211;&#x8BA4;&#x4E3A;&#x662F;&#x4EFB;&#x610F;&#x7684;)&#x4E0D;&#x540C;&#x7684;&#x7ED3;&#x6784;&#x3002;&#x6865;&#x63A5;&#x6A21;&#x5F0F;,&#x7279;&#x522B;&#x662F;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x5355;&#x72EC;&#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x4F46;&#x8FD9;&#x4F3C;&#x4E4E;&#x5BF9;&#x6211;&#x6765;&#x8BF4;&#x662F;&#x4E0D;&#x5FC5;&#x8981;&#x7684;,&#x9664;&#x975E;&#x4F60;&#x786E;&#x5B9A;&#x8BE5;&#x5B9E;&#x73B0;&#x662F;&#x4F60;&#x65E0;&#x6CD5;&#x63A7;&#x5236;&#x7684;(&#x5F53;&#x7136;&#x6709;&#x53EF;&#x80FD;&#xFF0C;&#x4F46;&#x662F;&#x5982;&#x679C;&#x60A8;&#x7F16;&#x5199;&#x6240;&#x6709;&#x4EE3;&#x7801;&#xFF0C;&#x90A3;&#x4E48;&#x6CA1;&#x6709;&#x7406;&#x7531;&#x4E0D;&#x4ECE;&#x5355;&#x57FA;&#x7C7B;&#x7684;&#x4F18;&#x96C5;&#x4E2D;&#x53D7;&#x76CA;)&#x3002;&#x6B64;&#x5916;&#xFF0C;&#x53EA;&#x8981;&#x4EE3;&#x7406;&#x5BF9;&#x8C61;&#x63A7;&#x5236;&#x5BF9;&#x5176;&#x201C;&#x524D;&#x7F6E;&#x201D;&#x5BF9;&#x8C61;&#x7684;&#x8BBF;&#x95EE;&#xFF0C;&#x4EE3;&#x6A21;&#x5F0F;&#x7406;&#x5C31;&#x4E0D;&#x9700;&#x8981;&#x4E3A;&#x5176;&#x5B9E;&#x73B0;&#x4F7F;&#x7528;&#x76F8;&#x540C;&#x7684;&#x57FA;&#x7C7B;&#x3002;&#x4E0D;&#x7BA1;&#x5177;&#x4F53;&#x60C5;&#x51B5;&#x5982;&#x4F55;&#xFF0C;&#x5728;&#x4EE3;&#x7406;&#x6A21;&#x5F0F;&#x548C;&#x6865;&#x63A5;&#x6A21;&#x5F0F;&#x4E2D;&#xFF0C;&#x4EE3;&#x7406;&#x5BF9;&#x8C61;&#x90FD;&#x5C06;&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x4F20;&#x9012;&#x7ED9;&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#x5BF9;&#x8C61;&#x3002;</p>
 <p><strong>&#x72B6;&#x6001;&#x673A;</strong></p>
 <p>&#x6865;&#x63A5;&#x6A21;&#x5F0F;&#x5141;&#x8BB8;&#x7A0B;&#x5E8F;&#x5458;&#x66F4;&#x6539;&#x5B9E;&#x73B0;&#xFF0C;&#x72B6;&#x6001;&#x673A;&#x5229;&#x7528;&#x4E00;&#x4E2A;&#x7ED3;&#x6784;&#x6765;&#x81EA;&#x52A8;&#x5730;&#x5C06;&#x5B9E;&#x73B0;&#x66F4;&#x6539;&#x5230;&#x4E0B;&#x4E00;&#x4E2A;&#x3002;&#x5F53;&#x524D;&#x5B9E;&#x73B0;&#x8868;&#x793A;&#x7CFB;&#x7EDF;&#x6240;&#x5904;&#x7684;&#x72B6;&#x6001;&#xFF0C;&#x7CFB;&#x7EDF;&#x5728;&#x4E0D;&#x540C;&#x72B6;&#x6001;&#x4E0B;&#x7684;&#x884C;&#x4E3A;&#x4E0D;&#x540C;(&#x56E0;&#x4E3A;&#x5B83;&#x4F7F;&#x7528;&#x6865;&#x63A5;&#x6A21;&#x5F0F;)&#x3002;&#x57FA;&#x672C;&#x4E0A;&#xFF0C;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x5229;&#x7528;&#x5BF9;&#x8C61;&#x7684;&#x201C;&#x72B6;&#x6001;&#x673A;&#x201D;&#x3002;&#x5C06;&#x7CFB;&#x7EDF;&#x4ECE;&#x4E00;&#x79CD;&#x72B6;&#x6001;&#x79FB;&#x52A8;&#x5230;&#x53E6;&#x4E00;&#x79CD;&#x72B6;&#x6001;&#x7684;&#x4EE3;&#x7801;&#x901A;&#x5E38;&#x662F;&#x6A21;&#x677F;&#x65B9;&#x6CD5;&#x6A21;&#x5F0F;&#xFF0C;&#x5982;&#x4E0B;&#x4F8B;&#x6240;&#x793A;:</p>
-<pre class="language-"><code class="lang-Java">// patterns/state/StateMachineDemo.java
-// The StateMachine pattern and Template method
-// {java patterns.state.StateMachineDemo}
-package patterns.state;
+<pre class="language-"><code class="lang-java"><span class="token comment">// patterns/state/StateMachineDemo.java</span>
+<span class="token comment">// The StateMachine pattern and Template method</span>
+<span class="token comment">// {java patterns.state.StateMachineDemo}</span>
+<span class="token keyword">package</span> <span class="token namespace">patterns<span class="token punctuation">.</span>state</span><span class="token punctuation">;</span>
 
-import onjava.Nap;
+<span class="token keyword">import</span> <span class="token namespace">onjava<span class="token punctuation">.</span></span><span class="token class-name">Nap</span><span class="token punctuation">;</span>
 
-interface State {
-    void run();
-}
+<span class="token keyword">interface</span> <span class="token class-name">State</span> <span class="token punctuation">{</span>
+    <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-abstract class StateMachine {
-    protected State currentState;
+<span class="token keyword">abstract</span> <span class="token keyword">class</span> <span class="token class-name">StateMachine</span> <span class="token punctuation">{</span>
+    <span class="token keyword">protected</span> <span class="token class-name">State</span> currentState<span class="token punctuation">;</span>
 
-    Nap(0.5);
-System.out.println(&quot;Washing&quot;); new
+    <span class="token class-name">Nap</span><span class="token punctuation">(</span><span class="token number">0.5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;Washing&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token keyword">new</span>
 
-    protected abstract boolean changeState();
+    <span class="token keyword">protected</span> <span class="token keyword">abstract</span> <span class="token keyword">boolean</span> <span class="token function">changeState</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    // Template method:
-    protected final void runAll() {
-        while (changeState()) // Customizable
-            currentState.run();
-    }
-}
+    <span class="token comment">// Template method:</span>
+    <span class="token keyword">protected</span> <span class="token keyword">final</span> <span class="token keyword">void</span> <span class="token function">runAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token function">changeState</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// Customizable</span>
+            currentState<span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-// A different subclass for each state:
-class Wash implements State {
-    @Override
-    public void run() {
-    }
-}
+<span class="token comment">// A different subclass for each state:</span>
+<span class="token keyword">class</span> <span class="token class-name">Wash</span> <span class="token keyword">implements</span> <span class="token class-name">State</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-class Spin implements State {
-    @Override
-    public void run() {
-        System.out.println(&quot;Spinning&quot;);
-        new Nap(0.5);
-    }
-}
+<span class="token keyword">class</span> <span class="token class-name">Spin</span> <span class="token keyword">implements</span> <span class="token class-name">State</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;Spinning&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">new</span> <span class="token class-name">Nap</span><span class="token punctuation">(</span><span class="token number">0.5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-class Rinse implements State {
-    @Override
-    public void run() {
-        System.out.println(&quot;Rinsing&quot;);
-        new Nap(0.5);
-    }
-}
+<span class="token keyword">class</span> <span class="token class-name">Rinse</span> <span class="token keyword">implements</span> <span class="token class-name">State</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;Rinsing&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">new</span> <span class="token class-name">Nap</span><span class="token punctuation">(</span><span class="token number">0.5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-class Washer extends StateMachine {
-    private int i = 0;
+<span class="token keyword">class</span> <span class="token class-name">Washer</span> <span class="token keyword">extends</span> <span class="token class-name">StateMachine</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
 
-    // The state table:
-    private State[] states = {new Wash(), new Spin(), new Rinse(), new Spin(),};
+    <span class="token comment">// The state table:</span>
+    <span class="token keyword">private</span> <span class="token class-name">State</span><span class="token punctuation">[</span><span class="token punctuation">]</span> states <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token keyword">new</span> <span class="token class-name">Wash</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">Spin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">Rinse</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">Spin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
 
-    Washer() {
-        runAll();
-    }
+    <span class="token class-name">Washer</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">runAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    @Override
-    public boolean changeState() {
-        if (i &lt; states.length) {
-            // Change the state by setting the
-            // surrogate reference to a new object:
-            currentState = states[i++];
-            return true;
-        } else return false;
-    }
-}
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">changeState</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;</span> states<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment">// Change the state by setting the</span>
+            <span class="token comment">// surrogate reference to a new object:</span>
+            currentState <span class="token operator">=</span> states<span class="token punctuation">[</span>i<span class="token operator">++</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-public class StateMachineDemo {
-    public static void main(String[] args) {
-        new Washer();
-    }
-}
-/*
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">StateMachineDemo</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">new</span> <span class="token class-name">Washer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token comment">/*
 Output:
 Washing
 Spinning
 Rinsing
 Spinning
-*/
+*/</span>
 </code></pre>
 <p>&#x5728;&#x8FD9;&#x91CC;&#xFF0C;&#x63A7;&#x5236;&#x72B6;&#x6001;&#x7684;&#x7C7B;(&#x672C;&#x4F8B;&#x4E2D;&#x662F;&#x72B6;&#x6001;&#x673A;)&#x8D1F;&#x8D23;&#x51B3;&#x5B9A;&#x4E0B;&#x4E00;&#x4E2A;&#x72B6;&#x6001;&#x3002;&#x7136;&#x800C;&#xFF0C;&#x72B6;&#x6001;&#x5BF9;&#x8C61;&#x672C;&#x8EAB;&#x4E5F;&#x53EF;&#x4EE5;&#x51B3;&#x5B9A;&#x4E0B;&#x4E00;&#x6B65;&#x79FB;&#x52A8;&#x5230;&#x4EC0;&#x4E48;&#x72B6;&#x6001;&#xFF0C;&#x901A;&#x5E38;&#x57FA;&#x4E8E;&#x7CFB;&#x7EDF;&#x7684;&#x67D0;&#x79CD;&#x8F93;&#x5165;&#x3002;&#x8FD9;&#x662F;&#x66F4;&#x7075;&#x6D3B;&#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x3002;</p>
 <!-- Factories: Encapsulating Object Creation -->
@@ -7586,7 +7586,7 @@ Bisection.algorithm
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第二十五章 设计模式","level":"1.28","depth":1,"next":{"title":"概念","level":"1.28.1","depth":2,"anchor":"#概念","path":"chapters/25-Patterns.md","ref":"./chapters/25-Patterns.md#概念","articles":[]},"previous":{"title":"本章小结","level":"1.27.14","depth":2,"anchor":"#本章小结","path":"chapters/24-Concurrent-Programming.md","ref":"./chapters/24-Concurrent-Programming.md#本章小结","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","anchor-navigation-ex","-sharing","sharing-plus","-highlight","prism"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"night","family":"serif","size":2},"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"sharing":{"weibo":true,"qzone":true,"qq":true,"douban":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"Little Captain","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"OnJava8","gitbook":"*","description":"OnJava8"},"file":{"path":"chapters/25-Patterns.md","mtime":"2021-08-24T16:13:07.666Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-08-24T16:48:49.732Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第二十五章 设计模式","level":"1.28","depth":1,"next":{"title":"概念","level":"1.28.1","depth":2,"anchor":"#概念","path":"chapters/25-Patterns.md","ref":"./chapters/25-Patterns.md#概念","articles":[]},"previous":{"title":"本章小结","level":"1.27.14","depth":2,"anchor":"#本章小结","path":"chapters/24-Concurrent-Programming.md","ref":"./chapters/24-Concurrent-Programming.md#本章小结","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","anchor-navigation-ex","-sharing","sharing-plus","-highlight","prism"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"night","family":"serif","size":2},"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"sharing":{"weibo":true,"qzone":true,"qq":true,"douban":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"Little Captain","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"OnJava8","gitbook":"*","description":"OnJava8"},"file":{"path":"chapters/25-Patterns.md","mtime":"2021-08-24T17:00:35.919Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-08-24T17:01:25.080Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
