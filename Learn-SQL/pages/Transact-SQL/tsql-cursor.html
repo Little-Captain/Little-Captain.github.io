@@ -1,0 +1,657 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Transact-SQL 游标 · Learn-SQL</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Little Captain">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism-okaidia.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="tsql-procedure.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                        <b>1.2.</b>
+                    
+                    Transact-SQL
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="tsql-control.html">
+            
+                <a href="tsql-control.html">
+            
+                    
+                        <b>1.2.1.</b>
+                    
+                    Transact-SQL 控制流
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="tsql-expression.html">
+            
+                <a href="tsql-expression.html">
+            
+                    
+                        <b>1.2.2.</b>
+                    
+                    Transact-SQL 表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="tsql-procedure.html">
+            
+                <a href="tsql-procedure.html">
+            
+                    
+                        <b>1.2.3.</b>
+                    
+                    Transact-SQL 存储过程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.4" data-path="tsql-cursor.html">
+            
+                <a href="tsql-cursor.html">
+            
+                    
+                        <b>1.2.4.</b>
+                    
+                    Transact-SQL 游标
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Transact-SQL 游标</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#transact-sql-&#x6E38;&#x6807;"><b>1. </b>Transact-SQL &#x6E38;&#x6807;</a></li><ul><li><span class="title-icon "></span><a href="#declare-cursor"><b>1.1. </b>DECLARE CURSOR</a></li><ul><li><span class="title-icon "></span><a href="#&#x793A;&#x4F8B;"><b>1.1.1. </b>&#x793A;&#x4F8B;</a></li></ul><li><span class="title-icon "></span><a href="#open"><b>1.2. </b>OPEN</a></li><li><span class="title-icon "></span><a href="#fetch"><b>1.3. </b>FETCH</a></li><ul><li><span class="title-icon "></span><a href="#&#x793A;&#x4F8B;_1"><b>1.3.1. </b>&#x793A;&#x4F8B;</a></li></ul><li><span class="title-icon "></span><a href="#close"><b>1.4. </b>CLOSE</a></li><li><span class="title-icon "></span><a href="#deallocate"><b>1.5. </b>DEALLOCATE</a></li></ul></ul></div><a href="#transact-sql-&#x6E38;&#x6807;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="transact-sql-&#x6E38;&#x6807;"><a name="transact-sql-&#x6E38;&#x6807;" class="anchor-navigation-ex-anchor" href="#transact-sql-&#x6E38;&#x6807;"><i class="fa fa-link" aria-hidden="true"></i></a>1. Transact-SQL &#x6E38;&#x6807;</h1>
+<ul>
+<li><p>SQL Server &#x8BED;&#x53E5;&#x4EA7;&#x751F;&#x5B8C;&#x6574;&#x7684;&#x7ED3;&#x679C;&#x96C6;&#xFF0C;&#x4F46;&#x6709;&#x65F6;&#x5019;&#x6700;&#x597D;&#x5BF9;&#x7ED3;&#x679C;&#x8FDB;&#x884C;&#x9010;&#x884C;&#x5904;&#x7406;&#x3002;</p>
+</li>
+<li><p>&#x6253;&#x5F00;&#x7ED3;&#x679C;&#x96C6;&#x4E2D;&#x7684;&#x6E38;&#x6807;&#xFF0C;&#x5373;&#x53EF;&#x5BF9;&#x7ED3;&#x679C;&#x96C6;&#x8FDB;&#x884C;&#x9010;&#x884C;&#x5904;&#x7406;&#x3002;</p>
+</li>
+<li><p>&#x53EF;&#x4EE5;&#x5C06;&#x6E38;&#x6807;&#x5206;&#x914D;&#x7ED9;&#x5177;&#x6709;&#x5149;&#x6807;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x7684;&#x53D8;&#x91CF;&#x6216;&#x53C2;&#x6570;&#x3002;</p>
+</li>
+<li><p>&#x652F;&#x6301;&#x6E38;&#x6807;&#x64CD;&#x4F5C;&#x7684;&#x8BED;&#x53E5;</p>
+<ul>
+<li>CLOSE</li>
+<li>CREATE PROCEDURE</li>
+<li>DEALLOCATE</li>
+<li>DECLARE CURSOR</li>
+<li>DECLARE @local_variable</li>
+<li>DELETE</li>
+<li>FETCH</li>
+<li>OPEN</li>
+<li>UPDATE</li>
+<li>SET</li>
+</ul>
+</li>
+<li><p>&#x652F;&#x6301;&#x6E38;&#x6807;&#x7684;&#x7CFB;&#x7EDF;&#x51FD;&#x6570;&#x548C;&#x7CFB;&#x7EDF;&#x5B58;&#x50A8;&#x8FC7;&#x7A0B;</p>
+<ul>
+<li>@@CURSOR_ROWS</li>
+<li>CURSOR_STATUS</li>
+<li>@@FETCH_STATUS</li>
+<li>sp_cursor_list</li>
+<li>sp_describe_cursor</li>
+<li>sp_describe_cursor_columns</li>
+<li>sp_describe_cursor_tables</li>
+</ul>
+</li>
+</ul>
+<h2 id="declare-cursor"><a name="declare-cursor" class="anchor-navigation-ex-anchor" href="#declare-cursor"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. DECLARE CURSOR</h2>
+<ul>
+<li>&#x5B9A;&#x4E49; Transact-SQL &#x670D;&#x52A1;&#x5668;&#x6E38;&#x6807;&#x7684;&#x5C5E;&#x6027;<ul>
+<li>&#x5982;&#x6E38;&#x6807;&#x7684;&#x6EDA;&#x52A8;&#x884C;&#x4E3A;&#x548C;&#x7528;&#x4E8E;&#x751F;&#x6210;&#x6E38;&#x6807;&#x6240;&#x64CD;&#x4F5C;&#x7684;&#x7ED3;&#x679C;&#x96C6;&#x7684;&#x67E5;&#x8BE2;&#x3002;</li>
+<li>DECLARE CURSOR &#x65E2;&#x63A5;&#x53D7;&#x57FA;&#x4E8E; ISO &#x6807;&#x51C6;&#x7684;&#x8BED;&#x6CD5;&#xFF0C;&#x4E5F;&#x63A5;&#x53D7;&#x4F7F;&#x7528;&#x4E00;&#x7EC4; Transact-SQL &#x6269;&#x5C55;&#x7684;&#x8BED;&#x6CD5;&#x3002;</li>
+</ul>
+</li>
+</ul>
+<pre class="language-"><code class="lang-sql"><span class="token comment">-- ISO Syntax</span>
+<span class="token keyword">DECLARE</span> cursor_name <span class="token punctuation">[</span> INSENSITIVE <span class="token punctuation">]</span> <span class="token punctuation">[</span> SCROLL <span class="token punctuation">]</span> <span class="token keyword">CURSOR</span>
+     <span class="token keyword">FOR</span> select_statement
+     <span class="token punctuation">[</span> <span class="token keyword">FOR</span> { <span class="token keyword">READ</span> ONLY <span class="token operator">|</span> <span class="token keyword">UPDATE</span> <span class="token punctuation">[</span> <span class="token keyword">OF</span> column_name <span class="token punctuation">[</span> <span class="token punctuation">,</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>n <span class="token punctuation">]</span> <span class="token punctuation">]</span> } <span class="token punctuation">]</span>
+<span class="token punctuation">[</span><span class="token punctuation">;</span><span class="token punctuation">]</span>
+<span class="token comment">-- Transact-SQL Extended Syntax</span>
+<span class="token keyword">DECLARE</span> cursor_name <span class="token keyword">CURSOR</span> <span class="token punctuation">[</span> <span class="token keyword">LOCAL</span> <span class="token operator">|</span> <span class="token keyword">GLOBAL</span> <span class="token punctuation">]</span>
+     <span class="token punctuation">[</span> FORWARD_ONLY <span class="token operator">|</span> SCROLL <span class="token punctuation">]</span>
+     <span class="token punctuation">[</span> STATIC <span class="token operator">|</span> KEYSET <span class="token operator">|</span> DYNAMIC <span class="token operator">|</span> FAST_FORWARD <span class="token punctuation">]</span>
+     <span class="token punctuation">[</span> READ_ONLY <span class="token operator">|</span> SCROLL_LOCKS <span class="token operator">|</span> OPTIMISTIC <span class="token punctuation">]</span>
+     <span class="token punctuation">[</span> TYPE_WARNING <span class="token punctuation">]</span>
+     <span class="token keyword">FOR</span> select_statement
+     <span class="token punctuation">[</span> <span class="token keyword">FOR</span> <span class="token keyword">UPDATE</span> <span class="token punctuation">[</span> <span class="token keyword">OF</span> column_name <span class="token punctuation">[</span> <span class="token punctuation">,</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>n <span class="token punctuation">]</span> <span class="token punctuation">]</span> <span class="token punctuation">]</span>
+<span class="token punctuation">[</span><span class="token punctuation">;</span><span class="token punctuation">]</span>
+</code></pre>
+<h3 id="&#x793A;&#x4F8B;"><a name="&#x793A;&#x4F8B;" class="anchor-navigation-ex-anchor" href="#&#x793A;&#x4F8B;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.1. &#x793A;&#x4F8B;</h3>
+<ul>
+<li>&#x4F7F;&#x7528;&#x7B80;&#x5355;&#x7684;&#x6E38;&#x6807;&#x548C;&#x8BED;&#x6CD5;</li>
+</ul>
+<pre class="language-"><code class="lang-sql"><span class="token keyword">DECLARE</span> vend_cursor <span class="token keyword">CURSOR</span>  
+    <span class="token keyword">FOR</span> <span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> Purchasing<span class="token punctuation">.</span>Vendor
+    <span class="token keyword">OPEN</span> vend_cursor  
+<span class="token keyword">FETCH</span> <span class="token keyword">NEXT</span> <span class="token keyword">FROM</span> vend_cursor<span class="token punctuation">;</span>
+</code></pre>
+<ul>
+<li>&#x4F7F;&#x7528;&#x5D4C;&#x5957;&#x6E38;&#x6807;&#x751F;&#x6210;&#x62A5;&#x8868;&#x8F93;&#x51FA;</li>
+</ul>
+<pre class="language-"><code class="lang-sql"><span class="token keyword">SET</span> NOCOUNT <span class="token keyword">ON</span><span class="token punctuation">;</span>
+
+<span class="token keyword">DECLARE</span> <span class="token variable">@vendor_id</span> <span class="token keyword">INT</span><span class="token punctuation">,</span> <span class="token variable">@vendor_name</span> NVARCHAR<span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span><span class="token punctuation">,</span>  
+    <span class="token variable">@message</span> <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">80</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token variable">@product</span> NVARCHAR<span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+
+<span class="token keyword">PRINT</span> <span class="token string">&apos;-------- Vendor Products Report --------&apos;</span><span class="token punctuation">;</span>  
+
+<span class="token keyword">DECLARE</span> vendor_cursor <span class="token keyword">CURSOR</span> <span class="token keyword">FOR</span>
+<span class="token keyword">SELECT</span> VendorID<span class="token punctuation">,</span> Name
+<span class="token keyword">FROM</span> Purchasing<span class="token punctuation">.</span>Vendor
+<span class="token keyword">WHERE</span> PreferredVendorStatus <span class="token operator">=</span> <span class="token number">1</span>
+<span class="token keyword">ORDER</span> <span class="token keyword">BY</span> VendorID<span class="token punctuation">;</span>
+
+<span class="token keyword">OPEN</span> vendor_cursor
+
+    <span class="token keyword">FETCH</span> <span class="token keyword">NEXT</span> <span class="token keyword">FROM</span> vendor_cursor   
+<span class="token keyword">INTO</span> <span class="token variable">@vendor_id</span><span class="token punctuation">,</span> <span class="token variable">@vendor_name</span>  
+
+<span class="token keyword">WHILE</span> @<span class="token variable">@FETCH_STATUS</span> <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token keyword">BEGIN</span>  
+    <span class="token keyword">PRINT</span> <span class="token string">&apos; &apos;</span>
+<span class="token keyword">SELECT</span> <span class="token variable">@message</span> <span class="token operator">=</span> <span class="token string">&apos;----- Products From Vendor: &apos;</span> <span class="token operator">+</span>
+                  <span class="token variable">@vendor_name</span>
+           <span class="token keyword">PRINT</span> <span class="token variable">@message</span>
+
+<span class="token comment">-- Declare an inner cursor based     </span>
+<span class="token comment">-- on vendor_id from the outer cursor.  </span>
+
+<span class="token keyword">DECLARE</span> product_cursor <span class="token keyword">CURSOR</span> <span class="token keyword">FOR</span>
+<span class="token keyword">SELECT</span> v<span class="token punctuation">.</span>Name
+<span class="token keyword">FROM</span> Purchasing<span class="token punctuation">.</span>ProductVendor pv<span class="token punctuation">,</span> Production<span class="token punctuation">.</span>Product v
+<span class="token keyword">WHERE</span> pv<span class="token punctuation">.</span>ProductID <span class="token operator">=</span> v<span class="token punctuation">.</span>ProductID <span class="token operator">AND</span>
+    pv<span class="token punctuation">.</span>VendorID <span class="token operator">=</span> <span class="token variable">@vendor_id</span>  <span class="token comment">-- Variable value from the outer cursor  </span>
+
+    <span class="token keyword">OPEN</span> product_cursor  
+    <span class="token keyword">FETCH</span> <span class="token keyword">NEXT</span> <span class="token keyword">FROM</span> product_cursor <span class="token keyword">INTO</span> <span class="token variable">@product</span>
+
+    <span class="token keyword">IF</span> @<span class="token variable">@FETCH_STATUS</span> <span class="token operator">&lt;&gt;</span> <span class="token number">0</span>
+    <span class="token keyword">PRINT</span> <span class="token string">&apos;         &lt;&lt;None&gt;&gt;&apos;</span>
+
+    <span class="token keyword">WHILE</span> @<span class="token variable">@FETCH_STATUS</span> <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token keyword">BEGIN</span>
+
+<span class="token keyword">SELECT</span> <span class="token variable">@message</span> <span class="token operator">=</span> <span class="token string">&apos;         &apos;</span> <span class="token operator">+</span> <span class="token variable">@product</span>
+           <span class="token keyword">PRINT</span> <span class="token variable">@message</span>  
+        <span class="token keyword">FETCH</span> <span class="token keyword">NEXT</span> <span class="token keyword">FROM</span> product_cursor <span class="token keyword">INTO</span> <span class="token variable">@product</span>
+<span class="token keyword">END</span>
+
+<span class="token keyword">CLOSE</span> product_cursor
+    <span class="token keyword">DEALLOCATE</span> product_cursor  
+        <span class="token comment">-- Get the next vendor.  </span>
+    <span class="token keyword">FETCH</span> <span class="token keyword">NEXT</span> <span class="token keyword">FROM</span> vendor_cursor   
+    <span class="token keyword">INTO</span> <span class="token variable">@vendor_id</span><span class="token punctuation">,</span> <span class="token variable">@vendor_name</span>
+<span class="token keyword">END</span>
+<span class="token keyword">CLOSE</span> vendor_cursor<span class="token punctuation">;</span>
+<span class="token keyword">DEALLOCATE</span> vendor_cursor<span class="token punctuation">;</span>
+</code></pre>
+<h2 id="open"><a name="open" class="anchor-navigation-ex-anchor" href="#open"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. OPEN</h2>
+<ul>
+<li>&#x6253;&#x5F00; Transact-SQL &#x670D;&#x52A1;&#x5668;&#x6E38;&#x6807;&#xFF0C;&#x7136;&#x540E;&#x901A;&#x8FC7;&#x6267;&#x884C;&#x5728; DECLARE CURSOR &#x6216; SET cursor_variable &#x8BED;&#x53E5;&#x4E2D;&#x6307;&#x5B9A;&#x7684; Transact-SQL &#x8BED;&#x53E5;&#x586B;&#x5145;&#x6E38;&#x6807;&#x3002;</li>
+</ul>
+<pre class="language-"><code class="lang-sql"><span class="token keyword">OPEN</span> { { <span class="token punctuation">[</span> <span class="token keyword">GLOBAL</span> <span class="token punctuation">]</span> cursor_name } <span class="token operator">|</span> cursor_variable_name }
+</code></pre>
+<ul>
+<li>&#x793A;&#x4F8B;</li>
+</ul>
+<pre class="language-"><code class="lang-sql"><span class="token keyword">DECLARE</span> Employee_Cursor <span class="token keyword">CURSOR</span> <span class="token keyword">FOR</span>
+<span class="token keyword">SELECT</span> LastName<span class="token punctuation">,</span> FirstName
+<span class="token keyword">FROM</span> AdventureWorks2012<span class="token punctuation">.</span>HumanResources<span class="token punctuation">.</span>vEmployee
+<span class="token keyword">WHERE</span> LastName <span class="token operator">like</span> <span class="token string">&apos;B%&apos;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">OPEN</span> Employee_Cursor<span class="token punctuation">;</span>
+
+<span class="token keyword">FETCH</span> <span class="token keyword">NEXT</span> <span class="token keyword">FROM</span> Employee_Cursor<span class="token punctuation">;</span>
+<span class="token keyword">WHILE</span> @<span class="token variable">@FETCH_STATUS</span> <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token keyword">BEGIN</span>
+<span class="token keyword">FETCH</span> <span class="token keyword">NEXT</span> <span class="token keyword">FROM</span> Employee_Cursor
+<span class="token keyword">END</span><span class="token punctuation">;</span>
+
+<span class="token keyword">CLOSE</span> Employee_Cursor<span class="token punctuation">;</span>
+<span class="token keyword">DEALLOCATE</span> Employee_Cursor<span class="token punctuation">;</span>
+</code></pre>
+<h2 id="fetch"><a name="fetch" class="anchor-navigation-ex-anchor" href="#fetch"><i class="fa fa-link" aria-hidden="true"></i></a>1.3. FETCH</h2>
+<ul>
+<li>&#x901A;&#x8FC7; Transact-SQL &#x670D;&#x52A1;&#x5668;&#x6E38;&#x6807;&#x68C0;&#x7D22;&#x7279;&#x5B9A;&#x884C;&#x3002;</li>
+</ul>
+<pre class="language-"><code class="lang-sql"><span class="token keyword">FETCH</span>
+    <span class="token punctuation">[</span> <span class="token punctuation">[</span> <span class="token keyword">NEXT</span> <span class="token operator">|</span> PRIOR <span class="token operator">|</span> <span class="token keyword">FIRST</span> <span class="token operator">|</span> <span class="token keyword">LAST</span>
+            <span class="token operator">|</span> ABSOLUTE { n <span class="token operator">|</span> <span class="token variable">@nvar</span> }
+            <span class="token operator">|</span> RELATIVE { n <span class="token operator">|</span> <span class="token variable">@nvar</span> }
+        <span class="token punctuation">]</span>
+        <span class="token keyword">FROM</span>
+    <span class="token punctuation">]</span>
+{ { <span class="token punctuation">[</span> <span class="token keyword">GLOBAL</span> <span class="token punctuation">]</span> cursor_name } <span class="token operator">|</span> <span class="token variable">@cursor_variable_name</span> }
+<span class="token punctuation">[</span> <span class="token keyword">INTO</span> <span class="token variable">@variable_name</span> <span class="token punctuation">[</span> <span class="token punctuation">,</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>n <span class="token punctuation">]</span> <span class="token punctuation">]</span>
+</code></pre>
+<h3 id="&#x793A;&#x4F8B;_1"><a name="&#x793A;&#x4F8B;_1" class="anchor-navigation-ex-anchor" href="#&#x793A;&#x4F8B;_1"><i class="fa fa-link" aria-hidden="true"></i></a>1.3.1. &#x793A;&#x4F8B;</h3>
+<ul>
+<li><p>&#x5728;&#x7B80;&#x5355;&#x7684;&#x6E38;&#x6807;&#x4E2D;&#x4F7F;&#x7528; FETCH</p>
+</li>
+<li><p>@@FETCH_STATUS &#x51FD;&#x6570;&#x62A5;&#x544A;&#x4E0A;&#x4E00;&#x4E2A; FETCH &#x8BED;&#x53E5;&#x7684;&#x72B6;&#x6001;&#x3002;</p>
+</li>
+</ul>
+<pre class="language-"><code class="lang-sql"><span class="token keyword">USE</span> AdventureWorks2012<span class="token punctuation">;</span>
+GO  
+<span class="token keyword">DECLARE</span> contact_cursor <span class="token keyword">CURSOR</span> <span class="token keyword">FOR</span>
+<span class="token keyword">SELECT</span> LastName <span class="token keyword">FROM</span> Person<span class="token punctuation">.</span>Person
+<span class="token keyword">WHERE</span> LastName <span class="token operator">LIKE</span> <span class="token string">&apos;B%&apos;</span>
+<span class="token keyword">ORDER</span> <span class="token keyword">BY</span> LastName<span class="token punctuation">;</span>
+
+<span class="token keyword">OPEN</span> contact_cursor<span class="token punctuation">;</span>
+
+<span class="token comment">-- Perform the first fetch.  </span>
+<span class="token keyword">FETCH</span> <span class="token keyword">NEXT</span> <span class="token keyword">FROM</span> contact_cursor<span class="token punctuation">;</span>
+
+<span class="token comment">-- Check @@FETCH_STATUS to see if there are any more rows to fetch.  </span>
+<span class="token keyword">WHILE</span> @<span class="token variable">@FETCH_STATUS</span> <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token keyword">BEGIN</span>  
+   <span class="token comment">-- This is executed as long as the previous fetch succeeds.  </span>
+<span class="token keyword">FETCH</span> <span class="token keyword">NEXT</span> <span class="token keyword">FROM</span> contact_cursor<span class="token punctuation">;</span>
+<span class="token keyword">END</span>
+
+<span class="token keyword">CLOSE</span> contact_cursor<span class="token punctuation">;</span>
+<span class="token keyword">DEALLOCATE</span> contact_cursor<span class="token punctuation">;</span>
+GO
+</code></pre>
+<ul>
+<li>&#x4F7F;&#x7528; FETCH &#x5C06;&#x503C;&#x5B58;&#x5165;&#x53D8;&#x91CF;</li>
+</ul>
+<pre class="language-"><code class="lang-sql"><span class="token keyword">USE</span> AdventureWorks2012<span class="token punctuation">;</span>
+GO  
+<span class="token comment">-- Declare the variables to store the values returned by FETCH.  </span>
+<span class="token keyword">DECLARE</span> <span class="token variable">@LastName</span> <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token variable">@FirstName</span> <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+
+<span class="token keyword">DECLARE</span> contact_cursor <span class="token keyword">CURSOR</span> <span class="token keyword">FOR</span>
+<span class="token keyword">SELECT</span> LastName<span class="token punctuation">,</span> FirstName <span class="token keyword">FROM</span> Person<span class="token punctuation">.</span>Person
+<span class="token keyword">WHERE</span> LastName <span class="token operator">LIKE</span> <span class="token string">&apos;B%&apos;</span>
+<span class="token keyword">ORDER</span> <span class="token keyword">BY</span> LastName<span class="token punctuation">,</span> FirstName<span class="token punctuation">;</span>
+
+<span class="token keyword">OPEN</span> contact_cursor<span class="token punctuation">;</span>
+
+<span class="token comment">-- Perform the first fetch and store the values in variables.  </span>
+<span class="token comment">-- Note: The variables are in the same order as the columns  </span>
+<span class="token comment">-- in the SELECT statement.   </span>
+
+<span class="token keyword">FETCH</span> <span class="token keyword">NEXT</span> <span class="token keyword">FROM</span> contact_cursor
+    <span class="token keyword">INTO</span> <span class="token variable">@LastName</span><span class="token punctuation">,</span> <span class="token variable">@FirstName</span><span class="token punctuation">;</span>
+
+<span class="token comment">-- Check @@FETCH_STATUS to see if there are any more rows to fetch.  </span>
+<span class="token keyword">WHILE</span> @<span class="token variable">@FETCH_STATUS</span> <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token keyword">BEGIN</span>  
+
+   <span class="token comment">-- Concatenate and display the current values in the variables.  </span>
+   <span class="token keyword">PRINT</span> <span class="token string">&apos;Contact Name: &apos;</span> <span class="token operator">+</span> <span class="token variable">@FirstName</span> <span class="token operator">+</span> <span class="token string">&apos; &apos;</span> <span class="token operator">+</span>  <span class="token variable">@LastName</span>  
+
+   <span class="token comment">-- This is executed as long as the previous fetch succeeds.  </span>
+   <span class="token keyword">FETCH</span> <span class="token keyword">NEXT</span> <span class="token keyword">FROM</span> contact_cursor  
+   <span class="token keyword">INTO</span> <span class="token variable">@LastName</span><span class="token punctuation">,</span> <span class="token variable">@FirstName</span><span class="token punctuation">;</span>
+<span class="token keyword">END</span>
+
+<span class="token keyword">CLOSE</span> contact_cursor<span class="token punctuation">;</span>
+<span class="token keyword">DEALLOCATE</span> contact_cursor<span class="token punctuation">;</span>
+GO
+</code></pre>
+<ul>
+<li>&#x58F0;&#x660E; SCROLL &#x6E38;&#x6807;&#x5E76;&#x4F7F;&#x7528;&#x5176;&#x4ED6; FETCH &#x9009;&#x9879;</li>
+</ul>
+<pre class="language-"><code class="lang-sql"><span class="token keyword">USE</span> AdventureWorks2012<span class="token punctuation">;</span>
+GO  
+<span class="token comment">-- Execute the SELECT statement alone to show the   </span>
+<span class="token comment">-- full result set that is used by the cursor.  </span>
+<span class="token keyword">SELECT</span> LastName<span class="token punctuation">,</span> FirstName <span class="token keyword">FROM</span> Person<span class="token punctuation">.</span>Person
+<span class="token keyword">ORDER</span> <span class="token keyword">BY</span> LastName<span class="token punctuation">,</span> FirstName<span class="token punctuation">;</span>
+
+<span class="token comment">-- Declare the cursor.  </span>
+<span class="token keyword">DECLARE</span> contact_cursor SCROLL <span class="token keyword">CURSOR</span> <span class="token keyword">FOR</span>
+<span class="token keyword">SELECT</span> LastName<span class="token punctuation">,</span> FirstName <span class="token keyword">FROM</span> Person<span class="token punctuation">.</span>Person
+<span class="token keyword">ORDER</span> <span class="token keyword">BY</span> LastName<span class="token punctuation">,</span> FirstName<span class="token punctuation">;</span>
+
+<span class="token keyword">OPEN</span> contact_cursor<span class="token punctuation">;</span>
+
+<span class="token comment">-- Fetch the last row in the cursor.  </span>
+<span class="token keyword">FETCH</span> <span class="token keyword">LAST</span> <span class="token keyword">FROM</span> contact_cursor<span class="token punctuation">;</span>
+
+<span class="token comment">-- Fetch the row immediately prior to the current row in the cursor.  </span>
+<span class="token keyword">FETCH</span> PRIOR <span class="token keyword">FROM</span> contact_cursor<span class="token punctuation">;</span>
+
+<span class="token comment">-- Fetch the second row in the cursor.  </span>
+<span class="token keyword">FETCH</span> ABSOLUTE <span class="token number">2</span> <span class="token keyword">FROM</span> contact_cursor<span class="token punctuation">;</span>
+
+<span class="token comment">-- Fetch the row that is three rows after the current row.  </span>
+<span class="token keyword">FETCH</span> RELATIVE <span class="token number">3</span> <span class="token keyword">FROM</span> contact_cursor<span class="token punctuation">;</span>
+
+<span class="token comment">-- Fetch the row that is two rows prior to the current row.  </span>
+<span class="token keyword">FETCH</span> RELATIVE <span class="token operator">-</span><span class="token number">2</span> <span class="token keyword">FROM</span> contact_cursor<span class="token punctuation">;</span>
+
+<span class="token keyword">CLOSE</span> contact_cursor<span class="token punctuation">;</span>
+<span class="token keyword">DEALLOCATE</span> contact_cursor<span class="token punctuation">;</span>
+GO
+</code></pre>
+<h2 id="close"><a name="close" class="anchor-navigation-ex-anchor" href="#close"><i class="fa fa-link" aria-hidden="true"></i></a>1.4. CLOSE</h2>
+<ul>
+<li><p>&#x91CA;&#x653E;&#x5F53;&#x524D;&#x7ED3;&#x679C;&#x96C6;&#xFF0C;&#x7136;&#x540E;&#x89E3;&#x9664;&#x5B9A;&#x4F4D;&#x6E38;&#x6807;&#x7684;&#x884C;&#x4E0A;&#x7684;&#x6E38;&#x6807;&#x9501;&#x5B9A;&#xFF0C;&#x4ECE;&#x800C;&#x5173;&#x95ED;&#x4E00;&#x4E2A;&#x5F00;&#x653E;&#x7684;&#x6E38;&#x6807;&#x3002;</p>
+</li>
+<li><p>CLOSE &#x5C06;&#x4FDD;&#x7559;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x4EE5;&#x4FBF;&#x91CD;&#x65B0;&#x6253;&#x5F00;&#xFF0C;&#x4F46;&#x5728;&#x91CD;&#x65B0;&#x6253;&#x5F00;&#x6E38;&#x6807;&#x4E4B;&#x524D;&#xFF0C;&#x4E0D;&#x5141;&#x8BB8;&#x63D0;&#x53D6;&#x548C;&#x5B9A;&#x4F4D;&#x66F4;&#x65B0;&#x3002;</p>
+</li>
+<li><p>&#x5FC5;&#x987B;&#x5BF9;&#x6253;&#x5F00;&#x7684;&#x6E38;&#x6807;&#x53D1;&#x5E03; CLOSE&#xFF1B;&#x4E0D;&#x5141;&#x8BB8;&#x5BF9;&#x4EC5;&#x58F0;&#x660E;&#x6216;&#x5DF2;&#x5173;&#x95ED;&#x7684;&#x6E38;&#x6807;&#x6267;&#x884C; CLOSE&#x3002;</p>
+</li>
+</ul>
+<pre class="language-"><code class="lang-sql"><span class="token keyword">CLOSE</span> { { <span class="token punctuation">[</span> <span class="token keyword">GLOBAL</span> <span class="token punctuation">]</span> cursor_name } <span class="token operator">|</span> cursor_variable_name }
+</code></pre>
+<ul>
+<li>&#x793A;&#x4F8B;</li>
+</ul>
+<pre class="language-"><code class="lang-sql"><span class="token keyword">DECLARE</span> Employee_Cursor <span class="token keyword">CURSOR</span> <span class="token keyword">FOR</span>
+<span class="token keyword">SELECT</span> EmployeeID<span class="token punctuation">,</span> Title <span class="token keyword">FROM</span> AdventureWorks2012<span class="token punctuation">.</span>HumanResources<span class="token punctuation">.</span>Employee<span class="token punctuation">;</span>
+<span class="token keyword">OPEN</span> Employee_Cursor<span class="token punctuation">;</span>
+<span class="token keyword">FETCH</span> <span class="token keyword">NEXT</span> <span class="token keyword">FROM</span> Employee_Cursor<span class="token punctuation">;</span>
+<span class="token keyword">WHILE</span> @<span class="token variable">@FETCH_STATUS</span> <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token keyword">BEGIN</span>
+<span class="token keyword">FETCH</span> <span class="token keyword">NEXT</span> <span class="token keyword">FROM</span> Employee_Cursor<span class="token punctuation">;</span>
+<span class="token keyword">END</span><span class="token punctuation">;</span>
+<span class="token keyword">CLOSE</span> Employee_Cursor<span class="token punctuation">;</span>
+<span class="token keyword">DEALLOCATE</span> Employee_Cursor<span class="token punctuation">;</span>
+GO
+</code></pre>
+<h2 id="deallocate"><a name="deallocate" class="anchor-navigation-ex-anchor" href="#deallocate"><i class="fa fa-link" aria-hidden="true"></i></a>1.5. DEALLOCATE</h2>
+<ul>
+<li>&#x5220;&#x9664;&#x6E38;&#x6807;&#x5F15;&#x7528;&#x3002;</li>
+</ul>
+<pre class="language-"><code class="lang-sql"><span class="token keyword">DEALLOCATE</span> { { <span class="token punctuation">[</span> <span class="token keyword">GLOBAL</span> <span class="token punctuation">]</span> cursor_name } <span class="token operator">|</span> <span class="token variable">@cursor_variable_name</span> }
+</code></pre>
+<ul>
+<li>&#x793A;&#x4F8B;</li>
+</ul>
+<pre class="language-"><code class="lang-sql"><span class="token keyword">USE</span> AdventureWorks2012<span class="token punctuation">;</span>
+GO  
+<span class="token comment">-- Create and open a global named cursor that  </span>
+<span class="token comment">-- is visible outside the batch.  </span>
+<span class="token keyword">DECLARE</span> abc <span class="token keyword">CURSOR</span> <span class="token keyword">GLOBAL</span> SCROLL <span class="token keyword">FOR</span>
+<span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> Sales<span class="token punctuation">.</span>SalesPerson<span class="token punctuation">;</span>
+<span class="token keyword">OPEN</span> abc<span class="token punctuation">;</span>
+GO  
+<span class="token comment">-- Reference the named cursor with a cursor variable.  </span>
+<span class="token keyword">DECLARE</span> <span class="token variable">@MyCrsrRef1</span> <span class="token keyword">CURSOR</span><span class="token punctuation">;</span>  
+<span class="token keyword">SET</span> <span class="token variable">@MyCrsrRef1</span> <span class="token operator">=</span> abc<span class="token punctuation">;</span>  
+<span class="token comment">-- Now deallocate the cursor reference.  </span>
+<span class="token keyword">DEALLOCATE</span> <span class="token variable">@MyCrsrRef1</span><span class="token punctuation">;</span>  
+<span class="token comment">-- Cursor abc still exists.  </span>
+<span class="token keyword">FETCH</span> <span class="token keyword">NEXT</span> <span class="token keyword">FROM</span> abc<span class="token punctuation">;</span>
+GO  
+<span class="token comment">-- Reference the named cursor again.  </span>
+<span class="token keyword">DECLARE</span> <span class="token variable">@MyCrsrRef2</span> <span class="token keyword">CURSOR</span><span class="token punctuation">;</span>  
+<span class="token keyword">SET</span> <span class="token variable">@MyCrsrRef2</span> <span class="token operator">=</span> abc<span class="token punctuation">;</span>  
+<span class="token comment">-- Now deallocate cursor name abc.  </span>
+<span class="token keyword">DEALLOCATE</span> abc<span class="token punctuation">;</span>  
+<span class="token comment">-- Cursor still exists, referenced by @MyCrsrRef2.  </span>
+<span class="token keyword">FETCH</span> <span class="token keyword">NEXT</span> <span class="token keyword">FROM</span> <span class="token variable">@MyCrsrRef2</span><span class="token punctuation">;</span>
+<span class="token comment">-- Cursor finally is deallocated when last referencing  </span>
+<span class="token comment">-- variable goes out of scope at the end of the batch.  </span>
+GO  
+<span class="token comment">-- Create an unnamed cursor.  </span>
+<span class="token keyword">DECLARE</span> <span class="token variable">@MyCursor</span> <span class="token keyword">CURSOR</span><span class="token punctuation">;</span>  
+<span class="token keyword">SET</span> <span class="token variable">@MyCursor</span> <span class="token operator">=</span> <span class="token keyword">CURSOR</span> <span class="token keyword">LOCAL</span> SCROLL <span class="token keyword">FOR</span>
+<span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> Sales<span class="token punctuation">.</span>SalesTerritory<span class="token punctuation">;</span>
+<span class="token comment">-- The following statement deallocates the cursor  </span>
+<span class="token comment">-- because no other variables reference it.  </span>
+<span class="token keyword">DEALLOCATE</span> <span class="token variable">@MyCursor</span><span class="token punctuation">;</span>
+GO
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="tsql-procedure.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Transact-SQL 存储过程">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Transact-SQL 游标","level":"1.2.4","depth":2,"previous":{"title":"Transact-SQL 存储过程","level":"1.2.3","depth":2,"path":"pages/Transact-SQL/tsql-procedure.md","ref":"./pages/Transact-SQL/tsql-procedure.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","anchor-navigation-ex","-sharing","sharing-plus","-highlight","prism"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"night","family":"serif","size":2},"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"sharing":{"weibo":true,"qzone":true,"qq":true,"douban":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"Little Captain","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Learn-SQL","gitbook":"*","description":"Learn-SQL"},"file":{"path":"pages/Transact-SQL/tsql-cursor.md","mtime":"2021-08-24T07:33:24.749Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-08-24T07:33:41.029Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
