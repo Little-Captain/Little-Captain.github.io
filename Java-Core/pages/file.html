@@ -1,0 +1,595 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>文件 · Java-Core</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Little Captain">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-okaidia.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="IO-Stream.html" />
+    
+    
+    <link rel="prev" href="../" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2" data-path="file.html">
+            
+                <a href="file.html">
+            
+                    
+                        <b>1.2.</b>
+                    
+                    文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="IO-Stream.html">
+            
+                <a href="IO-Stream.html">
+            
+                    
+                        <b>1.3.</b>
+                    
+                    IO流
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >文件</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#&#x6587;&#x4EF6;"><b>1. </b>&#x6587;&#x4EF6;</a></li><ul><li><span class="title-icon "></span><a href="#&#x6587;&#x4EF6;&#x548C;&#x76EE;&#x5F55;&#x8DEF;&#x5F84;"><b>1.1. </b>&#x6587;&#x4EF6;&#x548C;&#x76EE;&#x5F55;&#x8DEF;&#x5F84;</a></li><ul><li><span class="title-icon "></span><a href="#&#x9009;&#x53D6;&#x8DEF;&#x5F84;&#x90E8;&#x5206;&#x7247;&#x6BB5;"><b>1.1.1. </b>&#x9009;&#x53D6;&#x8DEF;&#x5F84;&#x90E8;&#x5206;&#x7247;&#x6BB5;</a></li><li><span class="title-icon "></span><a href="#&#x8DEF;&#x5F84;&#x5206;&#x6790;"><b>1.1.2. </b>&#x8DEF;&#x5F84;&#x5206;&#x6790;</a></li><li><span class="title-icon "></span><a href="#paths&#x7684;&#x589E;&#x51CF;&#x4FEE;&#x6539;"><b>1.1.3. </b>Paths&#x7684;&#x589E;&#x51CF;&#x4FEE;&#x6539;</a></li></ul><li><span class="title-icon "></span><a href="#&#x76EE;&#x5F55;"><b>1.2. </b>&#x76EE;&#x5F55;</a></li><li><span class="title-icon "></span><a href="#&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;"><b>1.3. </b>&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;</a></li></ul></ul></div><a href="#&#x6587;&#x4EF6;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x6587;&#x4EF6;"><a name="&#x6587;&#x4EF6;" class="anchor-navigation-ex-anchor" href="#&#x6587;&#x4EF6;"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x6587;&#x4EF6;</h1>
+<ul>
+<li><p>&#x6253;&#x5F00;&#x5E76;&#x8BFB;&#x53D6;&#x6587;&#x4EF6;&#x5BF9;&#x4E8E;&#x5927;&#x591A;&#x6570;&#x7F16;&#x7A0B;&#x8BED;&#x8A00;&#x6765;&#x8BF4;&#x662F;&#x975E;&#x5E38;&#x5E38;&#x7528;&#x7684;&#xFF0C;&#x7531;&#x4E8E; I/O &#x7CDF;&#x7CD5;&#x7684;&#x8BBE;&#x8BA1;&#x4EE5;&#x81F3;&#x4E8E; &#x5F88;&#x5C11;&#x6709;&#x4EBA;&#x80FD;&#x591F;&#x5728;&#x4E0D;&#x4F9D;&#x8D56;&#x5176;&#x4ED6;&#x53C2;&#x8003;&#x4EE3;&#x7801;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x5B8C;&#x6210;&#x6253;&#x5F00;&#x6587;&#x4EF6;&#x7684;&#x64CD;&#x4F5C;&#x3002;</p>
+</li>
+<li><p>Java &#x8BBE;&#x8BA1;&#x8005;&#x5728; Java 7 &#x4E2D;&#x5BF9; I/O &#x64CD;&#x4F5C;&#x5F15;&#x5165;&#x4E86;&#x5DE8;&#x5927;&#x7684;&#x6539;&#x8FDB;&#x3002;</p>
+<ul>
+<li>&#x8FD9;&#x4E9B;&#x65B0;&#x5143;&#x7D20;&#x88AB;&#x653E;&#x5728; java.nio.file &#x5305;&#x4E0B;&#x9762;&#x3002;</li>
+<li>&#x8FC7;&#x53BB;&#x4EBA;&#x4EEC;&#x901A;&#x5E38;&#x628A; nio &#x4E2D;&#x7684; n &#x7406;&#x89E3;&#x4E3A; new &#x5373;&#x65B0;&#x7684; io&#xFF0C;&#x73B0;&#x5728;&#x66F4;&#x5E94;&#x8BE5;&#x5F53;&#x6210;&#x662F; non-blocking &#x975E;&#x963B;&#x585E; io&#x3002;</li>
+<li>java.nio.file &#x5E93;&#x7EC8;&#x4E8E;&#x5C06; Java &#x6587;&#x4EF6;&#x64CD;&#x4F5C;&#x5E26;&#x5230;&#x4E0E;&#x5176;&#x4ED6;&#x7F16;&#x7A0B;&#x8BED;&#x8A00;&#x76F8;&#x540C;&#x7684;&#x6C34;&#x5E73;&#x3002;</li>
+<li>&#x518D;&#x52A0;&#x4E0A; Java 8 &#x65B0;&#x589E;&#x7684; streams &#x4E0E;&#x6587;&#x4EF6;&#x7ED3;&#x5408;&#x4F7F;&#x5F97;&#x6587;&#x4EF6;&#x64CD;&#x4F5C;&#x7F16;&#x7A0B;&#x53D8;&#x5F97;&#x66F4;&#x52A0;&#x4F18;&#x96C5;&#x3002;</li>
+</ul>
+</li>
+</ul>
+<h2 id="&#x6587;&#x4EF6;&#x548C;&#x76EE;&#x5F55;&#x8DEF;&#x5F84;"><a name="&#x6587;&#x4EF6;&#x548C;&#x76EE;&#x5F55;&#x8DEF;&#x5F84;" class="anchor-navigation-ex-anchor" href="#&#x6587;&#x4EF6;&#x548C;&#x76EE;&#x5F55;&#x8DEF;&#x5F84;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. &#x6587;&#x4EF6;&#x548C;&#x76EE;&#x5F55;&#x8DEF;&#x5F84;</h2>
+<ul>
+<li><p>&#x4E00;&#x4E2A; Path &#x5BF9;&#x8C61;&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x6216;&#x8005;&#x76EE;&#x5F55;&#x7684;&#x8DEF;&#x5F84;&#xFF0C;&#x662F;&#x4E00;&#x4E2A;&#x8DE8;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#xFF08;OS&#xFF09;&#x548C;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7684;&#x62BD;&#x8C61;&#xFF0C;&#x76EE;&#x7684;&#x662F;&#x5728;&#x6784;&#x9020;&#x8DEF;&#x5F84;&#x65F6;&#x4E0D;&#x5FC5;&#x5173;&#x6CE8;&#x5E95;&#x5C42;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#xFF0C;&#x4EE3;&#x7801;&#x53EF;&#x4EE5;&#x5728;&#x4E0D;&#x8FDB;&#x884C;&#x4FEE;&#x6539;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x8FD0;&#x884C;&#x5728;&#x4E0D;&#x540C;&#x7684;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x4E0A;&#x3002;</p>
+</li>
+<li><p>java.nio.file.Paths &#x7C7B;&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x91CD;&#x8F7D;&#x65B9;&#x6CD5; <code>static get()</code>&#xFF0C;&#x8BE5;&#x65B9;&#x6CD5;&#x63A5;&#x53D7;&#x4E00;&#x7CFB;&#x5217; String &#x5B57;&#x7B26;&#x4E32;&#x6216;&#x4E00;&#x4E2A;&#x7EDF;&#x4E00;&#x8D44;&#x6E90;&#x6807;&#x8BC6;&#x7B26;(URI)&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#xFF0C;&#x5E76;&#x4E14;&#x8FDB;&#x884C;&#x8F6C;&#x6362;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A; Path &#x5BF9;&#x8C61;&#x3002;</p>
+</li>
+<li><p>&#x901A;&#x8FC7;&#x4F7F;&#x7528; Files &#x5DE5;&#x5177;&#x7C7B;(&#x6211;&#x4EEC;&#x63A5;&#x4E0B;&#x6765;&#x5C06;&#x4F1A;&#x66F4;&#x591A;&#x5730;&#x4F7F;&#x7528;&#x5B83;)&#xFF0C;&#x53EF;&#x4EE5;&#x6D4B;&#x8BD5;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x662F;&#x5426;&#x5B58;&#x5728;&#xFF0C;&#x6D4B;&#x8BD5;&#x662F;&#x5426;&#x662F;&#x4E00;&#x4E2A;&quot;&#x666E;&#x901A;&quot;&#x6587;&#x4EF6;&#x8FD8;&#x662F;&#x4E00;&#x4E2A;&#x76EE;&#x5F55;&#x7B49;&#x7B49;&#x3002;</p>
+</li>
+<li><p>&#x201C;&#x771F;&#x5B9E;&#x201D;&#x8DEF;&#x5F84;&#x7684;&#x5B9A;&#x4E49;&#x5728;&#x6587;&#x6863;&#x4E2D;&#x6709;&#x70B9;&#x6A21;&#x7CCA;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x53D6;&#x51B3;&#x4E8E;&#x5177;&#x4F53;&#x7684;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x3002;</p>
+</li>
+</ul>
+<pre class="language-"><code class="lang-java"><span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>nio<span class="token punctuation">.</span>file<span class="token punctuation">.</span></span><span class="token operator">*</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>net<span class="token punctuation">.</span></span>URI<span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span></span><span class="token class-name">File</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span></span><span class="token class-name">IOException</span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">PathInfo</span> <span class="token punctuation">{</span>
+    <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">show</span><span class="token punctuation">(</span><span class="token class-name">String</span> id<span class="token punctuation">,</span> <span class="token class-name">Object</span> p<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>id <span class="token operator">+</span> <span class="token string">&quot;: &quot;</span> <span class="token operator">+</span> p<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">info</span><span class="token punctuation">(</span><span class="token class-name">Path</span> p<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">show</span><span class="token punctuation">(</span><span class="token string">&quot;toString&quot;</span><span class="token punctuation">,</span> p<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">show</span><span class="token punctuation">(</span><span class="token string">&quot;Exists&quot;</span><span class="token punctuation">,</span> <span class="token class-name">Files</span><span class="token punctuation">.</span><span class="token function">exists</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">show</span><span class="token punctuation">(</span><span class="token string">&quot;RegularFile&quot;</span><span class="token punctuation">,</span> <span class="token class-name">Files</span><span class="token punctuation">.</span><span class="token function">isRegularFile</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">show</span><span class="token punctuation">(</span><span class="token string">&quot;Directory&quot;</span><span class="token punctuation">,</span> <span class="token class-name">Files</span><span class="token punctuation">.</span><span class="token function">isDirectory</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">show</span><span class="token punctuation">(</span><span class="token string">&quot;Absolute&quot;</span><span class="token punctuation">,</span> p<span class="token punctuation">.</span><span class="token function">isAbsolute</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">show</span><span class="token punctuation">(</span><span class="token string">&quot;FileName&quot;</span><span class="token punctuation">,</span> p<span class="token punctuation">.</span><span class="token function">getFileName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">show</span><span class="token punctuation">(</span><span class="token string">&quot;Parent&quot;</span><span class="token punctuation">,</span> p<span class="token punctuation">.</span><span class="token function">getParent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">show</span><span class="token punctuation">(</span><span class="token string">&quot;Root&quot;</span><span class="token punctuation">,</span> p<span class="token punctuation">.</span><span class="token function">getRoot</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;******************&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">getProperty</span><span class="token punctuation">(</span><span class="token string">&quot;os.name&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">info</span><span class="token punctuation">(</span><span class="token class-name">Paths</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">&quot;C:&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;path&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;to&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;nowhere&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;NoFile.txt&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Path</span> p <span class="token operator">=</span> <span class="token class-name">Paths</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">&quot;PathInfo.java&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">info</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Path</span> ap <span class="token operator">=</span> p<span class="token punctuation">.</span><span class="token function">toAbsolutePath</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">info</span><span class="token punctuation">(</span>ap<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">info</span><span class="token punctuation">(</span>ap<span class="token punctuation">.</span><span class="token function">getParent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">try</span> <span class="token punctuation">{</span>
+            <span class="token function">info</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span><span class="token function">toRealPath</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token class-name">URI</span> u <span class="token operator">=</span> p<span class="token punctuation">.</span><span class="token function">toUri</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;URI: &quot;</span> <span class="token operator">+</span> u<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Path</span> puri <span class="token operator">=</span> <span class="token class-name">Paths</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>u<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">Files</span><span class="token punctuation">.</span><span class="token function">exists</span><span class="token punctuation">(</span>puri<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">File</span> f <span class="token operator">=</span> ap<span class="token punctuation">.</span><span class="token function">toFile</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Don&apos;t be fooled</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="&#x9009;&#x53D6;&#x8DEF;&#x5F84;&#x90E8;&#x5206;&#x7247;&#x6BB5;"><a name="&#x9009;&#x53D6;&#x8DEF;&#x5F84;&#x90E8;&#x5206;&#x7247;&#x6BB5;" class="anchor-navigation-ex-anchor" href="#&#x9009;&#x53D6;&#x8DEF;&#x5F84;&#x90E8;&#x5206;&#x7247;&#x6BB5;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.1. &#x9009;&#x53D6;&#x8DEF;&#x5F84;&#x90E8;&#x5206;&#x7247;&#x6BB5;</h3>
+<ul>
+<li><p>Path &#x5BF9;&#x8C61;&#x53EF;&#x4EE5;&#x975E;&#x5E38;&#x5BB9;&#x6613;&#x5730;&#x751F;&#x6210;&#x8DEF;&#x5F84;&#x7684;&#x67D0;&#x4E00;&#x90E8;&#x5206;&#x3002;</p>
+</li>
+<li><p>&#x53EF;&#x4EE5;&#x901A;&#x8FC7; getName() &#x6765;&#x7D22;&#x5F15; Path &#x7684;&#x5404;&#x4E2A;&#x90E8;&#x5206;&#xFF0C;&#x76F4;&#x5230;&#x8FBE;&#x5230;&#x4E0A;&#x9650; getNameCount()&#x3002;</p>
+</li>
+<li><p>Path &#x4E5F;&#x5B9E;&#x73B0;&#x4E86; Iterable &#x63A5;&#x53E3;&#xFF0C;&#x56E0;&#x6B64;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x589E;&#x5F3A;&#x7684; for-each &#x8FDB;&#x884C;&#x904D;&#x5386;&#x3002;</p>
+</li>
+<li><p>&#x8BF7;&#x6CE8;&#x610F;&#xFF0C;&#x5373;&#x4F7F;&#x8DEF;&#x5F84;&#x4EE5; .java &#x7ED3;&#x5C3E;&#xFF0C;&#x4F7F;&#x7528; endsWith() &#x65B9;&#x6CD5;&#x4E5F;&#x4F1A;&#x8FD4;&#x56DE; false&#x3002;&#x8FD9;&#x662F;&#x56E0;&#x4E3A;&#x4F7F;&#x7528; endsWith() &#x6BD4;&#x8F83;&#x7684;&#x662F;&#x6574;&#x4E2A;&#x8DEF;&#x5F84;&#x90E8;&#x5206;&#xFF0C;&#x800C;&#x4E0D;&#x4F1A;&#x5305;&#x542B;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;&#x7684;&#x540E;&#x7F00;&#x3002;</p>
+</li>
+<li><p>&#x901A;&#x8FC7;&#x4F7F;&#x7528; startsWith() &#x548C; endsWith() &#x4E5F;&#x53EF;&#x4EE5;&#x5B8C;&#x6210;&#x8DEF;&#x5F84;&#x7684;&#x904D;&#x5386;&#x3002;&#x4F46;&#x662F;&#x904D;&#x5386; Path &#x5BF9;&#x8C61;&#x5E76;&#x4E0D;&#x5305;&#x542B;&#x6839;&#x8DEF;&#x5F84;&#xFF0C;&#x53EA;&#x6709;&#x4F7F;&#x7528; startsWith() &#x68C0;&#x6D4B;&#x6839;&#x8DEF;&#x5F84;&#x65F6;&#x624D;&#x4F1A;&#x8FD4;&#x56DE; true&#x3002;</p>
+</li>
+</ul>
+<pre class="language-"><code class="lang-java"><span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>nio<span class="token punctuation">.</span>file<span class="token punctuation">.</span></span><span class="token operator">*</span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">PartsOfPaths</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">getProperty</span><span class="token punctuation">(</span><span class="token string">&quot;os.name&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Path</span> p <span class="token operator">=</span> <span class="token class-name">Paths</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">&quot;PartsOfPaths.java&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toAbsolutePath</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> p<span class="token punctuation">.</span><span class="token function">getNameCount</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;ends with &apos;.java&apos;: &quot;</span> <span class="token operator">+</span>
+                                   p<span class="token punctuation">.</span><span class="token function">endsWith</span><span class="token punctuation">(</span><span class="token string">&quot;.java&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">Path</span> pp <span class="token operator">:</span> p<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>pp <span class="token operator">+</span> <span class="token string">&quot;: &quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span><span class="token function">startsWith</span><span class="token punctuation">(</span>pp<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">&quot; : &quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span><span class="token function">endsWith</span><span class="token punctuation">(</span>pp<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;Starts with &quot;</span> <span class="token operator">+</span> p<span class="token punctuation">.</span><span class="token function">getRoot</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">&quot; &quot;</span> <span class="token operator">+</span> p<span class="token punctuation">.</span><span class="token function">startsWith</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span><span class="token function">getRoot</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="&#x8DEF;&#x5F84;&#x5206;&#x6790;"><a name="&#x8DEF;&#x5F84;&#x5206;&#x6790;" class="anchor-navigation-ex-anchor" href="#&#x8DEF;&#x5F84;&#x5206;&#x6790;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.2. &#x8DEF;&#x5F84;&#x5206;&#x6790;</h3>
+<ul>
+<li><p>Files &#x5DE5;&#x5177;&#x7C7B;&#x5305;&#x542B;&#x4E00;&#x7CFB;&#x5217;&#x5B8C;&#x6574;&#x7684;&#x65B9;&#x6CD5;&#x7528;&#x4E8E;&#x83B7;&#x5F97; Path &#x76F8;&#x5173;&#x7684;&#x4FE1;&#x606F;&#x3002;</p>
+</li>
+<li><p>&#x5728;&#x8C03;&#x7528;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5; getPosixFilePermissions() &#x4E4B;&#x524D;&#xFF0C;&#x9700;&#x8981;&#x786E;&#x8BA4;&#x4E00;&#x4E0B;&#x5F53;&#x524D;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x662F;&#x5426;&#x652F;&#x6301; Posix &#x63A5;&#x53E3;&#xFF0C;&#x5426;&#x5219;&#x4F1A;&#x629B;&#x51FA;&#x8FD0;&#x884C;&#x65F6;&#x5F02;&#x5E38;&#x3002;</p>
+</li>
+</ul>
+<pre class="language-"><code class="lang-java"><span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>nio<span class="token punctuation">.</span>file<span class="token punctuation">.</span></span><span class="token operator">*</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span></span><span class="token class-name">IOException</span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">PathAnalysis</span> <span class="token punctuation">{</span>
+    <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">say</span><span class="token punctuation">(</span><span class="token class-name">String</span> id<span class="token punctuation">,</span> <span class="token class-name">Object</span> result<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>id <span class="token operator">+</span> <span class="token string">&quot;: &quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">getProperty</span><span class="token punctuation">(</span><span class="token string">&quot;os.name&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Path</span> p <span class="token operator">=</span> <span class="token class-name">Paths</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">&quot;PathAnalysis.java&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toAbsolutePath</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">say</span><span class="token punctuation">(</span><span class="token string">&quot;Exists&quot;</span><span class="token punctuation">,</span> <span class="token class-name">Files</span><span class="token punctuation">.</span><span class="token function">exists</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">say</span><span class="token punctuation">(</span><span class="token string">&quot;Directory&quot;</span><span class="token punctuation">,</span> <span class="token class-name">Files</span><span class="token punctuation">.</span><span class="token function">isDirectory</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">say</span><span class="token punctuation">(</span><span class="token string">&quot;Executable&quot;</span><span class="token punctuation">,</span> <span class="token class-name">Files</span><span class="token punctuation">.</span><span class="token function">isExecutable</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">say</span><span class="token punctuation">(</span><span class="token string">&quot;Readable&quot;</span><span class="token punctuation">,</span> <span class="token class-name">Files</span><span class="token punctuation">.</span><span class="token function">isReadable</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">say</span><span class="token punctuation">(</span><span class="token string">&quot;RegularFile&quot;</span><span class="token punctuation">,</span> <span class="token class-name">Files</span><span class="token punctuation">.</span><span class="token function">isRegularFile</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">say</span><span class="token punctuation">(</span><span class="token string">&quot;Writable&quot;</span><span class="token punctuation">,</span> <span class="token class-name">Files</span><span class="token punctuation">.</span><span class="token function">isWritable</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">say</span><span class="token punctuation">(</span><span class="token string">&quot;notExists&quot;</span><span class="token punctuation">,</span> <span class="token class-name">Files</span><span class="token punctuation">.</span><span class="token function">notExists</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">say</span><span class="token punctuation">(</span><span class="token string">&quot;Hidden&quot;</span><span class="token punctuation">,</span> <span class="token class-name">Files</span><span class="token punctuation">.</span><span class="token function">isHidden</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">say</span><span class="token punctuation">(</span><span class="token string">&quot;size&quot;</span><span class="token punctuation">,</span> <span class="token class-name">Files</span><span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">say</span><span class="token punctuation">(</span><span class="token string">&quot;FileStore&quot;</span><span class="token punctuation">,</span> <span class="token class-name">Files</span><span class="token punctuation">.</span><span class="token function">getFileStore</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">say</span><span class="token punctuation">(</span><span class="token string">&quot;LastModified: &quot;</span><span class="token punctuation">,</span> <span class="token class-name">Files</span><span class="token punctuation">.</span><span class="token function">getLastModifiedTime</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">say</span><span class="token punctuation">(</span><span class="token string">&quot;Owner&quot;</span><span class="token punctuation">,</span> <span class="token class-name">Files</span><span class="token punctuation">.</span><span class="token function">getOwner</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">say</span><span class="token punctuation">(</span><span class="token string">&quot;ContentType&quot;</span><span class="token punctuation">,</span> <span class="token class-name">Files</span><span class="token punctuation">.</span><span class="token function">probeContentType</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">say</span><span class="token punctuation">(</span><span class="token string">&quot;SymbolicLink&quot;</span><span class="token punctuation">,</span> <span class="token class-name">Files</span><span class="token punctuation">.</span><span class="token function">isSymbolicLink</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token class-name">Files</span><span class="token punctuation">.</span><span class="token function">isSymbolicLink</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token function">say</span><span class="token punctuation">(</span><span class="token string">&quot;SymbolicLink&quot;</span><span class="token punctuation">,</span> <span class="token class-name">Files</span><span class="token punctuation">.</span><span class="token function">readSymbolicLink</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token class-name">FileSystems</span><span class="token punctuation">.</span><span class="token function">getDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">supportedFileAttributeViews</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">contains</span><span class="token punctuation">(</span><span class="token string">&quot;posix&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token function">say</span><span class="token punctuation">(</span><span class="token string">&quot;PosixFilePermissions&quot;</span><span class="token punctuation">,</span>
+                <span class="token class-name">Files</span><span class="token punctuation">.</span><span class="token function">getPosixFilePermissions</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="paths&#x7684;&#x589E;&#x51CF;&#x4FEE;&#x6539;"><a name="paths&#x7684;&#x589E;&#x51CF;&#x4FEE;&#x6539;" class="anchor-navigation-ex-anchor" href="#paths&#x7684;&#x589E;&#x51CF;&#x4FEE;&#x6539;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.3. Paths&#x7684;&#x589E;&#x51CF;&#x4FEE;&#x6539;</h3>
+<ul>
+<li>&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5BF9; Path &#x5BF9;&#x8C61;&#x589E;&#x52A0;&#x6216;&#x8005;&#x5220;&#x9664;&#x4E00;&#x90E8;&#x5206;&#x6765;&#x6784;&#x9020;&#x4E00;&#x4E2A;&#x65B0;&#x7684; Path &#x5BF9;&#x8C61;&#x3002;<ul>
+<li>&#x4F7F;&#x7528; relativize() &#x79FB;&#x9664; Path &#x7684;&#x6839;&#x8DEF;&#x5F84;</li>
+<li>&#x4F7F;&#x7528; resolve() &#x6DFB;&#x52A0; Path &#x7684;&#x5C3E;&#x8DEF;&#x5F84;</li>
+</ul>
+</li>
+</ul>
+<pre class="language-"><code class="lang-java"><span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>nio<span class="token punctuation">.</span>file<span class="token punctuation">.</span></span><span class="token operator">*</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span></span><span class="token class-name">IOException</span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">AddAndSubtractPaths</span> <span class="token punctuation">{</span>
+    <span class="token keyword">static</span> <span class="token class-name">Path</span> base <span class="token operator">=</span> <span class="token class-name">Paths</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">&quot;..&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;..&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;..&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toAbsolutePath</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">normalize</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">show</span><span class="token punctuation">(</span><span class="token keyword">int</span> id<span class="token punctuation">,</span> <span class="token class-name">Path</span> result<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>result<span class="token punctuation">.</span><span class="token function">isAbsolute</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;(&quot;</span> <span class="token operator">+</span> id <span class="token operator">+</span> <span class="token string">&quot;)r &quot;</span> <span class="token operator">+</span> base<span class="token punctuation">.</span><span class="token function">relativize</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">else</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;(&quot;</span> <span class="token operator">+</span> id <span class="token operator">+</span> <span class="token string">&quot;) &quot;</span> <span class="token operator">+</span> result<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">try</span> <span class="token punctuation">{</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;RealPath: &quot;</span> <span class="token operator">+</span> result<span class="token punctuation">.</span><span class="token function">toRealPath</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">getProperty</span><span class="token punctuation">(</span><span class="token string">&quot;os.name&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>base<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Path</span> p <span class="token operator">=</span> <span class="token class-name">Paths</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">&quot;AddAndSubtractPaths.java&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toAbsolutePath</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">show</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> p<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Path</span> convoluted <span class="token operator">=</span> p<span class="token punctuation">.</span><span class="token function">getParent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getParent</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">&quot;strings&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">&quot;..&quot;</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span><span class="token function">getParent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getFileName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">show</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> convoluted<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">show</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> convoluted<span class="token punctuation">.</span><span class="token function">normalize</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Path</span> p2 <span class="token operator">=</span> <span class="token class-name">Paths</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">&quot;..&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;..&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">show</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span> p2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">show</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> p2<span class="token punctuation">.</span><span class="token function">normalize</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">show</span><span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">,</span> p2<span class="token punctuation">.</span><span class="token function">toAbsolutePath</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">normalize</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Path</span> p3 <span class="token operator">=</span> <span class="token class-name">Paths</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">&quot;.&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toAbsolutePath</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Path</span> p4 <span class="token operator">=</span> p3<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>p2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">show</span><span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">,</span> p4<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">show</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">,</span> p4<span class="token punctuation">.</span><span class="token function">normalize</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Path</span> p5 <span class="token operator">=</span> <span class="token class-name">Paths</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">&quot;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toAbsolutePath</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">show</span><span class="token punctuation">(</span><span class="token number">9</span><span class="token punctuation">,</span> p5<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">show</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> p5<span class="token punctuation">.</span><span class="token function">resolveSibling</span><span class="token punctuation">(</span><span class="token string">&quot;strings&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">show</span><span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">,</span> <span class="token class-name">Paths</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">&quot;nonexistent&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="&#x76EE;&#x5F55;"><a name="&#x76EE;&#x5F55;" class="anchor-navigation-ex-anchor" href="#&#x76EE;&#x5F55;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. &#x76EE;&#x5F55;</h2>
+<ul>
+<li><p>Files &#x5DE5;&#x5177;&#x7C7B;&#x5305;&#x542B;&#x5F88;&#x591A;&#x76EE;&#x5F55;&#x64CD;&#x4F5C;&#x548C;&#x6587;&#x4EF6;&#x64CD;&#x4F5C;&#x65B9;&#x6CD5;&#x3002;&#x4E0D;&#x8FC7;&#xFF0C;&#x6CA1;&#x6709;&#x5305;&#x542B;&#x5220;&#x9664;&#x76EE;&#x5F55;&#x6811;&#x76F8;&#x5173;&#x7684;&#x65B9;&#x6CD5;&#x3002;</p>
+</li>
+<li><p>&#x5220;&#x9664;&#x76EE;&#x5F55;&#x6811;&#x7684;&#x65B9;&#x6CD5;&#x5B9E;&#x73B0;&#x4F9D;&#x8D56;&#x4E8E; Files.walkFileTree()&#xFF0C;&quot;walking&quot; &#x76EE;&#x5F55;&#x6811;&#x610F;&#x5473;&#x7740;&#x904D;&#x5386;&#x6BCF;&#x4E2A;&#x5B50;&#x76EE;&#x5F55;&#x548C;&#x6587;&#x4EF6;&#x3002;</p>
+</li>
+<li><p>Visitor &#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x79CD;&#x6807;&#x51C6;&#x673A;&#x5236;&#x6765;&#x8BBF;&#x95EE;&#x96C6;&#x5408;&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x7136;&#x540E;&#x9700;&#x8981;&#x63D0;&#x4F9B;&#x5728;&#x6BCF;&#x4E2A;&#x5BF9;&#x8C61;&#x4E0A;&#x6267;&#x884C;&#x7684;&#x64CD;&#x4F5C;&#x3002;&#x6B64;&#x64CD;&#x4F5C;&#x7684;&#x5B9A;&#x4E49;&#x53D6;&#x51B3;&#x4E8E;&#x5B9E;&#x73B0;&#x7684; FileVisitor &#x7684;&#x56DB;&#x4E2A;&#x62BD;&#x8C61;&#x65B9;&#x6CD5;&#xFF0C;&#x5305;&#x62EC;&#xFF1A;</p>
+<ol>
+<li><strong>preVisitDirectory()</strong>&#xFF1A;&#x5728;&#x8BBF;&#x95EE;&#x76EE;&#x5F55;&#x4E2D;&#x6761;&#x76EE;&#x4E4B;&#x524D;&#x5728;&#x76EE;&#x5F55;&#x4E0A;&#x8FD0;&#x884C;&#x3002;</li>
+<li><strong>visitFile()</strong>&#xFF1A;&#x8FD0;&#x884C;&#x76EE;&#x5F55;&#x4E2D;&#x7684;&#x6BCF;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x3002;</li>
+<li><strong>visitFileFailed()</strong>&#xFF1A;&#x8C03;&#x7528;&#x65E0;&#x6CD5;&#x8BBF;&#x95EE;&#x7684;&#x6587;&#x4EF6;&#x3002;</li>
+<li><strong>postVisitDirectory()</strong>&#xFF1A;&#x5728;&#x8BBF;&#x95EE;&#x76EE;&#x5F55;&#x4E2D;&#x6761;&#x76EE;&#x4E4B;&#x540E;&#x5728;&#x76EE;&#x5F55;&#x4E0A;&#x8FD0;&#x884C;&#xFF0C;&#x5305;&#x62EC;&#x6240;&#x6709;&#x7684;&#x5B50;&#x76EE;&#x5F55;&#x3002;</li>
+</ol>
+</li>
+<li><p>&#x4E3A;&#x4E86;&#x7B80;&#x5316;&#xFF0C;java.nio.file.SimpleFileVisitor &#x63D0;&#x4F9B;&#x4E86;&#x6240;&#x6709;&#x65B9;&#x6CD5;&#x7684;&#x9ED8;&#x8BA4;&#x5B9E;&#x73B0;&#x3002;</p>
+<ul>
+<li>&#x8FD9;&#x6837;&#xFF0C;&#x5728;&#x533F;&#x540D;&#x5185;&#x90E8;&#x7C7B;&#x4E2D;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x91CD;&#x5199;&#x975E;&#x6807;&#x51C6;&#x884C;&#x4E3A;&#x7684;&#x65B9;&#x6CD5;&#xFF1A;visitFile() &#x548C; postVisitDirectory() &#x5B9E;&#x73B0;&#x5220;&#x9664;&#x6587;&#x4EF6;&#x548C;&#x5220;&#x9664;&#x76EE;&#x5F55;&#x3002;</li>
+<li>&#x4E24;&#x8005;&#x90FD;&#x5E94;&#x8BE5;&#x8FD4;&#x56DE;&#x6807;&#x5FD7;&#x4F4D;&#x51B3;&#x5B9A;&#x662F;&#x5426;&#x7EE7;&#x7EED;&#x8BBF;&#x95EE;(&#x8FD9;&#x6837;&#x5C31;&#x53EF;&#x4EE5;&#x7EE7;&#x7EED;&#x8BBF;&#x95EE;&#xFF0C;&#x76F4;&#x5230;&#x627E;&#x5230;&#x6240;&#x9700;&#x8981;&#x7684;)&#x3002;</li>
+</ul>
+</li>
+</ul>
+<pre class="language-"><code class="lang-java"><span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>nio<span class="token punctuation">.</span>file<span class="token punctuation">.</span></span><span class="token operator">*</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>nio<span class="token punctuation">.</span>file<span class="token punctuation">.</span>attribute<span class="token punctuation">.</span></span><span class="token class-name">BasicFileAttributes</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span></span><span class="token class-name">IOException</span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">RmDir</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">rmdir</span><span class="token punctuation">(</span><span class="token class-name">Path</span> dir<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span> <span class="token punctuation">{</span>
+        <span class="token class-name">Files</span><span class="token punctuation">.</span><span class="token function">walkFileTree</span><span class="token punctuation">(</span>dir<span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">SimpleFileVisitor</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Path</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token annotation punctuation">@Override</span>
+            <span class="token keyword">public</span> <span class="token class-name">FileVisitResult</span> <span class="token function">visitFile</span><span class="token punctuation">(</span><span class="token class-name">Path</span> file<span class="token punctuation">,</span> <span class="token class-name">BasicFileAttributes</span> attrs<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span> <span class="token punctuation">{</span>
+                <span class="token class-name">Files</span><span class="token punctuation">.</span><span class="token function">delete</span><span class="token punctuation">(</span>file<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">return</span> <span class="token class-name">FileVisitResult</span><span class="token punctuation">.</span>CONTINUE<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+
+            <span class="token annotation punctuation">@Override</span>
+            <span class="token keyword">public</span> <span class="token class-name">FileVisitResult</span> <span class="token function">postVisitDirectory</span><span class="token punctuation">(</span><span class="token class-name">Path</span> dir<span class="token punctuation">,</span> <span class="token class-name">IOException</span> exc<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span> <span class="token punctuation">{</span>
+                <span class="token class-name">Files</span><span class="token punctuation">.</span><span class="token function">delete</span><span class="token punctuation">(</span>dir<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">return</span> <span class="token class-name">FileVisitResult</span><span class="token punctuation">.</span>CONTINUE<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<ul>
+<li><p>&#x4F5C;&#x4E3A;&#x63A2;&#x7D22;&#x76EE;&#x5F55;&#x64CD;&#x4F5C;&#x7684;&#x4E00;&#x90E8;&#x5206;&#xFF0C;&#x73B0;&#x5728;&#x53EF;&#x4EE5;&#x6709;&#x6761;&#x4EF6;&#x5730;&#x5220;&#x9664;&#x5DF2;&#x5B58;&#x5728;&#x7684;&#x76EE;&#x5F55;&#x3002;</p>
+<ul>
+<li>&#x5728;&#x4E0B;&#x4F8B;&#x4E2D;&#xFF0C;makeVariant() &#x63A5;&#x53D7;&#x57FA;&#x672C;&#x76EE;&#x5F55;&#x6D4B;&#x8BD5;&#xFF0C;&#x5E76;&#x901A;&#x8FC7;&#x65CB;&#x8F6C;&#x90E8;&#x4EF6;&#x5217;&#x8868;&#x751F;&#x6210;&#x4E0D;&#x540C;&#x7684;&#x5B50;&#x76EE;&#x5F55;&#x8DEF;&#x5F84;&#x3002;</li>
+<li>&#x8FD9;&#x4E9B;&#x65CB;&#x8F6C;&#x4E0E;&#x8DEF;&#x5F84;&#x5206;&#x9694;&#x7B26; sep &#x4F7F;&#x7528; String.join() &#x8D34;&#x5728;&#x4E00;&#x8D77;&#xFF0C;&#x7136;&#x540E;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A; Path &#x5BF9;&#x8C61;&#x3002;</li>
+</ul>
+</li>
+<li><p>&#x9996;&#x5148;&#xFF0C;refreshTestDir() &#x7528;&#x4E8E;&#x68C0;&#x6D4B; test &#x76EE;&#x5F55;&#x662F;&#x5426;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#x3002;</p>
+<ul>
+<li>&#x82E5;&#x5B58;&#x5728;&#xFF0C;&#x5219;&#x4F7F;&#x7528;&#x65B0;&#x5DE5;&#x5177;&#x7C7B; rmdir() &#x5220;&#x9664;&#x5176;&#x6574;&#x4E2A;&#x76EE;&#x5F55;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x5BF9;&#x4E8E;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#x7684;&#x76EE;&#x5F55;&#x8C03;&#x7528; createDirectory() &#x5C06;&#x4F1A;&#x629B;&#x51FA;&#x5F02;&#x5E38;&#x3002;</li>
+<li>createFile() &#x4F7F;&#x7528;&#x53C2;&#x6570; Path &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7A7A;&#x6587;&#x4EF6;; resolve() &#x5C06;&#x6587;&#x4EF6;&#x540D;&#x6DFB;&#x52A0;&#x5230; test Path &#x7684;&#x672B;&#x5C3E;&#x3002;</li>
+</ul>
+</li>
+<li><p>&#x5C1D;&#x8BD5;&#x4F7F;&#x7528; createDirectory() &#x6765;&#x521B;&#x5EFA;&#x591A;&#x7EA7;&#x8DEF;&#x5F84;&#xFF0C;&#x4F46;&#x662F;&#x8FD9;&#x6837;&#x4F1A;&#x629B;&#x51FA;&#x5F02;&#x5E38;&#xFF0C;&#x56E0;&#x4E3A;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x53EA;&#x80FD;&#x521B;&#x5EFA;&#x5355;&#x7EA7;&#x8DEF;&#x5F84;&#x3002;</p>
+</li>
+<li><p>&#x5C06; populateTestDir() &#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x5355;&#x72EC;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x4EE5;&#x4FBF;&#x4EE5;&#x540E;&#x91CD;&#x7528;&#x3002;</p>
+</li>
+<li><p>&#x5BF9;&#x4E8E;&#x6BCF;&#x4E00;&#x4E2A;&#x53D8;&#x91CF; variant&#xFF0C;&#x90FD;&#x80FD;&#x4F7F;&#x7528; createDirectories() &#x521B;&#x5EFA;&#x5B8C;&#x6574;&#x7684;&#x76EE;&#x5F55;&#x8DEF;&#x5F84;&#xFF0C;&#x7136;&#x540E;&#x4F7F;&#x7528;&#x6B64;&#x6587;&#x4EF6;&#x7684;&#x526F;&#x672C;&#x4EE5;&#x4E0D;&#x540C;&#x7684;&#x76EE;&#x6807;&#x540D;&#x79F0;&#x586B;&#x5145;&#x8BE5;&#x7EC8;&#x7AEF;&#x76EE;&#x5F55;&#x3002;&#x7136;&#x540E;&#x4F7F;&#x7528; createTempFile() &#x751F;&#x6210;&#x4E00;&#x4E2A;&#x4E34;&#x65F6;&#x6587;&#x4EF6;&#x3002;</p>
+</li>
+<li><p>&#x5728;&#x8C03;&#x7528; populateTestDir() &#x4E4B;&#x540E;&#xFF0C;&#x5728; test &#x76EE;&#x5F55;&#x4E0B;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x4E34;&#x65F6;&#x76EE;&#x5F55;&#x3002;</p>
+<ul>
+<li>&#x8BF7;&#x6CE8;&#x610F;&#xFF0C;createTempDirectory() &#x53EA;&#x6709;&#x540D;&#x79F0;&#x7684;&#x524D;&#x7F00;&#x9009;&#x9879;&#x3002;</li>
+<li>&#x4E0E; createTempFile() &#x4E0D;&#x540C;&#xFF0C;&#x518D;&#x6B21;&#x4F7F;&#x7528;&#x5B83;&#x5C06;&#x4E34;&#x65F6;&#x6587;&#x4EF6;&#x653E;&#x5165;&#x65B0;&#x7684;&#x4E34;&#x65F6;&#x76EE;&#x5F55;&#x4E2D;&#x3002;</li>
+<li>&#x53EF;&#x4EE5;&#x4ECE;&#x8F93;&#x51FA;&#x4E2D;&#x770B;&#x5230;&#xFF0C;&#x5982;&#x679C;&#x672A;&#x6307;&#x5B9A;&#x540E;&#x7F00;&#xFF0C;&#x5B83;&#x5C06;&#x9ED8;&#x8BA4;&#x4F7F;&#x7528; &quot;.tmp&quot; &#x4F5C;&#x4E3A;&#x540E;&#x7F00;&#x3002;</li>
+</ul>
+</li>
+<li><p>&#x4E3A;&#x4E86;&#x5C55;&#x793A;&#x7ED3;&#x679C;</p>
+<ul>
+<li>&#x9996;&#x6B21;&#x4F7F;&#x7528; newDirectoryStream()&#xFF0C;&#x4F46;&#x4E8B;&#x5B9E;&#x8BC1;&#x660E;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x53EA;&#x662F;&#x8FD4;&#x56DE; test &#x76EE;&#x5F55;&#x5185;&#x5BB9;&#x7684; Stream &#x6D41;&#xFF0C;&#x5E76;&#x6CA1;&#x6709;&#x66F4;&#x591A;&#x7684;&#x5185;&#x5BB9;&#x3002;</li>
+<li>&#x8981;&#x83B7;&#x53D6;&#x76EE;&#x5F55;&#x6811;&#x7684;&#x5168;&#x90E8;&#x5185;&#x5BB9;&#x7684;&#x6D41;&#xFF0C;&#x8BF7;&#x4F7F;&#x7528; Files.walk()&#x3002;</li>
+</ul>
+</li>
+</ul>
+<pre class="language-"><code class="lang-java"><span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token operator">*</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>nio<span class="token punctuation">.</span>file<span class="token punctuation">.</span></span><span class="token operator">*</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token namespace">onjava<span class="token punctuation">.</span></span><span class="token class-name">RmDir</span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Directories</span> <span class="token punctuation">{</span>
+    <span class="token keyword">static</span> <span class="token class-name">Path</span> test <span class="token operator">=</span> <span class="token class-name">Paths</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">&quot;test&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">static</span> <span class="token class-name">String</span> sep <span class="token operator">=</span> <span class="token class-name">FileSystems</span><span class="token punctuation">.</span><span class="token function">getDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getSeparator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">static</span> <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> parts <span class="token operator">=</span> <span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">asList</span><span class="token punctuation">(</span><span class="token string">&quot;foo&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;bar&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;baz&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;bag&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">static</span> <span class="token class-name">Path</span> <span class="token function">makeVariant</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">Collections</span><span class="token punctuation">.</span><span class="token function">rotate</span><span class="token punctuation">(</span>parts<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token class-name">Paths</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">&quot;test&quot;</span><span class="token punctuation">,</span> <span class="token class-name">String</span><span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>sep<span class="token punctuation">,</span> parts<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">refreshTestDir</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token class-name">Files</span><span class="token punctuation">.</span><span class="token function">exists</span><span class="token punctuation">(</span>test<span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token class-name">RmDir</span><span class="token punctuation">.</span><span class="token function">rmdir</span><span class="token punctuation">(</span>test<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token class-name">Files</span><span class="token punctuation">.</span><span class="token function">exists</span><span class="token punctuation">(</span>test<span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token class-name">Files</span><span class="token punctuation">.</span><span class="token function">createDirectory</span><span class="token punctuation">(</span>test<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span> <span class="token punctuation">{</span>
+        <span class="token function">refreshTestDir</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Files</span><span class="token punctuation">.</span><span class="token function">createFile</span><span class="token punctuation">(</span>test<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">&quot;Hello.txt&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Path</span> variant <span class="token operator">=</span> <span class="token function">makeVariant</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// Throws exception (too many levels):</span>
+        <span class="token keyword">try</span> <span class="token punctuation">{</span>
+            <span class="token class-name">Files</span><span class="token punctuation">.</span><span class="token function">createDirectory</span><span class="token punctuation">(</span>variant<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">Exception</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;Nope, that doesn&apos;t work.&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token function">populateTestDir</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Path</span> tempdir <span class="token operator">=</span> <span class="token class-name">Files</span><span class="token punctuation">.</span><span class="token function">createTempDirectory</span><span class="token punctuation">(</span>test<span class="token punctuation">,</span> <span class="token string">&quot;DIR_&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Files</span><span class="token punctuation">.</span><span class="token function">createTempFile</span><span class="token punctuation">(</span>tempdir<span class="token punctuation">,</span> <span class="token string">&quot;pre&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;.non&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Files</span><span class="token punctuation">.</span><span class="token function">newDirectoryStream</span><span class="token punctuation">(</span>test<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token operator">::</span><span class="token function">println</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;*********&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Files</span><span class="token punctuation">.</span><span class="token function">walk</span><span class="token punctuation">(</span>test<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token operator">::</span><span class="token function">println</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">populateTestDir</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span> <span class="token punctuation">{</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> parts<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token class-name">Path</span> variant <span class="token operator">=</span> <span class="token function">makeVariant</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token class-name">Files</span><span class="token punctuation">.</span><span class="token function">exists</span><span class="token punctuation">(</span>variant<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token class-name">Files</span><span class="token punctuation">.</span><span class="token function">createDirectories</span><span class="token punctuation">(</span>variant<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token class-name">Files</span><span class="token punctuation">.</span><span class="token function">copy</span><span class="token punctuation">(</span><span class="token class-name">Paths</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">&quot;Directories.java&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                           variant<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">&quot;File.txt&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token class-name">Files</span><span class="token punctuation">.</span><span class="token function">createTempFile</span><span class="token punctuation">(</span>variant<span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;"><a name="&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;" class="anchor-navigation-ex-anchor" href="#&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;"><i class="fa fa-link" aria-hidden="true"></i></a>1.3. &#x6587;&#x4EF6;&#x7CFB;&#x7EDF;</h2>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../" class="navigation navigation-prev " aria-label="Previous page: 简介">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="IO-Stream.html" class="navigation navigation-next " aria-label="Next page: IO流">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"文件","level":"1.2","depth":1,"next":{"title":"IO流","level":"1.3","depth":1,"path":"pages/IO-Stream.md","ref":"./pages/IO-Stream.md","articles":[]},"previous":{"title":"简介","level":"1.1","depth":1,"path":"README.md","ref":"./README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","anchor-navigation-ex","-sharing","sharing-plus","-highlight","prism"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"night","family":"serif","size":2},"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"sharing":{"weibo":true,"qzone":true,"qq":true,"douban":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"Little Captain","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Java-Core","gitbook":"*","description":"Java-Core"},"file":{"path":"pages/file.md","mtime":"2021-09-19T08:33:16.829Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-09-19T08:33:48.706Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
