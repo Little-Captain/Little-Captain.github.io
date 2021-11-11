@@ -1,0 +1,700 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Building ANTLR itself · antlr4-doc</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Little Captain">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-okaidia.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="releasing-antlr.html" />
+    
+    
+    <link rel="prev" href="resources.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Sections</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                        <b>2.1.</b>
+                    
+                    Index
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="getting-started.html">
+            
+                <a href="getting-started.html">
+            
+                    
+                        <b>2.2.</b>
+                    
+                    Getting Started with ANTLR v4
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="lexicon.html">
+            
+                <a href="lexicon.html">
+            
+                    
+                        <b>2.3.</b>
+                    
+                    Grammar Lexicon
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="grammars.html">
+            
+                <a href="grammars.html">
+            
+                    
+                        <b>2.4.</b>
+                    
+                    Grammar Structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="parser-rules.html">
+            
+                <a href="parser-rules.html">
+            
+                    
+                        <b>2.5.</b>
+                    
+                    Parser Rules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="left-recursion.html">
+            
+                <a href="left-recursion.html">
+            
+                    
+                        <b>2.6.</b>
+                    
+                    Left-recursive rules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="actions.html">
+            
+                <a href="actions.html">
+            
+                    
+                        <b>2.7.</b>
+                    
+                    Actions and Attributes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="lexer-rules.html">
+            
+                <a href="lexer-rules.html">
+            
+                    
+                        <b>2.8.</b>
+                    
+                    Lexer Rules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="wildcard.html">
+            
+                <a href="wildcard.html">
+            
+                    
+                        <b>2.9.</b>
+                    
+                    Wildcard Operator and Nongreedy Subrules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="listeners.html">
+            
+                <a href="listeners.html">
+            
+                    
+                        <b>2.10.</b>
+                    
+                    Parse Tree Listeners
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11" data-path="tree-matching.html">
+            
+                <a href="tree-matching.html">
+            
+                    
+                        <b>2.11.</b>
+                    
+                    Parse Tree Matching and XPath
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.12" data-path="predicates.html">
+            
+                <a href="predicates.html">
+            
+                    
+                        <b>2.12.</b>
+                    
+                    Semantic Predicates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.13" data-path="options.html">
+            
+                <a href="options.html">
+            
+                    
+                        <b>2.13.</b>
+                    
+                    Options
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14" data-path="tool-options.html">
+            
+                <a href="tool-options.html">
+            
+                    
+                        <b>2.14.</b>
+                    
+                    ANTLR Tool Command Line Options
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.15" data-path="targets.html">
+            
+                <a href="targets.html">
+            
+                    
+                        <b>2.15.</b>
+                    
+                    Runtime Libraries and Code Generation Targets
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.16" data-path="unicode.html">
+            
+                <a href="unicode.html">
+            
+                    
+                        <b>2.16.</b>
+                    
+                    Unicode U+FFFF, U+10FFFF character streams
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17" data-path="parsing-binary-files.html">
+            
+                <a href="parsing-binary-files.html">
+            
+                    
+                        <b>2.17.</b>
+                    
+                    Parsing binary streams
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.18" data-path="case-insensitive-lexing.html">
+            
+                <a href="case-insensitive-lexing.html">
+            
+                    
+                        <b>2.18.</b>
+                    
+                    Case-Insensitive Lexing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.19" data-path="interpreters.html">
+            
+                <a href="interpreters.html">
+            
+                    
+                        <b>2.19.</b>
+                    
+                    Parser and lexer interpreters
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.20" data-path="resources.html">
+            
+                <a href="resources.html">
+            
+                    
+                        <b>2.20.</b>
+                    
+                    Resources
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Building / releasing ANTLR itself</li>
+        
+        
+    
+        <li class="chapter active" data-level="3.1" data-path="building-antlr.html">
+            
+                <a href="building-antlr.html">
+            
+                    
+                        <b>3.1.</b>
+                    
+                    Building ANTLR itself
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="releasing-antlr.html">
+            
+                <a href="releasing-antlr.html">
+            
+                    
+                        <b>3.2.</b>
+                    
+                    Cutting an ANTLR Release
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="antlr-project-testing.html">
+            
+                <a href="antlr-project-testing.html">
+            
+                    
+                        <b>3.3.</b>
+                    
+                    ANTLR project unit tests
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="creating-a-language-target.html">
+            
+                <a href="creating-a-language-target.html">
+            
+                    
+                        <b>3.4.</b>
+                    
+                    Creating an ANTLR Language Target
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Building ANTLR itself</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#building-antlr"><b>1. </b>Building ANTLR</a></li><li><span class="title-icon "></span><a href="#get-the-source"><b>2. </b>Get the source</a></li><li><span class="title-icon "></span><a href="#check-your-environment"><b>3. </b>Check your environment</a></li><li><span class="title-icon "></span><a href="#compile"><b>4. </b>Compile</a></li><li><span class="title-icon "></span><a href="#installing-libs-to-mvn-cache-locally"><b>5. </b>Installing libs to mvn cache locally</a></li><li><span class="title-icon "></span><a href="#testing-tool-and-targets"><b>6. </b>Testing tool and targets</a></li><li><span class="title-icon "></span><a href="#building-without-testing"><b>7. </b>Building without testing</a></li><ul><li><span class="title-icon "></span><a href="#building-antlr-in-intellij-ide"><b>7.1. </b>Building ANTLR in Intellij IDE</a></li></ul></ul></div><a href="#building-antlr" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="building-antlr"><a name="building-antlr" class="anchor-navigation-ex-anchor" href="#building-antlr"><i class="fa fa-link" aria-hidden="true"></i></a>1. Building ANTLR</h1>
+<p>Most programmers do not need the information on this page because they will simply download the appropriate jar(s) or use ANTLR through maven (via ANTLR&apos;s antlr4-maven-plugin). If you would like to fork the project and fix bugs or tweak the runtime code generation, then you will almost certainly need to build ANTLR itself. There are two components:</p>
+<ol>
+<li>the tool that compiles grammars down into parsers and lexers in one of the target languages</li>
+<li>the runtime used by those generated parsers and lexers.</li>
+</ol>
+<p>I will assume that the root directory is <code>/tmp</code> for the purposes of explaining how to build ANTLR in this document.</p>
+<p><em>As of 4.6, ANTLR tool and Java-target runtime requires Java 7.</em></p>
+<h1 id="get-the-source"><a name="get-the-source" class="anchor-navigation-ex-anchor" href="#get-the-source"><i class="fa fa-link" aria-hidden="true"></i></a>2. Get the source</h1>
+<p>The first step is to get the Java source code from the ANTLR 4 repository at github. You can download the repository from github, but the easiest thing to do is simply clone the repository on your local disk:</p>
+<pre class="language-"><code class="lang-bash">$ <span class="token builtin class-name">cd</span> /tmp
+/tmp $ <span class="token function">git</span> clone https://github.com/antlr/antlr4.git
+Cloning into <span class="token string">&apos;antlr4&apos;</span><span class="token punctuation">..</span>.
+remote: Counting objects: <span class="token number">61480</span>, done.
+remote: Total <span class="token number">61480</span> <span class="token punctuation">(</span>delta <span class="token number">0</span><span class="token punctuation">)</span>, reused <span class="token number">0</span> <span class="token punctuation">(</span>delta <span class="token number">0</span><span class="token punctuation">)</span>, pack-reused <span class="token number">61480</span>
+Receiving objects: <span class="token number">100</span>% <span class="token punctuation">(</span><span class="token number">61480</span>/61480<span class="token punctuation">)</span>, <span class="token number">31.24</span> MiB <span class="token operator">|</span> <span class="token number">7.18</span> MiB/s, done.
+Resolving deltas: <span class="token number">100</span>% <span class="token punctuation">(</span><span class="token number">32970</span>/32970<span class="token punctuation">)</span>, done.
+Checking connectivity<span class="token punctuation">..</span>. done.
+Checking out files: <span class="token number">100</span>% <span class="token punctuation">(</span><span class="token number">1427</span>/1427<span class="token punctuation">)</span>, done.
+</code></pre>
+<h1 id="check-your-environment"><a name="check-your-environment" class="anchor-navigation-ex-anchor" href="#check-your-environment"><i class="fa fa-link" aria-hidden="true"></i></a>3. Check your environment</h1>
+<p>If you are starting from a clean, minimum Ubuntu OS, check your environment.</p>
+<pre class="language-"><code class="lang-bash">$ <span class="token function">sudo</span> <span class="token function">apt-get</span> update
+$ <span class="token comment"># Get Java</span>
+$ java <span class="token operator">&gt;</span> /dev/null <span class="token operator"><span class="token file-descriptor important">2</span>&gt;</span><span class="token file-descriptor important">&amp;1</span>
+$ <span class="token keyword">if</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token string">&quot;<span class="token variable">$?</span>&quot;</span> <span class="token operator">!=</span> <span class="token string">&quot;0&quot;</span> <span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span> <span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> -y openjdk-11-jre-headless<span class="token punctuation">;</span> <span class="token keyword">fi</span>
+$ <span class="token comment"># Get Mvn</span>
+$ mvn <span class="token operator">&gt;</span> /dev/null <span class="token operator"><span class="token file-descriptor important">2</span>&gt;</span><span class="token file-descriptor important">&amp;1</span>
+$ <span class="token keyword">if</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token string">&quot;<span class="token variable">$?</span>&quot;</span> <span class="token operator">!=</span> <span class="token string">&quot;0&quot;</span> <span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span> <span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> -y maven<span class="token punctuation">;</span> <span class="token keyword">fi</span>
+</code></pre>
+<h1 id="compile"><a name="compile" class="anchor-navigation-ex-anchor" href="#compile"><i class="fa fa-link" aria-hidden="true"></i></a>4. Compile</h1>
+<pre class="language-"><code class="lang-bash">$ <span class="token builtin class-name">cd</span> /tmp/antlr4
+$ <span class="token builtin class-name">export</span> <span class="token assign-left variable">MAVEN_OPTS</span><span class="token operator">=</span><span class="token string">&quot;-Xmx1G&quot;</span>   <span class="token comment"># don&apos;t forget this on linux</span>
+$ mvn clean                    <span class="token comment"># must be separate, not part of install/compile</span>
+$ mvn -DskipTests <span class="token function">install</span>
+<span class="token punctuation">..</span>.
+<span class="token punctuation">[</span>INFO<span class="token punctuation">]</span> ------------------------------------------------------------------------
+<span class="token punctuation">[</span>INFO<span class="token punctuation">]</span> Reactor Summary:
+<span class="token punctuation">[</span>INFO<span class="token punctuation">]</span> 
+<span class="token punctuation">[</span>INFO<span class="token punctuation">]</span> ANTLR <span class="token number">4</span> <span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span> SUCCESS <span class="token punctuation">[</span>  <span class="token number">0.287</span> s<span class="token punctuation">]</span>
+<span class="token punctuation">[</span>INFO<span class="token punctuation">]</span> ANTLR <span class="token number">4</span> Runtime <span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span> SUCCESS <span class="token punctuation">[</span>  <span class="token number">4.915</span> s<span class="token punctuation">]</span>
+<span class="token punctuation">[</span>INFO<span class="token punctuation">]</span> ANTLR <span class="token number">4</span> Tool <span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span>. SUCCESS <span class="token punctuation">[</span>  <span class="token number">1.315</span> s<span class="token punctuation">]</span>
+<span class="token punctuation">[</span>INFO<span class="token punctuation">]</span> ANTLR <span class="token number">4</span> Maven plugin <span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span>. SUCCESS <span class="token punctuation">[</span>  <span class="token number">2.393</span> s<span class="token punctuation">]</span>
+<span class="token punctuation">[</span>INFO<span class="token punctuation">]</span> ANTLR <span class="token number">4</span> Runtime Test Annotations <span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span>. SUCCESS <span class="token punctuation">[</span>  <span class="token number">0.078</span> s<span class="token punctuation">]</span>
+<span class="token punctuation">[</span>INFO<span class="token punctuation">]</span> ANTLR <span class="token number">4</span> Runtime Test Processors <span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span> SUCCESS <span class="token punctuation">[</span>  <span class="token number">0.019</span> s<span class="token punctuation">]</span>
+<span class="token punctuation">[</span>INFO<span class="token punctuation">]</span> ANTLR <span class="token number">4</span> Runtime Tests <span class="token punctuation">(</span>2nd generation<span class="token punctuation">)</span> <span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span>. SUCCESS <span class="token punctuation">[</span>  <span class="token number">1.986</span> s<span class="token punctuation">]</span>
+<span class="token punctuation">[</span>INFO<span class="token punctuation">]</span> ANTLR <span class="token number">4</span> Tool Tests <span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span>. SUCCESS <span class="token punctuation">[</span>  <span class="token number">0.513</span> s<span class="token punctuation">]</span>
+<span class="token punctuation">[</span>INFO<span class="token punctuation">]</span> ------------------------------------------------------------------------
+<span class="token punctuation">[</span>INFO<span class="token punctuation">]</span> BUILD SUCCESS
+<span class="token punctuation">[</span>INFO<span class="token punctuation">]</span> ------------------------------------------------------------------------
+<span class="token punctuation">[</span>INFO<span class="token punctuation">]</span> Total time: <span class="token number">12.005</span> s
+<span class="token punctuation">[</span>INFO<span class="token punctuation">]</span> Finished at: <span class="token number">2016</span>-11-21T11:42:42-08:00
+<span class="token punctuation">[</span>INFO<span class="token punctuation">]</span> Final Memory: 52M/434M
+<span class="token punctuation">[</span>INFO<span class="token punctuation">]</span> ------------------------------------------------------------------------
+</code></pre>
+<p><strong>NOTE:</strong> We do <code>install</code> not <code>compile</code> as tool tests and such refer to modules that must be pulled from the maven install local cache.</p>
+<h1 id="installing-libs-to-mvn-cache-locally"><a name="installing-libs-to-mvn-cache-locally" class="anchor-navigation-ex-anchor" href="#installing-libs-to-mvn-cache-locally"><i class="fa fa-link" aria-hidden="true"></i></a>5. Installing libs to mvn cache locally</h1>
+<p>To skip the tests (which require all the target languages be installed) and <strong>install into local repository</strong> <code>~/.m2/repository/org/antlr</code>, do this:</p>
+<pre class="language-"><code class="lang-bash">$ <span class="token builtin class-name">export</span> <span class="token assign-left variable">MAVEN_OPTS</span><span class="token operator">=</span><span class="token string">&quot;-Xmx1G&quot;</span>     <span class="token comment"># don&apos;t forget this on linux</span>
+$ mvn <span class="token function">install</span> -DskipTests<span class="token operator">=</span>true   <span class="token comment"># make sure all artifacts are visible on this machine</span>
+</code></pre>
+<p>You should see these jars (when building 4.6-SNAPSHOT):</p>
+<pre class="language-"><code class="lang-bash">/Users/parrt/.m2/repository/org/antlr $ <span class="token function">find</span> antlr4* -name <span class="token string">&apos;*.jar&apos;</span>
+antlr4-maven-plugin/4.6-SNAPSHOT/antlr4-maven-plugin-4.6-SNAPSHOT.jar
+antlr4-runtime-test-annotation-processors/4.6-SNAPSHOT/antlr4-runtime-test-annotation-processors-4.6-SNAPSHOT.jar
+antlr4-runtime-test-annotations/4.6-SNAPSHOT/antlr4-runtime-test-annotations-4.6-SNAPSHOT.jar
+antlr4-runtime-testsuite/4.6-SNAPSHOT/antlr4-runtime-testsuite-4.6-SNAPSHOT-tests.jar
+antlr4-runtime-testsuite/4.6-SNAPSHOT/antlr4-runtime-testsuite-4.6-SNAPSHOT.jar
+antlr4-runtime/4.6-SNAPSHOT/antlr4-runtime-4.6-SNAPSHOT.jar
+antlr4-tool-testsuite/4.6-SNAPSHOT/antlr4-tool-testsuite-4.6-SNAPSHOT.jar
+antlr4/4.6-SNAPSHOT/antlr4-4.6-SNAPSHOT-tests.jar
+antlr4/4.6-SNAPSHOT/antlr4-4.6-SNAPSHOT.jar
+</code></pre>
+<p>Note that ANTLR is written in itself, which is why maven downloads antlr4-4.5.jar for boostrapping 4.6-SNAPSHOT purposes.</p>
+<h1 id="testing-tool-and-targets"><a name="testing-tool-and-targets" class="anchor-navigation-ex-anchor" href="#testing-tool-and-targets"><i class="fa fa-link" aria-hidden="true"></i></a>6. Testing tool and targets</h1>
+<p>See <a href="antlr-project-testing.html">ANTLR project unit tests</a>.</p>
+<h1 id="building-without-testing"><a name="building-without-testing" class="anchor-navigation-ex-anchor" href="#building-without-testing"><i class="fa fa-link" aria-hidden="true"></i></a>7. Building without testing</h1>
+<p>To build without running the tests (saves a lot of time), do this:</p>
+<pre class="language-"><code class="lang-bash">$ mvn -DskipTests <span class="token function">install</span>
+</code></pre>
+<h2 id="building-antlr-in-intellij-ide"><a name="building-antlr-in-intellij-ide" class="anchor-navigation-ex-anchor" href="#building-antlr-in-intellij-ide"><i class="fa fa-link" aria-hidden="true"></i></a>7.1. Building ANTLR in Intellij IDE</h2>
+<p>After download ANTLR source, just &quot;import project from existing sources&quot; and click on the &quot;Maven Projects&quot; tab in right gutter of IDE. It should build stuff in the background automatically and look like:</p>
+<p><img src="images/intellij-maven.png" width="200"></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="resources.html" class="navigation navigation-prev " aria-label="Previous page: Resources">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="releasing-antlr.html" class="navigation navigation-next " aria-label="Next page: Cutting an ANTLR Release">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Building ANTLR itself","level":"3.1","depth":1,"next":{"title":"Cutting an ANTLR Release","level":"3.2","depth":1,"path":"chapters/releasing-antlr.md","ref":"chapters/releasing-antlr.md","articles":[]},"previous":{"title":"Resources","level":"2.20","depth":1,"path":"chapters/resources.md","ref":"chapters/resources.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","anchor-navigation-ex","-sharing","sharing-plus","-highlight","prism"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"night","family":"serif","size":2},"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"sharing":{"weibo":true,"qzone":true,"qq":true,"douban":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"Little Captain","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"antlr4-doc","gitbook":"*","description":"antlr4-doc"},"file":{"path":"chapters/building-antlr.md","mtime":"2021-11-11T03:00:11.621Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-11-11T03:11:20.710Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,744 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Parsing binary streams · antlr4-doc</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Little Captain">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-okaidia.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="case-insensitive-lexing.html" />
+    
+    
+    <link rel="prev" href="unicode.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Sections</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                        <b>2.1.</b>
+                    
+                    Index
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="getting-started.html">
+            
+                <a href="getting-started.html">
+            
+                    
+                        <b>2.2.</b>
+                    
+                    Getting Started with ANTLR v4
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="lexicon.html">
+            
+                <a href="lexicon.html">
+            
+                    
+                        <b>2.3.</b>
+                    
+                    Grammar Lexicon
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="grammars.html">
+            
+                <a href="grammars.html">
+            
+                    
+                        <b>2.4.</b>
+                    
+                    Grammar Structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="parser-rules.html">
+            
+                <a href="parser-rules.html">
+            
+                    
+                        <b>2.5.</b>
+                    
+                    Parser Rules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="left-recursion.html">
+            
+                <a href="left-recursion.html">
+            
+                    
+                        <b>2.6.</b>
+                    
+                    Left-recursive rules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="actions.html">
+            
+                <a href="actions.html">
+            
+                    
+                        <b>2.7.</b>
+                    
+                    Actions and Attributes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="lexer-rules.html">
+            
+                <a href="lexer-rules.html">
+            
+                    
+                        <b>2.8.</b>
+                    
+                    Lexer Rules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="wildcard.html">
+            
+                <a href="wildcard.html">
+            
+                    
+                        <b>2.9.</b>
+                    
+                    Wildcard Operator and Nongreedy Subrules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="listeners.html">
+            
+                <a href="listeners.html">
+            
+                    
+                        <b>2.10.</b>
+                    
+                    Parse Tree Listeners
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11" data-path="tree-matching.html">
+            
+                <a href="tree-matching.html">
+            
+                    
+                        <b>2.11.</b>
+                    
+                    Parse Tree Matching and XPath
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.12" data-path="predicates.html">
+            
+                <a href="predicates.html">
+            
+                    
+                        <b>2.12.</b>
+                    
+                    Semantic Predicates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.13" data-path="options.html">
+            
+                <a href="options.html">
+            
+                    
+                        <b>2.13.</b>
+                    
+                    Options
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14" data-path="tool-options.html">
+            
+                <a href="tool-options.html">
+            
+                    
+                        <b>2.14.</b>
+                    
+                    ANTLR Tool Command Line Options
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.15" data-path="targets.html">
+            
+                <a href="targets.html">
+            
+                    
+                        <b>2.15.</b>
+                    
+                    Runtime Libraries and Code Generation Targets
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.16" data-path="unicode.html">
+            
+                <a href="unicode.html">
+            
+                    
+                        <b>2.16.</b>
+                    
+                    Unicode U+FFFF, U+10FFFF character streams
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.17" data-path="parsing-binary-files.html">
+            
+                <a href="parsing-binary-files.html">
+            
+                    
+                        <b>2.17.</b>
+                    
+                    Parsing binary streams
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.18" data-path="case-insensitive-lexing.html">
+            
+                <a href="case-insensitive-lexing.html">
+            
+                    
+                        <b>2.18.</b>
+                    
+                    Case-Insensitive Lexing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.19" data-path="interpreters.html">
+            
+                <a href="interpreters.html">
+            
+                    
+                        <b>2.19.</b>
+                    
+                    Parser and lexer interpreters
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.20" data-path="resources.html">
+            
+                <a href="resources.html">
+            
+                    
+                        <b>2.20.</b>
+                    
+                    Resources
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Building / releasing ANTLR itself</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="building-antlr.html">
+            
+                <a href="building-antlr.html">
+            
+                    
+                        <b>3.1.</b>
+                    
+                    Building ANTLR itself
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="releasing-antlr.html">
+            
+                <a href="releasing-antlr.html">
+            
+                    
+                        <b>3.2.</b>
+                    
+                    Cutting an ANTLR Release
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="antlr-project-testing.html">
+            
+                <a href="antlr-project-testing.html">
+            
+                    
+                        <b>3.3.</b>
+                    
+                    ANTLR project unit tests
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="creating-a-language-target.html">
+            
+                <a href="creating-a-language-target.html">
+            
+                    
+                        <b>3.4.</b>
+                    
+                    Creating an ANTLR Language Target
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Parsing binary streams</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#parsing-binary-files"><b>1. </b>Parsing Binary Files</a></li><ul><li><span class="title-icon "></span><a href="#binary-streams"><b>1.1. </b>Binary streams</a></li><li><span class="title-icon "></span><a href="#custom-stream"><b>1.2. </b>Custom stream</a></li><li><span class="title-icon "></span><a href="#error-handling-in-binary-files"><b>1.3. </b>Error handling in binary files</a></li></ul></ul></div><a href="#parsing-binary-files" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="parsing-binary-files"><a name="parsing-binary-files" class="anchor-navigation-ex-anchor" href="#parsing-binary-files"><i class="fa fa-link" aria-hidden="true"></i></a>1. Parsing Binary Files</h1>
+<p>Parsing binary files is no different than parsing character-based files except that the &quot;characters&quot; are actually bytes not 16-bit unsigned short unicode characters.  From a lexer/parser point of view, there is no difference except that the characters are likely not printable.  If you want to match a special 2-byte marker 0xCA then 0xFE, the following rule is sufficient.</p>
+<pre class="language-"><code>MARKER : &apos;\u00CA&apos; &apos;\u00FE&apos; ;
+</code></pre><p>The parser of course would refer to that token like any other token.</p>
+<p>Here is a sample grammar for use with the code snippets below.</p>
+<pre class="language-"><code>grammar IP;
+
+file : ip+ (MARKER ip)* ;
+
+ip : BYTE BYTE BYTE BYTE ;
+
+MARKER : &apos;\u00CA&apos; &apos;\u00FE&apos; ;
+BYTE : &apos;\u0000&apos;..&apos;\u00FF&apos; ;
+</code></pre><p>Notice that <code>BYTE</code> is using a range operator to match anything between 0 and 255. We can&apos;t use character classes like <code>[a-z]</code> naturally because we are not parsing character codes.  All character specifiers must have <code>00</code> as their upper byte. E.g., <code>\uCAFE</code> is not a valid character because that 16-bit value will never be created from the input stream (bytes only remember).</p>
+<p>If there are actual characters like <code>$</code> or <code>!</code> encoded as bytes in the binary file, you can refer to them via literals like <code>&apos;$&apos;</code> as you normally would. See <code>&apos;.&apos;</code> in the grammar.</p>
+<h2 id="binary-streams"><a name="binary-streams" class="anchor-navigation-ex-anchor" href="#binary-streams"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. Binary streams</h2>
+<p>There are many targets now so I&apos;m not sure exactly how they process text files but most targets will pull in text per the machine&apos;s locale. Much of the time this will mean UTF-8 encoding of text converted to 16-bit Unicode. ANTLR&apos;s lexers operate on <code>int</code> so we can handle any kind of character you want to send in that fits in <code>int</code>.</p>
+<p>Once the lexer gets an input stream, it doesn&apos;t care whether the characters come from / represent bytes or actual Unicode characters.</p>
+<p>Let&apos;s get a binary file called <code>ips</code> and put it in our resources directory:</p>
+<pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">WriteBinaryFile</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> bytes <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token punctuation">(</span><span class="token keyword">byte</span><span class="token punctuation">)</span><span class="token number">172</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token keyword">byte</span><span class="token punctuation">)</span><span class="token number">0xCA</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token keyword">byte</span><span class="token punctuation">)</span><span class="token number">0xFE</span><span class="token punctuation">,</span>
+        <span class="token punctuation">(</span><span class="token keyword">byte</span><span class="token punctuation">)</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token keyword">byte</span><span class="token punctuation">)</span><span class="token number">0xCA</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token keyword">byte</span><span class="token punctuation">)</span><span class="token number">0xFE</span><span class="token punctuation">,</span>
+        <span class="token punctuation">(</span><span class="token keyword">byte</span><span class="token punctuation">)</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">99</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span> <span class="token punctuation">{</span>
+        <span class="token class-name">Files</span><span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span><span class="token string">&quot;/tmp/ips&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toPath</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> bytes<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Now we need to create a stream of bytes satisfactory to ANTLR, which is as simple as:</p>
+<pre class="language-"><code class="lang-java"><span class="token class-name">CharStream</span> bytesAsChar <span class="token operator">=</span> <span class="token class-name">CharStreams</span><span class="token punctuation">.</span><span class="token function">fromFileName</span><span class="token punctuation">(</span><span class="token string">&quot;/tmp/ips&quot;</span><span class="token punctuation">,</span> <span class="token class-name">StandardCharsets</span><span class="token punctuation">.</span>ISO_8859_1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>The <code>ISO-8859-1</code> encoding is just the 8-bit char encoding for LATIN-1, which effectively tells the stream to treat each byte as a character. That&apos;s what we want. Then we have the usual test rig:</p>
+<pre class="language-"><code class="lang-java"><span class="token comment">//ANTLRFileStream bytesAsChar = new ANTLRFileStream(&quot;/tmp/ips&quot;, &quot;ISO-8859-1&quot;); DEPRECATED in 4.7</span>
+<span class="token class-name">CharStream</span> bytesAsChar <span class="token operator">=</span> <span class="token class-name">CharStreams</span><span class="token punctuation">.</span><span class="token function">fromFileName</span><span class="token punctuation">(</span><span class="token string">&quot;/tmp/ips&quot;</span><span class="token punctuation">,</span> <span class="token class-name">StandardCharsets</span><span class="token punctuation">.</span>ISO_8859_1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">IPLexer</span> lexer <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">IPLexer</span><span class="token punctuation">(</span>bytesAsChar<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">CommonTokenStream</span> tokens <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">CommonTokenStream</span><span class="token punctuation">(</span>lexer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">IPParser</span> parser <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">IPParser</span><span class="token punctuation">(</span>tokens<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">ParseTree</span> tree <span class="token operator">=</span> parser<span class="token punctuation">.</span><span class="token function">file</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">IPBaseListener</span> listener <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MyIPListener</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">ParseTreeWalker</span><span class="token punctuation">.</span>DEFAULT<span class="token punctuation">.</span><span class="token function">walk</span><span class="token punctuation">(</span>listener<span class="token punctuation">,</span> tree<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Here is the listener:</p>
+<pre class="language-"><code class="lang-java"><span class="token keyword">class</span> <span class="token class-name">MyIPListener</span> <span class="token keyword">extends</span> <span class="token class-name">IPBaseListener</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">exitIp</span><span class="token punctuation">(</span><span class="token class-name">IPParser<span class="token punctuation">.</span>IpContext</span> ctx<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">TerminalNode</span><span class="token punctuation">&gt;</span></span> octets <span class="token operator">=</span> ctx<span class="token punctuation">.</span><span class="token function">BYTE</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">short</span><span class="token punctuation">[</span><span class="token punctuation">]</span> ip <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">short</span><span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>octets<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token class-name">String</span> oneCharStringHoldingOctet <span class="token operator">=</span> octets<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getText</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            ip<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">short</span><span class="token punctuation">)</span>oneCharStringHoldingOctet<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span>ip<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>We can&apos;t just print out the text because we are not reading in text. We need to emit each byte as a decimal value. The output should be the following when you run the test code:</p>
+<pre class="language-"><code>[172, 0, 0, 1]
+[10, 10, 10, 1]
+[10, 10, 10, 99]
+</code></pre><h2 id="custom-stream"><a name="custom-stream" class="anchor-navigation-ex-anchor" href="#custom-stream"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. Custom stream</h2>
+<p>(<em>ANTLRFileStream was deprecated in 4.7</em>)</p>
+<p>If you want to play around with the stream, you can. Here&apos;s an example that alters how &quot;text&quot; is computed from the byte stream (which changes how tokens print out their text as well):</p>
+<pre class="language-"><code class="lang-java"><span class="token comment">/** make a stream treating file as full of single unsigned byte characters */</span>
+<span class="token keyword">class</span> <span class="token class-name">BinaryANTLRFileStream</span> <span class="token keyword">extends</span> <span class="token class-name">ANTLRFileStream</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token class-name">BinaryANTLRFileStream</span><span class="token punctuation">(</span><span class="token class-name">String</span> fileName<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span> <span class="token punctuation">{</span>
+        <span class="token keyword">super</span><span class="token punctuation">(</span>fileName<span class="token punctuation">,</span> <span class="token string">&quot;ISO-8859-1&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/** Print the decimal value rather than treat as char */</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getText</span><span class="token punctuation">(</span><span class="token class-name">Interval</span> interval<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">StringBuilder</span> buf <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StringBuilder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> start <span class="token operator">=</span> interval<span class="token punctuation">.</span>a<span class="token punctuation">;</span>
+        <span class="token keyword">int</span> stop <span class="token operator">=</span> interval<span class="token punctuation">.</span>b<span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>stop <span class="token operator">&gt;=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            stop <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> start<span class="token punctuation">;</span> i<span class="token operator">&lt;=</span>stop<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">int</span> v <span class="token operator">=</span> data<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            buf<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> buf<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>The new test code starts out like this:</p>
+<pre class="language-"><code class="lang-java"><span class="token class-name">ANTLRFileStream</span> bytesAsChar <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BinaryANTLRFileStream</span><span class="token punctuation">(</span><span class="token string">&quot;/tmp/ips&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">IPLexer</span> lexer <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">IPLexer</span><span class="token punctuation">(</span>bytesAsChar<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+</code></pre>
+<p>This simplifies our listener then:</p>
+<pre class="language-"><code class="lang-java"><span class="token keyword">class</span> <span class="token class-name">MyIPListenerCustomStream</span> <span class="token keyword">extends</span> <span class="token class-name">IPBaseListener</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">exitIp</span><span class="token punctuation">(</span><span class="token class-name">IPParser<span class="token punctuation">.</span>IpContext</span> ctx<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">TerminalNode</span><span class="token punctuation">&gt;</span></span> octets <span class="token operator">=</span> ctx<span class="token punctuation">.</span><span class="token function">BYTE</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>octets<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>You should get this enhanced output:</p>
+<pre class="language-"><code>[172(0xAC), 0(0x0), 0(0x0), 1(0x1)]
+[10(0xA), 10(0xA), 10(0xA), 1(0x1)]
+[10(0xA), 10(0xA), 10(0xA), 99(0x63)]
+</code></pre><h2 id="error-handling-in-binary-files"><a name="error-handling-in-binary-files" class="anchor-navigation-ex-anchor" href="#error-handling-in-binary-files"><i class="fa fa-link" aria-hidden="true"></i></a>1.3. Error handling in binary files</h2>
+<p>Error handling proceeds exactly like any other parser. For example, let&apos;s alter the binary file so that it is missing one of the 0&apos;s in the first IP address:</p>
+<pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> bytes <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">(</span><span class="token keyword">byte</span><span class="token punctuation">)</span><span class="token number">172</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token keyword">byte</span><span class="token punctuation">)</span><span class="token number">0xCA</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token keyword">byte</span><span class="token punctuation">)</span><span class="token number">0xFE</span><span class="token punctuation">,</span> <span class="token comment">// OOOPS</span>
+    <span class="token punctuation">(</span><span class="token keyword">byte</span><span class="token punctuation">)</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token keyword">byte</span><span class="token punctuation">)</span><span class="token number">0xCA</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token keyword">byte</span><span class="token punctuation">)</span><span class="token number">0xFE</span><span class="token punctuation">,</span>
+    <span class="token punctuation">(</span><span class="token keyword">byte</span><span class="token punctuation">)</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">99</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Running the original test case gives us:</p>
+<pre class="language-"><code>line 1:4 extraneous input &apos;.&apos; expecting BYTE
+line 1:6 mismatched input &apos;&#xCA;&#xFE;&apos; expecting &apos;.&apos;
+[172, 0, 1, 0]
+[10, 10, 10, 1]
+[10, 10, 10, 99]
+</code></pre><p>That <code>&apos;&#xCA;&#xFE;&apos;</code> is just to the character representation of two bytes 0xCA and 0xFE. Using the enhanced binary stream, we see:</p>
+<pre class="language-"><code>line 1:4 extraneous input &apos;46(0x2E)&apos; expecting BYTE
+line 1:6 mismatched input &apos;202(0xCA)254(0xFE)&apos; expecting &apos;.&apos;
+[172(0xAC), 0(0x0), 1(0x1)]
+[10(0xA), 10(0xA), 10(0xA), 1(0x1)]
+[10(0xA), 10(0xA), 10(0xA), 99(0x63)]
+</code></pre>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="unicode.html" class="navigation navigation-prev " aria-label="Previous page: Unicode U+FFFF, U+10FFFF character streams">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="case-insensitive-lexing.html" class="navigation navigation-next " aria-label="Next page: Case-Insensitive Lexing">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Parsing binary streams","level":"2.17","depth":1,"next":{"title":"Case-Insensitive Lexing","level":"2.18","depth":1,"path":"chapters/case-insensitive-lexing.md","ref":"chapters/case-insensitive-lexing.md","articles":[]},"previous":{"title":"Unicode U+FFFF, U+10FFFF character streams","level":"2.16","depth":1,"path":"chapters/unicode.md","ref":"chapters/unicode.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","anchor-navigation-ex","-sharing","sharing-plus","-highlight","prism"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"night","family":"serif","size":2},"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"sharing":{"weibo":true,"qzone":true,"qq":true,"douban":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"Little Captain","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"antlr4-doc","gitbook":"*","description":"antlr4-doc"},"file":{"path":"chapters/parsing-binary-files.md","mtime":"2021-11-11T03:00:11.621Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-11-11T03:11:20.710Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

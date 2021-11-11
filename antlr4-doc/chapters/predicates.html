@@ -1,0 +1,705 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Semantic Predicates · antlr4-doc</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Little Captain">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-okaidia.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="options.html" />
+    
+    
+    <link rel="prev" href="tree-matching.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Sections</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                        <b>2.1.</b>
+                    
+                    Index
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="getting-started.html">
+            
+                <a href="getting-started.html">
+            
+                    
+                        <b>2.2.</b>
+                    
+                    Getting Started with ANTLR v4
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="lexicon.html">
+            
+                <a href="lexicon.html">
+            
+                    
+                        <b>2.3.</b>
+                    
+                    Grammar Lexicon
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="grammars.html">
+            
+                <a href="grammars.html">
+            
+                    
+                        <b>2.4.</b>
+                    
+                    Grammar Structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="parser-rules.html">
+            
+                <a href="parser-rules.html">
+            
+                    
+                        <b>2.5.</b>
+                    
+                    Parser Rules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="left-recursion.html">
+            
+                <a href="left-recursion.html">
+            
+                    
+                        <b>2.6.</b>
+                    
+                    Left-recursive rules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="actions.html">
+            
+                <a href="actions.html">
+            
+                    
+                        <b>2.7.</b>
+                    
+                    Actions and Attributes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="lexer-rules.html">
+            
+                <a href="lexer-rules.html">
+            
+                    
+                        <b>2.8.</b>
+                    
+                    Lexer Rules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="wildcard.html">
+            
+                <a href="wildcard.html">
+            
+                    
+                        <b>2.9.</b>
+                    
+                    Wildcard Operator and Nongreedy Subrules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="listeners.html">
+            
+                <a href="listeners.html">
+            
+                    
+                        <b>2.10.</b>
+                    
+                    Parse Tree Listeners
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11" data-path="tree-matching.html">
+            
+                <a href="tree-matching.html">
+            
+                    
+                        <b>2.11.</b>
+                    
+                    Parse Tree Matching and XPath
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.12" data-path="predicates.html">
+            
+                <a href="predicates.html">
+            
+                    
+                        <b>2.12.</b>
+                    
+                    Semantic Predicates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.13" data-path="options.html">
+            
+                <a href="options.html">
+            
+                    
+                        <b>2.13.</b>
+                    
+                    Options
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14" data-path="tool-options.html">
+            
+                <a href="tool-options.html">
+            
+                    
+                        <b>2.14.</b>
+                    
+                    ANTLR Tool Command Line Options
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.15" data-path="targets.html">
+            
+                <a href="targets.html">
+            
+                    
+                        <b>2.15.</b>
+                    
+                    Runtime Libraries and Code Generation Targets
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.16" data-path="unicode.html">
+            
+                <a href="unicode.html">
+            
+                    
+                        <b>2.16.</b>
+                    
+                    Unicode U+FFFF, U+10FFFF character streams
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17" data-path="parsing-binary-files.html">
+            
+                <a href="parsing-binary-files.html">
+            
+                    
+                        <b>2.17.</b>
+                    
+                    Parsing binary streams
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.18" data-path="case-insensitive-lexing.html">
+            
+                <a href="case-insensitive-lexing.html">
+            
+                    
+                        <b>2.18.</b>
+                    
+                    Case-Insensitive Lexing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.19" data-path="interpreters.html">
+            
+                <a href="interpreters.html">
+            
+                    
+                        <b>2.19.</b>
+                    
+                    Parser and lexer interpreters
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.20" data-path="resources.html">
+            
+                <a href="resources.html">
+            
+                    
+                        <b>2.20.</b>
+                    
+                    Resources
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Building / releasing ANTLR itself</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="building-antlr.html">
+            
+                <a href="building-antlr.html">
+            
+                    
+                        <b>3.1.</b>
+                    
+                    Building ANTLR itself
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="releasing-antlr.html">
+            
+                <a href="releasing-antlr.html">
+            
+                    
+                        <b>3.2.</b>
+                    
+                    Cutting an ANTLR Release
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="antlr-project-testing.html">
+            
+                <a href="antlr-project-testing.html">
+            
+                    
+                        <b>3.3.</b>
+                    
+                    ANTLR project unit tests
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="creating-a-language-target.html">
+            
+                <a href="creating-a-language-target.html">
+            
+                    
+                        <b>3.4.</b>
+                    
+                    Creating an ANTLR Language Target
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Semantic Predicates</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#semantic-predicates"><b>1. </b>Semantic Predicates</a></li><ul><li><span class="title-icon "></span><a href="#making-predicated-parsing-decisions"><b>1.1. </b>Making Predicated Parsing Decisions</a></li><li><span class="title-icon "></span><a href="#finding-visible-predicates"><b>1.2. </b>Finding Visible Predicates</a></li><li><span class="title-icon "></span><a href="#using-context-dependent-predicates"><b>1.3. </b>Using Context-Dependent Predicates</a></li><li><span class="title-icon "></span><a href="#predicates-in-lexer-rules"><b>1.4. </b>Predicates in Lexer Rules</a></li></ul></ul></div><a href="#semantic-predicates" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="semantic-predicates"><a name="semantic-predicates" class="anchor-navigation-ex-anchor" href="#semantic-predicates"><i class="fa fa-link" aria-hidden="true"></i></a>1. Semantic Predicates</h1>
+<p>Semantic predicates, <code>{...}?</code>, are boolean expressions written in the target language that indicate the validity of continuing the parse along the path &quot;guarded&quot; by the predicate. Predicates can appear anywhere within a parser rule just like actions can, but only those appearing on the left edge of alternatives can affect prediction (choosing between alternatives).  This section provides all of the fine print regarding the use of semantic predicates in parser and lexer rules. Let&apos;s start out by digging deeper into how the parser incorporates predicates into parsing decisions.</p>
+<h2 id="making-predicated-parsing-decisions"><a name="making-predicated-parsing-decisions" class="anchor-navigation-ex-anchor" href="#making-predicated-parsing-decisions"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. Making Predicated Parsing Decisions</h2>
+<p>ANTLR&apos;s general decision-making strategy is to find all viable alternatives and then ignore the alternatives guarded with predicates that currently evaluate to false. (A viable alternative is one that matches the current input.) If more than one viable alternative remains, the parser chooses the alternative specified first in the decision.</p>
+<p>Consider a variant of C++ where array references also use parentheses instead of square brackets. If we only predicate one of the alternatives, we still have an ambiguous decision in expr:</p>
+<pre class="language-"><code>expr: ID &apos;(&apos; expr &apos;)&apos; // array reference (ANTLR picks this one)
+     | {istype()}? ID &apos;(&apos; expr &apos;)&apos; // ctor-style typecast
+     | ID &apos;(&apos; expr &apos;)&apos; // function call
+     ;
+</code></pre><p>In this case, all three alternatives are viable for input <code>x(i)</code>. When <code>x</code> is not a type name, the predicate evaluates to false, leaving only the first and third alternatives as possible matches for expr. ANTLR automatically chooses the first alternative matching the array reference to resolve the ambiguity. Leaving ANTLR with more than one viable alternative because of too few predicates is probably not a good idea. It&apos;s best to cover n viable alternatives with at least n-1 predicates. In other words, don&apos;t build rules like expr with too few predicates.</p>
+<p>Sometimes, the parser finds multiple visible predicates associated with a single choice. No worries. ANTLR just combines the predicates with appropriate logical operators to conjure up a single meta-predicate on-the-fly.</p>
+<p>For example, the decision in rule <code>stat</code> joins the predicates from both alternatives of expr with the <code>||</code> operator to guard the second stat alternative:</p>
+<pre class="language-"><code>stat: decl | expr ;
+decl: ID ID ;
+expr: {istype()}? ID &apos;(&apos; expr &apos;)&apos; // ctor-style typecast
+     | {isfunc()}? ID &apos;(&apos; expr &apos;)&apos; // function call
+     ;
+</code></pre><p>The parser will only predict an expr from stat when <code>istype()||isfunc()</code> evaluates to true. This makes sense because the parser should only choose to match an expression if the upcoming <code>ID</code> is a type name or function name. It wouldn&apos;t make sense to just test one of the predicates in this case. Note that, when the parser gets to <code>expr</code> itself, the parsing decision tests the predicates individually, one for each alternative.</p>
+<p>If multiple predicates occur in a sequence, the parser joins them with the <code>&amp;&amp;</code> operator. For example, consider changing <code>stat</code> to include a predicate before the call <code>toexpr</code>:</p>
+<pre class="language-"><code>stat: decl | {java5}? expr ;
+</code></pre><p>Now, the parser would only predict the second alternative if <code>java5&amp;&amp;(istype()||isfunc())</code> evaluated to true.</p>
+<p>Turning to the code inside the predicates themselves now, keep in mind the following guidelines.</p>
+<p>Even when the parser isn&apos;t making decisions, predicates can deactivate alternatives, causing rules to fail. This happens when a rule only has a single alternative. There is no choice to make, but ANTLR evaluates the predicate as part of the normal parsing process, just like it does for actions. That means that the following rule always fails to match.</p>
+<pre class="language-"><code>prog: {false}? &apos;return&apos; INT ; // throws FailedPredicateException
+</code></pre><p>ANTLR converts <code>{false}?</code> in the grammar to a conditional in the generated parser:</p>
+<pre class="language-"><code>if ( !false ) throw new FailedPredicateException(...);
+</code></pre><p>So far, all of the predicates we&apos;ve seen have been visible and available to the prediction process, but that&apos;s not always the case.</p>
+<h2 id="finding-visible-predicates"><a name="finding-visible-predicates" class="anchor-navigation-ex-anchor" href="#finding-visible-predicates"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. Finding Visible Predicates</h2>
+<p>The parser will not evaluate predicates during prediction that occur after an action or token reference. Let&apos;s think about the relationship between actions and predicates first.</p>
+<p>ANTLR has no idea what&apos;s inside the raw code of an action and so it must assume any predicate could depend on side effects of that action. Imagine an action that computed value <code>x</code> and a predicate that tested <code>x</code>. Evaluating that predicate before the action executed to create <code>x</code> would violate the implied order of operations within the grammar.</p>
+<p>More importantly, the parser can&apos;t execute actions until it has decided which alternative to match. That&apos;s because actions have side effects and we can&apos;t undo things like print statements. For example, in the following rule, the parser can&apos;t execute the action in front of the <code>{java5}?</code> predicate before committing to that alternative.</p>
+<pre class="language-"><code>@members {boolean allowgoto=false;}
+stat: {System.out.println(&quot;goto&quot;); allowgoto=true;} {java5}? &apos;goto&apos; ID &apos;;&apos;
+     | ...
+     ;
+</code></pre><p>If we can&apos;t execute the action during prediction, we shouldn&apos;t evaluate the <code>{java5}?</code> predicate because it depends on that action.</p>
+<p>The prediction process also can&apos;t see through token references. Token references have the side effect of advancing the input one symbol. A predicate that tested the current input symbol would find itself out of sync if the parser shifted it over the token reference. For example, in the following grammar, the predicates expect <code>getCurrentToken</code> to return an <code>ID</code> token.</p>
+<pre class="language-"><code>stat: &apos;{&apos; decl &apos;}&apos;
+     | &apos;{&apos; stat &apos;}&apos;
+     ;
+decl: {istype(getCurrentToken().getText())}? ID ID &apos;;&apos; ;
+expr: {isvar(getCurrentToken().getText())}? ID ;
+</code></pre><p>The decision in stat can&apos;t test those predicates because, at the start of stat, the current token is a left curly. To preserve the semantics, ANTLR won&apos;t test the predicates in that decision.</p>
+<p>Visible predicates are those that prediction encounters before encountering an action or token. The prediction process ignores nonvisible predicates, treating them as if they don&apos;t exist.</p>
+<p>In rare cases, the parser won&apos;t be able to use a predicate, even if it&apos;s visible to a particular decision. That brings us to our next fine print topic.</p>
+<h2 id="using-context-dependent-predicates"><a name="using-context-dependent-predicates" class="anchor-navigation-ex-anchor" href="#using-context-dependent-predicates"><i class="fa fa-link" aria-hidden="true"></i></a>1.3. Using Context-Dependent Predicates</h2>
+<p>A predicate that depends on a parameter or local variable of the surrounding rule, is considered a context-dependent predicate. Clearly, we can only evaluate such predicates within the rules in which they&apos;re defined. For example, it makes no sense for the decision in prog below to test context-dependent predicate <code>{$i&lt;=5}?</code>. That <code>$i</code> local variable is not even defined in <code>prog</code>.</p>
+<pre class="language-"><code>prog: vec5
+     | ...
+     ;
+vec5
+locals [int i=1]
+     : ( {$i&lt;=5}? INT {$i++;} )* // match 5 INTs
+     ;
+</code></pre><p>ANTLR ignores context-dependent predicates that it can&apos;t evaluate in the proper context. Normally the proper context is simply the rule defining the predicate, but sometimes the parser can&apos;t even evaluate a context-dependent predicate from within the same rule! Detecting these cases is done on-the-fly at runtime during adaptive LL(*) prediction.</p>
+<p>For example, prediction for the optional branch of the else subrule in stat below &quot;falls off&quot; the end of stat and continues looking for symbols in the invoking prog rule.</p>
+<pre class="language-"><code>prog: stat+ ; // stat can follow stat
+stat
+locals [int i=0]
+     : {$i==0}? &apos;if&apos; expr &apos;then&apos; stat {$i=5;} (&apos;else&apos; stat)?
+     | &apos;break&apos; &apos;;&apos;
+     ;
+</code></pre><p>The prediction process is trying to figure out what can follow an if statement other than an else clause. Since the input can have multiple stats in a row, the prediction for the optional branch of the else subrule reenters stat. This time, of course, it gets a new copy of <code>$i</code> with a value of 0, not 5. ANTLR ignores context-dependent predicate <code>{$i==0}?</code> because it knows that the parser isn&apos;t in the original stat call. The predicate would test a different version of <code>$i</code> so the parser can&apos;t evaluate it.</p>
+<p>The fine print for predicates in the lexer more or less follow these same guidelines, except of course lexer rules can&apos;t have parameters and local variables. Let&apos;s look at all of the lexer-specific guidelines in the next section.</p>
+<h2 id="predicates-in-lexer-rules"><a name="predicates-in-lexer-rules" class="anchor-navigation-ex-anchor" href="#predicates-in-lexer-rules"><i class="fa fa-link" aria-hidden="true"></i></a>1.4. Predicates in Lexer Rules</h2>
+<p>In parser rules, predicates must appear on the left edge of alternatives to aid in alternative prediction. Lexers, on the other hand, prefer predicates on the right edge of lexer rules because they choose rules after seeing a token&apos;s entire text. Predicates in lexer rules can technically be anywhere within the rule. Some positions might be more or less efficient than others; ANTLR makes no guarantees about the optimal spot. A predicate in a lexer rule might be executed multiple times even during a single token match. You can embed multiple predicates per lexer rule and they are evaluated as the lexer reaches them during matching.</p>
+<p>Loosely speaking, the lexer&apos;s goal is to choose the rule that matches the most input characters. At each character, the lexer decides which rules are still viable. Eventually, only a single rule will be still viable. At that point, the lexer creates a token object according the rule&apos;s token type and matched text.</p>
+<p>Sometimes the lexer is faced with more than a single viable matching rule. For example, input enum would match an <code>ENUM</code> rule and an <code>ID</code> rule. If the next character after enum is a space, neither rule can continue. The lexer resolves the ambiguity by choosing the viable rule specified first in the grammar. That&apos;s why we have to place keyword rules before an identifier rule like this:</p>
+<pre class="language-"><code>ENUM : &apos;enum&apos; ;
+ID : [a-z]+ ;
+</code></pre><p>If, on the other hand, the next character after input <code>enum</code> is a letter, then only <code>ID</code> is viable.</p>
+<p>Predicates come into play by pruning the set of viable lexer rules. When the lexer encounters a false predicate, it deactivates that rule just like parsers deactivate alternatives with false predicates.</p>
+<p>Like parser predicates, lexer predicates can&apos;t depend on side effects from lexer actions. That&apos;s because actions can only execute after the lexer positively identifies the rule to match. Since predicates are part of the rule selection process, they can&apos;t rely on action side effects. Lexer actions must appear after predicates in lexer rules. As an example, here&apos;s another way to match enum as a keyword in the lexer:</p>
+<pre class="language-"><code>ENUM: [a-z]+ {getText().equals(&quot;enum&quot;)}?
+       {System.out.println(&quot;enum!&quot;);}
+    ;
+ID  : [a-z]+ {System.out.println(&quot;ID &quot;+getText());} ;
+</code></pre><p>The print action in <code>ENUM</code> appears last and executes only if the current input matches <code>[a-z]+</code> and the predicate is true. Let&apos;s build and test <code>Enum3</code> to see if it distinguishes between enum and an identifier:</p>
+<pre class="language-"><code class="lang-bash">$ antlr4 Enum3.g4
+$ javac Enum3.java
+$ grun Enum3 tokens
+<span class="token operator">=</span><span class="token operator">&gt;</span>     enum abc
+<span class="token operator">=</span><span class="token operator">&gt;</span>     EOF
+<span class="token operator">&lt;</span><span class="token operator">=</span>     enum<span class="token operator">!</span>
+     ID abc
+</code></pre>
+<p>That works great, but it&apos;s really just for instructional purposes. It&apos;s easier to understand and more efficient to match enum keywords with a simple rule like this:</p>
+<pre class="language-"><code>ENUM : &apos;enum&apos; ;
+</code></pre>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="tree-matching.html" class="navigation navigation-prev " aria-label="Previous page: Parse Tree Matching and XPath">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="options.html" class="navigation navigation-next " aria-label="Next page: Options">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Semantic Predicates","level":"2.12","depth":1,"next":{"title":"Options","level":"2.13","depth":1,"path":"chapters/options.md","ref":"chapters/options.md","articles":[]},"previous":{"title":"Parse Tree Matching and XPath","level":"2.11","depth":1,"path":"chapters/tree-matching.md","ref":"chapters/tree-matching.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","anchor-navigation-ex","-sharing","sharing-plus","-highlight","prism"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"night","family":"serif","size":2},"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"sharing":{"weibo":true,"qzone":true,"qq":true,"douban":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"Little Captain","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"antlr4-doc","gitbook":"*","description":"antlr4-doc"},"file":{"path":"chapters/predicates.md","mtime":"2021-11-11T03:00:11.621Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-11-11T03:11:20.710Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

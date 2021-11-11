@@ -1,0 +1,828 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>ANTLR project unit tests · antlr4-doc</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Little Captain">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-okaidia.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="creating-a-language-target.html" />
+    
+    
+    <link rel="prev" href="releasing-antlr.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Sections</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                        <b>2.1.</b>
+                    
+                    Index
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="getting-started.html">
+            
+                <a href="getting-started.html">
+            
+                    
+                        <b>2.2.</b>
+                    
+                    Getting Started with ANTLR v4
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="lexicon.html">
+            
+                <a href="lexicon.html">
+            
+                    
+                        <b>2.3.</b>
+                    
+                    Grammar Lexicon
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="grammars.html">
+            
+                <a href="grammars.html">
+            
+                    
+                        <b>2.4.</b>
+                    
+                    Grammar Structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="parser-rules.html">
+            
+                <a href="parser-rules.html">
+            
+                    
+                        <b>2.5.</b>
+                    
+                    Parser Rules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="left-recursion.html">
+            
+                <a href="left-recursion.html">
+            
+                    
+                        <b>2.6.</b>
+                    
+                    Left-recursive rules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="actions.html">
+            
+                <a href="actions.html">
+            
+                    
+                        <b>2.7.</b>
+                    
+                    Actions and Attributes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="lexer-rules.html">
+            
+                <a href="lexer-rules.html">
+            
+                    
+                        <b>2.8.</b>
+                    
+                    Lexer Rules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="wildcard.html">
+            
+                <a href="wildcard.html">
+            
+                    
+                        <b>2.9.</b>
+                    
+                    Wildcard Operator and Nongreedy Subrules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="listeners.html">
+            
+                <a href="listeners.html">
+            
+                    
+                        <b>2.10.</b>
+                    
+                    Parse Tree Listeners
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11" data-path="tree-matching.html">
+            
+                <a href="tree-matching.html">
+            
+                    
+                        <b>2.11.</b>
+                    
+                    Parse Tree Matching and XPath
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.12" data-path="predicates.html">
+            
+                <a href="predicates.html">
+            
+                    
+                        <b>2.12.</b>
+                    
+                    Semantic Predicates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.13" data-path="options.html">
+            
+                <a href="options.html">
+            
+                    
+                        <b>2.13.</b>
+                    
+                    Options
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14" data-path="tool-options.html">
+            
+                <a href="tool-options.html">
+            
+                    
+                        <b>2.14.</b>
+                    
+                    ANTLR Tool Command Line Options
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.15" data-path="targets.html">
+            
+                <a href="targets.html">
+            
+                    
+                        <b>2.15.</b>
+                    
+                    Runtime Libraries and Code Generation Targets
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.16" data-path="unicode.html">
+            
+                <a href="unicode.html">
+            
+                    
+                        <b>2.16.</b>
+                    
+                    Unicode U+FFFF, U+10FFFF character streams
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17" data-path="parsing-binary-files.html">
+            
+                <a href="parsing-binary-files.html">
+            
+                    
+                        <b>2.17.</b>
+                    
+                    Parsing binary streams
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.18" data-path="case-insensitive-lexing.html">
+            
+                <a href="case-insensitive-lexing.html">
+            
+                    
+                        <b>2.18.</b>
+                    
+                    Case-Insensitive Lexing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.19" data-path="interpreters.html">
+            
+                <a href="interpreters.html">
+            
+                    
+                        <b>2.19.</b>
+                    
+                    Parser and lexer interpreters
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.20" data-path="resources.html">
+            
+                <a href="resources.html">
+            
+                    
+                        <b>2.20.</b>
+                    
+                    Resources
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Building / releasing ANTLR itself</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="building-antlr.html">
+            
+                <a href="building-antlr.html">
+            
+                    
+                        <b>3.1.</b>
+                    
+                    Building ANTLR itself
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="releasing-antlr.html">
+            
+                <a href="releasing-antlr.html">
+            
+                    
+                        <b>3.2.</b>
+                    
+                    Cutting an ANTLR Release
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.3" data-path="antlr-project-testing.html">
+            
+                <a href="antlr-project-testing.html">
+            
+                    
+                        <b>3.3.</b>
+                    
+                    ANTLR project unit tests
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="creating-a-language-target.html">
+            
+                <a href="creating-a-language-target.html">
+            
+                    
+                        <b>3.4.</b>
+                    
+                    Creating an ANTLR Language Target
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >ANTLR project unit tests</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#antlr-project-unit-tests"><b>1. </b>ANTLR project unit tests</a></li><ul><li><span class="title-icon "></span><a href="#introduction"><b>1.1. </b>Introduction</a></li><li><span class="title-icon "></span><a href="#requirements"><b>1.2. </b>Requirements</a></li><li><span class="title-icon "></span><a href="#running-the-runtime-tests"><b>1.3. </b>Running the runtime tests</a></li><li><span class="title-icon "></span><a href="#running-test-subsets"><b>1.4. </b>Running test subsets</a></li><ul><li><span class="title-icon "></span><a href="#run-one-test-group-across-targets"><b>1.4.1. </b>Run one test group across targets</a></li><li><span class="title-icon "></span><a href="#run-all-tests-for-a-single-target"><b>1.4.2. </b>Run all tests for a single target</a></li></ul><li><span class="title-icon "></span><a href="#testing-in-parallel"><b>1.5. </b>Testing in parallel</a></li><li><span class="title-icon "></span><a href="#adding-a-runtime-test"><b>1.6. </b>Adding a runtime test</a></li><ul><li><span class="title-icon "></span><a href="#ignoring-tests"><b>1.6.1. </b>Ignoring tests</a></li><li><span class="title-icon "></span><a href="#target-apilibrary-testing"><b>1.6.2. </b>Target API/library testing</a></li><li><span class="title-icon "></span><a href="#cross-language-actions-embedded-within-grammars"><b>1.6.3. </b>Cross-language actions embedded within grammars</a></li></ul><li><span class="title-icon "></span><a href="#adding-an-antlr-tool-unit-test"><b>1.7. </b>Adding an ANTLR tool unit test</a></li></ul></ul></div><a href="#antlr-project-unit-tests" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="antlr-project-unit-tests"><a name="antlr-project-unit-tests" class="anchor-navigation-ex-anchor" href="#antlr-project-unit-tests"><i class="fa fa-link" aria-hidden="true"></i></a>1. ANTLR project unit tests</h1>
+<h2 id="introduction"><a name="introduction" class="anchor-navigation-ex-anchor" href="#introduction"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. Introduction</h2>
+<p>Because ANTLR supports multiple target languages, the unit tests are broken into two groups: the unit tests that test the tool itself (in <code>tool-testsuite</code>) and the unit tests that test the parser runtimes (in <code>antlr4/runtime-testsuite</code>).  The tool tests are straightforward because they are Java code testing Java code; see the section at the bottom of this file.</p>
+<p>The runtime tests must be specified in a generic fashion to work across language targets. Furthermore, we must test the various targets from Java. This usually means Java launching processes to compile, say, C++ and run parsers.</p>
+<p>As of 4.6, we use <a href="https://github.com/antlr/antlr4/blob/master/runtime-testsuite/test/org/antlr/v4/test/runtime/RuntimeTestDescriptor.java" target="_blank">a Java descriptor object</a> to describe each runtime test.  Unit tests are grouped together into categories such as <a href="https://github.com/antlr/antlr4/blob/master/runtime-testsuite/test/org/antlr/v4/test/runtime/descriptors/ParserExecDescriptors.java" target="_blank">ParserExecDescriptors</a>, which has multiple nested descriptor objects, one per test. For example, here is the start of that file:</p>
+<pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ParserExecDescriptors</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">class</span> <span class="token class-name">APlus</span> <span class="token keyword">extends</span> <span class="token class-name">BaseParserTestDescriptor</span> <span class="token punctuation">{</span>
+        <span class="token keyword">public</span> <span class="token class-name">String</span> input <span class="token operator">=</span> <span class="token string">&quot;a b c&quot;</span><span class="token punctuation">;</span>
+        <span class="token keyword">public</span> <span class="token class-name">String</span> output <span class="token operator">=</span> <span class="token string">&quot;abc\n&quot;</span><span class="token punctuation">;</span>
+        <span class="token keyword">public</span> <span class="token class-name">String</span> errors <span class="token operator">=</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">;</span>
+        <span class="token keyword">public</span> <span class="token class-name">String</span> startRule <span class="token operator">=</span> <span class="token string">&quot;a&quot;</span><span class="token punctuation">;</span>
+        <span class="token keyword">public</span> <span class="token class-name">String</span> grammarName <span class="token operator">=</span> <span class="token string">&quot;T&quot;</span><span class="token punctuation">;</span>
+
+        <span class="token comment">/**
+         grammar T;
+         a : ID+ {
+         &lt;writeln(&quot;$text&quot;)&gt;
+         };
+         ID : &apos;a&apos;..&apos;z&apos;+;
+         WS : (&apos; &apos;|&apos;\n&apos;) -&gt; skip;
+         */</span>
+        <span class="token annotation punctuation">@CommentHasStringValue</span>
+        <span class="token keyword">public</span> <span class="token class-name">String</span> grammar<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre>
+<p>The mysterious <code>@CommentHasStringValue</code> annotation is a bit of a hack that allows multi-line strings in Java. This kung fu is required so that we can use Java classes rather than StringTemplate group files to specify runtime tests (the legacy system used those and it was hard to get them right). Here are all the <a href="https://github.com/antlr/antlr4/tree/master/runtime-testsuite/test/org/antlr/v4/test/runtime/descriptors" target="_blank">Runtime test descriptors</a> organized into groups.</p>
+<p>The grammars are strings representing StringTemplates (<code>ST</code> objects) so <code>&lt;writeln(&quot;$text&quot;)&gt;</code> will get replace when the unit test file is generated (<code>Test.java</code>, <code>Test.cs</code>, ...). The <code>writeln</code> template must be defined per target.  Here are all of the 
+<a href="https://github.com/antlr/antlr4/tree/master/runtime-testsuite/resources/org/antlr/v4/test/runtime/templates" target="_blank">Target templates for runtime tests</a>.</p>
+<h2 id="requirements"><a name="requirements" class="anchor-navigation-ex-anchor" href="#requirements"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. Requirements</h2>
+<p>In order to perform the tests on all target languages, you need to have the following languages installed:</p>
+<ul>
+<li><code>mono</code> (e.g., <code>brew install mono</code>) on non-Windows boxes (on Windows it uses the Microsoft .net stack). Also must <a href="https://github.com/antlr/antlr4/blob/master/doc/releasing-antlr.md" target="_blank"><code>xbuild</code> the runtime</a> before tests will run; see below</li>
+<li><code>nodejs</code></li>
+<li>Python 2.7</li>
+<li>Python 3.6</li>
+<li>Go</li>
+<li>Swift 4 (via XCode 10.x) tested currently only osx</li>
+<li>clang (for C++ target) </li>
+<li>To <strong>install into local repository</strong> <code>~/.m2/repository/org/antlr</code>, do this:</li>
+</ul>
+<pre class="language-"><code class="lang-bash">$ <span class="token builtin class-name">export</span> <span class="token assign-left variable">MAVEN_OPTS</span><span class="token operator">=</span><span class="token string">&quot;-Xmx1G&quot;</span>     <span class="token comment"># don&apos;t forget this on linux</span>
+$ mvn <span class="token function">install</span> -DskipTests<span class="token operator">=</span>true   <span class="token comment"># make sure all artifacts are visible on this machine</span>
+</code></pre>
+<p>Now, make sure C# runtime is built and installed locally.</p>
+<pre class="language-"><code class="lang-bash"><span class="token builtin class-name">cd</span> ~/antlr/code/antlr4/runtime/CSharp/src
+<span class="token function">rm</span> -rf <span class="token variable"><span class="token variable">`</span><span class="token function">find</span> <span class="token builtin class-name">.</span> -name <span class="token string">&apos;{obj,bin}&apos;</span><span class="token variable">`</span></span>
+dotnet build -c Release runtime/CSharp/src/Antlr4.csproj
+</code></pre>
+<p>C++ test rig automatically builds C++ runtime during tests. Others don&apos;t need a prebuilt lib.</p>
+<h2 id="running-the-runtime-tests"><a name="running-the-runtime-tests" class="anchor-navigation-ex-anchor" href="#running-the-runtime-tests"><i class="fa fa-link" aria-hidden="true"></i></a>1.3. Running the runtime tests</h2>
+<p>A single test rig is sufficient to test all targets against all descriptors using the <a href="https://github.com/junit-team/junit4/wiki/parameterized-tests" target="_blank">junit parameterized tests</a> mechanism. But, that is inconvenient because we often want to test just a single target or perhaps even just a single test within a single group of a single target. I have automatically generated a bunch of
+<a href="https://github.com/antlr/antlr4/tree/master/runtime-testsuite/test/org/antlr/v4/test/runtime" target="_blank">Target runtime test rigs</a> that allow developers such flexibility. For example, here are the Python3 test rigs in intellij:</p>
+<p><img src="images/testrigs.png" width="300"></p>
+<p>And the result of testing the entire subdirectory:</p>
+<p><img src="images/python3-tests.png" width="400"></p>
+<p>From <code>mvn</code>, on the commandline, you will see:</p>
+<pre class="language-"><code class="lang-bash">$ <span class="token builtin class-name">cd</span> antlr4
+$ mvn <span class="token builtin class-name">test</span>
+<span class="token punctuation">..</span>.
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.antlr.v4.test.runtime.csharp.TestCompositeLexers
+<span class="token function">dir</span> /var/folders/s1/h3qgww1x0ks3pb30l8t1wgd80000gn/T/TestCompositeLexers-1446068612451
+Starting build /usr/bin/xbuild /p:Configuration<span class="token operator">=</span>Release /var/folders/s1/h3qgww1x0ks3pb30l8t1wgd80000gn/T/TestCompositeLexers-1446068612451/Antlr4.Test.mono.csproj
+<span class="token function">dir</span> /var/folders/s1/h3qgww1x0ks3pb30l8t1wgd80000gn/T/TestCompositeLexers-1446068615081
+Starting build /usr/bin/xbuild /p:Configuration<span class="token operator">=</span>Release /var/folders/s1/h3qgww1x0ks3pb30l8t1wgd80000gn/T/TestCompositeLexers-1446068615081/Antlr4.Test.mono.csproj
+Tests run: <span class="token number">2</span>, Failures: <span class="token number">0</span>, Errors: <span class="token number">0</span>, Skipped: <span class="token number">0</span>, Time elapsed: <span class="token number">3.451</span> sec
+Running org.antlr.v4.test.runtime.csharp.TestCompositeParsers
+<span class="token function">dir</span> /var/folders/s1/h3qgww1x0ks3pb30l8t1wgd80000gn/T/TestCompositeParsers-1446068615864
+antlr reports warnings from <span class="token punctuation">[</span>-visitor, -Dlanguage<span class="token operator">=</span>CSharp, -o, /var/folders/s1/h3qgww1x0ks3pb30l8t1wgd80000gn/T/TestCompositeParsers-1446068615864, -lib, /var/folders/s1/h3qgww1x0ks3pb30l8t1wgd80000gn/T/TestCompositeParsers-1446068615864, -encoding, UTF-8, /var/folders/s1/h3qgww1x0ks3pb30l8t1wgd80000gn/T/TestCompositeParsers-1446068615864/M.g4<span class="token punctuation">]</span>
+<span class="token punctuation">..</span>.
+<span class="token punctuation">[</span>INFO<span class="token punctuation">]</span> ------------------------------------------------------------------------
+<span class="token punctuation">[</span>INFO<span class="token punctuation">]</span> Reactor Summary:
+<span class="token punctuation">[</span>INFO<span class="token punctuation">]</span> 
+<span class="token punctuation">[</span>INFO<span class="token punctuation">]</span> ANTLR <span class="token number">4</span> <span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span> SUCCESS <span class="token punctuation">[</span>  <span class="token number">0.445</span> s<span class="token punctuation">]</span>
+<span class="token punctuation">[</span>INFO<span class="token punctuation">]</span> ANTLR <span class="token number">4</span> Runtime <span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span> SUCCESS <span class="token punctuation">[</span>  <span class="token number">3.392</span> s<span class="token punctuation">]</span>
+<span class="token punctuation">[</span>INFO<span class="token punctuation">]</span> ANTLR <span class="token number">4</span> Tool <span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span>. SUCCESS <span class="token punctuation">[</span>  <span class="token number">1.373</span> s<span class="token punctuation">]</span>
+<span class="token punctuation">[</span>INFO<span class="token punctuation">]</span> ANTLR <span class="token number">4</span> Maven plugin <span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span>. SUCCESS <span class="token punctuation">[</span>  <span class="token number">1.519</span> s<span class="token punctuation">]</span>
+<span class="token punctuation">[</span>INFO<span class="token punctuation">]</span> ANTLR <span class="token number">4</span> Runtime Test Annotations <span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span>. SUCCESS <span class="token punctuation">[</span>  <span class="token number">0.086</span> s<span class="token punctuation">]</span>
+<span class="token punctuation">[</span>INFO<span class="token punctuation">]</span> ANTLR <span class="token number">4</span> Runtime Test Processors <span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span> SUCCESS <span class="token punctuation">[</span>  <span class="token number">0.014</span> s<span class="token punctuation">]</span>
+<span class="token punctuation">[</span>INFO<span class="token punctuation">]</span> ANTLR <span class="token number">4</span> Runtime Tests <span class="token punctuation">(</span>2nd generation<span class="token punctuation">)</span> <span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span>. SUCCESS <span class="token punctuation">[</span>06:39 min<span class="token punctuation">]</span>
+<span class="token punctuation">[</span>INFO<span class="token punctuation">]</span> ANTLR <span class="token number">4</span> Tool Tests <span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span>. SUCCESS <span class="token punctuation">[</span>  <span class="token number">6.922</span> s<span class="token punctuation">]</span>
+<span class="token punctuation">[</span>INFO<span class="token punctuation">]</span> ------------------------------------------------------------------------
+<span class="token punctuation">[</span>INFO<span class="token punctuation">]</span> BUILD SUCCESS
+<span class="token punctuation">[</span>INFO<span class="token punctuation">]</span> ------------------------------------------------------------------------
+<span class="token punctuation">[</span>INFO<span class="token punctuation">]</span> Total time: 06:53 min
+<span class="token punctuation">[</span>INFO<span class="token punctuation">]</span> Finished at: <span class="token number">2016</span>-11-16T15:36:56-08:00
+<span class="token punctuation">[</span>INFO<span class="token punctuation">]</span> Final Memory: 44M/458M
+<span class="token punctuation">[</span>INFO<span class="token punctuation">]</span> ------------------------------------------------------------------------
+</code></pre>
+<p>Note: That is actually result of running the much faster:</p>
+<pre class="language-"><code class="lang-bash">mvn -Dparallel<span class="token operator">=</span>methods -DthreadCount<span class="token operator">=</span><span class="token number">4</span> <span class="token function">install</span>
+</code></pre>
+<h2 id="running-test-subsets"><a name="running-test-subsets" class="anchor-navigation-ex-anchor" href="#running-test-subsets"><i class="fa fa-link" aria-hidden="true"></i></a>1.4. Running test subsets</h2>
+<p><em>From the <code>runtime-testsuite</code> dir</em></p>
+<h3 id="run-one-test-group-across-targets"><a name="run-one-test-group-across-targets" class="anchor-navigation-ex-anchor" href="#run-one-test-group-across-targets"><i class="fa fa-link" aria-hidden="true"></i></a>1.4.1. Run one test group across targets</h3>
+<pre class="language-"><code class="lang-bash">$ <span class="token builtin class-name">cd</span> runtime-testsuite
+$ <span class="token builtin class-name">export</span> <span class="token assign-left variable">MAVEN_OPTS</span><span class="token operator">=</span><span class="token string">&quot;-Xmx1G&quot;</span>     <span class="token comment"># don&apos;t forget this on linux</span>
+$ mvn -Dtest<span class="token operator">=</span>TestParserExec <span class="token builtin class-name">test</span>
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.antlr.v4.test.runtime.cpp.TestParserExec
+<span class="token punctuation">..</span>.
+Tests run: <span class="token number">32</span>, Failures: <span class="token number">0</span>, Errors: <span class="token number">0</span>, Skipped: <span class="token number">0</span>, Time elapsed: <span class="token number">114.283</span> sec
+Running org.antlr.v4.test.runtime.csharp.TestParserExec
+<span class="token punctuation">..</span>.
+</code></pre>
+<p>Or run all lexer related tests:</p>
+<pre class="language-"><code>$ cd runtime-testsuite
+$ mvn -Dtest=Test*Lexer* test
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.antlr.v4.test.runtime.cpp.TestCompositeLexers
+...
+</code></pre><h3 id="run-all-tests-for-a-single-target"><a name="run-all-tests-for-a-single-target" class="anchor-navigation-ex-anchor" href="#run-all-tests-for-a-single-target"><i class="fa fa-link" aria-hidden="true"></i></a>1.4.2. Run all tests for a single target</h3>
+<pre class="language-"><code class="lang-bash">$ <span class="token builtin class-name">cd</span> runtime-testsuite
+$ mvn -Dtest<span class="token operator">=</span>java.* <span class="token builtin class-name">test</span>
+<span class="token punctuation">..</span>.
+</code></pre>
+<p>Or run all lexer related tests in Java target only:</p>
+<pre class="language-"><code class="lang-bash">$ <span class="token builtin class-name">cd</span> runtime-testsuite
+$ mvn -Dtest<span class="token operator">=</span>java.*Lexer* <span class="token builtin class-name">test</span>
+<span class="token punctuation">..</span>.
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.antlr.v4.test.runtime.java.TestCompositeLexers
+Tests run: <span class="token number">2</span>, Failures: <span class="token number">0</span>, Errors: <span class="token number">0</span>, Skipped: <span class="token number">0</span>, Time elapsed: <span class="token number">1.277</span> sec
+Running org.antlr.v4.test.runtime.java.TestLexerErrors
+Tests run: <span class="token number">12</span>, Failures: <span class="token number">0</span>, Errors: <span class="token number">0</span>, Skipped: <span class="token number">0</span>, Time elapsed: <span class="token number">2.376</span> sec
+Running org.antlr.v4.test.runtime.java.TestLexerExec
+Tests run: <span class="token number">38</span>, Failures: <span class="token number">0</span>, Errors: <span class="token number">0</span>, Skipped: <span class="token number">0</span>, Time elapsed: <span class="token number">10.07</span> sec
+Running org.antlr.v4.test.runtime.java.TestSemPredEvalLexer
+Tests run: <span class="token number">7</span>, Failures: <span class="token number">0</span>, Errors: <span class="token number">0</span>, Skipped: <span class="token number">0</span>, Time elapsed: <span class="token number">1.255</span> sec
+
+Results <span class="token builtin class-name">:</span>
+
+Tests run: <span class="token number">59</span>, Failures: <span class="token number">0</span>, Errors: <span class="token number">0</span>, Skipped: <span class="token number">0</span>
+</code></pre>
+<h2 id="testing-in-parallel"><a name="testing-in-parallel" class="anchor-navigation-ex-anchor" href="#testing-in-parallel"><i class="fa fa-link" aria-hidden="true"></i></a>1.5. Testing in parallel</h2>
+<p>Use this to run tests in parallel:</p>
+<pre class="language-"><code class="lang-bash">$ <span class="token builtin class-name">export</span> <span class="token assign-left variable">MAVEN_OPTS</span><span class="token operator">=</span><span class="token string">&quot;-Xmx1G&quot;</span>
+$ mvn -Dparallel<span class="token operator">=</span>methods -DthreadCount<span class="token operator">=</span><span class="token number">4</span> <span class="token builtin class-name">test</span>
+<span class="token punctuation">..</span>.
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Concurrency config is <span class="token assign-left variable">parallel</span><span class="token operator">=</span><span class="token string">&apos;methods&apos;</span>, <span class="token assign-left variable">perCoreThreadCount</span><span class="token operator">=</span>true, <span class="token assign-left variable">threadCount</span><span class="token operator">=</span><span class="token number">4</span>, <span class="token assign-left variable">useUnlimitedThreads</span><span class="token operator">=</span>false
+<span class="token punctuation">..</span>.
+</code></pre>
+<p>This can be combined with other <code>-D</code> above.</p>
+<h2 id="adding-a-runtime-test"><a name="adding-a-runtime-test" class="anchor-navigation-ex-anchor" href="#adding-a-runtime-test"><i class="fa fa-link" aria-hidden="true"></i></a>1.6. Adding a runtime test</h2>
+<p>To add a new runtime test, first determine which <a href="https://github.com/antlr/antlr4/blob/master/runtime-testsuite/test/org/antlr/v4/test/runtime/descriptors" target="_blank">group of tests</a> it belongs to. Then, add a new <a href="https://github.com/antlr/antlr4/blob/master/runtime-testsuite/test/org/antlr/v4/test/runtime/RuntimeTestDescriptor.java" target="_blank">RuntimeTestDescriptor</a> implementation by subclassing one of:</p>
+<ul>
+<li><a href="https://github.com/antlr/antlr4/blob/master/runtime-testsuite/test/org/antlr/v4/test/runtime/BaseParserTestDescriptor.java" target="_blank">BaseParserTestDescriptor</a>; see example <a href="https://github.com/antlr/antlr4/blob/master/runtime-testsuite/test/org/antlr/v4/test/runtime/descriptors/ParserExecDescriptors.java#L7" target="_blank">APlus</a>.</li>
+<li><a href="https://github.com/antlr/antlr4/blob/master/runtime-testsuite/test/org/antlr/v4/test/runtime/BaseDiagnosticParserTestDescriptor" target="_blank">BaseDiagnosticParserTestDescriptor</a> if you want to test parser diagnostic output; see <a href="https://github.com/antlr/antlr4/blob/master/runtime-testsuite/test/org/antlr/v4/test/runtime/descriptors/FullContextParsingDescriptors.java#L16" target="_blank">example output</a>.</li>
+<li><a href="https://github.com/antlr/antlr4/blob/master/runtime-testsuite/test/org/antlr/v4/test/runtime/BaseCompositeParserTestDescriptor.java" target="_blank">BaseCompositeParserTestDescriptor</a>; see example <a href="https://github.com/antlr/antlr4/blob/master/runtime-testsuite/test/org/antlr/v4/test/runtime/descriptors/CompositeParsersDescriptors.java#L11" target="_blank">BringInLiteralsFromDelegate</a></li>
+<li><a href="https://github.com/antlr/antlr4/blob/master/runtime-testsuite/test/org/antlr/v4/test/runtime/BaseLexerTestDescriptor.java" target="_blank">BaseLexerTestDescriptor</a>; see example <a href="https://github.com/antlr/antlr4/blob/master/runtime-testsuite/test/org/antlr/v4/test/runtime/descriptors/LexerExecDescriptors.java#L12" target="_blank">ActionPlacement</a>.</li>
+<li><a href="https://github.com/antlr/antlr4/blob/master/runtime-testsuite/test/org/antlr/v4/test/runtime/BaseCompositeLexerTestDescriptor.java" target="_blank">BaseCompositeLexerTestDescriptor</a>; see example <a href="https://github.com/antlr/antlr4/blob/master/runtime-testsuite/test/org/antlr/v4/test/runtime/descriptors/CompositeLexersDescriptors.java#L11" target="_blank">LexerDelegatorInvokesDelegateRule</a></li>
+</ul>
+<p>Each descriptor object describes the following mandatory elements for the test:</p>
+<ul>
+<li>the test type</li>
+<li>the grammar </li>
+<li>the start rule</li>
+<li>the input text to parse or lex</li>
+<li>the expected output</li>
+<li>the expected errors</li>
+</ul>
+<p>Your best bet is to find a similar test in the appropriate group and then copy and paste the descriptor object, creating a new nested class within the test group class. Modify the field definitions to suit your new problem.</p>
+<p>If you need to create a whole new group of tests, it requires a new descriptor class; call it <code>XDescriptors</code>. Then, in each <a href="https://github.com/antlr/antlr4/tree/master/runtime-testsuite/test/org/antlr/v4/test/runtime" target="_blank">target subdirectory</a>, you need to create a new test rig <code>TestX.java</code> file:</p>
+<pre class="language-"><code class="lang-java"><span class="token keyword">package</span> <span class="token namespace">org<span class="token punctuation">.</span>antlr<span class="token punctuation">.</span>v4<span class="token punctuation">.</span>test<span class="token punctuation">.</span>runtime<span class="token punctuation">.</span>java</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>antlr<span class="token punctuation">.</span>v4<span class="token punctuation">.</span>test<span class="token punctuation">.</span>runtime<span class="token punctuation">.</span></span><span class="token class-name">BaseRuntimeTest</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>antlr<span class="token punctuation">.</span>v4<span class="token punctuation">.</span>test<span class="token punctuation">.</span>runtime<span class="token punctuation">.</span></span><span class="token class-name">RuntimeTestDescriptor</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>antlr<span class="token punctuation">.</span>v4<span class="token punctuation">.</span>test<span class="token punctuation">.</span>runtime<span class="token punctuation">.</span>descriptors<span class="token punctuation">.</span></span><span class="token class-name">ListenersDescriptors</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>junit<span class="token punctuation">.</span>runner<span class="token punctuation">.</span></span><span class="token class-name">RunWith</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>junit<span class="token punctuation">.</span>runners<span class="token punctuation">.</span></span><span class="token class-name">Parameterized</span><span class="token punctuation">;</span>
+
+<span class="token annotation punctuation">@RunWith</span><span class="token punctuation">(</span><span class="token class-name">Parameterized</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TestX</span> <span class="token keyword">extends</span> <span class="token class-name">BaseRuntimeTest</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token class-name">TestX</span><span class="token punctuation">(</span><span class="token class-name">RuntimeTestDescriptor</span> descriptor<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">super</span><span class="token punctuation">(</span>descriptor<span class="token punctuation">,</span><span class="token keyword">new</span> <span class="token class-name">Base</span><span class="token generics"><span class="token punctuation">&lt;</span>TARGET<span class="token punctuation">&gt;</span></span><span class="token class-name">Test</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@Parameterized.Parameters</span><span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">&quot;{0}&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">RuntimeTestDescriptor</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token function">getAllTestDescriptors</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token class-name">BaseRuntimeTest</span><span class="token punctuation">.</span><span class="token function">getRuntimeTestDescriptors</span><span class="token punctuation">(</span><span class="token class-name">XDescriptors</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span> <span class="token string">&quot;&lt;TARGET&gt;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>where <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>TARGET</span><span class="token punctuation">&gt;</span></span></code> is replaced with Java, Cpp, CSharp, Python2, ... in the various subdirectories.</p>
+<h3 id="ignoring-tests"><a name="ignoring-tests" class="anchor-navigation-ex-anchor" href="#ignoring-tests"><i class="fa fa-link" aria-hidden="true"></i></a>1.6.1. Ignoring tests</h3>
+<p>In order to turn off a test for a particular target, we need to use the <code>ignore</code> method. Given a target name, a descriptor object can decide whether to ignore the test. This is not always convenient but it is fully general and works well for the one case we have now where we have to ignore <code>Visitor</code> tests in all targets except JavaScript.</p>
+<h3 id="target-apilibrary-testing"><a name="target-apilibrary-testing" class="anchor-navigation-ex-anchor" href="#target-apilibrary-testing"><i class="fa fa-link" aria-hidden="true"></i></a>1.6.2. Target API/library testing</h3>
+<p>Some parts of the runtime API need to be tested with code written specifically in the target language. For example, you can see all of the Java runtime API tests here:</p>
+<p><a href="https://github.com/antlr/antlr4/tree/master/runtime-testsuite/test/org/antlr/v4/test/runtime/java/api" target="_blank">https://github.com/antlr/antlr4/tree/master/runtime-testsuite/test/org/antlr/v4/test/runtime/java/api</a></p>
+<p>Notice that it is under an <code>api</code> dir. The directory above is where all of the <code>Test*</code> files go.</p>
+<h3 id="cross-language-actions-embedded-within-grammars"><a name="cross-language-actions-embedded-within-grammars" class="anchor-navigation-ex-anchor" href="#cross-language-actions-embedded-within-grammars"><i class="fa fa-link" aria-hidden="true"></i></a>1.6.3. Cross-language actions embedded within grammars</h3>
+<p>To get:</p>
+<pre class="language-"><code>System.out.println($set.stop);
+</code></pre><p>Use instead the language-neutral:</p>
+<pre class="language-"><code>&lt;writeln(&quot;$set.stop&quot;)&gt;
+</code></pre><p>Template file <a href="https://github.com/antlr/antlr4/tree/master/runtime-testsuite/resources/org/antlr/v4/test/runtime/templates/Java.test.stg" target="_blank">runtime-testsuite/resources/org/antlr/v4/test/runtime/templates/Java.test.stg</a> has templates like:</p>
+<pre class="language-"><code>writeln(s) ::= &lt;&lt;System.out.println(<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>s</span><span class="token punctuation">&gt;</span></span>);&gt;&gt;
+</code></pre><p>that translate generic operations to target-specific language statements or expressions.</p>
+<h2 id="adding-an-antlr-tool-unit-test"><a name="adding-an-antlr-tool-unit-test" class="anchor-navigation-ex-anchor" href="#adding-an-antlr-tool-unit-test"><i class="fa fa-link" aria-hidden="true"></i></a>1.7. Adding an ANTLR tool unit test</h2>
+<p>Just go into the appropriate Java test class in dir <a href="https://github.com/antlr/antlr4/tree/master/tool-testsuite/test/org/antlr/v4/test/tool" target="_blank">antlr4/tool-testsuite/test/org/antlr/v4/test/tool</a> and add your unit test.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="releasing-antlr.html" class="navigation navigation-prev " aria-label="Previous page: Cutting an ANTLR Release">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="creating-a-language-target.html" class="navigation navigation-next " aria-label="Next page: Creating an ANTLR Language Target">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"ANTLR project unit tests","level":"3.3","depth":1,"next":{"title":"Creating an ANTLR Language Target","level":"3.4","depth":1,"path":"chapters/creating-a-language-target.md","ref":"chapters/creating-a-language-target.md","articles":[]},"previous":{"title":"Cutting an ANTLR Release","level":"3.2","depth":1,"path":"chapters/releasing-antlr.md","ref":"chapters/releasing-antlr.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","anchor-navigation-ex","-sharing","sharing-plus","-highlight","prism"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"night","family":"serif","size":2},"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"sharing":{"weibo":true,"qzone":true,"qq":true,"douban":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"Little Captain","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"antlr4-doc","gitbook":"*","description":"antlr4-doc"},"file":{"path":"chapters/antlr-project-testing.md","mtime":"2021-11-11T03:00:11.618Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-11-11T03:11:20.710Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

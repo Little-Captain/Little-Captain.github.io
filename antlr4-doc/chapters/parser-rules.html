@@ -1,0 +1,954 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Parser Rules · antlr4-doc</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Little Captain">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-okaidia.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="left-recursion.html" />
+    
+    
+    <link rel="prev" href="grammars.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Sections</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                        <b>2.1.</b>
+                    
+                    Index
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="getting-started.html">
+            
+                <a href="getting-started.html">
+            
+                    
+                        <b>2.2.</b>
+                    
+                    Getting Started with ANTLR v4
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="lexicon.html">
+            
+                <a href="lexicon.html">
+            
+                    
+                        <b>2.3.</b>
+                    
+                    Grammar Lexicon
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="grammars.html">
+            
+                <a href="grammars.html">
+            
+                    
+                        <b>2.4.</b>
+                    
+                    Grammar Structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.5" data-path="parser-rules.html">
+            
+                <a href="parser-rules.html">
+            
+                    
+                        <b>2.5.</b>
+                    
+                    Parser Rules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="left-recursion.html">
+            
+                <a href="left-recursion.html">
+            
+                    
+                        <b>2.6.</b>
+                    
+                    Left-recursive rules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="actions.html">
+            
+                <a href="actions.html">
+            
+                    
+                        <b>2.7.</b>
+                    
+                    Actions and Attributes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="lexer-rules.html">
+            
+                <a href="lexer-rules.html">
+            
+                    
+                        <b>2.8.</b>
+                    
+                    Lexer Rules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="wildcard.html">
+            
+                <a href="wildcard.html">
+            
+                    
+                        <b>2.9.</b>
+                    
+                    Wildcard Operator and Nongreedy Subrules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="listeners.html">
+            
+                <a href="listeners.html">
+            
+                    
+                        <b>2.10.</b>
+                    
+                    Parse Tree Listeners
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11" data-path="tree-matching.html">
+            
+                <a href="tree-matching.html">
+            
+                    
+                        <b>2.11.</b>
+                    
+                    Parse Tree Matching and XPath
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.12" data-path="predicates.html">
+            
+                <a href="predicates.html">
+            
+                    
+                        <b>2.12.</b>
+                    
+                    Semantic Predicates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.13" data-path="options.html">
+            
+                <a href="options.html">
+            
+                    
+                        <b>2.13.</b>
+                    
+                    Options
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14" data-path="tool-options.html">
+            
+                <a href="tool-options.html">
+            
+                    
+                        <b>2.14.</b>
+                    
+                    ANTLR Tool Command Line Options
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.15" data-path="targets.html">
+            
+                <a href="targets.html">
+            
+                    
+                        <b>2.15.</b>
+                    
+                    Runtime Libraries and Code Generation Targets
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.16" data-path="unicode.html">
+            
+                <a href="unicode.html">
+            
+                    
+                        <b>2.16.</b>
+                    
+                    Unicode U+FFFF, U+10FFFF character streams
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17" data-path="parsing-binary-files.html">
+            
+                <a href="parsing-binary-files.html">
+            
+                    
+                        <b>2.17.</b>
+                    
+                    Parsing binary streams
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.18" data-path="case-insensitive-lexing.html">
+            
+                <a href="case-insensitive-lexing.html">
+            
+                    
+                        <b>2.18.</b>
+                    
+                    Case-Insensitive Lexing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.19" data-path="interpreters.html">
+            
+                <a href="interpreters.html">
+            
+                    
+                        <b>2.19.</b>
+                    
+                    Parser and lexer interpreters
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.20" data-path="resources.html">
+            
+                <a href="resources.html">
+            
+                    
+                        <b>2.20.</b>
+                    
+                    Resources
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Building / releasing ANTLR itself</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="building-antlr.html">
+            
+                <a href="building-antlr.html">
+            
+                    
+                        <b>3.1.</b>
+                    
+                    Building ANTLR itself
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="releasing-antlr.html">
+            
+                <a href="releasing-antlr.html">
+            
+                    
+                        <b>3.2.</b>
+                    
+                    Cutting an ANTLR Release
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="antlr-project-testing.html">
+            
+                <a href="antlr-project-testing.html">
+            
+                    
+                        <b>3.3.</b>
+                    
+                    ANTLR project unit tests
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="creating-a-language-target.html">
+            
+                <a href="creating-a-language-target.html">
+            
+                    
+                        <b>3.4.</b>
+                    
+                    Creating an ANTLR Language Target
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Parser Rules</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#parser-rules"><b>1. </b>Parser Rules</a></li><ul><li><span class="title-icon "></span><a href="#alternative-labels"><b>1.1. </b>Alternative Labels</a></li><li><span class="title-icon "></span><a href="#rule-context-objects"><b>1.2. </b>Rule Context Objects</a></li><li><span class="title-icon "></span><a href="#rule-element-labels"><b>1.3. </b>Rule Element Labels</a></li><li><span class="title-icon "></span><a href="#rule-elements"><b>1.4. </b>Rule Elements</a></li><li><span class="title-icon "></span><a href="#subrules"><b>1.5. </b>Subrules</a></li><li><span class="title-icon "></span><a href="#catching-exceptions"><b>1.6. </b>Catching Exceptions</a></li><li><span class="title-icon "></span><a href="#rule-attribute-definitions"><b>1.7. </b>Rule Attribute Definitions</a></li><li><span class="title-icon "></span><a href="#start-rules-and-eof"><b>1.8. </b>Start Rules and EOF</a></li></ul></ul></div><a href="#parser-rules" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="parser-rules"><a name="parser-rules" class="anchor-navigation-ex-anchor" href="#parser-rules"><i class="fa fa-link" aria-hidden="true"></i></a>1. Parser Rules</h1>
+<p>Parsers consist of a set of parser rules either in a parser or a combined grammar. A Java application launches a parser by invoking the rule function, generated by ANTLR, associated with the desired start rule. The most basic rule is just a rule name followed by a single alternative terminated with a semicolon:</p>
+<pre class="language-"><code>     /** Javadoc comment can precede rule */
+     retstat : &apos;return&apos; expr &apos;;&apos; ;
+</code></pre><p>Rules can also have alternatives separated by the | </p>
+<pre class="language-"><code>operator:
+     stat: retstat
+     | &apos;break&apos; &apos;;&apos;
+     | &apos;continue&apos; &apos;;&apos;
+     ;
+</code></pre><p>Alternatives are either a list of rule elements or empty. For example, here&#x2019;s a rule with an empty alternative that makes the entire rule optional:</p>
+<pre class="language-"><code>superClass
+     : &apos;extends&apos; ID
+     | // empty means other alternative(s) are optional
+     ;
+</code></pre><h2 id="alternative-labels"><a name="alternative-labels" class="anchor-navigation-ex-anchor" href="#alternative-labels"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. Alternative Labels</h2>
+<p>As we saw in Section 7.4, Labeling Rule Alternatives for Precise Event Methods, we can get more precise parse-tree listener events by labeling the outermost alternatives of a rule using the # operator. All alternatives within a rule must be labeled, or none of them. Here are two rules with labeled alternatives.</p>
+<pre class="language-"><code>grammar T;
+stat: &apos;return&apos; e &apos;;&apos; # Return
+     | &apos;break&apos; &apos;;&apos; # Break
+     ;
+e   : e &apos;*&apos; e # Mult
+    | e &apos;+&apos; e # Add
+    | INT # Int
+    ;
+</code></pre><p>Alternative labels do not have to be at the end of the line and there does not have to be a space after the # symbol.
+ANTLR generates a rule context class definition for each label. For example, here is the listener that ANTLR generates:</p>
+<pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">AListener</span> <span class="token keyword">extends</span> <span class="token class-name">ParseTreeListener</span> <span class="token punctuation">{</span>
+     <span class="token keyword">void</span> <span class="token function">enterReturn</span><span class="token punctuation">(</span><span class="token class-name">AParser<span class="token punctuation">.</span>ReturnContext</span> ctx<span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token keyword">void</span> <span class="token function">exitReturn</span><span class="token punctuation">(</span><span class="token class-name">AParser<span class="token punctuation">.</span>ReturnContext</span> ctx<span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token keyword">void</span> <span class="token function">enterBreak</span><span class="token punctuation">(</span><span class="token class-name">AParser<span class="token punctuation">.</span>BreakContext</span> ctx<span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token keyword">void</span> <span class="token function">exitBreak</span><span class="token punctuation">(</span><span class="token class-name">AParser<span class="token punctuation">.</span>BreakContext</span> ctx<span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token keyword">void</span> <span class="token function">enterMult</span><span class="token punctuation">(</span><span class="token class-name">AParser<span class="token punctuation">.</span>MultContext</span> ctx<span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token keyword">void</span> <span class="token function">exitMult</span><span class="token punctuation">(</span><span class="token class-name">AParser<span class="token punctuation">.</span>MultContext</span> ctx<span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token keyword">void</span> <span class="token function">enterAdd</span><span class="token punctuation">(</span><span class="token class-name">AParser<span class="token punctuation">.</span>AddContext</span> ctx<span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token keyword">void</span> <span class="token function">exitAdd</span><span class="token punctuation">(</span><span class="token class-name">AParser<span class="token punctuation">.</span>AddContext</span> ctx<span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token keyword">void</span> <span class="token function">enterInt</span><span class="token punctuation">(</span><span class="token class-name">AParser<span class="token punctuation">.</span>IntContext</span> ctx<span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token keyword">void</span> <span class="token function">exitInt</span><span class="token punctuation">(</span><span class="token class-name">AParser<span class="token punctuation">.</span>IntContext</span> ctx<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>There are enter and exit methods associated with each labeled alternative. The parameters to those methods are specific to alternatives.</p>
+<p>You can reuse the same label on multiple alternatives to indicate that the parse tree walker should trigger the same event for those alternatives. For example, here&#x2019;s a variation on rule e from grammar A above:</p>
+<pre class="language-"><code>     e : e &apos;*&apos; e # BinaryOp
+     | e &apos;+&apos; e # BinaryOp
+     | INT # Int
+     ;
+</code></pre><p>ANTLR would generate the following listener methods for e:</p>
+<pre class="language-"><code class="lang-java">     <span class="token keyword">void</span> <span class="token function">enterBinaryOp</span><span class="token punctuation">(</span><span class="token class-name">AParser<span class="token punctuation">.</span>BinaryOpContext</span> ctx<span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token keyword">void</span> <span class="token function">exitBinaryOp</span><span class="token punctuation">(</span><span class="token class-name">AParser<span class="token punctuation">.</span>BinaryOpContext</span> ctx<span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token keyword">void</span> <span class="token function">enterInt</span><span class="token punctuation">(</span><span class="token class-name">AParser<span class="token punctuation">.</span>IntContext</span> ctx<span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token keyword">void</span> <span class="token function">exitInt</span><span class="token punctuation">(</span><span class="token class-name">AParser<span class="token punctuation">.</span>IntContext</span> ctx<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>ANTLR gives errors if an alternative name conflicts with a rule name. Here&#x2019;s another rewrite of rule e where two 
+alternative labels conflict with rule names:</p>
+<pre class="language-"><code>     e : e &apos;*&apos; e # e
+     | e &apos;+&apos; e # Stat
+     | INT # Int
+     ;
+</code></pre><p>The context objects generated from rule names and labels get capitalized and so label Stat conflicts with rule stat:</p>
+<pre class="language-"><code class="lang-bash">     $ antlr4 A.g4
+     error<span class="token punctuation">(</span><span class="token number">124</span><span class="token punctuation">)</span>: A.g4:5:23: rule alt label e conflicts with rule e
+     error<span class="token punctuation">(</span><span class="token number">124</span><span class="token punctuation">)</span>: A.g4:6:23: rule alt label Stat conflicts with rule <span class="token function">stat</span>
+     warning<span class="token punctuation">(</span><span class="token number">125</span><span class="token punctuation">)</span>: A.g4:2:13: implicit definition of token INT <span class="token keyword">in</span> parser
+</code></pre>
+<h2 id="rule-context-objects"><a name="rule-context-objects" class="anchor-navigation-ex-anchor" href="#rule-context-objects"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. Rule Context Objects</h2>
+<p>ANTLR generates methods to access the rule context objects (parse tree nodes) associated with each rule reference. For rules with a single rule reference, ANTLR generates a method with no arguments. Consider the following rule.</p>
+<pre class="language-"><code>     inc : e &apos;++&apos; ;
+</code></pre><p>ANTLR generates this context class:</p>
+<pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">class</span> <span class="token class-name">IncContext</span> <span class="token keyword">extends</span> <span class="token class-name">ParserRuleContext</span> <span class="token punctuation">{</span>
+     <span class="token keyword">public</span> <span class="token class-name">EContext</span> <span class="token function">e</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token punctuation">}</span> <span class="token comment">// return context object associated with e</span>
+     <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>ANTLR also provide support to access context objects when there is more than a single reference to a rule:</p>
+<pre class="language-"><code>field : e &apos;.&apos; e ;
+</code></pre><p>ANTLR generates a method with an index to access the ith element as well as a method to get context for all references to that rule:</p>
+<pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">class</span> <span class="token class-name">FieldContext</span> <span class="token keyword">extends</span> <span class="token class-name">ParserRuleContext</span> <span class="token punctuation">{</span>
+     <span class="token keyword">public</span> <span class="token class-name">EContext</span> <span class="token function">e</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token punctuation">}</span> <span class="token comment">// get ith e context</span>
+     <span class="token keyword">public</span> <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">EContext</span><span class="token punctuation">&gt;</span></span> <span class="token function">e</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token punctuation">}</span> <span class="token comment">// return ALL e contexts</span>
+     <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>If we had another rule, s, that references field, an embedded action could access the list of e rule matches performed by field:</p>
+<pre class="language-"><code>s : field
+     {
+     List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>EContext</span><span class="token punctuation">&gt;</span></span> x = $field.ctx.e();
+     ...
+     }
+;
+</code></pre><p>A listener or visitor could do the same thing. Given a pointer to a FieldContext object, f, f.e() would return List<econtext>.</econtext></p>
+<h2 id="rule-element-labels"><a name="rule-element-labels" class="anchor-navigation-ex-anchor" href="#rule-element-labels"><i class="fa fa-link" aria-hidden="true"></i></a>1.3. Rule Element Labels</h2>
+<p>You can label rule elements using the = operator to add fields to the rule context objects:</p>
+<pre class="language-"><code>stat: &apos;return&apos; value=e &apos;;&apos; # Return
+     | &apos;break&apos; &apos;;&apos; # Break
+     ;
+</code></pre><p>Here value is the label for the return value of rule e, which is defined elsewhere.
+Labels become fields in the appropriate parse tree node class. In this case, label value becomes a field in ReturnContext because of the Return alternative label:</p>
+<pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">class</span> <span class="token class-name">ReturnContext</span> <span class="token keyword">extends</span> <span class="token class-name">StatContext</span> <span class="token punctuation">{</span>
+     <span class="token keyword">public</span> <span class="token class-name">EContext</span> value<span class="token punctuation">;</span>
+     <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>It&#x2019;s often handy to track a number of tokens, which you can do with the += &#x201C;list label&#x201D; operator. For example, the following rule creates a list of the Token objects matched for a simple array construct:</p>
+<pre class="language-"><code>     array : &apos;{&apos; el+=INT (&apos;,&apos; el+=INT)* &apos;}&apos; ;
+</code></pre><p>ANTLR generates a List field in the appropriate rule context class:</p>
+<pre class="language-"><code>     public static class ArrayContext extends ParserRuleContext {
+     public List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Token</span><span class="token punctuation">&gt;</span></span> el = new ArrayList<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Token</span><span class="token punctuation">&gt;</span></span>();
+     ...
+     }
+</code></pre><p>These list labels also work for rule references:</p>
+<pre class="language-"><code>     elist : exprs+=e (&apos;,&apos; exprs+=e)* ;
+</code></pre><p>ANTLR generates a field holding the list of context objects:</p>
+<pre class="language-"><code>     public static class ElistContext extends ParserRuleContext {
+     public List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>EContext</span><span class="token punctuation">&gt;</span></span> exprs = new ArrayList<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>EContext</span><span class="token punctuation">&gt;</span></span>();
+     ...
+     }
+</code></pre><h2 id="rule-elements"><a name="rule-elements" class="anchor-navigation-ex-anchor" href="#rule-elements"><i class="fa fa-link" aria-hidden="true"></i></a>1.4. Rule Elements</h2>
+<p>Rule elements specify what the parser should do at a given moment just like statements in a programming language. The elements can be rule, token, string literal like expression, ID, and &#x2019;return&#x2019;. Here&#x2019;s a complete list of the rule elements (we&#x2019;ll look at actions and predicates in more detail later):</p>
+<table>
+<tr>
+<th>Syntax</th><th>Description</th>
+</tr>
+<tr>
+<td>T</td><td>
+Match token T at the current input position. Tokens always begin with a capital letter.</td>
+</tr>
+<tr>
+<td>&#x2019;literal&#x2019;</td><td>
+Match the string literal at the current input position. A string literal is simply a token with a fixed string.</td>
+</tr>
+<tr>
+<td>r</td><td>
+Match rule r at current input position, which amounts to invoking the rule just like a function call. Parser rule names always begin with a lowercase letter.</td>
+</tr>
+<tr>
+<td>r [&#xAB;args&#xBB;]</td><td>
+Match rule r at current input position, passing in a list of arguments just like a function call. The arguments inside the square brackets are in the syntax of the target language and are usually a comma-separated list of expressions.</td>
+</tr>
+<tr>
+<td>{&#xAB;action&#xBB;}</td><td>
+Execute an action immediately after the preceding alternative element and immediately before the following alternative element. The action conforms to the syntax of the target language. ANTLR copies the action code to the generated class verbatim, except for substituting attribute and token references such as $x and $x.y.</td>
+</tr>
+<tr>
+<td>{&#xAB;p&#xBB;}?</td><td>
+Evaluate semantic predicate &#xAB;p&#xBB;. Do not continue parsing past a predicate if &#xAB;p&#xBB; evaluates to false at runtime. Predicates encountered during prediction, when ANTLR distinguishes between alternatives, enable or disable the alternative(s) surrounding the predicate(s).</td>
+</tr>
+<tr>
+<td>.</td><td>
+Match any single token except for the end of file token. The &#x201C;dot&#x201D; operator is called the wildcard.</td>
+</tr>
+</table>
+
+<p>When you want to match everything but a particular token or set of tokens, use the <code>~</code> &#x201C;not&#x201D; operator. This operator is rarely used in the parser but is available. <code>~INT</code> matches any token except the <code>INT</code> token. <code>~&#x2019;,&#x2019;</code> matches any token except the comma. <code>~(INT|ID)</code> matches any token except an INT or an ID.</p>
+<p>Token, string literal, and semantic predicate rule elements can take options. See Rule Element Options.</p>
+<h2 id="subrules"><a name="subrules" class="anchor-navigation-ex-anchor" href="#subrules"><i class="fa fa-link" aria-hidden="true"></i></a>1.5. Subrules</h2>
+<p>A rule can contain alternative blocks called subrules (as allowed in Extended BNF Notation: EBNF). A subrule is like a rule that lacks a name and is enclosed in parentheses. Subrules can have one or more alternatives inside the parentheses. Subrules cannot define attributes with locals and returns like rules can. There are four kinds of subrules (x, y, and z represent grammar fragments):</p>
+<table>
+<tr>
+<th>Syntax</th><th>Description</th>
+</tr>
+<tr>
+<td><img src="images/xyz.png"></td><td>(x|y|z).
+Match any alternative within the subrule exactly once. Example:
+<br>
+<tt>
+returnType : (type | &apos;void&apos;) ;
+</tt>
+</td>
+</tr>
+<tr>
+<td><img src="images/xyz_opt.png"></td><td>(x|y|z)?
+Match nothing or any alternative within subrule. Example:
+<br>
+<tt>    
+classDeclaration
+    : &apos;class&apos; ID (typeParameters)? (&apos;extends&apos; type)?
+      (&apos;implements&apos; typeList)?
+        classBody
+    ;
+</tt>
+</td></tr><tr>
+<td><img src="images/xyz_star.png"></td><td>(x|y|z)*
+Match an alternative within subrule zero or more times. Example:
+<br>
+<tt>
+annotationName : ID (&apos;.&apos; ID)* ;
+</tt>
+</td></tr>
+<tr>    
+<td><img src="images/xyz_plus.png"></td><td>(x|y|z)+
+Match an alternative within subrule one or more times. Example:
+<br>
+<tt>
+annotations : (annotation)+ ;
+</tt>
+</td>
+</tr>
+</table>
+
+<p>You can suffix the <code>?</code>, <code>*</code>, and <code>+</code> subrule operators with the nongreedy operator, which is also a question mark: <code>??</code>, <code>*?</code>, and <code>+?</code>. See Section 15.6, Wildcard Operator and Nongreedy Subrules.</p>
+<p>As a shorthand, you can omit the parentheses for subrules composed of a single alternative with a single rule element reference. For example, <code>annotation+</code> is the same as <code>(annotation)+</code> and <code>ID+</code> is the same as <code>(ID)+</code>. Labels also work with the shorthand. <code>ids+=INT+</code> make a list of <code>INT</code> token objects.</p>
+<h2 id="catching-exceptions"><a name="catching-exceptions" class="anchor-navigation-ex-anchor" href="#catching-exceptions"><i class="fa fa-link" aria-hidden="true"></i></a>1.6. Catching Exceptions</h2>
+<p>When a syntax error occurs within a rule, ANTLR catches the exception, reports the error, attempts to recover (possibly by consuming more tokens), and then returns from the rule. Every rule is wrapped in a <code>try/catch/finally</code> statement:</p>
+<pre class="language-"><code>void r() throws RecognitionException {
+     try {
+         rule-body
+     }
+     catch (RecognitionException re) {
+         _errHandler.reportError(this, re);
+         _errHandler.recover(this, re);
+     }
+     finally {
+        exitRule();
+     }
+}
+</code></pre><p>In Section 9.5, Altering ANTLR&#x2019;s Error Handling Strategy, we saw how to use a strategy object to alter ANTLR&#x2019;s error handling. Replacing the strategy changes the strategy for all rules, however. To alter the exception handling for a single rule, specify an exception after the rule definition:</p>
+<pre class="language-"><code>r : ...
+  ;
+  catch[RecognitionException e] { throw e; }
+</code></pre><p>That example shows how to avoid default error reporting and recovery. r rethrows the exception, which is useful when it makes more sense for a higher-level rule to report the error. Specifying any exception clause, prevents ANTLR from generating a clause to handle <code>RecognitionException</code>.</p>
+<p>You can specify other exceptions as well:</p>
+<pre class="language-"><code>r : ...
+  ;
+  catch[FailedPredicateException fpe] { ... }
+  catch[RecognitionException e] { ... }
+</code></pre><p>The code snippets inside curly braces and the exception &#x201C;argument&#x201D; actions must be written in the target language; Java, in this case.
+When you need to execute an action even if an exception occurs, put it into the <code>finally</code> clause:</p>
+<pre class="language-"><code>r : ...
+  ;
+  // catch blocks go first
+  finally { System.out.println(&quot;exit rule r&quot;); }
+</code></pre><p>The finally clause executes right before the rule triggers <code>exitRule</code> before returning. If you want to execute an action after the rule finishes matching the alternatives but before it does its cleanup work, use an <code>after</code> action.</p>
+<p>Here&#x2019;s a complete list of exceptions:</p>
+<table>
+<tr>
+<th>Exception name</th><th>Description</th>
+</tr>
+<tr>
+<td>RecognitionException</td><td>
+The superclass of all exceptions thrown by an ANTLR-generated recognizer. It&#x2019;s a subclass of RuntimeException to avoid the hassles of checked exceptions. This exception records where the recognizer (lexer or parser) was in the input, where it was in the ATN (internal graph data structure representing the grammar), the rule invocation stack, and what kind of problem occurred.</td>
+</tr>
+<tr>
+<td>NoViableAltException</td><td>
+Indicates that the parser could not decide which of two or more paths to take by looking at the remaining input. This exception tracks the starting token of the offending input and also knows where the parser was in the various paths when the error occurred.</td>
+</tr>
+<tr>
+<td>LexerNoViableAltException</td><td>
+The equivalent of NoViableAltException but for lexers only.</td>
+</tr>
+<tr>
+<td>InputMismatchException</td><td>
+The current input Token does not match what the parser expected.</td>
+</tr>
+<tr>
+<td>FailedPredicateException</td><td>
+A semantic predicate that evaluates to false during prediction renders the surrounding alternative nonviable. Prediction occurs when a rule is predicting which alternative to take. If all viable paths disappear, parser will throw NoViableAltException. This predicate gets thrown by the parser when a semantic predicate evaluates to false outside of prediction, during the normal parsing process of matching tokens and calling rules.</td>
+</tr>
+</table>
+
+<h2 id="rule-attribute-definitions"><a name="rule-attribute-definitions" class="anchor-navigation-ex-anchor" href="#rule-attribute-definitions"><i class="fa fa-link" aria-hidden="true"></i></a>1.7. Rule Attribute Definitions</h2>
+<p>There are a number of action-related syntax elements associated with rules to be aware of. Rules can have arguments, return values, and local variables just like functions in a programming language. (Rules can have actions embedded among the rule elements, as we&#x2019;ll see in Section 15.4, Actions and Attributes.) ANTLR collects all of the variables you define and stores them in the rule context object. These variables are usually called attributes. Here&#x2019;s the general syntax showing all possible attribute definition locations:</p>
+<pre class="language-"><code>rulename[args] returns [retvals] locals [localvars] : ... ;
+</code></pre><p>The attributes defined within those [...] can be used like any other variable. Here is a sample rule that copies parameters to return values:</p>
+<pre class="language-"><code>// Return the argument plus the integer value of the INT token
+add[int x] returns [int result] : &apos;+=&apos; INT {$result = $x + $INT.int;} ;
+</code></pre><p>The args, locals, and return <code>[...]</code> are generally in the target language but with some constraints. The <code>[...]</code> string is a comma-separated list of declarations either with prefix or postfix type notation or no-type notation. The elements can have initializer such as <code>[int x = 32, float y]</code> but don&apos;t go too crazy as we are parsing this generic text manually in <a href="https://github.com/antlr/antlr4/blob/master/tool/src/org/antlr/v4/parse/ScopeParser.java" target="_blank">ScopeParser</a>.  </p>
+<ul>
+<li>Java, CSharp, C++ use <code>int x</code> notation but C++ must use a slightly altered notation for array references, <code>int[] x</code>, to fit in the <em>type</em> <em>id</em> syntax.</li>
+<li>Go and Swift give the type after the variable name, but Swift requires a <code>:</code> in between. Go <code>i int</code>, Swift <code>i:int</code>.  For Go target, you must either use <code>int i</code> or <code>i:int</code>.</li>
+<li>Python and JavaScript don&apos;t specify static types so actions are just identifier lists such as <code>[i,j]</code>.</li>
+</ul>
+<p>Technically any target could use either notation. For examples, see <a href="https://github.com/antlr/antlr4/blob/master/tool-testsuite/test/org/antlr/v4/test/tool/TestScopeParsing.java" target="_blank">TestScopeParsing</a>.</p>
+<p>As with the grammar level, you can specify rule-level named actions. For rules, the valid names are <code>init</code> and <code>after</code>. As the names imply, parsers execute init actions immediately before trying to match the associated rule and execute after actions immediately after matching the rule. ANTLR after actions do not execute as part of the finally code block of the generated rule function. Use the ANTLR finally action to place code in the generated rule function finally code block.</p>
+<p>The actions come after any argument, return value, or local attribute definition actions. The <code>row</code> rule preamble from Section 10.2, Accessing Token and Rule Attributes illustrates the syntax nicely:
+actions/CSV.g4</p>
+<pre class="language-"><code>/** Derived from rule &quot;row : field (&apos;,&apos; field)* &apos;\r&apos;? &apos;\n&apos; ;&quot; */
+row[String[] columns]
+   returns [Map<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>String,String</span><span class="token punctuation">&gt;</span></span> values]
+   locals [int col=0]
+    @init {
+    $values = new HashMap<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>String,String</span><span class="token punctuation">&gt;</span></span>();
+    }
+    @after {
+    if ($values!=null &amp;&amp; $values.size()&gt;0) {
+    System.out.println(&quot;values = &quot;+$values);
+    }
+    }
+    : ...
+    ;
+</code></pre><p>Rule row takes argument columns, returns values, and defines local variable col. The &#x201C;actions&#x201D; in square brackets are copied directly into the generated code:</p>
+<pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">CSVParser</span> <span class="token keyword">extends</span> <span class="token class-name">Parser</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">class</span> <span class="token class-name">RowContext</span> <span class="token keyword">extends</span> <span class="token class-name">ParserRuleContext</span> <span class="token punctuation">{</span>
+        <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> columns<span class="token punctuation">;</span>
+        <span class="token keyword">public</span> <span class="token class-name">Map</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">,</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> values<span class="token punctuation">;</span>
+        <span class="token keyword">public</span> <span class="token keyword">int</span> col<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+    <span class="token punctuation">}</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>The generated rule functions also specify the rule arguments as function arguments, but they are quickly copied into the local RowContext object:</p>
+<pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">CSVParser</span> <span class="token keyword">extends</span> <span class="token class-name">Parser</span> <span class="token punctuation">{</span>
+     <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+     <span class="token keyword">public</span> <span class="token keyword">final</span> <span class="token class-name">RowContext</span> <span class="token function">row</span><span class="token punctuation">(</span><span class="token class-name">String</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> columns<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">RecognitionException</span> <span class="token punctuation">{</span>
+         <span class="token class-name">RowContext</span> _localctx <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">RowContext</span><span class="token punctuation">(</span>_ctx<span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> columns<span class="token punctuation">)</span><span class="token punctuation">;</span>
+         <span class="token function">enterRule</span><span class="token punctuation">(</span>_localctx<span class="token punctuation">,</span> <span class="token class-name">RULE_row</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+         <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+     <span class="token punctuation">}</span>
+     <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>ANTLR tracks nested <code>[...]</code> within the action so that <code>String[]</code> columns is parsed properly. It also tracks angle brackets so that commas within generic type parameters do not signify the start of another attribute. <code>Map<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>String,String</span><span class="token punctuation">&gt;</span></span></code> values is one attribute definition.</p>
+<p>There can be multiple attributes in each action, even for return values. Use a comma to separate attributes within the same action:</p>
+<pre class="language-"><code>a[Map<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>String,String</span><span class="token punctuation">&gt;</span></span> x, int y] : ... ;
+</code></pre><p>ANTLR interprets that action to define two arguments, x and y:</p>
+<pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token keyword">final</span> <span class="token class-name">AContext</span> <span class="token function">a</span><span class="token punctuation">(</span><span class="token class-name">Map</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">,</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> x<span class="token punctuation">,</span> <span class="token keyword">int</span> y<span class="token punctuation">)</span>
+    <span class="token keyword">throws</span> <span class="token class-name">RecognitionException</span>
+<span class="token punctuation">{</span>
+    <span class="token class-name">AContext</span> _localctx <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">AContext</span><span class="token punctuation">(</span>_ctx<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">enterRule</span><span class="token punctuation">(</span>_localctx<span class="token punctuation">,</span> <span class="token class-name">RULE_a</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="start-rules-and-eof"><a name="start-rules-and-eof" class="anchor-navigation-ex-anchor" href="#start-rules-and-eof"><i class="fa fa-link" aria-hidden="true"></i></a>1.8. Start Rules and EOF</h2>
+<p>A start rule is the rule engaged first by the parser; it&#x2019;s the rule function called by the language application. For example, a language application that parsed to Java code might call <code>parser.compilationUnit()</code> for a <code>JavaParser</code> object called <code>parser</code>. Any rule in the grammar can act as a start rule.</p>
+<p>Start rules don&#x2019;t necessarily consume all of the input. They consume only as much input as needed to match an alternative of the rule. For example, consider the following rule that matches one, two, or three tokens, depending on the input.</p>
+<pre class="language-"><code>s : ID
+  | ID &apos;+&apos;
+  | ID &apos;+&apos; INT
+  ;
+</code></pre><p>Upon <code>a+3</code>, rule <code>s</code> matches the third alternative. Upon <code>a+b</code>, it matches the second alternative and ignores the final <code>b</code> token. Upon <code>a b</code>, it matches the first alternative, ignoring the <code>b</code> token. The parser does not consume the complete input in the latter two cases because rule <code>s</code> doesn&#x2019;t explicitly say that end of file must occur after matching an alternative of the rule.</p>
+<p>This default functionality is very useful for building things like IDEs. Imagine the IDE wanting to parse a method somewhere in the middle of a big Java file. Calling rule <code>methodDeclaration</code> should try to match just a method and ignore whatever comes next.</p>
+<p>On the other hand, rules that describe entire input files should reference special predefined-token <code>EOF</code>. If they don&#x2019;t, you might scratch your head for a while wondering why the start rule doesn&#x2019;t report errors for any input no matter what you give it. Here&#x2019;s a rule that&#x2019;s part of a grammar for reading configuration files:</p>
+<pre class="language-"><code>config : element*; // can &quot;match&quot; even with invalid input.
+</code></pre><p>Invalid input would cause <code>config</code> to return immediately without matching any input and without reporting an error. Here&#x2019;s the proper specification:</p>
+<pre class="language-"><code>file : element* EOF; // don&apos;t stop early. must match all input
+</code></pre>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="grammars.html" class="navigation navigation-prev " aria-label="Previous page: Grammar Structure">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="left-recursion.html" class="navigation navigation-next " aria-label="Next page: Left-recursive rules">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Parser Rules","level":"2.5","depth":1,"next":{"title":"Left-recursive rules","level":"2.6","depth":1,"path":"chapters/left-recursion.md","ref":"chapters/left-recursion.md","articles":[]},"previous":{"title":"Grammar Structure","level":"2.4","depth":1,"path":"chapters/grammars.md","ref":"chapters/grammars.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","anchor-navigation-ex","-sharing","sharing-plus","-highlight","prism"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"night","family":"serif","size":2},"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"sharing":{"weibo":true,"qzone":true,"qq":true,"douban":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"Little Captain","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"antlr4-doc","gitbook":"*","description":"antlr4-doc"},"file":{"path":"chapters/parser-rules.md","mtime":"2021-11-11T03:00:11.621Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-11-11T03:11:20.710Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

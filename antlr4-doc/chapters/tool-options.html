@@ -1,0 +1,854 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>ANTLR Tool Command Line Options · antlr4-doc</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Little Captain">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-okaidia.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="targets.html" />
+    
+    
+    <link rel="prev" href="options.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Sections</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                        <b>2.1.</b>
+                    
+                    Index
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="getting-started.html">
+            
+                <a href="getting-started.html">
+            
+                    
+                        <b>2.2.</b>
+                    
+                    Getting Started with ANTLR v4
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="lexicon.html">
+            
+                <a href="lexicon.html">
+            
+                    
+                        <b>2.3.</b>
+                    
+                    Grammar Lexicon
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="grammars.html">
+            
+                <a href="grammars.html">
+            
+                    
+                        <b>2.4.</b>
+                    
+                    Grammar Structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="parser-rules.html">
+            
+                <a href="parser-rules.html">
+            
+                    
+                        <b>2.5.</b>
+                    
+                    Parser Rules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="left-recursion.html">
+            
+                <a href="left-recursion.html">
+            
+                    
+                        <b>2.6.</b>
+                    
+                    Left-recursive rules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="actions.html">
+            
+                <a href="actions.html">
+            
+                    
+                        <b>2.7.</b>
+                    
+                    Actions and Attributes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="lexer-rules.html">
+            
+                <a href="lexer-rules.html">
+            
+                    
+                        <b>2.8.</b>
+                    
+                    Lexer Rules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="wildcard.html">
+            
+                <a href="wildcard.html">
+            
+                    
+                        <b>2.9.</b>
+                    
+                    Wildcard Operator and Nongreedy Subrules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="listeners.html">
+            
+                <a href="listeners.html">
+            
+                    
+                        <b>2.10.</b>
+                    
+                    Parse Tree Listeners
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11" data-path="tree-matching.html">
+            
+                <a href="tree-matching.html">
+            
+                    
+                        <b>2.11.</b>
+                    
+                    Parse Tree Matching and XPath
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.12" data-path="predicates.html">
+            
+                <a href="predicates.html">
+            
+                    
+                        <b>2.12.</b>
+                    
+                    Semantic Predicates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.13" data-path="options.html">
+            
+                <a href="options.html">
+            
+                    
+                        <b>2.13.</b>
+                    
+                    Options
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.14" data-path="tool-options.html">
+            
+                <a href="tool-options.html">
+            
+                    
+                        <b>2.14.</b>
+                    
+                    ANTLR Tool Command Line Options
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.15" data-path="targets.html">
+            
+                <a href="targets.html">
+            
+                    
+                        <b>2.15.</b>
+                    
+                    Runtime Libraries and Code Generation Targets
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.16" data-path="unicode.html">
+            
+                <a href="unicode.html">
+            
+                    
+                        <b>2.16.</b>
+                    
+                    Unicode U+FFFF, U+10FFFF character streams
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17" data-path="parsing-binary-files.html">
+            
+                <a href="parsing-binary-files.html">
+            
+                    
+                        <b>2.17.</b>
+                    
+                    Parsing binary streams
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.18" data-path="case-insensitive-lexing.html">
+            
+                <a href="case-insensitive-lexing.html">
+            
+                    
+                        <b>2.18.</b>
+                    
+                    Case-Insensitive Lexing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.19" data-path="interpreters.html">
+            
+                <a href="interpreters.html">
+            
+                    
+                        <b>2.19.</b>
+                    
+                    Parser and lexer interpreters
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.20" data-path="resources.html">
+            
+                <a href="resources.html">
+            
+                    
+                        <b>2.20.</b>
+                    
+                    Resources
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Building / releasing ANTLR itself</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="building-antlr.html">
+            
+                <a href="building-antlr.html">
+            
+                    
+                        <b>3.1.</b>
+                    
+                    Building ANTLR itself
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="releasing-antlr.html">
+            
+                <a href="releasing-antlr.html">
+            
+                    
+                        <b>3.2.</b>
+                    
+                    Cutting an ANTLR Release
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="antlr-project-testing.html">
+            
+                <a href="antlr-project-testing.html">
+            
+                    
+                        <b>3.3.</b>
+                    
+                    ANTLR project unit tests
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="creating-a-language-target.html">
+            
+                <a href="creating-a-language-target.html">
+            
+                    
+                        <b>3.4.</b>
+                    
+                    Creating an ANTLR Language Target
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >ANTLR Tool Command Line Options</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#antlr-tool-command-line-options"><b>1. </b>ANTLR Tool Command Line Options</a></li><ul><li><span class="title-icon "></span><a href="#o-outdir"><b>1.1. </b>-o outdir</a></li><li><span class="title-icon "></span><a href="#lib-libdir"><b>1.2. </b>-lib libdir</a></li><li><span class="title-icon "></span><a href="#atn"><b>1.3. </b>-atn</a></li><li><span class="title-icon "></span><a href="#encoding-encodingname"><b>1.4. </b>-encoding encodingname</a></li><li><span class="title-icon "></span><a href="#message-format-format"><b>1.5. </b>-message-format format</a></li><li><span class="title-icon "></span><a href="#listener"><b>1.6. </b>-listener</a></li><li><span class="title-icon "></span><a href="#no-listener"><b>1.7. </b>-no-listener</a></li><li><span class="title-icon "></span><a href="#visitor"><b>1.8. </b>-visitor</a></li><li><span class="title-icon "></span><a href="#no-visitor"><b>1.9. </b>-no-visitor</a></li><li><span class="title-icon "></span><a href="#package"><b>1.10. </b>-package</a></li><li><span class="title-icon "></span><a href="#depend"><b>1.11. </b>-depend</a></li><li><span class="title-icon "></span><a href="#doptionvalue"><b>1.12. </b>-D<option>=value</option></a></li><li><span class="title-icon "></span><a href="#werror"><b>1.13. </b>-Werror</a></li><li><span class="title-icon "></span><a href="#xsave-lexer"><b>1.14. </b>-Xsave-lexer</a></li><li><span class="title-icon "></span><a href="#xdbgst"><b>1.15. </b>-XdbgST</a></li><li><span class="title-icon "></span><a href="#xforce-atn"><b>1.16. </b>-Xforce-atn</a></li><li><span class="title-icon "></span><a href="#xlog"><b>1.17. </b>-Xlog</a></li><li><span class="title-icon "></span><a href="#xexact-output-dir"><b>1.18. </b>-Xexact-output-dir</a></li><ul><li><span class="title-icon "></span><a href="#example-for-the-output-directory-47"><b>1.18.1. </b>Example for the output directory (4.7)</a></li><li><span class="title-icon "></span><a href="#example-for-the-output-directory-471-with--xexact-output-dir"><b>1.18.2. </b>Example for the output directory (4.7.1 with -Xexact-output-dir)</a></li><li><span class="title-icon "></span><a href="#example-of-where-it-looks-for-tokens-vocab"><b>1.18.3. </b>Example of where it looks for tokens vocab</a></li></ul></ul></ul></div><a href="#antlr-tool-command-line-options" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="antlr-tool-command-line-options"><a name="antlr-tool-command-line-options" class="anchor-navigation-ex-anchor" href="#antlr-tool-command-line-options"><i class="fa fa-link" aria-hidden="true"></i></a>1. ANTLR Tool Command Line Options</h1>
+<p>If you invoke the ANTLR tool without command line arguments, you&#x2019;ll get a help message:</p>
+<pre class="language-"><code class="lang-bash">$ antlr4
+ANTLR Parser Generator  Version <span class="token number">4.7</span>.1
+ -o ___              specify output directory where all output is generated
+ -lib ___            specify location of grammars, tokens files
+ -atn                generate rule augmented transition network diagrams
+ -encoding ___       specify grammar <span class="token function">file</span> encoding<span class="token punctuation">;</span> e.g., euc-jp
+ -message-format ___ specify output style <span class="token keyword">for</span> <span class="token for-or-select variable">messages</span> <span class="token keyword">in</span> antlr, gnu, vs2005
+ -long-messages      show exception details when available <span class="token keyword">for</span> errors and warnings
+ -listener           generate parse tree listener <span class="token punctuation">(</span>default<span class="token punctuation">)</span>
+ -no-listener        don<span class="token string">&apos;t generate parse tree listener
+ -visitor            generate parse tree visitor
+ -no-visitor         don&apos;</span>t generate parse tree visitor <span class="token punctuation">(</span>default<span class="token punctuation">)</span>
+ -package ___        specify a package/namespace <span class="token keyword">for</span> the generated code
+ -depend             generate <span class="token function">file</span> dependencies
+ -D<span class="token operator">&lt;</span>option<span class="token operator">&gt;</span><span class="token operator">=</span>value    set/override a grammar-level option
+ -Werror             treat warnings as errors
+ -XdbgST             launch StringTemplate visualizer on generated code
+ -XdbgSTWait         <span class="token function">wait</span> <span class="token keyword">for</span> STViz to close before continuing
+ -Xforce-atn         use the ATN simulator <span class="token keyword">for</span> all predictions
+ -Xlog               dump lots of logging info to antlr-timestamp.log
+ -Xexact-output-dir  all output goes into -o <span class="token function">dir</span> regardless of paths/package
+</code></pre>
+<p>Here are more details on the options:</p>
+<h2 id="o-outdir"><a name="o-outdir" class="anchor-navigation-ex-anchor" href="#o-outdir"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. -o outdir</h2>
+<p>ANTLR generates output files in the current directory by default. This option specifies the output directory where ANTLR should generate parsers, listeners, visitors, and tokens files.</p>
+<pre class="language-"><code class="lang-bash">$ antlr4 -o /tmp T.g4
+$ <span class="token function">ls</span> /tmp/T*
+/tmp/T.tokens /tmp/TListener.java
+/tmp/TBaseListener.java /tmp/TParser.java
+</code></pre>
+<h2 id="lib-libdir"><a name="lib-libdir" class="anchor-navigation-ex-anchor" href="#lib-libdir"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. -lib libdir</h2>
+<p>When looking for tokens files and imported grammars, ANTLR normally looks in the current directory. This option specifies which directory to look in instead. It is only used for resolving grammar references for the import statement and the tokenVocab option. The path to the primary grammar must always be fully specified.</p>
+<p>$ cat /tmp/B.g4</p>
+<p>parser grammar B;</p>
+<p>x : ID ;</p>
+<p>$ cat A.g4</p>
+<p>grammar A;</p>
+<p>import B;</p>
+<p>s : x ;</p>
+<p>ID : [a-z]+ ;</p>
+<p>$ antlr4 -lib /tmp A.g4</p>
+<h2 id="atn"><a name="atn" class="anchor-navigation-ex-anchor" href="#atn"><i class="fa fa-link" aria-hidden="true"></i></a>1.3. -atn</h2>
+<p>Generate DOT graph files that represent the internal ATN (augmented transition network) data structures that ANTLR uses to represent grammars. The files come out as Grammar.rule .dot. If the grammar is a combined grammar, the lexer rules are named Grammar Lexer.rule .dot.</p>
+<p>$ cat A.g4</p>
+<p>grammar A;</p>
+<p>s : b ;</p>
+<p>b : ID ;</p>
+<p>ID : [a-z]+ ;</p>
+<p>$ antlr4 -atn A.g4</p>
+<p>$ ls *.dot</p>
+<p>A.b.dot A.s.dot ALexer.ID.dot</p>
+<h2 id="encoding-encodingname"><a name="encoding-encodingname" class="anchor-navigation-ex-anchor" href="#encoding-encodingname"><i class="fa fa-link" aria-hidden="true"></i></a>1.4. -encoding encodingname</h2>
+<p>By default ANTLR loads grammar files using the UTF-8 encoding, which is a very common character file encoding that degenerates to ASCII for characters that fit in one byte. There are many character file encodings from around the world. If that grammar file is not the default encoding for your locale, you need this option so that ANTLR can properly interpret grammar files. This does not affect the input to the generated parsers, just the encoding of the grammars themselves.</p>
+<h2 id="message-format-format"><a name="message-format-format" class="anchor-navigation-ex-anchor" href="#message-format-format"><i class="fa fa-link" aria-hidden="true"></i></a>1.5. -message-format format</h2>
+<p>ANTLR generates warning and error messages using templates from directory tool/resources/org/antlr/v4/tool/templates/messages/formats. By default, ANTLR uses the antlr.stg (StringTemplate group) file. You can change this to gnu or vs2005 to have ANTLR generate messages appropriate for Emacs or Visual Studio. To make your own called X, create resource org/antlr/v4/tool/templates/messages/formats/ X and place it in the CLASSPATH.</p>
+<h2 id="listener"><a name="listener" class="anchor-navigation-ex-anchor" href="#listener"><i class="fa fa-link" aria-hidden="true"></i></a>1.6. -listener</h2>
+<p>This option tells ANTLR to generate a parse tree listener and is the default.</p>
+<h2 id="no-listener"><a name="no-listener" class="anchor-navigation-ex-anchor" href="#no-listener"><i class="fa fa-link" aria-hidden="true"></i></a>1.7. -no-listener</h2>
+<p>This option tells ANTLR not to generate a parse tree listener.</p>
+<h2 id="visitor"><a name="visitor" class="anchor-navigation-ex-anchor" href="#visitor"><i class="fa fa-link" aria-hidden="true"></i></a>1.8. -visitor</h2>
+<p>ANTLR does not generate parse tree visitors by default. This option turns that feature on. ANTLR can generate both parse tree listeners and visitors; this option and -listener aren&#x2019;t mutually exclusive.</p>
+<h2 id="no-visitor"><a name="no-visitor" class="anchor-navigation-ex-anchor" href="#no-visitor"><i class="fa fa-link" aria-hidden="true"></i></a>1.9. -no-visitor</h2>
+<p>Tell ANTLR not to generate a parse tree visitor; this is the default.</p>
+<h2 id="package"><a name="package" class="anchor-navigation-ex-anchor" href="#package"><i class="fa fa-link" aria-hidden="true"></i></a>1.10. -package</h2>
+<p>Use this option to specify a package or namespace for ANTLR-generated files. Alternatively, you can add a @header {...} action but that ties the grammar to a specific language. If you use this option and @header, make sure that the header action does not contain a package specification otherwise the generated code will have two of them.</p>
+<h2 id="depend"><a name="depend" class="anchor-navigation-ex-anchor" href="#depend"><i class="fa fa-link" aria-hidden="true"></i></a>1.11. -depend</h2>
+<p>Instead of generating a parser and/or lexer, generate a list of file dependencies, one per line. The output shows what each grammar depends on and what it generates. This is useful for build tools that need to know ANTLR grammar dependencies. Here&#x2019;s an example:</p>
+<pre class="language-"><code class="lang-bash">$ antlr4 -depend T.g    
+T.g: A.tokens
+TParser.java <span class="token builtin class-name">:</span> T.g
+T.tokens <span class="token builtin class-name">:</span> T.g
+TLexer.java <span class="token builtin class-name">:</span> T.g
+TListener.java <span class="token builtin class-name">:</span> T.g
+TBaseListener.java <span class="token builtin class-name">:</span> T.g
+</code></pre>
+<p>If you use -lib libdir with -depend and grammar option tokenVocab=A, then the dependencies include the library path as well: T.g: libdir/A.tokens. The output is also sensitive to the -o outdir option: outdir/TParser.java : T.g.</p>
+<h2 id="doptionvalue"><a name="doptionvalue" class="anchor-navigation-ex-anchor" href="#doptionvalue"><i class="fa fa-link" aria-hidden="true"></i></a>1.12. -D&lt;option&gt;=value</h2>
+<p>Use this option to override or set a grammar-level option in the specified grammar or grammars. This option is useful for generating parsers in different languages without altering the grammar itself. (I expect to have other targets in the near future.)</p>
+<pre class="language-"><code class="lang-bash">$ antlr4 -Dlanguage<span class="token operator">=</span>Java T.g4 <span class="token comment"># default</span>
+$ antlr4 -Dlanguage<span class="token operator">=</span>C T.g4
+error<span class="token punctuation">(</span><span class="token number">31</span><span class="token punctuation">)</span>: ANTLR cannot generate C code as of version <span class="token number">4</span>.0b3
+</code></pre>
+<h2 id="werror"><a name="werror" class="anchor-navigation-ex-anchor" href="#werror"><i class="fa fa-link" aria-hidden="true"></i></a>1.13. -Werror</h2>
+<p>As part of a large build, ANTLR warning messages could go unnoticed. Turn on this option to have warnings treated as errors, causing the ANTLR tool to report failure back to the invoking commandline shell.
+There are also some extended options that are useful mainly for debugging ANTLR itself:</p>
+<h2 id="xsave-lexer"><a name="xsave-lexer" class="anchor-navigation-ex-anchor" href="#xsave-lexer"><i class="fa fa-link" aria-hidden="true"></i></a>1.14. -Xsave-lexer</h2>
+<p>ANTLR generates both a parser and a lexer from a combined grammar. To create the lexer, ANTLR extracts a lexer grammar from the combined grammar. Sometimes it&#x2019;s useful to see what that looks like if it&#x2019;s not clear what token rules ANTLR is creating. This does not affect the generated parsers or lexers.</p>
+<h2 id="xdbgst"><a name="xdbgst" class="anchor-navigation-ex-anchor" href="#xdbgst"><i class="fa fa-link" aria-hidden="true"></i></a>1.15. -XdbgST</h2>
+<p>For those building a code generation target, this option brings up a window showing the generated code and the templates used to generate that code. It invokes the StringTemplate inspector window.</p>
+<h2 id="xforce-atn"><a name="xforce-atn" class="anchor-navigation-ex-anchor" href="#xforce-atn"><i class="fa fa-link" aria-hidden="true"></i></a>1.16. -Xforce-atn</h2>
+<p>ANTLR normally builds traditional &#x201C;switch on token type&#x201D; decisions where possible (one token of lookahead is sufficient to distinguish between all alternatives in a decision). To force even these simple decisions into the adaptive LL(*) mechanism, use this option.</p>
+<h2 id="xlog"><a name="xlog" class="anchor-navigation-ex-anchor" href="#xlog"><i class="fa fa-link" aria-hidden="true"></i></a>1.17. -Xlog</h2>
+<p>This option creates a log file containing lots of information messages from ANTLR as it processes your grammar. If you would like to see how ANTLR translates your left-recursive rules, turn on this option and look in the resulting log file.</p>
+<pre class="language-"><code class="lang-bash">$ antlr4 -Xlog T.g4     
+wrote ./antlr-2012-09-06-17.56.19.log
+</code></pre>
+<h2 id="xexact-output-dir"><a name="xexact-output-dir" class="anchor-navigation-ex-anchor" href="#xexact-output-dir"><i class="fa fa-link" aria-hidden="true"></i></a>1.18. -Xexact-output-dir</h2>
+<p>(<em>See the <a href="https://github.com/antlr/antlr4/pull/2065" target="_blank">discussion</a></em>).</p>
+<p>All output goes into <code>-o</code> dir regardless of paths/package.</p>
+<ul>
+<li>Output <code>-o</code> directory specifier is the exact directory containing the output. Previously it would include the relative path specified on the grammar itself for the purposes of packages.</li>
+</ul>
+<p><strong>new</strong>: <code>-o /tmp subdir/T.g4</code> =&gt; <code>/tmp/subdir/T.java</code>
+<strong>old</strong>: <code>-o /tmp subdir/T.g4</code> =&gt; <code>/tmp/T.java</code></p>
+<ul>
+<li>Previously we looked for the tokens vocab file in the <code>-lib</code> dir or in the output dir. <strong>New</strong>: also look in the directory containing the grammar, particularly if it it is specified with a path.</li>
+</ul>
+<h3 id="example-for-the-output-directory-47"><a name="example-for-the-output-directory-47" class="anchor-navigation-ex-anchor" href="#example-for-the-output-directory-47"><i class="fa fa-link" aria-hidden="true"></i></a>1.18.1. Example for the output directory (4.7)</h3>
+<p>Here is the existing 4.7 functionality.</p>
+<p>(For these examples, assume a4.7 and a4.7.1 are aliases to the right version of ANTLR&apos;s <code>org.antlr.v4.Tool</code>.)</p>
+<pre class="language-"><code class="lang-bash">$ <span class="token builtin class-name">cd</span> /tmp/parrt
+$ tree
+<span class="token builtin class-name">.</span>
+&#x251C;&#x2500;&#x2500; B.g4
+&#x2514;&#x2500;&#x2500; src
+    &#x2514;&#x2500;&#x2500; pkg
+        &#x2514;&#x2500;&#x2500; A.g4
+$ a4.7 -o /tmp/build src/pkg/A.g4
+$ tree /tmp/build
+/tmp/build/
+&#x2514;&#x2500;&#x2500; src
+    &#x2514;&#x2500;&#x2500; pkg
+        &#x251C;&#x2500;&#x2500; A.tokens
+        &#x251C;&#x2500;&#x2500; ABaseListener.java
+        &#x251C;&#x2500;&#x2500; ALexer.java
+        &#x251C;&#x2500;&#x2500; ALexer.tokens
+        &#x251C;&#x2500;&#x2500; AListener.java
+        &#x2514;&#x2500;&#x2500; AParser.java
+</code></pre>
+<p>Now, let&apos;s build a grammar that sits in the current directory:</p>
+<pre class="language-"><code class="lang-bash">$ a4.7 -o /tmp/build B.g4
+$ tree /tmp/build
+/tmp/build
+&#x251C;&#x2500;&#x2500; B.tokens
+&#x251C;&#x2500;&#x2500; BBaseListener.java
+&#x251C;&#x2500;&#x2500; BLexer.java
+&#x251C;&#x2500;&#x2500; BLexer.tokens
+&#x251C;&#x2500;&#x2500; BListener.java
+&#x251C;&#x2500;&#x2500; BParser.java
+&#x2514;&#x2500;&#x2500; src
+    &#x2514;&#x2500;&#x2500; pkg
+        &#x251C;&#x2500;&#x2500; A.tokens
+        &#x251C;&#x2500;&#x2500; ABaseListener.java
+        &#x251C;&#x2500;&#x2500; ALexer.java
+        &#x251C;&#x2500;&#x2500; ALexer.tokens
+        &#x251C;&#x2500;&#x2500; AListener.java
+        &#x2514;&#x2500;&#x2500; AParser.java
+</code></pre>
+<p>Finally, if we don&apos;t specify the output directory, it paid attention to the relative path specified on the input grammar:</p>
+<pre class="language-"><code class="lang-bash">$ a4.7 src/pkg/A.g4
+$ tree
+<span class="token builtin class-name">.</span>
+&#x251C;&#x2500;&#x2500; B.g4
+&#x2514;&#x2500;&#x2500; src
+    &#x2514;&#x2500;&#x2500; pkg
+        &#x251C;&#x2500;&#x2500; A.g4
+        &#x251C;&#x2500;&#x2500; A.tokens
+        &#x251C;&#x2500;&#x2500; ABaseListener.java
+        &#x251C;&#x2500;&#x2500; ALexer.java
+        &#x251C;&#x2500;&#x2500; ALexer.tokens
+        &#x251C;&#x2500;&#x2500; AListener.java
+        &#x2514;&#x2500;&#x2500; AParser.java
+</code></pre>
+<h3 id="example-for-the-output-directory-471-with--xexact-output-dir"><a name="example-for-the-output-directory-471-with--xexact-output-dir" class="anchor-navigation-ex-anchor" href="#example-for-the-output-directory-471-with--xexact-output-dir"><i class="fa fa-link" aria-hidden="true"></i></a>1.18.2. Example for the output directory (4.7.1 with -Xexact-output-dir)</h3>
+<p>Now, the output directory is the exact directory where output is generated regardless of relative paths on the grammar</p>
+<pre class="language-"><code class="lang-bash">$ <span class="token builtin class-name">cd</span> /tmp/parrt
+$ a4.7.1 -Xexact-output-dir  -o /tmp/build src/pkg/A.g4
+$ tree /tmp/build
+/tmp/build
+&#x251C;&#x2500;&#x2500; A.tokens
+&#x251C;&#x2500;&#x2500; ABaseListener.java
+&#x251C;&#x2500;&#x2500; ALexer.java
+&#x251C;&#x2500;&#x2500; ALexer.tokens
+&#x251C;&#x2500;&#x2500; AListener.java
+&#x2514;&#x2500;&#x2500; AParser.java
+</code></pre>
+<p>If you use the package option, it still does not change where the output is generated if you use <code>-o</code></p>
+<pre class="language-"><code class="lang-bash">$ a4.7.1 -Xexact-output-dir -package pkg -o /tmp/build src/pkg/A.g4
+$ tree /tmp/build
+/tmp/build
+&#x251C;&#x2500;&#x2500; A.tokens
+&#x251C;&#x2500;&#x2500; ABaseListener.java
+&#x251C;&#x2500;&#x2500; ALexer.java
+&#x251C;&#x2500;&#x2500; ALexer.tokens
+&#x251C;&#x2500;&#x2500; AListener.java
+&#x2514;&#x2500;&#x2500; AParser.java
+</code></pre>
+<p>4.7.1 does however add the package specification into the generated files:</p>
+<pre class="language-"><code class="lang-bash">$ <span class="token function">grep</span> package /tmp/build/A*.java
+/tmp/build/ABaseListener.java:package pkg<span class="token punctuation">;</span>
+/tmp/build/ALexer.java:package pkg<span class="token punctuation">;</span>
+/tmp/build/AListener.java:package pkg<span class="token punctuation">;</span>
+/tmp/build/AParser.java:package pkg<span class="token punctuation">;</span>
+</code></pre>
+<p>Compare this to 4.7:</p>
+<pre class="language-"><code class="lang-bash">$ a4.7 -package pkg -o /tmp/build src/pkg/A.g4
+beast:/tmp/parrt $ tree /tmp/build
+/tmp/build
+&#x2514;&#x2500;&#x2500; src
+    &#x2514;&#x2500;&#x2500; pkg
+        &#x251C;&#x2500;&#x2500; A.tokens
+        &#x251C;&#x2500;&#x2500; ABaseListener.java
+        &#x251C;&#x2500;&#x2500; ALexer.java
+        &#x251C;&#x2500;&#x2500; ALexer.tokens
+        &#x251C;&#x2500;&#x2500; AListener.java
+        &#x2514;&#x2500;&#x2500; AParser.java
+</code></pre>
+<h3 id="example-of-where-it-looks-for-tokens-vocab"><a name="example-of-where-it-looks-for-tokens-vocab" class="anchor-navigation-ex-anchor" href="#example-of-where-it-looks-for-tokens-vocab"><i class="fa fa-link" aria-hidden="true"></i></a>1.18.3. Example of where it looks for tokens vocab</h3>
+<p>In 4.7, we got an error for an obvious case that should work:</p>
+<pre class="language-"><code class="lang-bash">$ <span class="token builtin class-name">cd</span> /tmp/parrt
+$ tree
+<span class="token builtin class-name">.</span>
+&#x2514;&#x2500;&#x2500; src
+    &#x2514;&#x2500;&#x2500; pkg
+        &#x251C;&#x2500;&#x2500; L.g4
+        &#x2514;&#x2500;&#x2500; P.g4
+$ a4.7 -o /tmp/build src/pkg/*.g4
+error<span class="token punctuation">(</span><span class="token number">160</span><span class="token punctuation">)</span>: P.g4:2:21: cannot <span class="token function">find</span> tokens <span class="token function">file</span> /tmp/build/L.tokens
+warning<span class="token punctuation">(</span><span class="token number">125</span><span class="token punctuation">)</span>: P.g4:3:4: implicit definition of token A <span class="token keyword">in</span> parser
+</code></pre>
+<p>In 4.7.1 it looks in the directory containing the grammars as well:</p>
+<pre class="language-"><code class="lang-bash">$ a4.7.1 -o /tmp/build src/pkg/*.g4
+$ tree /tmp/build
+/tmp/build
+&#x251C;&#x2500;&#x2500; L.java
+&#x251C;&#x2500;&#x2500; L.tokens
+&#x251C;&#x2500;&#x2500; P.java
+&#x251C;&#x2500;&#x2500; P.tokens
+&#x251C;&#x2500;&#x2500; PBaseListener.java
+&#x251C;&#x2500;&#x2500; PListener.java
+&#x2514;&#x2500;&#x2500; src
+    &#x2514;&#x2500;&#x2500; pkg
+        &#x251C;&#x2500;&#x2500; L.java
+        &#x2514;&#x2500;&#x2500; L.tokens
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="options.html" class="navigation navigation-prev " aria-label="Previous page: Options">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="targets.html" class="navigation navigation-next " aria-label="Next page: Runtime Libraries and Code Generation Targets">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"ANTLR Tool Command Line Options","level":"2.14","depth":1,"next":{"title":"Runtime Libraries and Code Generation Targets","level":"2.15","depth":1,"path":"chapters/targets.md","ref":"chapters/targets.md","articles":[]},"previous":{"title":"Options","level":"2.13","depth":1,"path":"chapters/options.md","ref":"chapters/options.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","anchor-navigation-ex","-sharing","sharing-plus","-highlight","prism"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"night","family":"serif","size":2},"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"sharing":{"weibo":true,"qzone":true,"qq":true,"douban":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"Little Captain","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"antlr4-doc","gitbook":"*","description":"antlr4-doc"},"file":{"path":"chapters/tool-options.md","mtime":"2021-11-11T03:00:11.621Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-11-11T03:11:20.710Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

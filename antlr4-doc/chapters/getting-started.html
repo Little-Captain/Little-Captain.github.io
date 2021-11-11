@@ -1,0 +1,713 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Getting Started with ANTLR v4 · antlr4-doc</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Little Captain">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-okaidia.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="lexicon.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Sections</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                        <b>2.1.</b>
+                    
+                    Index
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.2" data-path="getting-started.html">
+            
+                <a href="getting-started.html">
+            
+                    
+                        <b>2.2.</b>
+                    
+                    Getting Started with ANTLR v4
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="lexicon.html">
+            
+                <a href="lexicon.html">
+            
+                    
+                        <b>2.3.</b>
+                    
+                    Grammar Lexicon
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="grammars.html">
+            
+                <a href="grammars.html">
+            
+                    
+                        <b>2.4.</b>
+                    
+                    Grammar Structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="parser-rules.html">
+            
+                <a href="parser-rules.html">
+            
+                    
+                        <b>2.5.</b>
+                    
+                    Parser Rules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="left-recursion.html">
+            
+                <a href="left-recursion.html">
+            
+                    
+                        <b>2.6.</b>
+                    
+                    Left-recursive rules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="actions.html">
+            
+                <a href="actions.html">
+            
+                    
+                        <b>2.7.</b>
+                    
+                    Actions and Attributes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="lexer-rules.html">
+            
+                <a href="lexer-rules.html">
+            
+                    
+                        <b>2.8.</b>
+                    
+                    Lexer Rules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="wildcard.html">
+            
+                <a href="wildcard.html">
+            
+                    
+                        <b>2.9.</b>
+                    
+                    Wildcard Operator and Nongreedy Subrules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="listeners.html">
+            
+                <a href="listeners.html">
+            
+                    
+                        <b>2.10.</b>
+                    
+                    Parse Tree Listeners
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11" data-path="tree-matching.html">
+            
+                <a href="tree-matching.html">
+            
+                    
+                        <b>2.11.</b>
+                    
+                    Parse Tree Matching and XPath
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.12" data-path="predicates.html">
+            
+                <a href="predicates.html">
+            
+                    
+                        <b>2.12.</b>
+                    
+                    Semantic Predicates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.13" data-path="options.html">
+            
+                <a href="options.html">
+            
+                    
+                        <b>2.13.</b>
+                    
+                    Options
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14" data-path="tool-options.html">
+            
+                <a href="tool-options.html">
+            
+                    
+                        <b>2.14.</b>
+                    
+                    ANTLR Tool Command Line Options
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.15" data-path="targets.html">
+            
+                <a href="targets.html">
+            
+                    
+                        <b>2.15.</b>
+                    
+                    Runtime Libraries and Code Generation Targets
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.16" data-path="unicode.html">
+            
+                <a href="unicode.html">
+            
+                    
+                        <b>2.16.</b>
+                    
+                    Unicode U+FFFF, U+10FFFF character streams
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17" data-path="parsing-binary-files.html">
+            
+                <a href="parsing-binary-files.html">
+            
+                    
+                        <b>2.17.</b>
+                    
+                    Parsing binary streams
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.18" data-path="case-insensitive-lexing.html">
+            
+                <a href="case-insensitive-lexing.html">
+            
+                    
+                        <b>2.18.</b>
+                    
+                    Case-Insensitive Lexing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.19" data-path="interpreters.html">
+            
+                <a href="interpreters.html">
+            
+                    
+                        <b>2.19.</b>
+                    
+                    Parser and lexer interpreters
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.20" data-path="resources.html">
+            
+                <a href="resources.html">
+            
+                    
+                        <b>2.20.</b>
+                    
+                    Resources
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Building / releasing ANTLR itself</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="building-antlr.html">
+            
+                <a href="building-antlr.html">
+            
+                    
+                        <b>3.1.</b>
+                    
+                    Building ANTLR itself
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="releasing-antlr.html">
+            
+                <a href="releasing-antlr.html">
+            
+                    
+                        <b>3.2.</b>
+                    
+                    Cutting an ANTLR Release
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="antlr-project-testing.html">
+            
+                <a href="antlr-project-testing.html">
+            
+                    
+                        <b>3.3.</b>
+                    
+                    ANTLR project unit tests
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="creating-a-language-target.html">
+            
+                <a href="creating-a-language-target.html">
+            
+                    
+                        <b>3.4.</b>
+                    
+                    Creating an ANTLR Language Target
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Getting Started with ANTLR v4</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#getting-started-with-antlr-v4"><b>1. </b>Getting Started with ANTLR v4</a></li><ul><li><span class="title-icon "></span><a href="#installation"><b>1.1. </b>Installation</a></li><ul><li><span class="title-icon "></span><a href="#unix"><b>1.1.1. </b>UNIX</a></li><li><span class="title-icon "></span><a href="#windows"><b>1.1.2. </b>WINDOWS</a></li><li><span class="title-icon "></span><a href="#testing-the-installation"><b>1.1.3. </b>Testing the installation</a></li></ul><li><span class="title-icon "></span><a href="#a-first-example"><b>1.2. </b>A First Example</a></li><li><span class="title-icon "></span><a href="#book-source-code"><b>1.3. </b>Book source code</a></li></ul></ul></div><a href="#getting-started-with-antlr-v4" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="getting-started-with-antlr-v4"><a name="getting-started-with-antlr-v4" class="anchor-navigation-ex-anchor" href="#getting-started-with-antlr-v4"><i class="fa fa-link" aria-hidden="true"></i></a>1. Getting Started with ANTLR v4</h1>
+<p>Hi and welcome to the version 4 release of ANTLR! It&apos;s named after the fearless hero of the <a href="http://www.youtube.com/watch?v=4r7wHMg5Yjg" target="_blank">Crazy Nasty-Ass Honey Badger</a> since ANTLR v4 takes whatever you give it--it just doesn&apos;t give a crap! See <a href="faq/general.md">Why do we need ANTLR v4?</a> and the <a href="http://media.pragprog.com/titles/tpantlr2/preface.pdf" target="_blank">preface of the ANTLR v4 book</a>.</p>
+<h2 id="installation"><a name="installation" class="anchor-navigation-ex-anchor" href="#installation"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. Installation</h2>
+<p>ANTLR is really two things: a tool that translates your grammar to a parser/lexer in Java (or other target language) and the runtime needed by the generated parsers/lexers. Even if you are using the ANTLR Intellij plug-in or ANTLRWorks to run the ANTLR tool, the generated code will still need the runtime library. </p>
+<p>The first thing you should do is probably download and install a development tool plug-in. Even if you only use such tools for editing, they are great. Then, follow the instructions below to get the runtime environment available to your system to run generated parsers/lexers.  In what follows, I talk about antlr-4.9-complete.jar, which has the tool and the runtime and any other support libraries (e.g., ANTLR v4 is written in v3).</p>
+<p>If you are going to integrate ANTLR into your existing build system using mvn, ant, or want to get ANTLR into your IDE such as eclipse or intellij, see <a href="https://github.com/antlr/antlr4/blob/master/doc/IDEs.md" target="_blank">Integrating ANTLR into Development Systems</a>.</p>
+<h3 id="unix"><a name="unix" class="anchor-navigation-ex-anchor" href="#unix"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.1. UNIX</h3>
+<ol>
+<li>Install Java (version 1.7 or higher)</li>
+<li><p>Download</p>
+<pre class="language-"><code>$ cd /usr/local/lib
+$ curl -O https://www.antlr.org/download/antlr-4.9-complete.jar
+</code></pre><p>Or just download in browser from website:
+ <a href="https://www.antlr.org/download.html" target="_blank">https://www.antlr.org/download.html</a>
+and put it somewhere rational like <code>/usr/local/lib</code>.</p>
+</li>
+<li><p>Add <code>antlr-4.9-complete.jar</code> to your <code>CLASSPATH</code>:</p>
+<pre class="language-"><code>$ export CLASSPATH=&quot;.:/usr/local/lib/antlr-4.9-complete.jar:$CLASSPATH&quot;
+</code></pre><p>It&apos;s also a good idea to put this in your <code>.bash_profile</code> or whatever your startup script is.</p>
+</li>
+<li><p>Create aliases for the ANTLR Tool, and <code>TestRig</code>.</p>
+<pre class="language-"><code>$ alias antlr4=&apos;java -Xmx500M -cp &quot;/usr/local/lib/antlr-4.9-complete.jar:$CLASSPATH&quot; org.antlr.v4.Tool&apos;
+$ alias grun=&apos;java -Xmx500M -cp &quot;/usr/local/lib/antlr-4.9-complete.jar:$CLASSPATH&quot; org.antlr.v4.gui.TestRig&apos;
+</code></pre></li>
+</ol>
+<h3 id="windows"><a name="windows" class="anchor-navigation-ex-anchor" href="#windows"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.2. WINDOWS</h3>
+<p>(<em>Thanks to Graham Wideman</em>)</p>
+<ol>
+<li>Install Java (version 1.7 or higher)</li>
+<li>Download antlr-4.9-complete.jar (or whatever version) from <a href="https://www.antlr.org/download/" target="_blank">https://www.antlr.org/download/</a>
+Save to your directory for 3rd party Java libraries, say <code>C:\Javalib</code></li>
+<li>Add <code>antlr-4.9-complete.jar</code> to CLASSPATH, either:<ul>
+<li>Permanently: Using System Properties dialog &gt; Environment variables &gt; Create or append to <code>CLASSPATH</code> variable</li>
+<li>Temporarily, at command line:<pre class="language-"><code>SET CLASSPATH=.;C:\Javalib\antlr-4.9-complete.jar;%CLASSPATH%
+</code></pre></li>
+</ul>
+</li>
+<li>Create short convenient commands for the ANTLR Tool, and TestRig, using batch files or doskey commands:<ul>
+<li>Batch files (in directory in system PATH) antlr4.bat and grun.bat<pre class="language-"><code>java org.antlr.v4.Tool %*
+</code></pre><pre class="language-"><code>@ECHO OFF
+SET TEST_CURRENT_DIR=%CLASSPATH:.;=%
+if &quot;%TEST_CURRENT_DIR%&quot; == &quot;%CLASSPATH%&quot; ( SET CLASSPATH=.;%CLASSPATH% )
+@ECHO ON
+java org.antlr.v4.gui.TestRig %*
+</code></pre></li>
+<li>Or, use doskey commands:<pre class="language-"><code>doskey antlr4=java org.antlr.v4.Tool $*
+doskey grun =java org.antlr.v4.gui.TestRig $*
+</code></pre></li>
+</ul>
+</li>
+</ol>
+<h3 id="testing-the-installation"><a name="testing-the-installation" class="anchor-navigation-ex-anchor" href="#testing-the-installation"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.3. Testing the installation</h3>
+<p>Either launch org.antlr.v4.Tool directly:</p>
+<pre class="language-"><code>$ java org.antlr.v4.Tool
+ANTLR Parser Generator Version 4.9
+-o ___ specify output directory where all output is generated
+-lib ___ specify location of .tokens files
+...
+</code></pre><p>or use -jar option on java:</p>
+<pre class="language-"><code>$ java -jar /usr/local/lib/antlr-4.9-complete.jar
+ANTLR Parser Generator Version 4.9
+-o ___ specify output directory where all output is generated
+-lib ___ specify location of .tokens files
+...
+</code></pre><h2 id="a-first-example"><a name="a-first-example" class="anchor-navigation-ex-anchor" href="#a-first-example"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. A First Example</h2>
+<p>In a temporary directory, put the following grammar inside file Hello.g4:
+Hello.g4</p>
+<pre class="language-"><code>// Define a grammar called Hello
+grammar Hello;
+r  : &apos;hello&apos; ID ;         // match keyword hello followed by an identifier
+ID : [a-z]+ ;             // match lower-case identifiers
+WS : [ \t\r\n]+ -&gt; skip ; // skip spaces, tabs, newlines
+</code></pre><p>Then run ANTLR the tool on it:</p>
+<pre class="language-"><code>$ cd /tmp
+$ antlr4 Hello.g4
+$ javac Hello*.java
+</code></pre><p>Now test it:</p>
+<pre class="language-"><code>$ grun Hello r -tree
+(Now enter something like the string below)
+hello parrt
+(now,do:)
+^D
+(The output:)
+(r hello parrt)
+(That ^D means EOF on unix; it&apos;s ^Z in Windows.) The -tree option prints the parse tree in LISP notation.
+It&apos;s nicer to look at parse trees visually.
+$ grun Hello r -gui
+hello parrt
+^D
+</code></pre><p>That pops up a dialog box showing that rule <code>r</code> matched keyword <code>hello</code> followed by identifier <code>parrt</code>.</p>
+<p><img src="images/hello-parrt.png" alt=""></p>
+<h2 id="book-source-code"><a name="book-source-code" class="anchor-navigation-ex-anchor" href="#book-source-code"><i class="fa fa-link" aria-hidden="true"></i></a>1.3. Book source code</h2>
+<p>The book has lots and lots of examples that should be useful too. You can download them here for free:</p>
+<p><a href="http://pragprog.com/titles/tpantlr2/source_code" target="_blank">http://pragprog.com/titles/tpantlr2/source_code</a></p>
+<p>Also, there is a large collection of grammars for v4 at github:</p>
+<p><a href="https://github.com/antlr/grammars-v4" target="_blank">https://github.com/antlr/grammars-v4</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Index">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="lexicon.html" class="navigation navigation-next " aria-label="Next page: Grammar Lexicon">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Getting Started with ANTLR v4","level":"2.2","depth":1,"next":{"title":"Grammar Lexicon","level":"2.3","depth":1,"path":"chapters/lexicon.md","ref":"chapters/lexicon.md","articles":[]},"previous":{"title":"Index","level":"2.1","depth":1,"path":"chapters/index.md","ref":"chapters/index.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","anchor-navigation-ex","-sharing","sharing-plus","-highlight","prism"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"night","family":"serif","size":2},"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"sharing":{"weibo":true,"qzone":true,"qq":true,"douban":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"Little Captain","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"antlr4-doc","gitbook":"*","description":"antlr4-doc"},"file":{"path":"chapters/getting-started.md","mtime":"2021-11-11T03:00:11.621Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-11-11T03:11:20.710Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

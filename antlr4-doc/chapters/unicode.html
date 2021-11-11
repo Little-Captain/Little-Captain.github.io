@@ -1,0 +1,736 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Unicode U+FFFF, U+10FFFF character streams · antlr4-doc</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Little Captain">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-okaidia.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="parsing-binary-files.html" />
+    
+    
+    <link rel="prev" href="targets.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Sections</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                        <b>2.1.</b>
+                    
+                    Index
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="getting-started.html">
+            
+                <a href="getting-started.html">
+            
+                    
+                        <b>2.2.</b>
+                    
+                    Getting Started with ANTLR v4
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="lexicon.html">
+            
+                <a href="lexicon.html">
+            
+                    
+                        <b>2.3.</b>
+                    
+                    Grammar Lexicon
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="grammars.html">
+            
+                <a href="grammars.html">
+            
+                    
+                        <b>2.4.</b>
+                    
+                    Grammar Structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="parser-rules.html">
+            
+                <a href="parser-rules.html">
+            
+                    
+                        <b>2.5.</b>
+                    
+                    Parser Rules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="left-recursion.html">
+            
+                <a href="left-recursion.html">
+            
+                    
+                        <b>2.6.</b>
+                    
+                    Left-recursive rules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="actions.html">
+            
+                <a href="actions.html">
+            
+                    
+                        <b>2.7.</b>
+                    
+                    Actions and Attributes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="lexer-rules.html">
+            
+                <a href="lexer-rules.html">
+            
+                    
+                        <b>2.8.</b>
+                    
+                    Lexer Rules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="wildcard.html">
+            
+                <a href="wildcard.html">
+            
+                    
+                        <b>2.9.</b>
+                    
+                    Wildcard Operator and Nongreedy Subrules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="listeners.html">
+            
+                <a href="listeners.html">
+            
+                    
+                        <b>2.10.</b>
+                    
+                    Parse Tree Listeners
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11" data-path="tree-matching.html">
+            
+                <a href="tree-matching.html">
+            
+                    
+                        <b>2.11.</b>
+                    
+                    Parse Tree Matching and XPath
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.12" data-path="predicates.html">
+            
+                <a href="predicates.html">
+            
+                    
+                        <b>2.12.</b>
+                    
+                    Semantic Predicates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.13" data-path="options.html">
+            
+                <a href="options.html">
+            
+                    
+                        <b>2.13.</b>
+                    
+                    Options
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14" data-path="tool-options.html">
+            
+                <a href="tool-options.html">
+            
+                    
+                        <b>2.14.</b>
+                    
+                    ANTLR Tool Command Line Options
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.15" data-path="targets.html">
+            
+                <a href="targets.html">
+            
+                    
+                        <b>2.15.</b>
+                    
+                    Runtime Libraries and Code Generation Targets
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.16" data-path="unicode.html">
+            
+                <a href="unicode.html">
+            
+                    
+                        <b>2.16.</b>
+                    
+                    Unicode U+FFFF, U+10FFFF character streams
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17" data-path="parsing-binary-files.html">
+            
+                <a href="parsing-binary-files.html">
+            
+                    
+                        <b>2.17.</b>
+                    
+                    Parsing binary streams
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.18" data-path="case-insensitive-lexing.html">
+            
+                <a href="case-insensitive-lexing.html">
+            
+                    
+                        <b>2.18.</b>
+                    
+                    Case-Insensitive Lexing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.19" data-path="interpreters.html">
+            
+                <a href="interpreters.html">
+            
+                    
+                        <b>2.19.</b>
+                    
+                    Parser and lexer interpreters
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.20" data-path="resources.html">
+            
+                <a href="resources.html">
+            
+                    
+                        <b>2.20.</b>
+                    
+                    Resources
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Building / releasing ANTLR itself</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="building-antlr.html">
+            
+                <a href="building-antlr.html">
+            
+                    
+                        <b>3.1.</b>
+                    
+                    Building ANTLR itself
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="releasing-antlr.html">
+            
+                <a href="releasing-antlr.html">
+            
+                    
+                        <b>3.2.</b>
+                    
+                    Cutting an ANTLR Release
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="antlr-project-testing.html">
+            
+                <a href="antlr-project-testing.html">
+            
+                    
+                        <b>3.3.</b>
+                    
+                    ANTLR project unit tests
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="creating-a-language-target.html">
+            
+                <a href="creating-a-language-target.html">
+            
+                    
+                        <b>3.4.</b>
+                    
+                    Creating an ANTLR Language Target
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Unicode U+FFFF, U+10FFFF character streams</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#lexers-and-unicode-text"><b>1. </b>Lexers and Unicode text</a></li><ul><li><span class="title-icon "></span><a href="#example"><b>1.1. </b>Example</a></li></ul><li><span class="title-icon "></span><a href="#unicode-code-points-in-lexer-grammars"><b>2. </b>Unicode Code Points in Lexer Grammars</a></li><ul><li><span class="title-icon "></span><a href="#migration"><b>2.1. </b>Migration</a></li><ul><li><span class="title-icon "></span><a href="#motivation"><b>2.1.1. </b>Motivation</a></li><li><span class="title-icon "></span><a href="#legacy-grammar-using-surrogate-code-units"><b>2.1.2. </b>Legacy grammar using surrogate code units</a></li><li><span class="title-icon "></span><a href="#character-buffering-unbuffered-streams"><b>2.1.3. </b>Character Buffering, Unbuffered streams</a></li></ul></ul></ul></div><a href="#lexers-and-unicode-text" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="lexers-and-unicode-text"><a name="lexers-and-unicode-text" class="anchor-navigation-ex-anchor" href="#lexers-and-unicode-text"><i class="fa fa-link" aria-hidden="true"></i></a>1. Lexers and Unicode text</h1>
+<p>Prior to ANTLR 4.7, generated lexers in most targets only supported part of the Unicode standard (code points up to <code>U+FFFF</code>). As of ANTLR 4.7, the lexers in all language runtimes support the full range of Unicode code points up to <code>U+10FFFF</code>. </p>
+<p>C++, Python, Go, and Swift APIs didn&apos;t need any API changes to support Unicode code points, so we decided to leave those class interfaces as-is. </p>
+<p>Java, C#, and JavaScript runtimes required changes and, rather than break the previous interface, we deprecated them. (The <em>Java-target</em> deprecated <code>ANTLRInputStream</code> and <code>ANTLRFileStream</code> APIs only support Unicode code points up to <code>U+FFFF</code>.) Now, those targets must create <code>CharStream</code>s from input using <code>CharStreams.fromPath()</code>, <code>CharStreams.fromFileName()</code>, etc... </p>
+<p>A big shout out to Ben Hamilton (github bhamiltoncx) for his superhuman
+efforts across all targets to get true support for U+10FFFF code points.</p>
+<h2 id="example"><a name="example" class="anchor-navigation-ex-anchor" href="#example"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. Example</h2>
+<p>The Java, C#, and JavaScript runtimes use the new factory style stream creation interface. For example, here is some sample Java code that uses <code>CharStreams.fromPath()</code>:</p>
+<pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token class-name">CharStream</span> charStream <span class="token operator">=</span> <span class="token class-name">CharStreams</span><span class="token punctuation">.</span><span class="token function">fromPath</span><span class="token punctuation">(</span><span class="token class-name">Paths</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>args<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token class-name">Lexer</span> lexer <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">UnicodeLexer</span><span class="token punctuation">(</span>charStream<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token class-name">CommonTokenStream</span> tokens <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">CommonTokenStream</span><span class="token punctuation">(</span>lexer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  tokens<span class="token punctuation">.</span><span class="token function">fill</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">Token</span> token <span class="token operator">:</span> tokens<span class="token punctuation">.</span><span class="token function">getTokens</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;Got token: &quot;</span> <span class="token operator">+</span> token<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h1 id="unicode-code-points-in-lexer-grammars"><a name="unicode-code-points-in-lexer-grammars" class="anchor-navigation-ex-anchor" href="#unicode-code-points-in-lexer-grammars"><i class="fa fa-link" aria-hidden="true"></i></a>2. Unicode Code Points in Lexer Grammars</h1>
+<p>To refer to Unicode <a href="https://en.wikipedia.org/wiki/Code_point" target="_blank">code points</a>
+in lexer grammars, use the <code>\u</code> string escape plus up to 4 hex digits. For example, to create
+a lexer rule for a single Cyrillic character by creating a range from
+<code>U+0400</code> to <code>U+04FF</code>:</p>
+<pre class="language-"><code class="lang-ANTLR">CYRILLIC : &apos;\u0400&apos;..&apos;\u04FF&apos; ; // or [\u0400-\u04FF] without quotes
+</code></pre>
+<p>Unicode literals larger than U+FFFF must use the extended <code>\u{12345}</code> syntax. For example, to create a lexer rule for a selection of smiley faces
+from the <a href="http://www.unicode.org/charts/PDF/U1F600.pdf" target="_blank">Emoticons Unicode block</a>:</p>
+<pre class="language-"><code class="lang-ANTLR">EMOTICONS : (&apos;\u{1F600}&apos; | &apos;\u{1F602}&apos; | &apos;\u{1F615}&apos;) ; // or [\u{1F600}\u{1F602}\u{1F615}]
+</code></pre>
+<p>Finally, lexer char sets can include Unicode properties. Each Unicode code point has at least one property that describes the type group to which it belongs (e.g. alpha, number, punctuation). Other properties can be the language script or special binary properties and Unicode code blocks. That means however, that a property specifies a group of code points, hence they are only allowed in lexer char sets.</p>
+<pre class="language-"><code class="lang-ANTLR">EMOJI : [\p{Emoji}] ;
+JAPANESE : [\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Han}] ;
+NOT_CYRILLIC : [\P{Script=Cyrillic}] ;
+</code></pre>
+<p>See <a href="lexer-rules.html#lexer-rule-elements">lexer-rules.md</a> for more detail on Unicode
+escapes in lexer rules.</p>
+<h2 id="migration"><a name="migration" class="anchor-navigation-ex-anchor" href="#migration"><i class="fa fa-link" aria-hidden="true"></i></a>2.1. Migration</h2>
+<p>Code for <strong>4.6</strong> looked like this:</p>
+<pre class="language-"><code class="lang-java"><span class="token class-name">CharStream</span> input <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ANTLRFileStream</span><span class="token punctuation">(</span><span class="token string">&quot;myinputfile&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">JavaLexer</span> lexer <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JavaLexer</span><span class="token punctuation">(</span>input<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">CommonTokenStream</span> tokens <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">CommonTokenStream</span><span class="token punctuation">(</span>lexer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>(It didn&apos;t use UTF-8 by default, despite the documentation saying so previously; it actually depended on the calling environments default.)</p>
+<p>Code for <strong>4.7</strong> assumes UTF-8 by default and looks like this:</p>
+<pre class="language-"><code class="lang-java"><span class="token class-name">CharStream</span> input <span class="token operator">=</span> <span class="token class-name">CharStreams</span><span class="token punctuation">.</span><span class="token function">fromFileName</span><span class="token punctuation">(</span><span class="token string">&quot;inputfile&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">JavaLexer</span> lexer <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JavaLexer</span><span class="token punctuation">(</span>input<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">CommonTokenStream</span> tokens <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">CommonTokenStream</span><span class="token punctuation">(</span>lexer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Or, if you&apos;d like to specify the file encoding:</p>
+<pre class="language-"><code class="lang-java"><span class="token class-name">CharStream</span> input <span class="token operator">=</span> <span class="token class-name">CharStreams</span><span class="token punctuation">.</span><span class="token function">fromFileName</span><span class="token punctuation">(</span><span class="token string">&quot;inputfile&quot;</span><span class="token punctuation">,</span> <span class="token class-name">Charset</span><span class="token punctuation">.</span><span class="token function">forName</span><span class="token punctuation">(</span><span class="token string">&quot;windows-1252&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h3 id="motivation"><a name="motivation" class="anchor-navigation-ex-anchor" href="#motivation"><i class="fa fa-link" aria-hidden="true"></i></a>2.1.1. Motivation</h3>
+<p>After a <a href="https://github.com/antlr/antlr4/pull/1771" target="_blank">lively discussion</a>, I (parrt) decided not to simply gut the 4.6 <code>ANTLRFileStream</code> and <code>ANTLRInputStream</code> to incorporate the new U+10FFFF functionality. I decided to <em>deprecate</em> the old interface and recommend use of the new interface to prevent confusion. My reasoning is summarized as:</p>
+<ul>
+<li>I didn&apos;t like the idea of breaking all 4.6 code. To get the previous streams to properly support &gt; 16 bit Unicode would require a lot of changes to the method signatures.</li>
+<li>Using <code>int</code> buffer element types would double the size of memory required to hold streams in memory, given that we buffer everything (and I didn&apos;t want to change that aspect of the streams).</li>
+<li>The new factory-style interface supports creation of the smallest possible code point buffer element size according to the Unicode code points found in the input stream. This means using half as much memory
+as the old {@link ANTLRFileStream}, which assumed 16-bit characters, for ASCII text.</li>
+<li>Through some <a href="https://github.com/antlr/antlr4/pull/1781" target="_blank">serious testing and performance tweaking</a>, the new streams perform as fast or faster than the 4.6 streams.</li>
+</ul>
+<p><strong>WARNING</strong>. <em>You should avoid using both the deprecated and the new streams</em> in the same application because you will see 
+a nontrivial performance degradation. This speed hit is because the 
+<code>Lexer</code>&apos;s internal code goes from a monomorphic to megamorphic
+dynamic dispatch to get characters from the input stream. Java&apos;s
+on-the-fly compiler (JIT) is unable to perform the same optimizations
+so stick with either the old or the new streams, if performance is
+a primary concern. See the <a href="https://github.com/antlr/antlr4/pull/1781" target="_blank">extreme debugging and spelunking</a> needed to identify this issue in our timing rig.</p>
+<h3 id="legacy-grammar-using-surrogate-code-units"><a name="legacy-grammar-using-surrogate-code-units" class="anchor-navigation-ex-anchor" href="#legacy-grammar-using-surrogate-code-units"><i class="fa fa-link" aria-hidden="true"></i></a>2.1.2. Legacy grammar using surrogate code units</h3>
+<p>Legacy grammars that did their own UTF-16 surrogate code unit matching will need to continue to use <code>ANTLRInputStream</code> (Java target) until the parser-application code can upgrade to <code>CharStreams</code> interface. Then the surrogate code unit matching should be removed from the grammar in favor of letting the new streams do the decoding.  </p>
+<p>Prior to 4.7, application code could directly pass <code>Token.getStartIndex()</code> and <code>Token.getStopIndex()</code> to Java and C# String APIs (because both used UTF-16 code units as the fundamental unit of length).  With the new streams, clients will have to convert from code point indices to UTF-16 code unit indices. Here is some (Java) code to show you the necessary logic:</p>
+<pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token keyword">final</span> <span class="token keyword">class</span> <span class="token class-name">CodePointCounter</span> <span class="token punctuation">{</span>
+  <span class="token keyword">private</span> <span class="token keyword">final</span> <span class="token class-name">String</span> input<span class="token punctuation">;</span>
+  <span class="token keyword">public</span> <span class="token keyword">int</span> inputIndex <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token keyword">public</span> <span class="token keyword">int</span> codePointIndex <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">advanceToIndex</span><span class="token punctuation">(</span><span class="token keyword">int</span> newCodePointIndex<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">assert</span> newCodePointIndex <span class="token operator">&gt;=</span> codePointIndex<span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>codePointIndex <span class="token operator">&lt;</span> newCodePointOffset<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> codePoint <span class="token operator">=</span> <span class="token class-name">Character</span><span class="token punctuation">.</span><span class="token function">codePointAt</span><span class="token punctuation">(</span>input<span class="token punctuation">,</span> inputIndex<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        inputIndex <span class="token operator">+=</span> <span class="token class-name">Character</span><span class="token punctuation">.</span><span class="token function">charCount</span><span class="token punctuation">(</span>codePoint<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        codePointIndex<span class="token operator">++</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> inputIndex<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="character-buffering-unbuffered-streams"><a name="character-buffering-unbuffered-streams" class="anchor-navigation-ex-anchor" href="#character-buffering-unbuffered-streams"><i class="fa fa-link" aria-hidden="true"></i></a>2.1.3. Character Buffering, Unbuffered streams</h3>
+<p>The ANTLR character streams still buffer all the input when you create
+the stream, as they have done for ~20 years. </p>
+<p>If you need unbuffered
+access, please note that it becomes challenging to create
+parse trees. The parse tree has to point to tokens which will either
+point into a stale location in an unbuffered stream or you have to copy
+the characters out of the buffer into the token. That defeats the purpose
+of unbuffered input. See the <a href="https://www.amazon.com/Definitive-ANTLR-4-Reference/dp/1934356999" target="_blank">ANTLR 4 book</a> &quot;13.8 Unbuffered Character and Token Streams&quot;. Unbuffered streams are primarily
+useful for processing infinite streams <em>during the parse</em> and require that you manually buffer characters. Use <code>UnbufferedCharStream</code> and <code>UnbufferedTokenStream</code>.</p>
+<pre class="language-"><code class="lang-java"><span class="token class-name">CharStream</span> input <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">UnbufferedCharStream</span><span class="token punctuation">(</span>is<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">CSVLexer</span> lex <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">CSVLexer</span><span class="token punctuation">(</span>input<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// copy text out of sliding buffer and store in tokens</span>
+lex<span class="token punctuation">.</span><span class="token function">setTokenFactory</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">CommonTokenFactory</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">TokenStream</span> tokens <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">UnbufferedTokenStream</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">CommonToken</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span>lex<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">CSVParser</span> parser <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">CSVParser</span><span class="token punctuation">(</span>tokens<span class="token punctuation">)</span><span class="token punctuation">;</span>
+parser<span class="token punctuation">.</span><span class="token function">setBuildParseTree</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+parser<span class="token punctuation">.</span><span class="token function">file</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Your grammar that needs to have embedded actions that access the tokens as they are created, but before they disappear and are garbage collected. For example,</p>
+<pre class="language-"><code>data : a=INT {int x = Integer.parseInt($a.text);} ;
+</code></pre><p>From the code comments of <code>CommonTokenFactory</code>:</p>
+<blockquote>
+<p>That <code>true</code> in <code>new CommonTokenFactory(true)</code> indicates whether <code>CommonToken.setText</code> should be called after 
+constructing tokens to explicitly set the text. This is useful for cases
+where the input stream might not be able to provide arbitrary substrings
+of text from the input after the lexer creates a token (e.g. the
+implementation of <code>CharStream.getText</code> in
+<code>UnbufferedCharStream</code> throws an
+<code>UnsupportedOperationException</code>). Explicitly setting the token text
+allows <code>Token.getText</code> to be called at any time regardless of the
+input stream implementation.</p>
+</blockquote>
+<p><em>Currently, only Java, C++, and C# have these unbuffered streams implemented</em>.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="targets.html" class="navigation navigation-prev " aria-label="Previous page: Runtime Libraries and Code Generation Targets">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="parsing-binary-files.html" class="navigation navigation-next " aria-label="Next page: Parsing binary streams">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Unicode U+FFFF, U+10FFFF character streams","level":"2.16","depth":1,"next":{"title":"Parsing binary streams","level":"2.17","depth":1,"path":"chapters/parsing-binary-files.md","ref":"chapters/parsing-binary-files.md","articles":[]},"previous":{"title":"Runtime Libraries and Code Generation Targets","level":"2.15","depth":1,"path":"chapters/targets.md","ref":"chapters/targets.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","anchor-navigation-ex","-sharing","sharing-plus","-highlight","prism"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"night","family":"serif","size":2},"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"sharing":{"weibo":true,"qzone":true,"qq":true,"douban":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"Little Captain","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"antlr4-doc","gitbook":"*","description":"antlr4-doc"},"file":{"path":"chapters/unicode.md","mtime":"2021-11-11T03:00:11.621Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-11-11T03:11:20.710Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

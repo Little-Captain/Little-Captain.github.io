@@ -1,0 +1,721 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Parser and lexer interpreters · antlr4-doc</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Little Captain">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-okaidia.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="resources.html" />
+    
+    
+    <link rel="prev" href="case-insensitive-lexing.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Sections</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                        <b>2.1.</b>
+                    
+                    Index
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="getting-started.html">
+            
+                <a href="getting-started.html">
+            
+                    
+                        <b>2.2.</b>
+                    
+                    Getting Started with ANTLR v4
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="lexicon.html">
+            
+                <a href="lexicon.html">
+            
+                    
+                        <b>2.3.</b>
+                    
+                    Grammar Lexicon
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="grammars.html">
+            
+                <a href="grammars.html">
+            
+                    
+                        <b>2.4.</b>
+                    
+                    Grammar Structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="parser-rules.html">
+            
+                <a href="parser-rules.html">
+            
+                    
+                        <b>2.5.</b>
+                    
+                    Parser Rules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="left-recursion.html">
+            
+                <a href="left-recursion.html">
+            
+                    
+                        <b>2.6.</b>
+                    
+                    Left-recursive rules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="actions.html">
+            
+                <a href="actions.html">
+            
+                    
+                        <b>2.7.</b>
+                    
+                    Actions and Attributes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="lexer-rules.html">
+            
+                <a href="lexer-rules.html">
+            
+                    
+                        <b>2.8.</b>
+                    
+                    Lexer Rules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="wildcard.html">
+            
+                <a href="wildcard.html">
+            
+                    
+                        <b>2.9.</b>
+                    
+                    Wildcard Operator and Nongreedy Subrules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="listeners.html">
+            
+                <a href="listeners.html">
+            
+                    
+                        <b>2.10.</b>
+                    
+                    Parse Tree Listeners
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11" data-path="tree-matching.html">
+            
+                <a href="tree-matching.html">
+            
+                    
+                        <b>2.11.</b>
+                    
+                    Parse Tree Matching and XPath
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.12" data-path="predicates.html">
+            
+                <a href="predicates.html">
+            
+                    
+                        <b>2.12.</b>
+                    
+                    Semantic Predicates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.13" data-path="options.html">
+            
+                <a href="options.html">
+            
+                    
+                        <b>2.13.</b>
+                    
+                    Options
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14" data-path="tool-options.html">
+            
+                <a href="tool-options.html">
+            
+                    
+                        <b>2.14.</b>
+                    
+                    ANTLR Tool Command Line Options
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.15" data-path="targets.html">
+            
+                <a href="targets.html">
+            
+                    
+                        <b>2.15.</b>
+                    
+                    Runtime Libraries and Code Generation Targets
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.16" data-path="unicode.html">
+            
+                <a href="unicode.html">
+            
+                    
+                        <b>2.16.</b>
+                    
+                    Unicode U+FFFF, U+10FFFF character streams
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17" data-path="parsing-binary-files.html">
+            
+                <a href="parsing-binary-files.html">
+            
+                    
+                        <b>2.17.</b>
+                    
+                    Parsing binary streams
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.18" data-path="case-insensitive-lexing.html">
+            
+                <a href="case-insensitive-lexing.html">
+            
+                    
+                        <b>2.18.</b>
+                    
+                    Case-Insensitive Lexing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.19" data-path="interpreters.html">
+            
+                <a href="interpreters.html">
+            
+                    
+                        <b>2.19.</b>
+                    
+                    Parser and lexer interpreters
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.20" data-path="resources.html">
+            
+                <a href="resources.html">
+            
+                    
+                        <b>2.20.</b>
+                    
+                    Resources
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Building / releasing ANTLR itself</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="building-antlr.html">
+            
+                <a href="building-antlr.html">
+            
+                    
+                        <b>3.1.</b>
+                    
+                    Building ANTLR itself
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="releasing-antlr.html">
+            
+                <a href="releasing-antlr.html">
+            
+                    
+                        <b>3.2.</b>
+                    
+                    Cutting an ANTLR Release
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="antlr-project-testing.html">
+            
+                <a href="antlr-project-testing.html">
+            
+                    
+                        <b>3.3.</b>
+                    
+                    ANTLR project unit tests
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="creating-a-language-target.html">
+            
+                <a href="creating-a-language-target.html">
+            
+                    
+                        <b>3.4.</b>
+                    
+                    Creating an ANTLR Language Target
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Parser and lexer interpreters</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#parser-and-lexer-interpreters"><b>1. </b>Parser and Lexer Interpreters</a></li><ul><li><span class="title-icon "></span><a href="#action-code"><b>1.1. </b>Action Code</a></li><li><span class="title-icon "></span><a href="#java-target-interpreter-setup"><b>1.2. </b>Java Target Interpreter Setup</a></li><li><span class="title-icon "></span><a href="#non-java-target-interpreter-setup"><b>1.3. </b>Non-Java Target Interpreter Setup</a></li></ul></ul></div><a href="#parser-and-lexer-interpreters" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="parser-and-lexer-interpreters"><a name="parser-and-lexer-interpreters" class="anchor-navigation-ex-anchor" href="#parser-and-lexer-interpreters"><i class="fa fa-link" aria-hidden="true"></i></a>1. Parser and Lexer Interpreters</h1>
+<p><em>Since ANTLR 4.2</em></p>
+<p>For small parsing tasks it is sometimes convenient to use ANTLR in interpreted mode, rather than generating a parser in a particular target, compiling it and running it as part of your application. Here&apos;s some sample code that creates lexer and parser Grammar objects and then creates interpreters. Once we have a ParserInterpreter, we can use it to parse starting in any rule we like, given a rule index (which the grammar + the parser can provide).</p>
+<h2 id="action-code"><a name="action-code" class="anchor-navigation-ex-anchor" href="#action-code"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. Action Code</h2>
+<p>Since interpreters don&apos;t use generated parsers + lexers they cannot execute any action code (including predicates). That means the interpreter runs as if there were no predicates at all. If your grammar requires action code in order to parse correctly you will not be able to test it using this approach.</p>
+<h2 id="java-target-interpreter-setup"><a name="java-target-interpreter-setup" class="anchor-navigation-ex-anchor" href="#java-target-interpreter-setup"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. Java Target Interpreter Setup</h2>
+<pre class="language-"><code class="lang-java"><span class="token class-name">LexerGrammar</span> lg <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">LexerGrammar</span><span class="token punctuation">(</span>
+    <span class="token string">&quot;lexer grammar L;\n&quot;</span> <span class="token operator">+</span>
+    <span class="token string">&quot;A : &apos;a&apos; ;\n&quot;</span> <span class="token operator">+</span>
+    <span class="token string">&quot;B : &apos;b&apos; ;\n&quot;</span> <span class="token operator">+</span>
+    <span class="token string">&quot;C : &apos;c&apos; ;\n&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">Grammar</span> g <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Grammar</span><span class="token punctuation">(</span>
+    <span class="token string">&quot;parser grammar T;\n&quot;</span> <span class="token operator">+</span>
+    <span class="token string">&quot;s : (A|B)* C ;\n&quot;</span><span class="token punctuation">,</span>
+    lg<span class="token punctuation">)</span><span class="token punctuation">;</span>   
+<span class="token class-name">LexerInterpreter</span> lexEngine <span class="token operator">=</span>
+    lg<span class="token punctuation">.</span><span class="token function">createLexerInterpreter</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">ANTLRInputStream</span><span class="token punctuation">(</span>input<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">CommonTokenStream</span> tokens <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">CommonTokenStream</span><span class="token punctuation">(</span>lexEngine<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">ParserInterpreter</span> parser <span class="token operator">=</span> g<span class="token punctuation">.</span><span class="token function">createParserInterpreter</span><span class="token punctuation">(</span>tokens<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">ParseTree</span> t <span class="token operator">=</span> parser<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>g<span class="token punctuation">.</span>rules<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>startRule<span class="token punctuation">)</span><span class="token punctuation">.</span>index<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>You can also load combined grammars from a file:</p>
+<pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">ParseTree</span> <span class="token function">parse</span><span class="token punctuation">(</span><span class="token class-name">String</span> fileName<span class="token punctuation">,</span>
+                              <span class="token class-name">String</span> combinedGrammarFileName<span class="token punctuation">,</span>
+                              <span class="token class-name">String</span> startRule<span class="token punctuation">)</span>
+    <span class="token keyword">throws</span> <span class="token class-name">IOException</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">final</span> <span class="token class-name">Grammar</span> g <span class="token operator">=</span> <span class="token class-name">Grammar</span><span class="token punctuation">.</span><span class="token function">load</span><span class="token punctuation">(</span>combinedGrammarFileName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">LexerInterpreter</span> lexEngine <span class="token operator">=</span> g<span class="token punctuation">.</span><span class="token function">createLexerInterpreter</span><span class="token punctuation">(</span><span class="token class-name">CharStreams</span><span class="token punctuation">.</span><span class="token function">fromPath</span><span class="token punctuation">(</span><span class="token class-name">Paths</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>fileName<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">CommonTokenStream</span> tokens <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">CommonTokenStream</span><span class="token punctuation">(</span>lexEngine<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">ParserInterpreter</span> parser <span class="token operator">=</span> g<span class="token punctuation">.</span><span class="token function">createParserInterpreter</span><span class="token punctuation">(</span>tokens<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">ParseTree</span> t <span class="token operator">=</span> parser<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>g<span class="token punctuation">.</span><span class="token function">getRule</span><span class="token punctuation">(</span>startRule<span class="token punctuation">)</span><span class="token punctuation">.</span>index<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;parse tree: &quot;</span><span class="token operator">+</span>t<span class="token punctuation">.</span><span class="token function">toStringTree</span><span class="token punctuation">(</span>parser<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> t<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Then:</p>
+<pre class="language-"><code class="lang-java"><span class="token class-name">ParseTree</span> t <span class="token operator">=</span> <span class="token function">parse</span><span class="token punctuation">(</span><span class="token string">&quot;T.om&quot;</span><span class="token punctuation">,</span>
+                    <span class="token class-name">MantraGrammar</span><span class="token punctuation">,</span>
+                    <span class="token string">&quot;compilationUnit&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>To load separate lexer/parser grammars, do this:</p>
+<pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">ParseTree</span> <span class="token function">parse</span><span class="token punctuation">(</span><span class="token class-name">String</span> fileNameToParse<span class="token punctuation">,</span>
+                              <span class="token class-name">String</span> lexerGrammarFileName<span class="token punctuation">,</span>
+                              <span class="token class-name">String</span> parserGrammarFileName<span class="token punctuation">,</span>
+                              <span class="token class-name">String</span> startRule<span class="token punctuation">)</span>
+    <span class="token keyword">throws</span> <span class="token class-name">IOException</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">final</span> <span class="token class-name">LexerGrammar</span> lg <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">LexerGrammar</span><span class="token punctuation">)</span> <span class="token class-name">Grammar</span><span class="token punctuation">.</span><span class="token function">load</span><span class="token punctuation">(</span>lexerGrammarFileName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">final</span> <span class="token class-name">Grammar</span> pg <span class="token operator">=</span> <span class="token class-name">Grammar</span><span class="token punctuation">.</span><span class="token function">load</span><span class="token punctuation">(</span>parserGrammarFileName<span class="token punctuation">,</span> lg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">CharStream</span> input <span class="token operator">=</span> <span class="token class-name">CharStreams</span><span class="token punctuation">.</span><span class="token function">fromPath</span><span class="token punctuation">(</span><span class="token class-name">Paths</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>fileNameToParse<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">LexerInterpreter</span> lexEngine <span class="token operator">=</span> lg<span class="token punctuation">.</span><span class="token function">createLexerInterpreter</span><span class="token punctuation">(</span>input<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">CommonTokenStream</span> tokens <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">CommonTokenStream</span><span class="token punctuation">(</span>lexEngine<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">ParserInterpreter</span> parser <span class="token operator">=</span> pg<span class="token punctuation">.</span><span class="token function">createParserInterpreter</span><span class="token punctuation">(</span>tokens<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">ParseTree</span> t <span class="token operator">=</span> parser<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>pg<span class="token punctuation">.</span><span class="token function">getRule</span><span class="token punctuation">(</span>startRule<span class="token punctuation">)</span><span class="token punctuation">.</span>index<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;parse tree: &quot;</span> <span class="token operator">+</span> t<span class="token punctuation">.</span><span class="token function">toStringTree</span><span class="token punctuation">(</span>parser<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> t<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Then:</p>
+<pre class="language-"><code class="lang-java"><span class="token class-name">ParseTree</span> t <span class="token operator">=</span> <span class="token function">parse</span><span class="token punctuation">(</span>fileName<span class="token punctuation">,</span> <span class="token class-name">XMLLexerGrammar</span><span class="token punctuation">,</span> <span class="token class-name">XMLParserGrammar</span><span class="token punctuation">,</span> <span class="token string">&quot;document&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>This is also how we will integrate instantaneous parsing into ANTLRWorks2 and development environment plug-ins.</p>
+<p>See <a href="../tool-testsuite/test/org/antlr/v4/test/tool/TestParserInterpreter.java">TestParserInterpreter.java</a>.</p>
+<h2 id="non-java-target-interpreter-setup"><a name="non-java-target-interpreter-setup" class="anchor-navigation-ex-anchor" href="#non-java-target-interpreter-setup"><i class="fa fa-link" aria-hidden="true"></i></a>1.3. Non-Java Target Interpreter Setup</h2>
+<p>The ANTLR4 runtimes do not contain any grammar parsing classes (they are in the ANTLR4 tool  jar). Hence we cannot use <code>LexerGrammar</code> and <code>Grammar</code> to parse grammars for the interpreter. Instead we directly instantiate <code>LexerInterpreter</code> and <code>ParserInterpreter</code> objects. They require some data (namely symbol information and the ATNs) which only the ANTLR4 tool can give us. However, on each generation run ANTLR not only produces your parser + lexer files but also interpreter data files (*.interp) which contain all you need to feed the interpreters.</p>
+<p>A support class (<code>InterpreterDataReader</code>) is used to load the data for your convenience, which makes this very easy to use. Btw. even the Java target go this route instead of using the non-runtime classes <code>Grammar</code> and <code>LexerGrammar</code>. Sometimes it might not be feasible to use the tool jar for whatever reason.</p>
+<p>Here&apos;s how the setup looks like (C++ example):</p>
+<pre class="language-"><code class="lang-cpp"><span class="token comment">/**
+ * sourceFileName - name of the file with content to parse
+ * lexerName - the name of your lexer (arbitrary, that&apos;s what is used in error messages)
+ * parserName - ditto for the parser
+ * lexerDataFileName - the lexer interpeter data file name (e.g. `&lt;path&gt;/ExprLexer.interp`)
+ * parserDataFileName - ditto for the parser (e.g. `&lt;path&gt;/Expr.interp`)
+ * startRule - the name of the rule to start parsing at
+ */</span>
+<span class="token keyword">void</span> <span class="token function">parse</span><span class="token punctuation">(</span>std<span class="token operator">::</span>string <span class="token keyword">const</span><span class="token operator">&amp;</span> sourceFileName<span class="token punctuation">,</span>
+  std<span class="token operator">::</span>string <span class="token keyword">const</span><span class="token operator">&amp;</span> lexerName<span class="token punctuation">,</span> std<span class="token operator">::</span>string <span class="token keyword">const</span><span class="token operator">&amp;</span> parserName<span class="token punctuation">,</span>
+  std<span class="token operator">::</span>string <span class="token keyword">const</span><span class="token operator">&amp;</span> lexerDataFileName<span class="token punctuation">,</span> std<span class="token operator">::</span>string <span class="token keyword">const</span><span class="token operator">&amp;</span> parserDataFileName<span class="token punctuation">,</span>
+  std<span class="token operator">::</span>string <span class="token keyword">const</span><span class="token operator">&amp;</span> startRule<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+    InterpreterData lexerData <span class="token operator">=</span> <span class="token class-name">InterpreterDataReader</span><span class="token operator">::</span><span class="token function">parseFile</span><span class="token punctuation">(</span>lexerDataFileName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    InterpreterData parserData <span class="token operator">=</span> <span class="token class-name">InterpreterDataReader</span><span class="token operator">::</span><span class="token function">parseFile</span><span class="token punctuation">(</span>parserDataFileName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    ANTLRFileStream <span class="token function">input</span><span class="token punctuation">(</span>sourceFileName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    LexerInterpreter <span class="token function">lexEngine</span><span class="token punctuation">(</span>lexerName<span class="token punctuation">,</span> lexerData<span class="token punctuation">.</span>vocabulary<span class="token punctuation">,</span> lexerData<span class="token punctuation">.</span>ruleNames<span class="token punctuation">,</span>
+      lexerData<span class="token punctuation">.</span>channels<span class="token punctuation">,</span> lexerData<span class="token punctuation">.</span>modes<span class="token punctuation">,</span> lexerData<span class="token punctuation">.</span>atn<span class="token punctuation">,</span> <span class="token operator">&amp;</span>input<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    CommonTokenStream <span class="token function">tokens</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>lexEngine<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">/* Remove comment to print the tokens.
+    tokens.fill();
+    std::cout &lt;&lt; &quot;INPUT:&quot; &lt;&lt; std::endl;
+    for (auto token : tokens.getTokens()) {
+      std::cout &lt;&lt; token-&gt;toString() &lt;&lt; std::endl;
+    }
+    */</span>
+
+    ParserInterpreter <span class="token function">parser</span><span class="token punctuation">(</span>parserName<span class="token punctuation">,</span> parserData<span class="token punctuation">.</span>vocabulary<span class="token punctuation">,</span> parserData<span class="token punctuation">.</span>ruleNames<span class="token punctuation">,</span>
+      parserData<span class="token punctuation">.</span>atn<span class="token punctuation">,</span> <span class="token operator">&amp;</span>tokens<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    tree<span class="token operator">::</span>ParseTree <span class="token operator">*</span>tree <span class="token operator">=</span> parser<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>parser<span class="token punctuation">.</span><span class="token function">getRuleIndex</span><span class="token punctuation">(</span>startRule<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    std<span class="token operator">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">&quot;parse tree: &quot;</span> <span class="token operator">&lt;&lt;</span> tree<span class="token operator">-&gt;</span><span class="token function">toStringTree</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>parser<span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> std<span class="token operator">::</span>endl<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="case-insensitive-lexing.html" class="navigation navigation-prev " aria-label="Previous page: Case-Insensitive Lexing">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="resources.html" class="navigation navigation-next " aria-label="Next page: Resources">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Parser and lexer interpreters","level":"2.19","depth":1,"next":{"title":"Resources","level":"2.20","depth":1,"path":"chapters/resources.md","ref":"chapters/resources.md","articles":[]},"previous":{"title":"Case-Insensitive Lexing","level":"2.18","depth":1,"path":"chapters/case-insensitive-lexing.md","ref":"chapters/case-insensitive-lexing.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","anchor-navigation-ex","-sharing","sharing-plus","-highlight","prism"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"night","family":"serif","size":2},"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"sharing":{"weibo":true,"qzone":true,"qq":true,"douban":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"Little Captain","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"antlr4-doc","gitbook":"*","description":"antlr4-doc"},"file":{"path":"chapters/interpreters.md","mtime":"2021-11-11T03:00:11.621Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-11-11T03:11:20.710Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

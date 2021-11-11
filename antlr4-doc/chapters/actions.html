@@ -1,0 +1,816 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Actions and Attributes · antlr4-doc</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Little Captain">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-okaidia.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="lexer-rules.html" />
+    
+    
+    <link rel="prev" href="left-recursion.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Sections</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                        <b>2.1.</b>
+                    
+                    Index
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="getting-started.html">
+            
+                <a href="getting-started.html">
+            
+                    
+                        <b>2.2.</b>
+                    
+                    Getting Started with ANTLR v4
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="lexicon.html">
+            
+                <a href="lexicon.html">
+            
+                    
+                        <b>2.3.</b>
+                    
+                    Grammar Lexicon
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="grammars.html">
+            
+                <a href="grammars.html">
+            
+                    
+                        <b>2.4.</b>
+                    
+                    Grammar Structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="parser-rules.html">
+            
+                <a href="parser-rules.html">
+            
+                    
+                        <b>2.5.</b>
+                    
+                    Parser Rules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="left-recursion.html">
+            
+                <a href="left-recursion.html">
+            
+                    
+                        <b>2.6.</b>
+                    
+                    Left-recursive rules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.7" data-path="actions.html">
+            
+                <a href="actions.html">
+            
+                    
+                        <b>2.7.</b>
+                    
+                    Actions and Attributes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="lexer-rules.html">
+            
+                <a href="lexer-rules.html">
+            
+                    
+                        <b>2.8.</b>
+                    
+                    Lexer Rules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="wildcard.html">
+            
+                <a href="wildcard.html">
+            
+                    
+                        <b>2.9.</b>
+                    
+                    Wildcard Operator and Nongreedy Subrules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="listeners.html">
+            
+                <a href="listeners.html">
+            
+                    
+                        <b>2.10.</b>
+                    
+                    Parse Tree Listeners
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11" data-path="tree-matching.html">
+            
+                <a href="tree-matching.html">
+            
+                    
+                        <b>2.11.</b>
+                    
+                    Parse Tree Matching and XPath
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.12" data-path="predicates.html">
+            
+                <a href="predicates.html">
+            
+                    
+                        <b>2.12.</b>
+                    
+                    Semantic Predicates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.13" data-path="options.html">
+            
+                <a href="options.html">
+            
+                    
+                        <b>2.13.</b>
+                    
+                    Options
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14" data-path="tool-options.html">
+            
+                <a href="tool-options.html">
+            
+                    
+                        <b>2.14.</b>
+                    
+                    ANTLR Tool Command Line Options
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.15" data-path="targets.html">
+            
+                <a href="targets.html">
+            
+                    
+                        <b>2.15.</b>
+                    
+                    Runtime Libraries and Code Generation Targets
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.16" data-path="unicode.html">
+            
+                <a href="unicode.html">
+            
+                    
+                        <b>2.16.</b>
+                    
+                    Unicode U+FFFF, U+10FFFF character streams
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17" data-path="parsing-binary-files.html">
+            
+                <a href="parsing-binary-files.html">
+            
+                    
+                        <b>2.17.</b>
+                    
+                    Parsing binary streams
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.18" data-path="case-insensitive-lexing.html">
+            
+                <a href="case-insensitive-lexing.html">
+            
+                    
+                        <b>2.18.</b>
+                    
+                    Case-Insensitive Lexing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.19" data-path="interpreters.html">
+            
+                <a href="interpreters.html">
+            
+                    
+                        <b>2.19.</b>
+                    
+                    Parser and lexer interpreters
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.20" data-path="resources.html">
+            
+                <a href="resources.html">
+            
+                    
+                        <b>2.20.</b>
+                    
+                    Resources
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Building / releasing ANTLR itself</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="building-antlr.html">
+            
+                <a href="building-antlr.html">
+            
+                    
+                        <b>3.1.</b>
+                    
+                    Building ANTLR itself
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="releasing-antlr.html">
+            
+                <a href="releasing-antlr.html">
+            
+                    
+                        <b>3.2.</b>
+                    
+                    Cutting an ANTLR Release
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="antlr-project-testing.html">
+            
+                <a href="antlr-project-testing.html">
+            
+                    
+                        <b>3.3.</b>
+                    
+                    ANTLR project unit tests
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="creating-a-language-target.html">
+            
+                <a href="creating-a-language-target.html">
+            
+                    
+                        <b>3.4.</b>
+                    
+                    Creating an ANTLR Language Target
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Actions and Attributes</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#actions-and-attributes"><b>1. </b>Actions and Attributes</a></li><ul><li><span class="title-icon "></span><a href="#token-attributes"><b>1.1. </b>Token Attributes</a></li><li><span class="title-icon "></span><a href="#parser-rule-attributes"><b>1.2. </b>Parser Rule Attributes</a></li><li><span class="title-icon "></span><a href="#dynamically-scoped-attributes"><b>1.3. </b>Dynamically-Scoped Attributes</a></li></ul></ul></div><a href="#actions-and-attributes" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="actions-and-attributes"><a name="actions-and-attributes" class="anchor-navigation-ex-anchor" href="#actions-and-attributes"><i class="fa fa-link" aria-hidden="true"></i></a>1. Actions and Attributes</h1>
+<p>In Chapter 10, Attributes and Actions, we learned how to embed actions within grammars and looked at the most common token and rule attributes. This section summarizes the important syntax and semantics from that chapter and provides a complete list of all available attributes. (You can learn more about actions in the grammar from the free excerpt on listeners and actions.)</p>
+<p>Actions are blocks of text written in the target language and enclosed in curly braces. The recognizer triggers them according to their locations within the grammar. For example, the following rule emits &quot;found a decl&quot; after the parser has seen a valid declaration:</p>
+<pre class="language-"><code>decl: type ID &apos;;&apos; {System.out.println(&quot;found a decl&quot;);} ;
+type: &apos;int&apos; | &apos;float&apos; ;
+</code></pre><p>Most often, actions access the attributes of tokens and rule references:</p>
+<pre class="language-"><code>decl: type ID &apos;;&apos;
+      {System.out.println(&quot;var &quot;+$ID.text+&quot;:&quot;+$type.text+&quot;;&quot;);}
+    | t=ID id=ID &apos;;&apos;
+      {System.out.println(&quot;var &quot;+$id.text+&quot;:&quot;+$t.text+&quot;;&quot;);}
+    ;
+</code></pre><h2 id="token-attributes"><a name="token-attributes" class="anchor-navigation-ex-anchor" href="#token-attributes"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. Token Attributes</h2>
+<p>All tokens have a collection of predefined, read-only attributes. The attributes include useful token properties such as the token type and text matched for a token. Actions can access these attributes via <code>$label.attribute</code> where label labels a particular instance of a token reference (<code>a</code> and <code>b</code> in the example below are used in the action code as <code>$a</code> and <code>$b</code>). Often, a particular token is only referenced once in the rule, in which case the token name itself can be used unambiguously in the action code (token <code>INT</code> can be used as <code>$INT</code> in the action). The following example illustrates token attribute expression syntax:</p>
+<pre class="language-"><code>r : INT {int x = $INT.line;}
+    ( ID {if ($INT.line == $ID.line) ...;} )?
+    a=FLOAT b=FLOAT {if ($a.line == $b.line) ...;}
+  ;
+</code></pre><p>The action within the <code>(...)?</code> subrule can see the <code>INT</code> token matched before it in the outer level.</p>
+<p>Because there are two references to the <code>FLOAT</code> token, a reference to <code>$FLOAT</code> in an action is not unique; you must use labels to specify which token reference you&#x2019;re interested in.</p>
+<p>Token references within different alternatives are unique because only one of them can be matched for any invocation of the rule. For example, in the following rule, actions in both alternatives can reference <code>$ID</code> directly without using a label:</p>
+<pre class="language-"><code>     r : ... ID {System.out.println($ID.text);}
+     | ... ID {System.out.println($ID.text);}
+     ;
+</code></pre><p>To access the tokens matched for literals, you must use a label:</p>
+<pre class="language-"><code>     stat: r=&apos;return&apos; expr &apos;;&apos; {System.out.println(&quot;line=&quot;+$r.line);} ;
+</code></pre><p>Most of the time you access the attributes of the token, but sometimes it is useful to access the Token object itself because it aggregates all the attributes. Further, you can use it to test whether an optional subrule matched a token:</p>
+<pre class="language-"><code>     stat: &apos;if&apos; expr &apos;then&apos; stat (el=&apos;else&apos; stat)?
+     {if ( $el!=null ) System.out.println(&quot;found an else&quot;);}
+     | ...
+     ;
+</code></pre><p><code>$T</code> and <code>$L</code> evaluate to <code>Token</code> objects for token name <code>T</code> and token label <code>L</code>. <code>$ll</code> evaluates to <code>List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Token</span><span class="token punctuation">&gt;</span></span></code> for list label <code>ll</code>. <code>$T.attr</code> evaluates to the type and value specified in the following table for attribute <code>attr</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>text</td>
+<td>String</td>
+<td>The text matched for the token; translates to a call to getText. Example: $ID.text.</td>
+</tr>
+<tr>
+<td>type</td>
+<td>int</td>
+<td>The token type (nonzero positive integer) of the token such as INT; translates to a call to getType. Example: $ID.type.</td>
+</tr>
+<tr>
+<td>line</td>
+<td>int</td>
+<td>The line number on which the token occurs, counting from 1; translates to a call to getLine. Example: $ID.line.</td>
+</tr>
+<tr>
+<td>pos</td>
+<td>int</td>
+<td>The character position within the line at which the token&#x2019;s first character occurs counting from zero; translates to a call togetCharPositionInLine. Example: $ID.pos.</td>
+</tr>
+<tr>
+<td>index</td>
+<td>int</td>
+<td>The overall index of this token in the token stream, counting from zero; translates to a call to getTokenIndex. Example: $ID.index.</td>
+</tr>
+<tr>
+<td>channel</td>
+<td>int</td>
+<td>The token&#x2019;s channel number. The parser tunes to only one channel, effectively ignoring off-channel tokens. The default channel is 0 (Token.DEFAULT_CHANNEL), and the default hidden channel is Token.HIDDEN_CHANNEL. Translates to a call to getChannel. Example: $ID.channel.</td>
+</tr>
+<tr>
+<td>int</td>
+<td>int</td>
+<td>The integer value of the text held by this token; it assumes that the text is a valid numeric string. Handy for building calculators and so on. Translates to Integer.valueOf(text-of-token). Example: $INT.int.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="parser-rule-attributes"><a name="parser-rule-attributes" class="anchor-navigation-ex-anchor" href="#parser-rule-attributes"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. Parser Rule Attributes</h2>
+<p>ANTLR predefines a number of read-only attributes associated with parser rule references that are available to actions. Actions can access rule attributes only for references that precede the action. The syntax is <code>$r.attr</code> for rule name <code>r</code> or a label assigned to a rule reference. For example, <code>$expr.text</code> returns the complete text matched by a preceding invocation of rule <code>expr</code>:</p>
+<pre class="language-"><code>returnStat : &apos;return&apos; expr {System.out.println(&quot;matched &quot;+$expr.text);} ;
+</code></pre><p>Using a rule label looks like this:</p>
+<pre class="language-"><code>returnStat : &apos;return&apos; e=expr {System.out.println(&quot;matched &quot;+e.text);} ;
+</code></pre><p>You can also use <code>$</code> followed by the name of the attribute to access the value associated with the currently executing rule. For example, <code>$start</code> is the starting token of the current rule.</p>
+<pre class="language-"><code>returnStat : &apos;return&apos; expr {System.out.println(&quot;first token &quot;+$start.getText());} ;
+</code></pre><p><code>$r</code> and <code>$rl</code> evaluate to <code>ParserRuleContext</code> objects of type <code>RContext</code> for rule name <code>r</code> and rule label <code>rl</code>. <code>$rll</code> evaluates to <code>List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>RContext</span><span class="token punctuation">&gt;</span></span></code> for rule list label <code>rll</code>. <code>$r.attr</code> evaluates to the type and value specified in the following table for attribute <code>attr</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>text</td>
+<td>String</td>
+<td>The text matched for a rule or the text matched from the start of the rule up until the point of the <code>$text</code> expression evaluation. Note that this includes the text for all tokens including those on hidden channels, which is what you want because usually that has all the whitespace and comments. When referring to the current rule, this attribute is available in any action including any exception actions.</td>
+</tr>
+<tr>
+<td>start</td>
+<td>Token</td>
+<td>The first token to be potentially matched by the rule that is on the main token channel; in other words, this attribute is never a hidden token. For rules that end up matching no tokens, this attribute points at the first token that could have been matched by this rule. When referring to the current rule, this attribute is available to any action within the rule.</td>
+</tr>
+<tr>
+<td>stop</td>
+<td>Token</td>
+<td>The last nonhidden channel token to be matched by the rule. When referring to the current rule, this attribute is available only to the after and finally actions.</td>
+</tr>
+<tr>
+<td>ctx</td>
+<td>ParserRuleContext</td>
+<td>The rule context object associated with a rule invocation. All of the other attributes are available through this attribute. For example, <code>$ctx.start</code> accesses the start field within the current rules context object. It&#x2019;s the same as <code>$start</code>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="dynamically-scoped-attributes"><a name="dynamically-scoped-attributes" class="anchor-navigation-ex-anchor" href="#dynamically-scoped-attributes"><i class="fa fa-link" aria-hidden="true"></i></a>1.3. Dynamically-Scoped Attributes</h2>
+<p>You can pass information to and from rules using parameters and return values, just like functions in a general-purpose programming language. Programming languages don&#x2019;t allow functions to access the local variables or parameters of invoking functions, however. For example, the following reference to local variable <code>x</code> form a nested method call is illegal in Java:</p>
+<pre class="language-"><code class="lang-java"><span class="token keyword">void</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> x <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token function">g</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">void</span> <span class="token function">g</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">h</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">void</span> <span class="token function">h</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> y <span class="token operator">=</span> x<span class="token punctuation">;</span> <span class="token comment">// INVALID reference to f&apos;s local variable x</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Variable <code>x</code> is available only within the scope of <code>f</code>, which is the text lexically delimited by curly brackets. For this reason, Java is said to use lexical scoping. Lexical scoping is the norm for most programming languages. Languages that allow methods further down in the call chain to access local variables defined earlier are said to use dynamic scoping. The term dynamic refers to the fact that a compiler cannot statically determine the set of visible variables. This is because the set of variables visible to a method changes depending on who calls that method.</p>
+<p>It turns out that, in the grammar realm, distant rules sometimes need to communicate with each other, mostly to provide context information to rules matched below in the rule invocation chain. (Naturally, this assumes that you are using actions directly in the grammar instead of the parse-tree listener event mechanism.) ANTLR allows dynamic scoping in that actions can access attributes from invoking rules using syntax <code>$r::x</code> where <code>r</code> is a rule name and <code>x</code> is an attribute within that rule. It is up to the programmer to ensure that <code>r</code> is in fact an invoking rule of the current rule. A runtime exception occurs if <code>r</code> is not in the current call chain when you access <code>$r::x</code>.</p>
+<p>To illustrate the use of dynamic scoping, consider the real problem of defining variables and ensuring that variables in expressions are defined. The following grammar defines the symbols attribute where it belongs in the block rule but adds variable names to it in rule <code>decl</code>. Rule <code>stat</code> then consults the list to see whether variables have been defined.</p>
+<pre class="language-"><code>grammar DynScope;
+
+prog: block ;
+
+block
+    /* List of symbols defined within this block */
+    locals [
+    List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>String</span><span class="token punctuation">&gt;</span></span> symbols = new ArrayList<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>String</span><span class="token punctuation">&gt;</span></span>()
+    ]
+    : &apos;{&apos; decl* stat+ &apos;}&apos;
+    // print out all symbols found in block
+    // $block::symbols evaluates to a List as defined in scope
+    {System.out.println(&quot;symbols=&quot;+$symbols);}
+    ;
+
+/** Match a declaration and add identifier name to list of symbols */
+decl: &apos;int&apos; ID {$block::symbols.add($ID.text);} &apos;;&apos; ;
+
+/** Match an assignment then test list of symbols to verify
+ * that it contains the variable on the left side of the assignment.
+ * Method contains() is List.contains() because $block::symbols
+ * is a List.
+ */
+stat: ID &apos;=&apos; INT &apos;;&apos;
+    {
+    if ( !$block::symbols.contains($ID.text) ) {
+    System.err.println(&quot;undefined variable: &quot;+$ID.text);
+    }
+    }
+    | block
+    ;
+
+ID : [a-z]+ ;
+INT : [0-9]+ ;
+WS : [ \t\r\n]+ -&gt; skip ;
+</code></pre><p>Here&#x2019;s a simple build and test sequence:</p>
+<pre class="language-"><code class="lang-bash">$ antlr4 DynScope.g4
+$ javac DynScope*.java
+$ grun DynScope prog
+<span class="token operator">=</span><span class="token operator">&gt;</span>     <span class="token punctuation">{</span>
+<span class="token operator">=</span><span class="token operator">&gt;</span>     int i<span class="token punctuation">;</span>
+<span class="token operator">=</span><span class="token operator">&gt;</span>     i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token operator">=</span><span class="token operator">&gt;</span>     j <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
+<span class="token operator">=</span><span class="token operator">&gt;</span>     <span class="token punctuation">}</span>
+<span class="token operator">=</span><span class="token operator">&gt;</span>     EOF
+<span class="token operator">&lt;</span><span class="token operator">=</span>     undefined variable: j
+     <span class="token assign-left variable">symbols</span><span class="token operator">=</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+</code></pre>
+<p>There&#x2019;s an important difference between a simple field declaration in a <code>@members</code> action and dynamic scoping. symbols is a local variable and so there is a copy for each invocation of rule <code>block</code>. That&#x2019;s exactly what we want for nested blocks so that we can reuse the same input variable name in an inner block. For example, the following nested code block redefines <code>i</code> in the inner scope. This new definition must hide the definition in the outer scope.</p>
+<pre class="language-"><code>{
+    int i;
+    int j;
+    i = 0;
+    {
+        int i;
+        int x;
+        x = 5;
+    }
+    x = 3;
+}
+</code></pre><p>Here&#x2019;s the output generated for that input by DynScope:</p>
+<pre class="language-"><code class="lang-bash">$ grun DynScope prog nested-input
+<span class="token assign-left variable">symbols</span><span class="token operator">=</span><span class="token punctuation">[</span>i, x<span class="token punctuation">]</span>
+undefined variable: x
+<span class="token assign-left variable">symbols</span><span class="token operator">=</span><span class="token punctuation">[</span>i, j<span class="token punctuation">]</span>
+</code></pre>
+<p>Referencing <code>$block::symbols</code> accesses the <code>symbols</code> field of the most recently invoked <code>block</code>&#x2019;s rule context object. If you need access to a symbols instance from a rule invocation farther up the call chain, you can walk backwards starting at the current context, <code>$ctx</code>. Use <code>getParent</code> to walk up the chain.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="left-recursion.html" class="navigation navigation-prev " aria-label="Previous page: Left-recursive rules">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="lexer-rules.html" class="navigation navigation-next " aria-label="Next page: Lexer Rules">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Actions and Attributes","level":"2.7","depth":1,"next":{"title":"Lexer Rules","level":"2.8","depth":1,"path":"chapters/lexer-rules.md","ref":"chapters/lexer-rules.md","articles":[]},"previous":{"title":"Left-recursive rules","level":"2.6","depth":1,"path":"chapters/left-recursion.md","ref":"chapters/left-recursion.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","anchor-navigation-ex","-sharing","sharing-plus","-highlight","prism"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"night","family":"serif","size":2},"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"sharing":{"weibo":true,"qzone":true,"qq":true,"douban":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"Little Captain","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"antlr4-doc","gitbook":"*","description":"antlr4-doc"},"file":{"path":"chapters/actions.md","mtime":"2021-11-11T03:00:11.618Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-11-11T03:11:20.710Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

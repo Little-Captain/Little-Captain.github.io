@@ -1,0 +1,787 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Wildcard Operator and Nongreedy Subrules · antlr4-doc</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Little Captain">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-okaidia.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="listeners.html" />
+    
+    
+    <link rel="prev" href="lexer-rules.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Sections</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                        <b>2.1.</b>
+                    
+                    Index
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="getting-started.html">
+            
+                <a href="getting-started.html">
+            
+                    
+                        <b>2.2.</b>
+                    
+                    Getting Started with ANTLR v4
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="lexicon.html">
+            
+                <a href="lexicon.html">
+            
+                    
+                        <b>2.3.</b>
+                    
+                    Grammar Lexicon
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="grammars.html">
+            
+                <a href="grammars.html">
+            
+                    
+                        <b>2.4.</b>
+                    
+                    Grammar Structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="parser-rules.html">
+            
+                <a href="parser-rules.html">
+            
+                    
+                        <b>2.5.</b>
+                    
+                    Parser Rules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="left-recursion.html">
+            
+                <a href="left-recursion.html">
+            
+                    
+                        <b>2.6.</b>
+                    
+                    Left-recursive rules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="actions.html">
+            
+                <a href="actions.html">
+            
+                    
+                        <b>2.7.</b>
+                    
+                    Actions and Attributes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="lexer-rules.html">
+            
+                <a href="lexer-rules.html">
+            
+                    
+                        <b>2.8.</b>
+                    
+                    Lexer Rules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.9" data-path="wildcard.html">
+            
+                <a href="wildcard.html">
+            
+                    
+                        <b>2.9.</b>
+                    
+                    Wildcard Operator and Nongreedy Subrules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="listeners.html">
+            
+                <a href="listeners.html">
+            
+                    
+                        <b>2.10.</b>
+                    
+                    Parse Tree Listeners
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11" data-path="tree-matching.html">
+            
+                <a href="tree-matching.html">
+            
+                    
+                        <b>2.11.</b>
+                    
+                    Parse Tree Matching and XPath
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.12" data-path="predicates.html">
+            
+                <a href="predicates.html">
+            
+                    
+                        <b>2.12.</b>
+                    
+                    Semantic Predicates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.13" data-path="options.html">
+            
+                <a href="options.html">
+            
+                    
+                        <b>2.13.</b>
+                    
+                    Options
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14" data-path="tool-options.html">
+            
+                <a href="tool-options.html">
+            
+                    
+                        <b>2.14.</b>
+                    
+                    ANTLR Tool Command Line Options
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.15" data-path="targets.html">
+            
+                <a href="targets.html">
+            
+                    
+                        <b>2.15.</b>
+                    
+                    Runtime Libraries and Code Generation Targets
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.16" data-path="unicode.html">
+            
+                <a href="unicode.html">
+            
+                    
+                        <b>2.16.</b>
+                    
+                    Unicode U+FFFF, U+10FFFF character streams
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17" data-path="parsing-binary-files.html">
+            
+                <a href="parsing-binary-files.html">
+            
+                    
+                        <b>2.17.</b>
+                    
+                    Parsing binary streams
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.18" data-path="case-insensitive-lexing.html">
+            
+                <a href="case-insensitive-lexing.html">
+            
+                    
+                        <b>2.18.</b>
+                    
+                    Case-Insensitive Lexing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.19" data-path="interpreters.html">
+            
+                <a href="interpreters.html">
+            
+                    
+                        <b>2.19.</b>
+                    
+                    Parser and lexer interpreters
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.20" data-path="resources.html">
+            
+                <a href="resources.html">
+            
+                    
+                        <b>2.20.</b>
+                    
+                    Resources
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Building / releasing ANTLR itself</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="building-antlr.html">
+            
+                <a href="building-antlr.html">
+            
+                    
+                        <b>3.1.</b>
+                    
+                    Building ANTLR itself
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="releasing-antlr.html">
+            
+                <a href="releasing-antlr.html">
+            
+                    
+                        <b>3.2.</b>
+                    
+                    Cutting an ANTLR Release
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="antlr-project-testing.html">
+            
+                <a href="antlr-project-testing.html">
+            
+                    
+                        <b>3.3.</b>
+                    
+                    ANTLR project unit tests
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="creating-a-language-target.html">
+            
+                <a href="creating-a-language-target.html">
+            
+                    
+                        <b>3.4.</b>
+                    
+                    Creating an ANTLR Language Target
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Wildcard Operator and Nongreedy Subrules</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#wildcard-operator-and-nongreedy-subrules"><b>1. </b>Wildcard Operator and Nongreedy Subrules</a></li><ul><li><span class="title-icon "></span><a href="#nongreedy-lexer-subrules"><b>1.1. </b>Nongreedy Lexer Subrules</a></li><li><span class="title-icon "></span><a href="#nongreedy-parser-subrules"><b>1.2. </b>Nongreedy Parser Subrules</a></li></ul></ul></div><a href="#wildcard-operator-and-nongreedy-subrules" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="wildcard-operator-and-nongreedy-subrules"><a name="wildcard-operator-and-nongreedy-subrules" class="anchor-navigation-ex-anchor" href="#wildcard-operator-and-nongreedy-subrules"><i class="fa fa-link" aria-hidden="true"></i></a>1. Wildcard Operator and Nongreedy Subrules</h1>
+<p>EBNF subrules like <code>(...)?</code>, <code>(...)*</code> and <code>(...)+</code> are greedy&#x2014;They consume as much input as possible, but sometimes that&#x2019;s not what&#x2019;s needed. Constructs like <code>.*</code> consume until the end of the input in the lexer and sometimes in the parser. We want that loop to be nongreedy so we need to use different syntax: <code>.*?</code> borrowed from regular expression notation. We can make any subrule that has a <code>?</code>, <code>*</code>, or <code>+</code> suffix nongreedy by adding another <code>?</code> suffix. Such nongreedy subrules are allowed in both the parser and the lexer, but they are used much more frequently in the lexer.</p>
+<h2 id="nongreedy-lexer-subrules"><a name="nongreedy-lexer-subrules" class="anchor-navigation-ex-anchor" href="#nongreedy-lexer-subrules"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. Nongreedy Lexer Subrules</h2>
+<p>Here&#x2019;s the very common C-style comment lexer rule that consumes any characters until it sees the trailing <code>*/</code>:</p>
+<pre class="language-"><code>COMMENT : &apos;/*&apos; .*? &apos;*/&apos; -&gt; skip ; // .*? matches anything until the first */
+</code></pre><p>Here&#x2019;s another example that matches strings that allow \&quot; as an escaped quote character:</p>
+<pre class="language-"><code>grammar Nongreedy;
+s : STRING+ ;
+STRING : &apos;&quot;&apos; ( &apos;\\&quot;&apos; | . )*? &apos;&quot;&apos; ; // match &quot;foo&quot;, &quot;\&quot;&quot;, &quot;x\&quot;\&quot;y&quot;, ...
+WS : [ \r\t\n]+ -&gt; skip ;
+</code></pre><pre class="language-"><code class="lang-bash">$ antlr4 Nongreedy.g4
+$ javac Nongreedy*.java
+$ grun Nongreedy s -tokens
+<span class="token operator">=</span><span class="token operator">&gt;</span>     <span class="token string">&quot;quote:<span class="token entity" title="\&quot;">\&quot;</span>&quot;</span>
+<span class="token operator">=</span><span class="token operator">&gt;</span>     EOF
+<span class="token operator">&lt;</span><span class="token operator">=</span>     <span class="token punctuation">[</span>@0,0:9<span class="token operator">=</span><span class="token string">&apos;&quot;quote:<span class="token entity" title="\&quot;">\&quot;</span>&quot;&apos;</span>,<span class="token operator">&lt;</span><span class="token operator"><span class="token file-descriptor important">1</span>&gt;</span>,1:0<span class="token punctuation">]</span>
+     <span class="token punctuation">[</span>@1,11:10<span class="token operator">=</span><span class="token string">&apos;&lt;EOF&gt;&apos;</span>,<span class="token operator">&lt;</span>-<span class="token operator"><span class="token file-descriptor important">1</span>&gt;</span>,2:0<span class="token punctuation">]</span>
+</code></pre>
+<p>Nongreedy subrules should be used sparingly because they complicate the recognition problem and sometimes make it tricky to decipher how the lexer will match text. Here is how the lexer chooses token rules:</p>
+<ol>
+<li>The primary goal is to match the lexer rule that recognizes the most input characters.
+
+```
+INT : [0-9]+ ;
+DOT : &apos;.&apos; ; // match period
+FLOAT : [0-9]+ &apos;.&apos; ; // match FLOAT upon &apos;34.&apos; not INT then DOT
+```
+</li>
+<li>
+If more than one lexer rule matches the same input sequence, the priority goes to the rule occurring first in the grammar file.
+
+```
+DOC : &apos;/**&apos; .*? &apos;*/&apos; ; // both rules match /** foo */, resolve to DOC
+CMT : &apos;/*&apos; .*? &apos;*/&apos; ;
+```
+</li>
+<li>
+Nongreedy subrules match the fewest number of characters that still allows the surrounding lexical rule to match.
+
+```
+/** Match anything except \n inside of double angle brackets */
+STRING : &apos;&lt;<' ~'\n'*?="" '="">&gt;&apos; ; // Input &apos;&lt;<foo>&gt;&gt;&gt;&apos; matches STRING then END
+END    : &apos;&gt;&gt;&apos; ;
+```
+</foo></'></li>
+<li>
+<p>After crossing through a nongreedy subrule within a lexical rule, all decision-making from then on is &quot;first match wins.&quot;
+</p>
+<p>
+For example, literal `ab` in rule right-hand side (grammar fragment) `.*? (&#x2019;a&#x2019;|&#x2019;ab&#x2019;)` is dead code and can never be matched. If the input is ab, the first alternative, &#x2019;a&#x2019;, matches the first character and therefore succeeds. (&#x2019;a&#x2019;|&#x2019;ab&#x2019;) by itself on the right-hand side of a rule properly matches the second alternative for input ab. This quirk arises from a nongreedy design decision that&#x2019;s too complicated to go into here.</p>
+</li><li>
+</li></ol>
+
+<p>To illustrate the different ways to use loops within lexer rules, consider the following grammar, which has three different action-like tokens (using different delimiters so that they all fit within one example grammar).</p>
+<pre class="language-"><code>ACTION1 : &apos;{&apos; ( STRING | . )*? &apos;}&apos; ; // Allows {&quot;foo}
+ACTION2 : &apos;[&apos; ( STRING | ~&apos;&quot;&apos; )*? &apos;]&apos; ; // Doesn&apos;t allow [&quot;foo]; nongreedy *?
+ACTION3 : &apos;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>&apos;</span> <span class="token attr-name">(</span> <span class="token attr-name">STRING</span> <span class="token attr-name">|</span> <span class="token attr-name">~[&quot;</span><span class="token punctuation">&gt;</span></span>] )* &apos;&gt;&apos; ; // Doesn&apos;t allow <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>&quot;foo</span><span class="token punctuation">&gt;</span></span>; greedy *
+STRING : &apos;&quot;&apos; ( &apos;\\&quot;&apos; | . )*? &apos;&quot;&apos; ;
+</code></pre><p>Rule <code>ACTION1</code> allows unterminated strings, such as <code>&quot;foo</code>, because input <code>&quot;foo</code> matches to the wildcard part of the loop. It doesn&#x2019;t have to go into rule <code>STRING</code> to match a quote. To fix that, rule <code>ACTION2</code> uses <code>~&#x2019;&quot;&#x2019;</code> to match any character but the quote. Expression <code>~&#x2019;&quot;&#x2019;</code> is still ambiguous with the <code>&#x2019;]&#x2019;</code> that ends the rule, but the fact that the subrule is nongreedy means that the lexer will exit the loop upon a right square bracket. To avoid a nongreedy subrule, make the alternatives explicit. Expression <code>~[&quot;&gt;]</code> matches anything but the quote and right angle bracket. Here&#x2019;s a sample run:</p>
+<pre class="language-"><code class="lang-bash">$ antlr4 Actions.g4
+$ javac Actions*.java
+$ grun Actions tokens -tokens
+<span class="token operator">=</span><span class="token operator">&gt;</span>     <span class="token punctuation">{</span><span class="token string">&quot;foo}
+=&gt;     EOF
+&lt;=     [@0,0:5=&apos;{&quot;</span>foo<span class="token punctuation">}</span><span class="token string">&apos;,&lt;1&gt;,1:0]
+     [@1,7:6=&apos;</span><span class="token operator">&lt;</span>EOF<span class="token operator">&gt;</span><span class="token string">&apos;,&lt;-1&gt;,2:0]
+=&gt;     $ grun Actions tokens -tokens
+=&gt;     [&quot;foo]
+=&gt;     EOF
+&lt;=     line 1:0 token recognition error at: &apos;</span><span class="token punctuation">[</span><span class="token string">&quot;foo]
+     &apos;
+     [@0,7:6=&apos;&lt;EOF&gt;&apos;,&lt;-1&gt;,2:0]
+=&gt;     $ grun Actions tokens -tokens
+=&gt;     &lt;&quot;</span>foo<span class="token operator">&gt;</span>
+<span class="token operator">=</span><span class="token operator">&gt;</span>     EOF
+<span class="token operator">&lt;</span><span class="token operator">=</span>     line <span class="token number">1</span>:0 token recognition error at: <span class="token string">&apos;&lt;&quot;foo&gt;
+     &apos;</span>
+     <span class="token punctuation">[</span>@0,7:6<span class="token operator">=</span><span class="token string">&apos;&lt;EOF&gt;&apos;</span>,<span class="token operator">&lt;</span>-<span class="token operator"><span class="token file-descriptor important">1</span>&gt;</span>,2:0<span class="token punctuation">]</span>
+</code></pre>
+<h2 id="nongreedy-parser-subrules"><a name="nongreedy-parser-subrules" class="anchor-navigation-ex-anchor" href="#nongreedy-parser-subrules"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. Nongreedy Parser Subrules</h2>
+<p>Nongreedy subrules and wildcard are also useful within parsers to do <em>fuzzy parsing</em> where the goal is to extract information from an input file without having to specify the full grammar. In contrast to nongreedy lexer decision-making, parsers always make globally correct decisions. A parser never makes a decision that will ultimately cause valid input to fail later on during the parse. Here is the central idea: Nongreedy parser subrules match the shortest sequence of tokens that preserves a successful parse for a valid input sentence.</p>
+<p>For example, here are the key rules that demonstrate how to pull integer constants out of an arbitrary Java file:</p>
+<pre class="language-"><code>grammar FuzzyJava;
+
+/** Match anything in between constant rule matches */
+file : .*? (constant .*?)+ ;
+
+/** Faster alternate version (Gets an ANTLR tool warning about
+ * a subrule like .* in parser that you can ignore.)
+ */
+altfile : (constant | .)* ; // match a constant or any token, 0-or-more times
+
+/** Match things like &quot;public static final SIZE&quot; followed by anything */
+constant
+    :   &apos;public&apos; &apos;static&apos; &apos;final&apos; &apos;int&apos; Identifier
+        {System.out.println(&quot;constant: &quot;+$Identifier.text);}
+    ;
+
+Identifier : [a-zA-Z_$] [a-zA-Z_$0-9]* ; // simplified
+</code></pre><p>The grammar contains a greatly simplified set of lexer rules from a real Java lexer; the whole file about 60 lines. The recognizer still needs to handle string and character constants as well as comments so it doesn&#x2019;t get out of sync, trying to match a constant inside of the string for example. The only unusual lexer rule performs &#x201C;match any character not matched by another lexer rule&#x201D; functionality:</p>
+<pre class="language-"><code>OTHER : . -&gt; skip ;
+</code></pre><p>This catchall lexer rule and the <code>.*?</code> subrule in the parser are the critical ingredients for fuzzy parsing.</p>
+<p>Here&#x2019;s a sample file that we can run into the fuzzy parser:</p>
+<pre class="language-"><code class="lang-java"><span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token operator">*</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">C</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token keyword">int</span> <span class="token class-name">A</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token keyword">int</span> <span class="token class-name">B</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token keyword">int</span> <span class="token class-name">C</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>And here&#x2019;s the build and test sequence:</p>
+<pre class="language-"><code class="lang-bash">$ antlr4 FuzzyJava.g4
+$ javac FuzzyJava*.java
+$ grun FuzzyJava <span class="token function">file</span> C.java
+constant: A
+constant: B
+constant: C
+</code></pre>
+<p>Notice that it totally ignores everything except for the <code>public static final int</code> declarations. This all happens with only two parser rules.</p>
+<p>Now let&apos;s try matching some simple class defs w/o having to build parser rules for the junk inside.  Here want to catch just <code>A</code> and <code>B</code>:</p>
+<pre class="language-"><code>class A {
+        String name = &quot;parrt&quot;;
+}
+
+class B {
+        int x;   
+        int getDubX() {
+                return 2*x;
+        }
+}
+</code></pre><p>This grammar does it.</p>
+<pre class="language-"><code>grammar Island;
+file : clazz* ;
+clazz : &apos;class&apos; ID &apos;{&apos; ignore &apos;}&apos; ;
+ignore : (method|.)*? ;
+method : type ID &apos;()&apos; block ;
+type : &apos;int&apos; | &apos;void&apos; ;
+block : &apos;{&apos; (block | .)*? &apos;}&apos; ;
+ID : [a-zA-Z] [a-zA-Z0-9]* ;
+WS : [ \r\t\n]+ -&gt; skip ;
+ANY : . ;
+</code></pre><p>You get:</p>
+<p><img src="images/nonnested-fuzzy.png" width="450"></p>
+<p>Now let&apos;s try some nested classes</p>
+<pre class="language-"><code>class A {
+        String name = &quot;parrt&quot;;
+        class Nested {
+            any filthy shite we want in here { }}}}}}
+        }
+}
+
+class B {
+        int x;   
+        int getDubX() {
+                return 2*x;
+        }
+}
+</code></pre><pre class="language-"><code>grammar Island;
+file : clazz* ;
+clazz : &apos;class&apos; ID &apos;{&apos; ignore &apos;}&apos; ;
+ignore : (method|clazz|.)*? ; // <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>-</span> <span class="token attr-name">only</span> <span class="token attr-name">change</span> <span class="token attr-name">is</span> <span class="token attr-name">to</span> <span class="token attr-name">add</span> <span class="token attr-name">clazz</span> <span class="token attr-name">alt</span> <span class="token attr-name">here</span>
+<span class="token attr-name">method</span> <span class="token attr-name">:</span> <span class="token attr-name">type</span> <span class="token attr-name">ID</span> <span class="token attr-name">&apos;()&apos;</span> <span class="token attr-name">block</span> <span class="token attr-name">;</span>
+<span class="token attr-name">type</span> <span class="token attr-name">:</span> <span class="token attr-name">&apos;int&apos;</span> <span class="token attr-name">|</span> <span class="token attr-name">&apos;void&apos;</span> <span class="token attr-name">;</span>
+<span class="token attr-name">block</span> <span class="token attr-name">:</span> <span class="token attr-name">&apos;{&apos;</span> <span class="token attr-name">(block</span> <span class="token attr-name">|</span> <span class="token attr-name">.)*?</span> <span class="token attr-name">&apos;}&apos;</span> <span class="token attr-name">;</span>
+<span class="token attr-name">ID</span> <span class="token attr-name">:</span> <span class="token attr-name">[a-zA-Z]</span> <span class="token attr-name">[a-zA-Z0-9]*</span> <span class="token attr-name">;</span>
+<span class="token attr-name">WS</span> <span class="token attr-name">:</span> <span class="token attr-name">[</span> <span class="token attr-name">\r\t\n]+</span> <span class="token attr-name">-</span><span class="token punctuation">&gt;</span></span> skip ;
+ANY : . ;
+</code></pre><p>You get:</p>
+<p><img src="images/nested-fuzzy.png" width="600"></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="lexer-rules.html" class="navigation navigation-prev " aria-label="Previous page: Lexer Rules">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="listeners.html" class="navigation navigation-next " aria-label="Next page: Parse Tree Listeners">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Wildcard Operator and Nongreedy Subrules","level":"2.9","depth":1,"next":{"title":"Parse Tree Listeners","level":"2.10","depth":1,"path":"chapters/listeners.md","ref":"chapters/listeners.md","articles":[]},"previous":{"title":"Lexer Rules","level":"2.8","depth":1,"path":"chapters/lexer-rules.md","ref":"chapters/lexer-rules.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","anchor-navigation-ex","-sharing","sharing-plus","-highlight","prism"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"night","family":"serif","size":2},"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"sharing":{"weibo":true,"qzone":true,"qq":true,"douban":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"Little Captain","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"antlr4-doc","gitbook":"*","description":"antlr4-doc"},"file":{"path":"chapters/wildcard.md","mtime":"2021-11-11T03:00:11.621Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-11-11T03:11:20.710Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

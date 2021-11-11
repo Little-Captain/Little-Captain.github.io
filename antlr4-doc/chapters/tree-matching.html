@@ -1,0 +1,739 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Parse Tree Matching and XPath · antlr4-doc</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Little Captain">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-okaidia.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="predicates.html" />
+    
+    
+    <link rel="prev" href="listeners.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Sections</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                        <b>2.1.</b>
+                    
+                    Index
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="getting-started.html">
+            
+                <a href="getting-started.html">
+            
+                    
+                        <b>2.2.</b>
+                    
+                    Getting Started with ANTLR v4
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="lexicon.html">
+            
+                <a href="lexicon.html">
+            
+                    
+                        <b>2.3.</b>
+                    
+                    Grammar Lexicon
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="grammars.html">
+            
+                <a href="grammars.html">
+            
+                    
+                        <b>2.4.</b>
+                    
+                    Grammar Structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="parser-rules.html">
+            
+                <a href="parser-rules.html">
+            
+                    
+                        <b>2.5.</b>
+                    
+                    Parser Rules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="left-recursion.html">
+            
+                <a href="left-recursion.html">
+            
+                    
+                        <b>2.6.</b>
+                    
+                    Left-recursive rules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="actions.html">
+            
+                <a href="actions.html">
+            
+                    
+                        <b>2.7.</b>
+                    
+                    Actions and Attributes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="lexer-rules.html">
+            
+                <a href="lexer-rules.html">
+            
+                    
+                        <b>2.8.</b>
+                    
+                    Lexer Rules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="wildcard.html">
+            
+                <a href="wildcard.html">
+            
+                    
+                        <b>2.9.</b>
+                    
+                    Wildcard Operator and Nongreedy Subrules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="listeners.html">
+            
+                <a href="listeners.html">
+            
+                    
+                        <b>2.10.</b>
+                    
+                    Parse Tree Listeners
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.11" data-path="tree-matching.html">
+            
+                <a href="tree-matching.html">
+            
+                    
+                        <b>2.11.</b>
+                    
+                    Parse Tree Matching and XPath
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.12" data-path="predicates.html">
+            
+                <a href="predicates.html">
+            
+                    
+                        <b>2.12.</b>
+                    
+                    Semantic Predicates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.13" data-path="options.html">
+            
+                <a href="options.html">
+            
+                    
+                        <b>2.13.</b>
+                    
+                    Options
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14" data-path="tool-options.html">
+            
+                <a href="tool-options.html">
+            
+                    
+                        <b>2.14.</b>
+                    
+                    ANTLR Tool Command Line Options
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.15" data-path="targets.html">
+            
+                <a href="targets.html">
+            
+                    
+                        <b>2.15.</b>
+                    
+                    Runtime Libraries and Code Generation Targets
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.16" data-path="unicode.html">
+            
+                <a href="unicode.html">
+            
+                    
+                        <b>2.16.</b>
+                    
+                    Unicode U+FFFF, U+10FFFF character streams
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17" data-path="parsing-binary-files.html">
+            
+                <a href="parsing-binary-files.html">
+            
+                    
+                        <b>2.17.</b>
+                    
+                    Parsing binary streams
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.18" data-path="case-insensitive-lexing.html">
+            
+                <a href="case-insensitive-lexing.html">
+            
+                    
+                        <b>2.18.</b>
+                    
+                    Case-Insensitive Lexing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.19" data-path="interpreters.html">
+            
+                <a href="interpreters.html">
+            
+                    
+                        <b>2.19.</b>
+                    
+                    Parser and lexer interpreters
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.20" data-path="resources.html">
+            
+                <a href="resources.html">
+            
+                    
+                        <b>2.20.</b>
+                    
+                    Resources
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Building / releasing ANTLR itself</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="building-antlr.html">
+            
+                <a href="building-antlr.html">
+            
+                    
+                        <b>3.1.</b>
+                    
+                    Building ANTLR itself
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="releasing-antlr.html">
+            
+                <a href="releasing-antlr.html">
+            
+                    
+                        <b>3.2.</b>
+                    
+                    Cutting an ANTLR Release
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="antlr-project-testing.html">
+            
+                <a href="antlr-project-testing.html">
+            
+                    
+                        <b>3.3.</b>
+                    
+                    ANTLR project unit tests
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="creating-a-language-target.html">
+            
+                <a href="creating-a-language-target.html">
+            
+                    
+                        <b>3.4.</b>
+                    
+                    Creating an ANTLR Language Target
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Parse Tree Matching and XPath</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#parse-tree-matching-and-xpath"><b>1. </b>Parse Tree Matching and XPath</a></li><ul><li><span class="title-icon "></span><a href="#parse-tree-patterns"><b>1.1. </b>Parse tree patterns</a></li><ul><li><span class="title-icon "></span><a href="#pattern-labels"><b>1.1.1. </b>Pattern labels</a></li><li><span class="title-icon "></span><a href="#creating-parse-trees-with-the-pattern-matcher"><b>1.1.2. </b>Creating parse trees with the pattern matcher</a></li></ul><li><span class="title-icon "></span><a href="#using-xpath-to-identify-parse-tree-node-sets"><b>1.2. </b>Using XPath to identify parse tree node sets</a></li><li><span class="title-icon "></span><a href="#combining-xpath-and-tree-pattern-matching"><b>1.3. </b>Combining XPath and tree pattern matching</a></li></ul></ul></div><a href="#parse-tree-matching-and-xpath" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="parse-tree-matching-and-xpath"><a name="parse-tree-matching-and-xpath" class="anchor-navigation-ex-anchor" href="#parse-tree-matching-and-xpath"><i class="fa fa-link" aria-hidden="true"></i></a>1. Parse Tree Matching and XPath</h1>
+<p><em>Since ANTLR 4.2</em></p>
+<p>ANTLR 4 introduced a visitor and listener mechanism that lets you implement DOM visiting or SAX-analogous event processing of tree nodes. This works great. For example, if all you care about is looking at Java method declarations, grab the <code>Java.g4</code> file and then override methodDeclaration in <code>JavaBaseListener</code>. From there, a <code>ParseTreeWalker</code> can trigger calls to your overridden method as it walks the tree. Easy things are easy.</p>
+<p>This mechanism works more or less on a node-level basis. In other words, for every method declaration subtree root, your <code>methodDeclaration()</code> would get called. There are many situations where we care more about subtrees not just nodes. We might want to:</p>
+<ul>
+<li>Collect method declarations within a particular context (i.e., nested within another method) or methods with specific structure or specific types (e.g., <code>void <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ID</span><span class="token punctuation">&gt;</span></span>() { }</code>). We&apos;ll combine <code>XPath</code> and tree pattern matching for this.</li>
+<li>Group translation operations by patterns in the tree rather than spreading operations across listener event methods.</li>
+<li>Get a list of all assignments anywhere in the tree. It&apos;s much easier to say <em>go find me all &quot;... = ... ;&quot; subtrees</em> rather than creating a class just to get a listener method for rule assignment and then passing the listener to the parse tree walker.</li>
+</ul>
+<p>The other important idea here is that, since we&apos;re talking about parse trees not abstract syntax trees, we can use concrete patterns instead of tree syntax. For example, we can say <code>x = 0;</code> instead of AST <code>(= x 0)</code> where the <code>;</code> would probably stripped before it went into the AST.</p>
+<h2 id="parse-tree-patterns"><a name="parse-tree-patterns" class="anchor-navigation-ex-anchor" href="#parse-tree-patterns"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. Parse tree patterns</h2>
+<p>To test a subtree to see if it has a particular structure, we use a tree pattern. We also often want to extract descendents from the subtree based upon the structure. A very simple example is checking to see if a subtree matches an assignment statement. The pattern might look like the following in your language:</p>
+<pre class="language-"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ID</span><span class="token punctuation">&gt;</span></span> = <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>expr</span><span class="token punctuation">&gt;</span></span>;
+</code></pre><p>where &quot;tags&quot; in angle brackets represent either token or rule references in the associated grammar. ANTLR converts that string to a parse tree with special nodes that represent any token <code>ID</code> and rule <code>expr</code> subtree. To create this parse tree, the pattern matching compiler needs to know which rule in the grammar the pattern conforms to. In this case it might be statement. Here is how we could test a tree, <code>t</code>, to see if it matches that pattern:</p>
+<pre class="language-"><code class="lang-java"><span class="token class-name">ParseTree</span> t <span class="token operator">=</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">;</span> <span class="token comment">// assume t is a statement</span>
+<span class="token class-name">ParseTreePattern</span> p <span class="token operator">=</span> parser<span class="token punctuation">.</span><span class="token function">compileParseTreePattern</span><span class="token punctuation">(</span><span class="token string">&quot;&lt;ID&gt; = &lt;expr&gt;;&quot;</span><span class="token punctuation">,</span> <span class="token class-name">MyParser<span class="token punctuation">.</span>RULE_statement</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">ParseTreeMatch</span> m <span class="token operator">=</span> p<span class="token punctuation">.</span><span class="token function">match</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span> m<span class="token punctuation">.</span><span class="token function">succeeded</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">}</span>
+</code></pre>
+<p>We can also test for specific expressions or token values. For example, the following checks to see if <code>t</code> is an expression consisting of an identifier added to 0:</p>
+<pre class="language-"><code class="lang-java"><span class="token class-name">ParseTree</span> t <span class="token operator">=</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">;</span> <span class="token comment">// assume t is an expression</span>
+<span class="token class-name">ParseTreePattern</span> p <span class="token operator">=</span> parser<span class="token punctuation">.</span><span class="token function">compileParseTreePattern</span><span class="token punctuation">(</span><span class="token string">&quot;&lt;ID&gt;+0&quot;</span><span class="token punctuation">,</span> <span class="token class-name">MyParser<span class="token punctuation">.</span>RULE_expr</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">ParseTreeMatch</span> m <span class="token operator">=</span> p<span class="token punctuation">.</span><span class="token function">match</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>We can also ask the <code>ParseTreeMatch</code> result to pull out the token matched to the <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ID</span><span class="token punctuation">&gt;</span></span></code> tag:</p>
+<pre class="language-"><code class="lang-java"><span class="token class-name">String</span> id <span class="token operator">=</span> m<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">&quot;ID&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>You can change the tag delimiters using a method on the pattern matcher:</p>
+<pre class="language-"><code class="lang-java"><span class="token class-name">ParseTreePatternMatcher</span> m <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ParseTreePatternMatcher</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+m<span class="token punctuation">.</span><span class="token function">setDelimiters</span><span class="token punctuation">(</span><span class="token string">&quot;&lt;&lt;&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;&gt;&gt;&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;$&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// $ is the escape character</span>
+</code></pre>
+<p>This would allow pattern <code>&lt;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ID</span><span class="token punctuation">&gt;</span></span>&gt; = &lt;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>expr</span><span class="token punctuation">&gt;</span></span>&gt; ;$&lt;&lt; ick $&gt;&gt;</code> to be interpreted as elements: <code>ID</code>, <code>=</code>, <code>expr</code>, and <code>;&lt;&lt; ick &gt;&gt;</code>.</p>
+<h3 id="pattern-labels"><a name="pattern-labels" class="anchor-navigation-ex-anchor" href="#pattern-labels"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.1. Pattern labels</h3>
+<p>The tree pattern matcher tracks the nodes in the tree at matches against the tags in a tree pattern. That way we can use the <code>get()</code> and <code>getAll()</code> methods to retrieve components of the matched subtree. For example, for pattern <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ID</span><span class="token punctuation">&gt;</span></span></code>, <code>get(&quot;ID&quot;)</code> returns the node matched for that <code>ID</code>. If more than one node matched the specified token or rule tag, only the first match is returned. If there is no node associated with the label, this returns null.</p>
+<p>You can also label the tags with identifiers. If the label is the name of a parser rule or token in the grammar, the resulting list from <code>getAll()</code> (or node from <code>get()</code>) will contain both the parse trees matching rule or tags explicitly labeled with the label and the complete set of parse trees matching the labeled and unlabeled tags in the pattern for the parser rule or token. For example, if label is <code>foo</code>, the result will contain all of the following.</p>
+<ul>
+<li>Parse tree nodes matching tags of the form <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">foo:</span>anyRuleName</span><span class="token punctuation">&gt;</span></span></code> and <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">foo:</span>AnyTokenName</span><span class="token punctuation">&gt;</span></span></code>.</li>
+<li>Parse tree nodes matching tags of the form <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">anyLabel:</span>foo</span><span class="token punctuation">&gt;</span></span></code>.</li>
+<li>Parse tree nodes matching tags of the form <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>foo</span><span class="token punctuation">&gt;</span></span></code>.</li>
+</ul>
+<h3 id="creating-parse-trees-with-the-pattern-matcher"><a name="creating-parse-trees-with-the-pattern-matcher" class="anchor-navigation-ex-anchor" href="#creating-parse-trees-with-the-pattern-matcher"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.2. Creating parse trees with the pattern matcher</h3>
+<p>You can use the parse tree pattern compiler to create parse trees for partial input fragments. Just use method <code>ParseTreePattern.getPatternTree()</code>.</p>
+<p>See <a href="https://github.com/antlr/antlr4/blob/master/tool-testsuite/test/org/antlr/v4/test/tool/TestParseTreeMatcher.java" target="_blank">TestParseTreeMatch.java</a>.</p>
+<h2 id="using-xpath-to-identify-parse-tree-node-sets"><a name="using-xpath-to-identify-parse-tree-node-sets" class="anchor-navigation-ex-anchor" href="#using-xpath-to-identify-parse-tree-node-sets"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. Using XPath to identify parse tree node sets</h2>
+<p>XPath paths are strings representing nodes or subtrees you would like to select within a parse tree. It&apos;s useful to collect subsets of the parse tree to process. For example you might want to know where all assignments are in a method or all variable declarations that are initialized.</p>
+<p>A path is a series of node names with the following separators.</p>
+<table>
+<thead>
+<tr>
+<th>Expression</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>nodename</td>
+<td>Nodes with the token or rule name nodename</td>
+</tr>
+<tr>
+<td>/</td>
+<td>The root node but <code>/X</code> is the same as <code>X</code> since the tree you pass to xpath is assumed to be the root. Because it looks better, start all of your patterns with <code>/</code> (or <code>//</code> below).</td>
+</tr>
+<tr>
+<td>//</td>
+<td>All nodes in the tree that match the next element in the path. E.g., <code>//ID</code> finds all <code>ID</code> token nodes in the tree.</td>
+</tr>
+<tr>
+<td>!</td>
+<td>Any node except for the next element in the path. E.g., <code>/classdef/!field</code> should find all children of <code>classdef</code> root node that are not <code>field</code> subtrees.</td>
+</tr>
+</tbody>
+</table>
+<p>Examples:</p>
+<pre class="language-"><code>/prog/func, -&gt; all funcs under prog at root
+/prog/*, -&gt; all children of prog at root
+/*/func, -&gt; all func kids of any root node
+prog, -&gt; prog must be root node
+/prog, -&gt; prog must be root node
+/*, -&gt; any root
+*, -&gt; any root
+//ID, -&gt; any ID in tree
+//expr/primary/ID, -&gt; any ID child of a primary under any expr
+//body//ID, -&gt; any ID under a body
+//&apos;return&apos;, -&gt; any &apos;return&apos; literal in tree
+//primary/*, -&gt; all kids of any primary
+//func/*/stat, -&gt; all stat nodes grandkids of any func node
+/prog/func/&apos;def&apos;, -&gt; all def literal kids of func kid of prog
+//stat/&apos;;&apos;, -&gt; all &apos;;&apos; under any stat node
+//expr/primary/!ID, -&gt; anything but ID under primary under any expr node
+//expr/!primary, -&gt; anything but primary under any expr node
+//!*, -&gt; nothing anywhere
+/!*, -&gt; nothing at root
+</code></pre><p>Given a parse tree, the typical mechanism for visiting those nodes is the following loop:</p>
+<pre class="language-"><code class="lang-java"><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">ParseTree</span> t <span class="token operator">:</span> <span class="token class-name">XPath</span><span class="token punctuation">.</span><span class="token function">findAll</span><span class="token punctuation">(</span>tree<span class="token punctuation">,</span> xpath<span class="token punctuation">,</span> parser<span class="token punctuation">)</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> process t <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>E.g., here is a general formula for making a list of the text associated with every node identified by a path specification:</p>
+<pre class="language-"><code class="lang-java"><span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> nodes <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">ParseTree</span> t <span class="token operator">:</span> <span class="token class-name">XPath</span><span class="token punctuation">.</span><span class="token function">findAll</span><span class="token punctuation">(</span>tree<span class="token punctuation">,</span> xpath<span class="token punctuation">,</span> parser<span class="token punctuation">)</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span> t <span class="token keyword">instanceof</span> <span class="token class-name">RuleContext</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">RuleContext</span> r <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">RuleContext</span><span class="token punctuation">)</span>t<span class="token punctuation">;</span>
+        nodes<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>parser<span class="token punctuation">.</span><span class="token function">getRuleNames</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span>r<span class="token punctuation">.</span><span class="token function">getRuleIndex</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token punctuation">}</span>      
+    <span class="token keyword">else</span> <span class="token punctuation">{</span> 
+        <span class="token class-name">TerminalNode</span> token <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">TerminalNode</span><span class="token punctuation">)</span>t<span class="token punctuation">;</span>
+        nodes<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>token<span class="token punctuation">.</span><span class="token function">getText</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>      
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="combining-xpath-and-tree-pattern-matching"><a name="combining-xpath-and-tree-pattern-matching" class="anchor-navigation-ex-anchor" href="#combining-xpath-and-tree-pattern-matching"><i class="fa fa-link" aria-hidden="true"></i></a>1.3. Combining XPath and tree pattern matching</h2>
+<p>Naturally you can combine the use of XPath to find a set of root nodes and then use tree pattern matching to identify a certain subset of those and extract component nodes.</p>
+<pre class="language-"><code class="lang-java"><span class="token comment">// assume we are parsing Java</span>
+<span class="token class-name">ParserRuleContext</span> tree <span class="token operator">=</span> parser<span class="token punctuation">.</span><span class="token function">compilationUnit</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">String</span> xpath <span class="token operator">=</span> <span class="token string">&quot;//blockStatement/*&quot;</span><span class="token punctuation">;</span> <span class="token comment">// get children of blockStatement</span>
+<span class="token class-name">String</span> treePattern <span class="token operator">=</span> <span class="token string">&quot;int &lt;Identifier&gt; = &lt;expression&gt;;&quot;</span><span class="token punctuation">;</span>
+<span class="token class-name">ParseTreePattern</span> p <span class="token operator">=</span>
+    parser<span class="token punctuation">.</span><span class="token function">compileParseTreePattern</span><span class="token punctuation">(</span>treePattern<span class="token punctuation">,</span>   
+        <span class="token class-name">ExprParser<span class="token punctuation">.</span>RULE_localVariableDeclarationStatement</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">ParseTreeMatch</span><span class="token punctuation">&gt;</span></span> matches <span class="token operator">=</span> p<span class="token punctuation">.</span><span class="token function">findAll</span><span class="token punctuation">(</span>tree<span class="token punctuation">,</span> xpath<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>matches<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>See <a href="https://github.com/antlr/antlr4/blob/master/tool-testsuite/test/org/antlr/v4/test/tool/TestXPath.java" target="_blank">TestXPath.java</a>.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="listeners.html" class="navigation navigation-prev " aria-label="Previous page: Parse Tree Listeners">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="predicates.html" class="navigation navigation-next " aria-label="Next page: Semantic Predicates">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Parse Tree Matching and XPath","level":"2.11","depth":1,"next":{"title":"Semantic Predicates","level":"2.12","depth":1,"path":"chapters/predicates.md","ref":"chapters/predicates.md","articles":[]},"previous":{"title":"Parse Tree Listeners","level":"2.10","depth":1,"path":"chapters/listeners.md","ref":"chapters/listeners.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","anchor-navigation-ex","-sharing","sharing-plus","-highlight","prism"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"night","family":"serif","size":2},"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"sharing":{"weibo":true,"qzone":true,"qq":true,"douban":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"Little Captain","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"antlr4-doc","gitbook":"*","description":"antlr4-doc"},"file":{"path":"chapters/tree-matching.md","mtime":"2021-11-11T03:00:11.621Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-11-11T03:11:20.710Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

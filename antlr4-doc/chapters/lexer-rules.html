@@ -1,0 +1,848 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Lexer Rules · antlr4-doc</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Little Captain">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-okaidia.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="wildcard.html" />
+    
+    
+    <link rel="prev" href="actions.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Sections</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                        <b>2.1.</b>
+                    
+                    Index
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="getting-started.html">
+            
+                <a href="getting-started.html">
+            
+                    
+                        <b>2.2.</b>
+                    
+                    Getting Started with ANTLR v4
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="lexicon.html">
+            
+                <a href="lexicon.html">
+            
+                    
+                        <b>2.3.</b>
+                    
+                    Grammar Lexicon
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="grammars.html">
+            
+                <a href="grammars.html">
+            
+                    
+                        <b>2.4.</b>
+                    
+                    Grammar Structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="parser-rules.html">
+            
+                <a href="parser-rules.html">
+            
+                    
+                        <b>2.5.</b>
+                    
+                    Parser Rules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="left-recursion.html">
+            
+                <a href="left-recursion.html">
+            
+                    
+                        <b>2.6.</b>
+                    
+                    Left-recursive rules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="actions.html">
+            
+                <a href="actions.html">
+            
+                    
+                        <b>2.7.</b>
+                    
+                    Actions and Attributes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.8" data-path="lexer-rules.html">
+            
+                <a href="lexer-rules.html">
+            
+                    
+                        <b>2.8.</b>
+                    
+                    Lexer Rules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="wildcard.html">
+            
+                <a href="wildcard.html">
+            
+                    
+                        <b>2.9.</b>
+                    
+                    Wildcard Operator and Nongreedy Subrules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="listeners.html">
+            
+                <a href="listeners.html">
+            
+                    
+                        <b>2.10.</b>
+                    
+                    Parse Tree Listeners
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11" data-path="tree-matching.html">
+            
+                <a href="tree-matching.html">
+            
+                    
+                        <b>2.11.</b>
+                    
+                    Parse Tree Matching and XPath
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.12" data-path="predicates.html">
+            
+                <a href="predicates.html">
+            
+                    
+                        <b>2.12.</b>
+                    
+                    Semantic Predicates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.13" data-path="options.html">
+            
+                <a href="options.html">
+            
+                    
+                        <b>2.13.</b>
+                    
+                    Options
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14" data-path="tool-options.html">
+            
+                <a href="tool-options.html">
+            
+                    
+                        <b>2.14.</b>
+                    
+                    ANTLR Tool Command Line Options
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.15" data-path="targets.html">
+            
+                <a href="targets.html">
+            
+                    
+                        <b>2.15.</b>
+                    
+                    Runtime Libraries and Code Generation Targets
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.16" data-path="unicode.html">
+            
+                <a href="unicode.html">
+            
+                    
+                        <b>2.16.</b>
+                    
+                    Unicode U+FFFF, U+10FFFF character streams
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17" data-path="parsing-binary-files.html">
+            
+                <a href="parsing-binary-files.html">
+            
+                    
+                        <b>2.17.</b>
+                    
+                    Parsing binary streams
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.18" data-path="case-insensitive-lexing.html">
+            
+                <a href="case-insensitive-lexing.html">
+            
+                    
+                        <b>2.18.</b>
+                    
+                    Case-Insensitive Lexing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.19" data-path="interpreters.html">
+            
+                <a href="interpreters.html">
+            
+                    
+                        <b>2.19.</b>
+                    
+                    Parser and lexer interpreters
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.20" data-path="resources.html">
+            
+                <a href="resources.html">
+            
+                    
+                        <b>2.20.</b>
+                    
+                    Resources
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Building / releasing ANTLR itself</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="building-antlr.html">
+            
+                <a href="building-antlr.html">
+            
+                    
+                        <b>3.1.</b>
+                    
+                    Building ANTLR itself
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="releasing-antlr.html">
+            
+                <a href="releasing-antlr.html">
+            
+                    
+                        <b>3.2.</b>
+                    
+                    Cutting an ANTLR Release
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="antlr-project-testing.html">
+            
+                <a href="antlr-project-testing.html">
+            
+                    
+                        <b>3.3.</b>
+                    
+                    ANTLR project unit tests
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="creating-a-language-target.html">
+            
+                <a href="creating-a-language-target.html">
+            
+                    
+                        <b>3.4.</b>
+                    
+                    Creating an ANTLR Language Target
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Lexer Rules</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#lexer-rules"><b>1. </b>Lexer Rules</a></li><ul><li><span class="title-icon "></span><a href="#lexical-modes"><b>1.1. </b>Lexical Modes</a></li><li><span class="title-icon "></span><a href="#lexer-rule-elements"><b>1.2. </b>Lexer Rule Elements</a></li><li><span class="title-icon "></span><a href="#recursive-lexer-rules"><b>1.3. </b>Recursive Lexer Rules</a></li><li><span class="title-icon "></span><a href="#redundant-string-literals"><b>1.4. </b>Redundant String Literals</a></li><li><span class="title-icon "></span><a href="#lexer-rule-actions"><b>1.5. </b>Lexer Rule Actions</a></li><li><span class="title-icon "></span><a href="#lexer-commands"><b>1.6. </b>Lexer Commands</a></li><ul><li><span class="title-icon "></span><a href="#skip"><b>1.6.1. </b>skip</a></li><li><span class="title-icon "></span><a href="#mode-pushmode-popmode-and-more"><b>1.6.2. </b>mode(), pushMode(), popMode, and more</a></li><li><span class="title-icon "></span><a href="#type"><b>1.6.3. </b>type()</a></li><li><span class="title-icon "></span><a href="#channel"><b>1.6.4. </b>channel()</a></li></ul></ul></ul></div><a href="#lexer-rules" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="lexer-rules"><a name="lexer-rules" class="anchor-navigation-ex-anchor" href="#lexer-rules"><i class="fa fa-link" aria-hidden="true"></i></a>1. Lexer Rules</h1>
+<p>A lexer grammar is composed of lexer rules, optionally broken into multiple modes. Lexical modes allow us to split a single lexer grammar into multiple sublexers. The lexer can only return tokens matched by rules from the current mode.</p>
+<p>Lexer rules specify token definitions and more or less follow the syntax of parser rules except that lexer rules cannot have arguments, return values, or local variables. Lexer rule names must begin with an uppercase letter, which distinguishes them from parser rule names:</p>
+<pre class="language-"><code>/** Optional document comment */
+TokenName : alternative1 | ... | alternativeN ;
+</code></pre><p>You can also define rules that are not tokens but rather aid in the recognition of tokens. These fragment rules do not result in tokens visible to the parser:</p>
+<pre class="language-"><code>fragment
+HelperTokenRule : alternative1 | ... | alternativeN ;
+</code></pre><p>For example, <code>DIGIT</code> is a pretty common fragment rule:</p>
+<pre class="language-"><code>INT : DIGIT+ ; // references the DIGIT helper rule
+fragment DIGIT : [0-9] ; // not a token by itself
+</code></pre><h2 id="lexical-modes"><a name="lexical-modes" class="anchor-navigation-ex-anchor" href="#lexical-modes"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. Lexical Modes</h2>
+<p>Modes allow you to group lexical rules by context, such as inside and outside of XML tags. It&#x2019;s like having multiple sublexers, one for each context. The lexer can only return tokens matched by entering a rule in the current mode. Lexers start out in the so-called default mode. All rules are considered to be within the default mode unless you specify a mode command. Modes are not allowed within combined grammars, just lexer grammars. (See grammar <code>XMLLexer</code> from <a href="http://pragprog.com/book/tpantlr2/the-definitive-antlr-4-reference" target="_blank">Tokenizing XML</a>.)</p>
+<pre class="language-"><code>rules in default mode
+...
+mode MODE1;
+rules in MODE1
+...
+mode MODEN;
+rules in MODEN
+...
+</code></pre><h2 id="lexer-rule-elements"><a name="lexer-rule-elements" class="anchor-navigation-ex-anchor" href="#lexer-rule-elements"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. Lexer Rule Elements</h2>
+<p>Lexer rules allow two constructs that are unavailable to parser rules: the .. range operator and the character set notation enclosed in square brackets, [characters]. Don&#x2019;t confuse character sets with arguments to parser rules. [characters] only means character set in a lexer. Here&#x2019;s a summary of all lexer rule elements:</p>
+<table>
+<tr>
+<th>Syntax</th><th>Description</th>
+</tr>
+<tr>
+<td>T</td><td>
+Match token T at the current input position. Tokens always begin with a capital letter.</td>
+</tr>
+
+<tr>
+<td>&#x2019;literal&#x2019;</td><td>
+Match that character or sequence of characters. E.g., &#x2019;while&#x2019; or &#x2019;=&#x2019;.</td>
+</tr>
+
+<tr>
+<td>[char set]</td><td>
+<p>Match one of the characters specified in the character set. Interpret <tt>x-y</tt> as the set of characters between range <tt>x</tt> and <tt>y</tt>, inclusively. The following escaped characters are interpreted as single special characters: <tt>\n</tt>, <tt>\r</tt>, <tt>\b</tt>, <tt>\t</tt>, <tt>\f</tt>, <tt>\uXXXX</tt>, and <tt>\u{XXXXXX}</tt>. To get <tt>]</tt> or <tt>\</tt> you must escape them with <tt>\</tt>. To get <tt>-</tt> you must escape it with <tt>\</tt> too, except for the case when <tt>-</tt> is the first or last character in the set.</p>
+
+<p>You can also include all characters matching Unicode properties (general category, boolean, or enumerated including scripts and blocks) with <tt>\p{PropertyName}</tt> or <tt>\p{EnumProperty=Value}</tt>. (You can invert the test with <tt>\P{PropertyName}</tt> or <tt>\P{EnumProperty=Value}</tt>).</p>
+
+<p>For a list of valid Unicode property names, see <a href="http://unicode.org/reports/tr44/#Properties" target="_blank">Unicode Standard Annex #44</a>. (ANTLR also supports <a href="http://unicode.org/reports/tr44/#General_Category_Values" target="_blank">short and long Unicode general category names and values</a> like <tt>\p{Lu}</tt>, <tt>\p{Z}</tt>, <tt>\p{Symbol}</tt>, <tt>\p{Blk=Latin_1_Sup}</tt>, and <tt>\p{Block=Latin_1_Supplement}</tt>.)</p>
+
+<p>As a shortcut for <tt>\p{Block=Latin_1_Supplement}</tt>, you can refer to blocks using <a href="http://www.unicode.org/Public/UCD/latest/ucd/Blocks.txt" target="_blank">Unicode block names</a> prefixed with <tt>In</tt> and with spaces changed to <tt>_</tt>. For example: <tt>\p{InLatin_1_Supplement}</tt>, <tt>\p{InYijing_Hexagram_Symbols}</tt>, and <tt>\p{InAncient_Greek_Numbers}</tt>.</p>
+
+<p>A few extra properties are supported:</p>
+<ul>
+<li><tt>\p{Extended_Pictographic}</tt> (see <a href="http://unicode.org/reports/tr35/" target="_blank">UTS #35</a>)</li>
+<li><tt>\p{EmojiPresentation=EmojiDefault}</tt> (code points which have colorful emoji-style presentation by default but which can also be displayed text-style)</li>
+<li><tt>\p{EmojiPresentation=TextDefault}</tt> (code points which have black-and-white text-style presentation by default but which can also be displayed emoji-style)</li>
+<li><tt>\p{EmojiPresentation=Text}</tt> (code points which have only black-and-white text-style and lack a colorful emoji-style presentation)</li>
+</ul>
+
+<p>Property names are <b>case-insensitive</b>, and <tt>_</tt> and <tt>-</tt> are treated identically</p>
+
+<p>Here are a few examples:</p>
+
+<pre class="language-">
+WS : [ \n\u000D] -&gt; skip ; // same as [ \n\r]
+
+UNICODE_WS : [\p{White_Space}] -&gt; skip; // match all Unicode whitespace
+
+ID : [a-zA-Z] [a-zA-Z0-9]* ; // match usual identifier spec
+
+UNICODE_ID : [\p{Alpha}\p{General_Category=Other_Letter}] [\p{Alnum}\p{General_Category=Other_Letter}]* ; // match full Unicode alphabetic ids
+
+EMOJI : [\u{1F4A9}\u{1F926}] ; // note Unicode code points &gt; U+FFFF
+
+DASHBRACK : [\-\]]+ ; // match - or ] one or more times
+
+DASH : [---] ; // match a single -, i.e., &quot;any character&quot; between - and - (note first and last - not escaped)
+</pre>
+</td>
+</tr>
+
+<tr>
+<td>&#x2019;x&#x2019;..&#x2019;y&#x2019;</td><td>
+Match any single character between range x and y, inclusively. E.g., &#x2019;a&#x2019;..&#x2019;z&#x2019;. &#x2019;a&#x2019;..&#x2019;z&#x2019; is identical to [a-z].</td>
+</tr>
+
+<tr>
+<td>T</td><td>
+Invoke lexer rule T; recursion is allowed in general, but not left recursion. T can be a regular token or fragment rule.
+
+<pre class="language-">
+ID : LETTER (LETTER|&apos;0&apos;..&apos;9&apos;)* ;
+
+fragment
+LETTER : [a-zA-Z\u0080-\u00FF_] ;
+</pre>
+</td>
+</tr>
+
+<tr>
+<td>.</td><td>
+The dot is a single-character wildcard that matches any single character. Example:
+<pre class="language-">
+ESC : &apos;\\&apos; . ; // match any escaped \x character
+</pre>
+</td>
+</tr>
+
+<tr>
+<td>{&#xAB;action&#xBB;}</td><td>
+Lexer actions can appear anywhere as of 4.2, not just at the end of the outermost alternative. The lexer executes the actions at the appropriate input position, according to the placement of the action within the rule. To execute a single action for a rule that has multiple alternatives, you can enclose the alts in parentheses and put the action afterwards:
+
+<pre class="language-">
+END : (&apos;endif&apos;|&apos;end&apos;) {System.out.println(&quot;found an end&quot;);} ;
+</pre>
+
+<p>The action conforms to the syntax of the target language. ANTLR copies the action&#x2019;s contents into the generated code verbatim; there is no translation of expressions like $x.y as there is in parser actions.</p>
+<p>
+Only actions within the outermost token rule are executed. In other words, if STRING calls ESC_CHAR and ESC_CHAR has an action, that action is not executed when the lexer starts matching in STRING.</p></td>
+</tr>
+
+<tr>
+<td>{&#xAB;p&#xBB;}?</td><td>
+Evaluate semantic predicate &#xAB;p&#xBB;. If &#xAB;p&#xBB; evaluates to false at runtime, the surrounding rule becomes &#x201C;invisible&#x201D; (nonviable). Expression &#xAB;p&#xBB; conforms to the target language syntax. While semantic predicates can appear anywhere within a lexer rule, it is most efficient to have them at the end of the rule. The one caveat is that semantic predicates must precede lexer actions. See Predicates in Lexer Rules.</td>
+</tr>
+
+<tr>
+<td>~x</td><td>
+Match any single character not in the set described by x. Set x can be a single character literal, a range, or a subrule set like ~(&#x2019;x&#x2019;|&#x2019;y&#x2019;|&#x2019;z&#x2019;) or ~[xyz]. Here is a rule that uses ~ to match any character other than characters using ~[\r\n]*:
+<pre class="language-">     
+COMMENT : &apos;#&apos; ~[\r\n]* &apos;\r&apos;? &apos;\n&apos; -&gt; skip ;
+</pre>
+</td>
+</tr>
+</table>
+
+<p>Just as with parser rules, lexer rules allow subrules in parentheses and EBNF operators: <code>?</code>, <code>*</code>, <code>+</code>. The <code>COMMENT</code> rule illustrates the <code>*</code> and <code>?</code> operators. A common use of <code>+</code> is <code>[0-9]+</code> to match integers. Lexer subrules can also use the nongreedy <code>?</code> suffix on those EBNF operators.</p>
+<h2 id="recursive-lexer-rules"><a name="recursive-lexer-rules" class="anchor-navigation-ex-anchor" href="#recursive-lexer-rules"><i class="fa fa-link" aria-hidden="true"></i></a>1.3. Recursive Lexer Rules</h2>
+<p>ANTLR lexer rules can be recursive, unlike most lexical grammar tools. This comes in really handy when you want to match nested tokens like nested action blocks: <code>{...{...}...}</code>.</p>
+<pre class="language-"><code>lexer grammar Recur;
+
+ACTION : &apos;{&apos; ( ACTION | ~[{}] )* &apos;}&apos; ;
+
+WS : [ \r\t\n]+ -&gt; skip ;
+</code></pre><h2 id="redundant-string-literals"><a name="redundant-string-literals" class="anchor-navigation-ex-anchor" href="#redundant-string-literals"><i class="fa fa-link" aria-hidden="true"></i></a>1.4. Redundant String Literals</h2>
+<p>Be careful that you don&#x2019;t specify the same string literal on the right-hand side of multiple lexer rules. Such literals are ambiguous and could match multiple token types. ANTLR makes this literal unavailable to the parser. The same is true for rules across modes. For example, the following lexer grammar defines two tokens with the same character sequence:</p>
+<pre class="language-"><code>lexer grammar L;
+AND : &apos;&amp;&apos; ;
+mode STR;
+MASK : &apos;&amp;&apos; ;
+</code></pre><p>A parser grammar cannot reference literal &#x2019;&amp;&#x2019;, but it can reference the name of the tokens:</p>
+<pre class="language-"><code>parser grammar P;
+options { tokenVocab=L; }
+a : &apos;&amp;&apos; // results in a tool error: no such token
+    AND // no problem
+    MASK // no problem
+  ;
+</code></pre><p>Here&#x2019;s a build and test sequence:</p>
+<pre class="language-"><code class="lang-bash">$ antlr4 L.g4 <span class="token comment"># yields L.tokens file needed by tokenVocab option in P.g4</span>
+$ antlr4 P.g4
+error<span class="token punctuation">(</span><span class="token number">126</span><span class="token punctuation">)</span>: P.g4:3:4: cannot create implicit token <span class="token keyword">for</span> string literal <span class="token string">&apos;&amp;&apos;</span> <span class="token keyword">in</span> non-combined grammar
+</code></pre>
+<h2 id="lexer-rule-actions"><a name="lexer-rule-actions" class="anchor-navigation-ex-anchor" href="#lexer-rule-actions"><i class="fa fa-link" aria-hidden="true"></i></a>1.5. Lexer Rule Actions</h2>
+<p>An ANTLR lexer creates a Token object after matching a lexical rule. Each request for a token starts in <code>Lexer.nextToken</code>, which calls <code>emit</code> once it has identified a token. <code>emit</code> collects information from the current state of the lexer to build the token. It accesses fields <code>_type</code>, <code>_text</code>, <code>_channel</code>, <code>_tokenStartCharIndex</code>, <code>_tokenStartLine</code>, and <code>_tokenStartCharPositionInLine</code>. You can set the state of these with the various setter methods such as <code>setType</code>. For example, the following rule turns <code>enum</code> into an identifier if <code>enumIsKeyword</code> is false.</p>
+<pre class="language-"><code>ENUM : &apos;enum&apos; {if (!enumIsKeyword) setType(Identifier);} ;
+</code></pre><p>ANTLR does no special <code>$x</code> attribute translations in lexer actions (unlike v3).</p>
+<p>There can be at most a single action for a lexical rule, regardless of how many alternatives there are in that rule.</p>
+<h2 id="lexer-commands"><a name="lexer-commands" class="anchor-navigation-ex-anchor" href="#lexer-commands"><i class="fa fa-link" aria-hidden="true"></i></a>1.6. Lexer Commands</h2>
+<p>To avoid tying a grammar to a particular target language, ANTLR supports lexer commands. Unlike arbitrary embedded actions, these commands follow specific syntax and are limited to a few common commands. Lexer commands appear at the end of the outermost alternative of a lexer rule definition. Like arbitrary actions, there can only be one per token rule. A lexer command consists of the <code>-&gt;</code> operator followed by one or more command names that can optionally take parameters:</p>
+<pre class="language-"><code>TokenName : &#xAB;alternative&#xBB; -&gt; command-name
+TokenName : &#xAB;alternative&#xBB; -&gt; command-name (&#xAB;identifier or integer&#xBB;)
+</code></pre><p>An alternative can have more than one command separated by commas. Here are the valid command names:</p>
+<ul>
+<li>skip</li>
+<li>more</li>
+<li>popMode</li>
+<li>mode( x )</li>
+<li>pushMode( x )</li>
+<li>type( x )</li>
+<li>channel( x )</li>
+</ul>
+<p>See the book source code for usage, some examples of which are shown here:</p>
+<h3 id="skip"><a name="skip" class="anchor-navigation-ex-anchor" href="#skip"><i class="fa fa-link" aria-hidden="true"></i></a>1.6.1. skip</h3>
+<p>A &apos;skip&apos; command tells the lexer to get another token and throw out the current text.</p>
+<pre class="language-"><code>ID : [a-zA-Z]+ ; // match identifiers
+INT : [0-9]+ ; // match integers
+NEWLINE:&apos;\r&apos;? &apos;\n&apos; ; // return newlines to parser (is end-statement signal)
+WS : [ \t]+ -&gt; skip ; // toss out whitespace
+</code></pre><h3 id="mode-pushmode-popmode-and-more"><a name="mode-pushmode-popmode-and-more" class="anchor-navigation-ex-anchor" href="#mode-pushmode-popmode-and-more"><i class="fa fa-link" aria-hidden="true"></i></a>1.6.2. mode(), pushMode(), popMode, and more</h3>
+<p>The mode commands alter the mode stack and hence the mode of the lexer. The &apos;more&apos; command forces the lexer to get another token but without throwing out the current text. The token type will be that of the &quot;final&quot; rule matched (i.e., the one without a more or skip command).</p>
+<pre class="language-"><code>// Default &quot;mode&quot;: Everything OUTSIDE of a tag
+COMMENT : &apos;<span class="token comment">&lt;!--&apos; .*? &apos;--&gt;</span>&apos; ;
+CDATA   : &apos;<span class="token cdata">&lt;![CDATA[&apos; .*? &apos;]]&gt;</span>&apos; ;
+OPEN : &apos;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>&apos;</span> <span class="token attr-name">-</span><span class="token punctuation">&gt;</span></span> pushMode(INSIDE) ;
+ ...
+XMLDeclOpen : &apos;<span class="token prolog">&lt;?xml&apos; S -&gt; pushMode(INSIDE) ;
+SPECIAL_OPEN: &apos;&lt;?&apos; Name -&gt; more, pushMode(PROC_INSTR) ;
+// ----------------- Everything INSIDE of a tag ---------------------
+mode INSIDE;
+CLOSE        : &apos;&gt;&apos; -&gt; popMode ;
+SPECIAL_CLOSE: &apos;?&gt;</span>&apos; -&gt; popMode ; // close <span class="token prolog">&lt;?xml...?&gt;</span>
+SLASH_CLOSE  : &apos;/&gt;&apos; -&gt; popMode ;
+</code></pre><p>Also check out:</p>
+<pre class="language-"><code>lexer grammar Strings;
+LQUOTE : &apos;&quot;&apos; -&gt; more, mode(STR) ;
+WS : [ \r\t\n]+ -&gt; skip ;
+mode STR;
+STRING : &apos;&quot;&apos; -&gt; mode(DEFAULT_MODE) ; // token we want parser to see
+TEXT : . -&gt; more ; // collect more text for string
+</code></pre><p>Popping the bottom layer of a mode stack will result in an exception. Switching modes with <code>mode</code> changes the current stack top.  More than one <code>more</code> is the same as just one and the position does not matter.</p>
+<h3 id="type"><a name="type" class="anchor-navigation-ex-anchor" href="#type"><i class="fa fa-link" aria-hidden="true"></i></a>1.6.3. type()</h3>
+<pre class="language-"><code>lexer grammar SetType;
+tokens { STRING }
+DOUBLE : &apos;&quot;&apos; .*? &apos;&quot;&apos;   -&gt; type(STRING) ;
+SINGLE : &apos;\&apos;&apos; .*? &apos;\&apos;&apos; -&gt; type(STRING) ;
+WS     : [ \r\t\n]+    -&gt; skip ;
+</code></pre><p>For multiple &apos;type()&apos; commands, only the rightmost has an effect.</p>
+<h3 id="channel"><a name="channel" class="anchor-navigation-ex-anchor" href="#channel"><i class="fa fa-link" aria-hidden="true"></i></a>1.6.4. channel()</h3>
+<pre class="language-"><code>BLOCK_COMMENT
+    : &apos;/*&apos; .*? &apos;*/&apos; -&gt; channel(HIDDEN)
+    ;
+LINE_COMMENT
+    : &apos;//&apos; ~[\r\n]* -&gt; channel(HIDDEN)
+    ;
+... 
+// ----------
+// Whitespace
+//
+// Characters and character constructs that are of no import
+// to the parser and are used to make the grammar easier to read
+// for humans.
+//
+WS : [ \t\r\n\f]+ -&gt; channel(HIDDEN) ;
+</code></pre><p>As of 4.5, you can also define channel names like enumerations with the following construct above the lexer rules:</p>
+<pre class="language-"><code>channels { WSCHANNEL, MYHIDDEN }
+</code></pre>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="actions.html" class="navigation navigation-prev " aria-label="Previous page: Actions and Attributes">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="wildcard.html" class="navigation navigation-next " aria-label="Next page: Wildcard Operator and Nongreedy Subrules">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Lexer Rules","level":"2.8","depth":1,"next":{"title":"Wildcard Operator and Nongreedy Subrules","level":"2.9","depth":1,"path":"chapters/wildcard.md","ref":"chapters/wildcard.md","articles":[]},"previous":{"title":"Actions and Attributes","level":"2.7","depth":1,"path":"chapters/actions.md","ref":"chapters/actions.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","anchor-navigation-ex","-sharing","sharing-plus","-highlight","prism"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"night","family":"serif","size":2},"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"sharing":{"weibo":true,"qzone":true,"qq":true,"douban":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"Little Captain","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"antlr4-doc","gitbook":"*","description":"antlr4-doc"},"file":{"path":"chapters/lexer-rules.md","mtime":"2021-11-11T03:00:11.621Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-11-11T03:11:20.710Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
